@@ -1,0 +1,14 @@
+PASS the last message ends with a cachePoint (after a toolResult)
+PASS one checkpoint in system and one in messages; the tools render first, so the system checkpoint caches them too (ONLINE-7588 Phase 2)
+PASS earlier messages are sent unchanged
+PASS the caller's (stored) history is never modified
+PASS the closing model's copy (reasoning removed) is cached too
+PASS a step that asks for no history checkpoint (the fast model's closing, ONLINE-7588) gets none and keeps the other two
+PASS never more than 4 checkpoints: none added to messages when system and tools use them all
+PASS with no system checkpoint the tools get their own
+PASS without tools the history still gets its checkpoint
+PASS prompt caching off: no checkpoint anywhere
+PASS a history that already ends with a checkpoint is not given a second one
+PASS an empty history is sent as it is
+
+0 failure(s)

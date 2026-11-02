@@ -1,0 +1,19 @@
+PASS the core comes first and is followed by its own one-hour checkpoint
+PASS the teacher block is its own cached layer, right after the core
+PASS the page layer ends with the acting module and its checkpoint
+PASS the uncached scope comes after the last checkpoint
+PASS only the core's checkpoint has the one-hour ttl
+PASS with no teacher block there is no teacher checkpoint
+PASS with no cached page context the acting module is still sent and cached
+PASS the acting module follows the mode
+PASS caching off sends no checkpoint
+PASS core, teacher, page and history use all four checkpoints, no more; the tools need none of their own
+PASS two pages share the core and teacher fingerprints
+PASS and differ on the page fingerprint
+PASS with no teacher block the page layer is still named page
+PASS sizes are recorded
+PASS only fingerprints and numbers, never text
+PASS telemetry keeps every layer field
+PASS the loop records the first call's layers, and the turn's telemetry carries them
+
+all passed

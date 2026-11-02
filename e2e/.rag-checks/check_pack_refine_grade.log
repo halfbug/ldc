@@ -1,0 +1,843 @@
+Error loading configuration from Parameter Store: You must specify a region.
+Traceback (most recent call last):
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/src/config/config.py", line 257, in get_config
+    param_store_config = _load_parameter_store_config(config.PARAMETER_STORE_PREFIX)
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/src/config/config.py", line 175, in _load_parameter_store_config
+    ssm_client = boto3.client('ssm')
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/boto3/__init__.py", line 93, in client
+    return _get_default_session().client(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/boto3/session.py", line 337, in client
+    return self._session.create_client(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        service_name, **create_client_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/context.py", line 123, in wrapper
+    return func(*args, **kwargs)
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/session.py", line 1031, in create_client
+    client = client_creator.create_client(
+        service_name=service_name,
+    ...<8 lines>...
+        auth_token=auth_token,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/client.py", line 161, in create_client
+    client_args = self._get_client_args(
+        service_model,
+    ...<10 lines>...
+        partition_data,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/client.py", line 561, in _get_client_args
+    return args_creator.get_client_args(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        service_model,
+        ^^^^^^^^^^^^^^
+    ...<10 lines>...
+        partition_data,
+        ^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/args.py", line 121, in get_client_args
+    final_args = self.compute_client_args(
+        service_model,
+    ...<5 lines>...
+        scoped_config,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/args.py", line 265, in compute_client_args
+    endpoint_config = self._compute_endpoint_config(
+        service_name=service_name,
+    ...<4 lines>...
+        s3_config=s3_config,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/args.py", line 459, in _compute_endpoint_config
+    return self._resolve_endpoint(**resolve_endpoint_kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/args.py", line 577, in _resolve_endpoint
+    return endpoint_bridge.resolve(
+           ~~~~~~~~~~~~~~~~~~~~~~~^
+        service_name, region_name, endpoint_url, is_secure
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/client.py", line 675, in resolve
+    resolved = self.endpoint_resolver.construct_endpoint(
+        service_name,
+    ...<2 lines>...
+        use_fips_endpoint=use_fips_endpoint,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/regions.py", line 237, in construct_endpoint
+    result = self._endpoint_for_partition(
+        partition,
+    ...<3 lines>...
+        use_fips_endpoint,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/regions.py", line 285, in _endpoint_for_partition
+    raise NoRegionError()
+botocore.exceptions.NoRegionError: You must specify a region.
+Failed to load Parameter Store config
+Traceback (most recent call last):
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/src/config/config.py", line 257, in get_config
+    param_store_config = _load_parameter_store_config(config.PARAMETER_STORE_PREFIX)
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/src/config/config.py", line 175, in _load_parameter_store_config
+    ssm_client = boto3.client('ssm')
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/boto3/__init__.py", line 93, in client
+    return _get_default_session().client(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/boto3/session.py", line 337, in client
+    return self._session.create_client(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        service_name, **create_client_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/context.py", line 123, in wrapper
+    return func(*args, **kwargs)
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/session.py", line 1031, in create_client
+    client = client_creator.create_client(
+        service_name=service_name,
+    ...<8 lines>...
+        auth_token=auth_token,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/client.py", line 161, in create_client
+    client_args = self._get_client_args(
+        service_model,
+    ...<10 lines>...
+        partition_data,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/client.py", line 561, in _get_client_args
+    return args_creator.get_client_args(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        service_model,
+        ^^^^^^^^^^^^^^
+    ...<10 lines>...
+        partition_data,
+        ^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/args.py", line 121, in get_client_args
+    final_args = self.compute_client_args(
+        service_model,
+    ...<5 lines>...
+        scoped_config,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/args.py", line 265, in compute_client_args
+    endpoint_config = self._compute_endpoint_config(
+        service_name=service_name,
+    ...<4 lines>...
+        s3_config=s3_config,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/args.py", line 459, in _compute_endpoint_config
+    return self._resolve_endpoint(**resolve_endpoint_kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/args.py", line 577, in _resolve_endpoint
+    return endpoint_bridge.resolve(
+           ~~~~~~~~~~~~~~~~~~~~~~~^
+        service_name, region_name, endpoint_url, is_secure
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/client.py", line 675, in resolve
+    resolved = self.endpoint_resolver.construct_endpoint(
+        service_name,
+    ...<2 lines>...
+        use_fips_endpoint=use_fips_endpoint,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/regions.py", line 237, in construct_endpoint
+    result = self._endpoint_for_partition(
+        partition,
+    ...<3 lines>...
+        use_fips_endpoint,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/regions.py", line 285, in _endpoint_for_partition
+    raise NoRegionError()
+botocore.exceptions.NoRegionError: You must specify a region.
+Error loading configuration from Parameter Store: You must specify a region.
+Traceback (most recent call last):
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/src/config/config.py", line 257, in get_config
+    param_store_config = _load_parameter_store_config(config.PARAMETER_STORE_PREFIX)
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/src/config/config.py", line 175, in _load_parameter_store_config
+    ssm_client = boto3.client('ssm')
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/boto3/__init__.py", line 93, in client
+    return _get_default_session().client(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/boto3/session.py", line 337, in client
+    return self._session.create_client(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        service_name, **create_client_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/context.py", line 123, in wrapper
+    return func(*args, **kwargs)
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/session.py", line 1031, in create_client
+    client = client_creator.create_client(
+        service_name=service_name,
+    ...<8 lines>...
+        auth_token=auth_token,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/client.py", line 161, in create_client
+    client_args = self._get_client_args(
+        service_model,
+    ...<10 lines>...
+        partition_data,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/client.py", line 561, in _get_client_args
+    return args_creator.get_client_args(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        service_model,
+        ^^^^^^^^^^^^^^
+    ...<10 lines>...
+        partition_data,
+        ^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/args.py", line 121, in get_client_args
+    final_args = self.compute_client_args(
+        service_model,
+    ...<5 lines>...
+        scoped_config,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/args.py", line 265, in compute_client_args
+    endpoint_config = self._compute_endpoint_config(
+        service_name=service_name,
+    ...<4 lines>...
+        s3_config=s3_config,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/args.py", line 459, in _compute_endpoint_config
+    return self._resolve_endpoint(**resolve_endpoint_kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/args.py", line 577, in _resolve_endpoint
+    return endpoint_bridge.resolve(
+           ~~~~~~~~~~~~~~~~~~~~~~~^
+        service_name, region_name, endpoint_url, is_secure
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/client.py", line 675, in resolve
+    resolved = self.endpoint_resolver.construct_endpoint(
+        service_name,
+    ...<2 lines>...
+        use_fips_endpoint=use_fips_endpoint,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/regions.py", line 237, in construct_endpoint
+    result = self._endpoint_for_partition(
+        partition,
+    ...<3 lines>...
+        use_fips_endpoint,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/regions.py", line 285, in _endpoint_for_partition
+    raise NoRegionError()
+botocore.exceptions.NoRegionError: You must specify a region.
+Failed to load Parameter Store config
+Traceback (most recent call last):
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/src/config/config.py", line 257, in get_config
+    param_store_config = _load_parameter_store_config(config.PARAMETER_STORE_PREFIX)
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/src/config/config.py", line 175, in _load_parameter_store_config
+    ssm_client = boto3.client('ssm')
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/boto3/__init__.py", line 93, in client
+    return _get_default_session().client(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/boto3/session.py", line 337, in client
+    return self._session.create_client(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        service_name, **create_client_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/context.py", line 123, in wrapper
+    return func(*args, **kwargs)
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/session.py", line 1031, in create_client
+    client = client_creator.create_client(
+        service_name=service_name,
+    ...<8 lines>...
+        auth_token=auth_token,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/client.py", line 161, in create_client
+    client_args = self._get_client_args(
+        service_model,
+    ...<10 lines>...
+        partition_data,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/client.py", line 561, in _get_client_args
+    return args_creator.get_client_args(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        service_model,
+        ^^^^^^^^^^^^^^
+    ...<10 lines>...
+        partition_data,
+        ^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/args.py", line 121, in get_client_args
+    final_args = self.compute_client_args(
+        service_model,
+    ...<5 lines>...
+        scoped_config,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/args.py", line 265, in compute_client_args
+    endpoint_config = self._compute_endpoint_config(
+        service_name=service_name,
+    ...<4 lines>...
+        s3_config=s3_config,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/args.py", line 459, in _compute_endpoint_config
+    return self._resolve_endpoint(**resolve_endpoint_kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/args.py", line 577, in _resolve_endpoint
+    return endpoint_bridge.resolve(
+           ~~~~~~~~~~~~~~~~~~~~~~~^
+        service_name, region_name, endpoint_url, is_secure
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/client.py", line 675, in resolve
+    resolved = self.endpoint_resolver.construct_endpoint(
+        service_name,
+    ...<2 lines>...
+        use_fips_endpoint=use_fips_endpoint,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/regions.py", line 237, in construct_endpoint
+    result = self._endpoint_for_partition(
+        partition,
+    ...<3 lines>...
+        use_fips_endpoint,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/regions.py", line 285, in _endpoint_for_partition
+    raise NoRegionError()
+botocore.exceptions.NoRegionError: You must specify a region.
+Error loading configuration from Parameter Store: You must specify a region.
+Traceback (most recent call last):
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/src/config/config.py", line 257, in get_config
+    param_store_config = _load_parameter_store_config(config.PARAMETER_STORE_PREFIX)
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/src/config/config.py", line 175, in _load_parameter_store_config
+    ssm_client = boto3.client('ssm')
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/boto3/__init__.py", line 93, in client
+    return _get_default_session().client(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/boto3/session.py", line 337, in client
+    return self._session.create_client(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        service_name, **create_client_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/context.py", line 123, in wrapper
+    return func(*args, **kwargs)
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/session.py", line 1031, in create_client
+    client = client_creator.create_client(
+        service_name=service_name,
+    ...<8 lines>...
+        auth_token=auth_token,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/client.py", line 161, in create_client
+    client_args = self._get_client_args(
+        service_model,
+    ...<10 lines>...
+        partition_data,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/client.py", line 561, in _get_client_args
+    return args_creator.get_client_args(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        service_model,
+        ^^^^^^^^^^^^^^
+    ...<10 lines>...
+        partition_data,
+        ^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/args.py", line 121, in get_client_args
+    final_args = self.compute_client_args(
+        service_model,
+    ...<5 lines>...
+        scoped_config,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/args.py", line 265, in compute_client_args
+    endpoint_config = self._compute_endpoint_config(
+        service_name=service_name,
+    ...<4 lines>...
+        s3_config=s3_config,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/args.py", line 459, in _compute_endpoint_config
+    return self._resolve_endpoint(**resolve_endpoint_kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/args.py", line 577, in _resolve_endpoint
+    return endpoint_bridge.resolve(
+           ~~~~~~~~~~~~~~~~~~~~~~~^
+        service_name, region_name, endpoint_url, is_secure
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/client.py", line 675, in resolve
+    resolved = self.endpoint_resolver.construct_endpoint(
+        service_name,
+    ...<2 lines>...
+        use_fips_endpoint=use_fips_endpoint,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/regions.py", line 237, in construct_endpoint
+    result = self._endpoint_for_partition(
+        partition,
+    ...<3 lines>...
+        use_fips_endpoint,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/regions.py", line 285, in _endpoint_for_partition
+    raise NoRegionError()
+botocore.exceptions.NoRegionError: You must specify a region.
+Failed to load Parameter Store config
+Traceback (most recent call last):
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/src/config/config.py", line 257, in get_config
+    param_store_config = _load_parameter_store_config(config.PARAMETER_STORE_PREFIX)
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/src/config/config.py", line 175, in _load_parameter_store_config
+    ssm_client = boto3.client('ssm')
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/boto3/__init__.py", line 93, in client
+    return _get_default_session().client(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/boto3/session.py", line 337, in client
+    return self._session.create_client(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        service_name, **create_client_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/context.py", line 123, in wrapper
+    return func(*args, **kwargs)
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/session.py", line 1031, in create_client
+    client = client_creator.create_client(
+        service_name=service_name,
+    ...<8 lines>...
+        auth_token=auth_token,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/client.py", line 161, in create_client
+    client_args = self._get_client_args(
+        service_model,
+    ...<10 lines>...
+        partition_data,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/client.py", line 561, in _get_client_args
+    return args_creator.get_client_args(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        service_model,
+        ^^^^^^^^^^^^^^
+    ...<10 lines>...
+        partition_data,
+        ^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/args.py", line 121, in get_client_args
+    final_args = self.compute_client_args(
+        service_model,
+    ...<5 lines>...
+        scoped_config,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/args.py", line 265, in compute_client_args
+    endpoint_config = self._compute_endpoint_config(
+        service_name=service_name,
+    ...<4 lines>...
+        s3_config=s3_config,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/args.py", line 459, in _compute_endpoint_config
+    return self._resolve_endpoint(**resolve_endpoint_kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/args.py", line 577, in _resolve_endpoint
+    return endpoint_bridge.resolve(
+           ~~~~~~~~~~~~~~~~~~~~~~~^
+        service_name, region_name, endpoint_url, is_secure
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/client.py", line 675, in resolve
+    resolved = self.endpoint_resolver.construct_endpoint(
+        service_name,
+    ...<2 lines>...
+        use_fips_endpoint=use_fips_endpoint,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/regions.py", line 237, in construct_endpoint
+    result = self._endpoint_for_partition(
+        partition,
+    ...<3 lines>...
+        use_fips_endpoint,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/regions.py", line 285, in _endpoint_for_partition
+    raise NoRegionError()
+botocore.exceptions.NoRegionError: You must specify a region.
+article grade lookup failed: PineconeConfigurationError
+Error loading configuration from Parameter Store: You must specify a region.
+Traceback (most recent call last):
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/src/config/config.py", line 257, in get_config
+    param_store_config = _load_parameter_store_config(config.PARAMETER_STORE_PREFIX)
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/src/config/config.py", line 175, in _load_parameter_store_config
+    ssm_client = boto3.client('ssm')
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/boto3/__init__.py", line 93, in client
+    return _get_default_session().client(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/boto3/session.py", line 337, in client
+    return self._session.create_client(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        service_name, **create_client_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/context.py", line 123, in wrapper
+    return func(*args, **kwargs)
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/session.py", line 1031, in create_client
+    client = client_creator.create_client(
+        service_name=service_name,
+    ...<8 lines>...
+        auth_token=auth_token,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/client.py", line 161, in create_client
+    client_args = self._get_client_args(
+        service_model,
+    ...<10 lines>...
+        partition_data,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/client.py", line 561, in _get_client_args
+    return args_creator.get_client_args(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        service_model,
+        ^^^^^^^^^^^^^^
+    ...<10 lines>...
+        partition_data,
+        ^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/args.py", line 121, in get_client_args
+    final_args = self.compute_client_args(
+        service_model,
+    ...<5 lines>...
+        scoped_config,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/args.py", line 265, in compute_client_args
+    endpoint_config = self._compute_endpoint_config(
+        service_name=service_name,
+    ...<4 lines>...
+        s3_config=s3_config,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/args.py", line 459, in _compute_endpoint_config
+    return self._resolve_endpoint(**resolve_endpoint_kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/args.py", line 577, in _resolve_endpoint
+    return endpoint_bridge.resolve(
+           ~~~~~~~~~~~~~~~~~~~~~~~^
+        service_name, region_name, endpoint_url, is_secure
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/client.py", line 675, in resolve
+    resolved = self.endpoint_resolver.construct_endpoint(
+        service_name,
+    ...<2 lines>...
+        use_fips_endpoint=use_fips_endpoint,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/regions.py", line 237, in construct_endpoint
+    result = self._endpoint_for_partition(
+        partition,
+    ...<3 lines>...
+        use_fips_endpoint,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/regions.py", line 285, in _endpoint_for_partition
+    raise NoRegionError()
+botocore.exceptions.NoRegionError: You must specify a region.
+Failed to load Parameter Store config
+Traceback (most recent call last):
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/src/config/config.py", line 257, in get_config
+    param_store_config = _load_parameter_store_config(config.PARAMETER_STORE_PREFIX)
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/src/config/config.py", line 175, in _load_parameter_store_config
+    ssm_client = boto3.client('ssm')
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/boto3/__init__.py", line 93, in client
+    return _get_default_session().client(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/boto3/session.py", line 337, in client
+    return self._session.create_client(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        service_name, **create_client_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/context.py", line 123, in wrapper
+    return func(*args, **kwargs)
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/session.py", line 1031, in create_client
+    client = client_creator.create_client(
+        service_name=service_name,
+    ...<8 lines>...
+        auth_token=auth_token,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/client.py", line 161, in create_client
+    client_args = self._get_client_args(
+        service_model,
+    ...<10 lines>...
+        partition_data,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/client.py", line 561, in _get_client_args
+    return args_creator.get_client_args(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        service_model,
+        ^^^^^^^^^^^^^^
+    ...<10 lines>...
+        partition_data,
+        ^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/args.py", line 121, in get_client_args
+    final_args = self.compute_client_args(
+        service_model,
+    ...<5 lines>...
+        scoped_config,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/args.py", line 265, in compute_client_args
+    endpoint_config = self._compute_endpoint_config(
+        service_name=service_name,
+    ...<4 lines>...
+        s3_config=s3_config,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/args.py", line 459, in _compute_endpoint_config
+    return self._resolve_endpoint(**resolve_endpoint_kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/args.py", line 577, in _resolve_endpoint
+    return endpoint_bridge.resolve(
+           ~~~~~~~~~~~~~~~~~~~~~~~^
+        service_name, region_name, endpoint_url, is_secure
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/client.py", line 675, in resolve
+    resolved = self.endpoint_resolver.construct_endpoint(
+        service_name,
+    ...<2 lines>...
+        use_fips_endpoint=use_fips_endpoint,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/regions.py", line 237, in construct_endpoint
+    result = self._endpoint_for_partition(
+        partition,
+    ...<3 lines>...
+        use_fips_endpoint,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/regions.py", line 285, in _endpoint_for_partition
+    raise NoRegionError()
+botocore.exceptions.NoRegionError: You must specify a region.
+Error loading configuration from Parameter Store: You must specify a region.
+Traceback (most recent call last):
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/src/config/config.py", line 257, in get_config
+    param_store_config = _load_parameter_store_config(config.PARAMETER_STORE_PREFIX)
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/src/config/config.py", line 175, in _load_parameter_store_config
+    ssm_client = boto3.client('ssm')
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/boto3/__init__.py", line 93, in client
+    return _get_default_session().client(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/boto3/session.py", line 337, in client
+    return self._session.create_client(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        service_name, **create_client_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/context.py", line 123, in wrapper
+    return func(*args, **kwargs)
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/session.py", line 1031, in create_client
+    client = client_creator.create_client(
+        service_name=service_name,
+    ...<8 lines>...
+        auth_token=auth_token,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/client.py", line 161, in create_client
+    client_args = self._get_client_args(
+        service_model,
+    ...<10 lines>...
+        partition_data,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/client.py", line 561, in _get_client_args
+    return args_creator.get_client_args(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        service_model,
+        ^^^^^^^^^^^^^^
+    ...<10 lines>...
+        partition_data,
+        ^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/args.py", line 121, in get_client_args
+    final_args = self.compute_client_args(
+        service_model,
+    ...<5 lines>...
+        scoped_config,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/args.py", line 265, in compute_client_args
+    endpoint_config = self._compute_endpoint_config(
+        service_name=service_name,
+    ...<4 lines>...
+        s3_config=s3_config,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/args.py", line 459, in _compute_endpoint_config
+    return self._resolve_endpoint(**resolve_endpoint_kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/args.py", line 577, in _resolve_endpoint
+    return endpoint_bridge.resolve(
+           ~~~~~~~~~~~~~~~~~~~~~~~^
+        service_name, region_name, endpoint_url, is_secure
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/client.py", line 675, in resolve
+    resolved = self.endpoint_resolver.construct_endpoint(
+        service_name,
+    ...<2 lines>...
+        use_fips_endpoint=use_fips_endpoint,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/regions.py", line 237, in construct_endpoint
+    result = self._endpoint_for_partition(
+        partition,
+    ...<3 lines>...
+        use_fips_endpoint,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/regions.py", line 285, in _endpoint_for_partition
+    raise NoRegionError()
+botocore.exceptions.NoRegionError: You must specify a region.
+Failed to load Parameter Store config
+Traceback (most recent call last):
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/src/config/config.py", line 257, in get_config
+    param_store_config = _load_parameter_store_config(config.PARAMETER_STORE_PREFIX)
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/src/config/config.py", line 175, in _load_parameter_store_config
+    ssm_client = boto3.client('ssm')
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/boto3/__init__.py", line 93, in client
+    return _get_default_session().client(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/boto3/session.py", line 337, in client
+    return self._session.create_client(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        service_name, **create_client_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/context.py", line 123, in wrapper
+    return func(*args, **kwargs)
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/session.py", line 1031, in create_client
+    client = client_creator.create_client(
+        service_name=service_name,
+    ...<8 lines>...
+        auth_token=auth_token,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/client.py", line 161, in create_client
+    client_args = self._get_client_args(
+        service_model,
+    ...<10 lines>...
+        partition_data,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/client.py", line 561, in _get_client_args
+    return args_creator.get_client_args(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        service_model,
+        ^^^^^^^^^^^^^^
+    ...<10 lines>...
+        partition_data,
+        ^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/args.py", line 121, in get_client_args
+    final_args = self.compute_client_args(
+        service_model,
+    ...<5 lines>...
+        scoped_config,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/args.py", line 265, in compute_client_args
+    endpoint_config = self._compute_endpoint_config(
+        service_name=service_name,
+    ...<4 lines>...
+        s3_config=s3_config,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/args.py", line 459, in _compute_endpoint_config
+    return self._resolve_endpoint(**resolve_endpoint_kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/args.py", line 577, in _resolve_endpoint
+    return endpoint_bridge.resolve(
+           ~~~~~~~~~~~~~~~~~~~~~~~^
+        service_name, region_name, endpoint_url, is_secure
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/client.py", line 675, in resolve
+    resolved = self.endpoint_resolver.construct_endpoint(
+        service_name,
+    ...<2 lines>...
+        use_fips_endpoint=use_fips_endpoint,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/regions.py", line 237, in construct_endpoint
+    result = self._endpoint_for_partition(
+        partition,
+    ...<3 lines>...
+        use_fips_endpoint,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/regions.py", line 285, in _endpoint_for_partition
+    raise NoRegionError()
+botocore.exceptions.NoRegionError: You must specify a region.
+article grade lookup failed: PineconeConfigurationError
+PASS the grade named in 'Make a lesson pack for the Week 8 article in this publication: a lesson plan, a worksheet and an exit ticket. Grade 4.' is 4
+PASS the grade named in 'a worksheet for my 4th graders' is 4
+PASS the grade named in 'for fourth-grade students' is 4
+PASS the grade named in 'for 5th grade, 45 minutes' is 5
+PASS the grade named in 'kindergarten please' is K
+PASS the grade named in 'Grade K' is K
+PASS the grade named in 'make it for grade 3' is 3
+PASS no one grade is named in 'Make a lesson pack for the Week 8 article.'
+PASS no one grade is named in 'grades 3-5'
+PASS no one grade is named in 'grade 3–5 students'
+PASS no one grade is named in 'grade the answers'
+PASS no one grade is named in 'for grade 4 and grade 5'
+PASS no one grade is named in 'make it shorter'
+PASS no one grade is named in 'unit 4, lesson 2'
+PASS this turn's own grade is the named grade
+PASS on the refine turns, the grade named earlier in the chat is still the named grade
+PASS a newer named grade replaces an older one
+PASS a bare "4" answering Scout's grade question is the named grade on a later turn (S3)
+PASS a bare "4" answering another question is not a grade
+PASS a level-up request's grade is the text's target, not a named grade
+PASS "make it for grade 6" is still a named grade
+PASS no grade named anywhere is None
+PASS a model-written worksheet is written at the named Grade 4, not the usual Grade 3
+PASS its brief never says the teacher did not name a grade
+PASS its ref keeps no 'your usual' grade assumption
+PASS with no grade named, the usual grade is still used and said so
+PASS a pack with the grade only in the teacher's words is written at Grade 4 throughout
+PASS its header states grade 4, not 'Grade 3 (your usual)'
+PASS with no grade named, a question set with only the article's grade asks the grade
+PASS with "4" typed to Scout's grade question earlier, the set is written at 4, not asked
+PASS "all three" after Scout's which-question revises all three documents with the earlier instruction
+PASS the scope answer 'All of them.' is dispatched
+PASS the scope answer 'both' is dispatched
+PASS the scope answer 'the whole pack' is dispatched
+PASS the scope answer 'ok, all three please' is dispatched
+PASS the scope answer 'all' is dispatched
+PASS a change that says all is dispatched with its own words
+PASS a change naming two of the set's documents revises only those two
+PASS not dispatched: one document named
+PASS not dispatched: a plain change after documents that are not a pack (the model asks which)
+PASS not dispatched: a scope answer with no question before it
+PASS not dispatched: a new thing
+PASS not dispatched: questions
+PASS not dispatched: not a change
+PASS not dispatched: a question to Scout
+PASS not dispatched with one document made
+PASS not dispatched without write_artifact
+PASS right after a pack, "make it shorter" revises every part of the pack
+PASS a part revised alone since is refined at its newest version
+PASS after a part was revised alone, a plain "make it shorter" is the model's again
+PASS each document is told 'Use simpler words.' for 'Use simpler words in all three.' (G-7761c run 1, C4)
+PASS each document is told 'Make it shorter' for 'Make them all shorter' (G-7761c run 1, C4)
+PASS each document is told 'make it shorter' for 'make all three of them shorter' (G-7761c run 1, C4)
+PASS each document is told 'make it shorter' for 'make it shorter' (G-7761c run 1, C4)
+PASS each document is told 'Shorten it, please.' for 'Shorten each of them, please.' (G-7761c run 1, C4)
+PASS each document is told 'Make it simpler' for 'Make the whole pack simpler for all of them' (G-7761c run 1, C4)
+PASS every document of the set is revised once, with the teacher's instruction
+PASS each keeps its kind and its own title (no new title, no other article)
+PASS one card per document, no duplicates and no header for a set that is not a pack
+PASS each new version records the one it replaces
+PASS the grade line is kept (a revise edits the document; it is never rewritten at the usual grade)
+PASS the reply is written in code and names all three
+PASS the model's record names every new ref
+PASS a pack refine opens and closes a new pack header around the three revised parts
+PASS the new header lists the new version of every part, done, none marked earlier
+PASS the pack keeps its title, grade and assumptions
+PASS the pack reply says the pack is updated
+PASS an exit ticket that could not be changed keeps its earlier version in the pack
+PASS and the reply says so
+
+all lesson pack refine and grade checks passed

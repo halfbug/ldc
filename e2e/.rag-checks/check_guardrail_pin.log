@@ -1,0 +1,225 @@
+Error loading configuration from Parameter Store: You must specify a region.
+Traceback (most recent call last):
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/src/config/config.py", line 257, in get_config
+    param_store_config = _load_parameter_store_config(config.PARAMETER_STORE_PREFIX)
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/src/config/config.py", line 175, in _load_parameter_store_config
+    ssm_client = boto3.client('ssm')
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/boto3/__init__.py", line 93, in client
+    return _get_default_session().client(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/boto3/session.py", line 337, in client
+    return self._session.create_client(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        service_name, **create_client_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/context.py", line 123, in wrapper
+    return func(*args, **kwargs)
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/session.py", line 1031, in create_client
+    client = client_creator.create_client(
+        service_name=service_name,
+    ...<8 lines>...
+        auth_token=auth_token,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/client.py", line 161, in create_client
+    client_args = self._get_client_args(
+        service_model,
+    ...<10 lines>...
+        partition_data,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/client.py", line 561, in _get_client_args
+    return args_creator.get_client_args(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        service_model,
+        ^^^^^^^^^^^^^^
+    ...<10 lines>...
+        partition_data,
+        ^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/args.py", line 121, in get_client_args
+    final_args = self.compute_client_args(
+        service_model,
+    ...<5 lines>...
+        scoped_config,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/args.py", line 265, in compute_client_args
+    endpoint_config = self._compute_endpoint_config(
+        service_name=service_name,
+    ...<4 lines>...
+        s3_config=s3_config,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/args.py", line 459, in _compute_endpoint_config
+    return self._resolve_endpoint(**resolve_endpoint_kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/args.py", line 577, in _resolve_endpoint
+    return endpoint_bridge.resolve(
+           ~~~~~~~~~~~~~~~~~~~~~~~^
+        service_name, region_name, endpoint_url, is_secure
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/client.py", line 675, in resolve
+    resolved = self.endpoint_resolver.construct_endpoint(
+        service_name,
+    ...<2 lines>...
+        use_fips_endpoint=use_fips_endpoint,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/regions.py", line 237, in construct_endpoint
+    result = self._endpoint_for_partition(
+        partition,
+    ...<3 lines>...
+        use_fips_endpoint,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/regions.py", line 285, in _endpoint_for_partition
+    raise NoRegionError()
+botocore.exceptions.NoRegionError: You must specify a region.
+Failed to load Parameter Store config
+Traceback (most recent call last):
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/src/config/config.py", line 257, in get_config
+    param_store_config = _load_parameter_store_config(config.PARAMETER_STORE_PREFIX)
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/src/config/config.py", line 175, in _load_parameter_store_config
+    ssm_client = boto3.client('ssm')
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/boto3/__init__.py", line 93, in client
+    return _get_default_session().client(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/boto3/session.py", line 337, in client
+    return self._session.create_client(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        service_name, **create_client_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/context.py", line 123, in wrapper
+    return func(*args, **kwargs)
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/session.py", line 1031, in create_client
+    client = client_creator.create_client(
+        service_name=service_name,
+    ...<8 lines>...
+        auth_token=auth_token,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/client.py", line 161, in create_client
+    client_args = self._get_client_args(
+        service_model,
+    ...<10 lines>...
+        partition_data,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/client.py", line 561, in _get_client_args
+    return args_creator.get_client_args(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        service_model,
+        ^^^^^^^^^^^^^^
+    ...<10 lines>...
+        partition_data,
+        ^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/args.py", line 121, in get_client_args
+    final_args = self.compute_client_args(
+        service_model,
+    ...<5 lines>...
+        scoped_config,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/args.py", line 265, in compute_client_args
+    endpoint_config = self._compute_endpoint_config(
+        service_name=service_name,
+    ...<4 lines>...
+        s3_config=s3_config,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/args.py", line 459, in _compute_endpoint_config
+    return self._resolve_endpoint(**resolve_endpoint_kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/args.py", line 577, in _resolve_endpoint
+    return endpoint_bridge.resolve(
+           ~~~~~~~~~~~~~~~~~~~~~~~^
+        service_name, region_name, endpoint_url, is_secure
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/client.py", line 675, in resolve
+    resolved = self.endpoint_resolver.construct_endpoint(
+        service_name,
+    ...<2 lines>...
+        use_fips_endpoint=use_fips_endpoint,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/regions.py", line 237, in construct_endpoint
+    result = self._endpoint_for_partition(
+        partition,
+    ...<3 lines>...
+        use_fips_endpoint,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/regions.py", line 285, in _endpoint_for_partition
+    raise NoRegionError()
+botocore.exceptions.NoRegionError: You must specify a region.
+PASS config load: both unset is allowed
+PASS config load: id with a version is allowed
+PASS config load: id with no version is refused
+PASS config load: id with a blank version is refused
+PASS engine module import: id with no version does not raise (startup must boot)
+PASS config load: curriculum id with no version is refused
+PASS config load: curriculum id with a version is allowed
+PASS engine call: pinned guardrail is sent with its version
+PASS engine call: misconfigured guardrail refuses (not dropped, not the DRAFT)
+PASS engine call: both unset stays unguarded (local dev)
+{"level":"CRITICAL","location":"guardrail_misconfigured_handler:75","message":"Scout v2 refused: guardrail misconfigured","timestamp":"2026-10-28 16:51:34,470+0500","service":"App","taskName":"starlette.middleware.base.BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.coro","error":"GUARDRAIL_ID is set but GUARDRAIL_VERSION is blank; set a published version number, not the unpinned DRAFT","path":"/assistant/v2/turn"}
+{"level":"CRITICAL","location":"guardrail_misconfigured_handler:75","message":"Scout v2 refused: guardrail misconfigured","timestamp":"2026-10-28 16:51:34,475+0500","service":"App","taskName":"starlette.middleware.base.BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.coro","error":"GUARDRAIL_ID is set but GUARDRAIL_VERSION is blank; set a published version number, not the unpinned DRAFT","path":"/assistant/v2/turn/cancel"}
+{"level":"INFO","location":"level_content:62","message":"Level request received","timestamp":"2026-10-28 16:51:34,478+0500","service":"LevelRouter","taskName":"starlette.middleware.base.BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.coro","user_id":"","content_length":12,"current_grade":"5","target_grade":"3","has_user_instructions":false}
+{"level":"INFO","location":"_route:206","message":"Handling request","timestamp":"2026-10-28 16:51:34,478+0500","service":"AIAssistant","taskName":"starlette.middleware.base.BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.coro","user_id":"","path":"level-content","method":"POST"}
+{"level":"CRITICAL","location":"_guardrail_refusal:324","message":"Request refused: guardrail misconfigured","timestamp":"2026-10-28 16:51:34,478+0500","service":"AIAssistant","taskName":"starlette.middleware.base.BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.coro","error":"GUARDRAIL_ID is set but GUARDRAIL_VERSION is blank; set a published version number, not the unpinned DRAFT"}
+{"level":"INFO","location":"generate_questions_from_topic:98","message":"Topic question generation request received","timestamp":"2026-10-28 16:51:34,481+0500","service":"QuestionRouter","taskName":"starlette.middleware.base.BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.coro","topic_length":9,"count":5}
+{"level":"INFO","location":"_route:206","message":"Handling request","timestamp":"2026-10-28 16:51:34,484+0500","service":"AIAssistant","taskName":"starlette.middleware.base.BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.coro","user_id":"","path":"generate-from-topic","method":"POST"}
+{"level":"CRITICAL","location":"_guardrail_refusal:324","message":"Request refused: guardrail misconfigured","timestamp":"2026-10-28 16:51:34,484+0500","service":"AIAssistant","taskName":"starlette.middleware.base.BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.coro","error":"GUARDRAIL_ID is set but GUARDRAIL_VERSION is blank; set a published version number, not the unpinned DRAFT"}
+{"level":"INFO","location":"revise_question:139","message":"Question revision request received","timestamp":"2026-10-28 16:51:34,488+0500","service":"QuestionRouter","taskName":"starlette.middleware.base.BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.coro","question_type":"multiple_choice"}
+{"level":"INFO","location":"_route:206","message":"Handling request","timestamp":"2026-10-28 16:51:34,488+0500","service":"AIAssistant","taskName":"starlette.middleware.base.BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.coro","user_id":"","path":"revise-question","method":"POST"}
+{"level":"CRITICAL","location":"_guardrail_refusal:324","message":"Request refused: guardrail misconfigured","timestamp":"2026-10-28 16:51:34,488+0500","service":"AIAssistant","taskName":"starlette.middleware.base.BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.coro","error":"GUARDRAIL_ID is set but GUARDRAIL_VERSION is blank; set a published version number, not the unpinned DRAFT"}
+{"level":"INFO","location":"_route:206","message":"Handling request","timestamp":"2026-10-28 16:51:34,491+0500","service":"AIAssistant","taskName":"starlette.middleware.base.BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.coro","user_id":"","path":"level-content","method":"GET"}
+{"level":"INFO","location":"_route:206","message":"Handling request","timestamp":"2026-10-28 16:51:34,495+0500","service":"AIAssistant","taskName":"Task-27","user_id":"1","path":"dev/level-content","method":"POST"}
+{"level":"CRITICAL","location":"_guardrail_refusal:324","message":"Request refused: guardrail misconfigured","timestamp":"2026-10-28 16:51:34,496+0500","service":"AIAssistant","taskName":"Task-27","error":"GUARDRAIL_ID is set but GUARDRAIL_VERSION is blank; set a published version number, not the unpinned DRAFT"}
+PASS misconfigured: v2 turn answers 503
+PASS misconfigured: v2 turn names the code and leaks no env name
+PASS misconfigured: v2 cancel answers 503
+PASS misconfigured: v2 cancel names the code and leaks no env name
+PASS misconfigured: level answers 503
+PASS misconfigured: level names the code and leaks no env name
+PASS misconfigured: topic answers 503
+PASS misconfigured: topic names the code and leaks no env name
+PASS misconfigured: revise answers 503
+PASS misconfigured: revise names the code and leaks no env name
+PASS misconfigured: no model-reaching handler or Bedrock client ran
+PASS misconfigured: the Lambda door's route refuses too (503, same code)
+PASS misconfigured: health answers 200
+PASS misconfigured: target-grades listing (no model) is not refused
+{"level":"INFO","location":"_guard_identifiers:129","message":"student identifiers in a browser payload","timestamp":"2026-10-28 16:51:34,498+0500","service":"CoreRouter","taskName":"starlette.middleware.base.BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.coro","route":"turn","removed":0,"scrub_list_sent":false}
+{"level":"ERROR","location":"preflight:122","message":"Core thread store unavailable","timestamp":"2026-10-28 16:51:34,634+0500","service":"CoreRuntime","taskName":"starlette.middleware.base.BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.coro","error":"ConnectionFailure('You have not defined a default connection')"}
+{"level":"INFO","location":"level_content:62","message":"Level request received","timestamp":"2026-10-28 16:51:34,640+0500","service":"LevelRouter","taskName":"starlette.middleware.base.BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.coro","user_id":"","content_length":12,"current_grade":"5","target_grade":"3","has_user_instructions":false}
+{"level":"INFO","location":"_route:206","message":"Handling request","timestamp":"2026-10-28 16:51:34,640+0500","service":"AIAssistant","taskName":"starlette.middleware.base.BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.coro","user_id":"","path":"level-content","method":"POST"}
+{"level":"INFO","location":"level_content:87","message":"Levelling completed","timestamp":"2026-10-28 16:51:34,641+0500","service":"LevelRouter","taskName":"starlette.middleware.base.BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.coro","user_id":""}
+{"level":"INFO","location":"generate_questions_from_topic:98","message":"Topic question generation request received","timestamp":"2026-10-28 16:51:34,645+0500","service":"QuestionRouter","taskName":"starlette.middleware.base.BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.coro","topic_length":9,"count":5}
+{"level":"INFO","location":"_route:206","message":"Handling request","timestamp":"2026-10-28 16:51:34,646+0500","service":"AIAssistant","taskName":"starlette.middleware.base.BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.coro","user_id":"","path":"generate-from-topic","method":"POST"}
+{"level":"INFO","location":"generate_questions_from_topic:114","message":"Topic question generation completed","timestamp":"2026-10-28 16:51:34,646+0500","service":"QuestionRouter","taskName":"starlette.middleware.base.BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.coro","status":"success"}
+{"level":"INFO","location":"revise_question:139","message":"Question revision request received","timestamp":"2026-10-28 16:51:34,649+0500","service":"QuestionRouter","taskName":"starlette.middleware.base.BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.coro","question_type":"multiple_choice"}
+{"level":"INFO","location":"_route:206","message":"Handling request","timestamp":"2026-10-28 16:51:34,650+0500","service":"AIAssistant","taskName":"starlette.middleware.base.BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.coro","user_id":"","path":"revise-question","method":"POST"}
+{"level":"INFO","location":"revise_question:154","message":"Question revision completed","timestamp":"2026-10-28 16:51:34,650+0500","service":"QuestionRouter","taskName":"starlette.middleware.base.BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.coro","status":"success"}
+{"level":"INFO","location":"_route:206","message":"Handling request","timestamp":"2026-10-28 16:51:34,652+0500","service":"AIAssistant","taskName":"starlette.middleware.base.BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.coro","user_id":"","path":"level-content","method":"GET"}
+{"level":"INFO","location":"_route:206","message":"Handling request","timestamp":"2026-10-28 16:51:34,656+0500","service":"AIAssistant","taskName":"Task-56","user_id":"1","path":"dev/level-content","method":"POST"}
+PASS pinned: v2 is not refused by the pin
+PASS pinned: the spy fires, so silence under misconfig means something
+PASS pinned: the three v1 routes are not answered 503
+PASS pinned: the Lambda door's route is not refused
+PASS title: the model call carries the pinned guardrail version
+PASS title: a pinned title is the model's
+{"level":"WARNING","location":"generate_title:745","message":"v2 title generation failed","timestamp":"2026-10-28 16:51:34,657+0500","service":"CoreThreads","error":"GuardrailConfigError('GUARDRAIL_ID is set but GUARDRAIL_VERSION is blank; set a published version number, not the unpinned DRAFT')"}
+PASS title: misconfigured makes no model call
+PASS title: an intervened title is no title
+{"level":"WARNING","location":"generate_title:745","message":"v2 title generation failed","timestamp":"2026-10-28 16:51:34,661+0500","service":"CoreThreads","error":"GuardrailConfigError('GUARDRAIL_ID is set but GUARDRAIL_VERSION is blank; set a published version number, not the unpinned DRAFT')"}
+PASS title route: misconfigured still creates the thread with its provisional title
+{"level":"CRITICAL","location":"lifespan:56","message":"Scout v2 is disabled: guardrail misconfigured","timestamp":"2026-10-28 16:51:34,662+0500","service":"App","taskName":"Task-62","error":"GUARDRAIL_ID is set but GUARDRAIL_VERSION is blank; set a published version number, not the unpinned DRAFT"}
+PASS misconfigured: lifespan boots (service starts)
+PASS PII policy: PASSWORD is not an entity
+PASS PII policy: SSN, card and AWS secret key still block
+PASS Political topic: within Bedrock's 200-character definition limit
+PASS Political topic: school calendars, days off and holidays are excluded
+PASS guardrail version: the Lambdas follow v16
+
+0 failed

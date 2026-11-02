@@ -1,0 +1,36 @@
+warning: The `tool.uv.dev-dependencies` field (used in `pyproject.toml`) is deprecated and will be removed in a future release; use `dependency-groups.dev` instead
+warning: `VIRTUAL_ENV=/home/lenovo/ldc/e2e/.rag-head/.venv` does not match the project environment path `.venv` and will be ignored; use `--active` to target the active environment instead
+INFO:     Will watch for changes in these directories: ['/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant']
+INFO:     Uvicorn running on http://0.0.0.0:8002 (Press CTRL+C to quit)
+INFO:     Started reloader process [57448] using WatchFiles
+INFO:     Started server process [57450]
+INFO:     Waiting for application startup.
+{"level":"INFO","location":"warm_up:2874","message":"Core warm-up process half done","timestamp":"2026-10-28 16:07:51,731+0500","service":"CoreRuntime","taskName":"Task-2","warmup":{"imports_ms":252.8,"bedrock_client_ms":102.2}}
+INFO:     Application startup complete.
+INFO:     127.0.0.1:52914 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52916 - "GET /health HTTP/1.1" 200 OK
+{"level":"INFO","location":"_warm_network:2860","message":"Core warm-up network half done","timestamp":"2026-10-28 16:07:54,905+0500","service":"CoreRuntime","taskName":"Task-3","warmup":{"bedrock_ms":"failed: ClientError","mongo_ms":75.5,"retrieval_clients_ms":2154.5}}
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [57450]
+INFO:     Stopping reloader process [57448]
+
+======================================================================
+LOCAL DEVELOPMENT SERVER - AI ASSISTANT
+======================================================================
+
+AI Assistant:
+   API:  http://localhost:8002
+   Docs: http://localhost:8002/docs
+   Health: http://localhost:8002/health
+
+======================================================================
+Press Ctrl+C to stop
+
+Starting AI Assistant on port 8002...
+   Guardrails: OFF (no GUARDRAIL_ID) - Core v2 calls are unguarded
+
+Server is running!
+======================================================================
+

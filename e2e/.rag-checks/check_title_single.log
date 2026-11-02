@@ -1,0 +1,24 @@
+PASS the page is in the prompt
+PASS the page comes before the message
+PASS the prompt forbids a person's name in the title
+PASS the SWO terms travel with it
+PASS the reply is the title
+PASS its usage comes back for telemetry
+PASS a long title is cut on a word boundary
+PASS and fits
+PASS quotes and alias codes are dropped
+PASS no page says so rather than inventing one
+PASS a Spanish ask gets a Spanish title
+PASS an empty reply is no title
+PASS the route answers
+PASS the route titles through core, once
+PASS with the page the browser sent
+PASS the listing row is upserted
+PASS a new row is marked core v2
+PASS the title spend is recorded once, as a title
+PASS no generated title falls back to the message
+PASS and records nothing spent twice
+PASS the LangChain title chain is not used
+PASS the runtime has no title step
+
+all passed

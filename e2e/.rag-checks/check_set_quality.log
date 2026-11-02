@@ -1,0 +1,44 @@
+ok   a: a usual type reads as the teacher's words
+ok   a: two types are joined with 'and'
+ok   a: a language reads by name
+ok   a: the closing's assumption line starts a sentence, never a lowercase fragment
+ok   b: for every seed and every size from 2 to 15, both answers appear and the rarer is at least half, rounded down
+ok   b: sets of 6 are given different answer orders, shuffled, not just one block of each answer (QA review: a fixed order can be learned across sets)
+ok   b: an odd count's extra answer is true for some seeds and false for others
+ok   b: only true/false slots are given an answer, one of each for two
+ok   b: one true/false question needs nothing
+ok   b: a balanced set needs nothing
+ok   b: eight all true: three are rewritten as false (a third of 8 rounds up), those planned false first
+ok   b: two all false: one is rewritten as true
+ok   d: F F F F T leaves out the two last falses, never the true
+ok   d: a balanced set leaves out nothing
+ok   b (engine): each true/false idea line tells the writer its answer, both answers among them
+ok   b (engine): a writer that made all six true is repaired, so both answers are delivered
+ok   b (engine): a rewrite that is still true is not taken as the repair
+ok   b (engine): a writer that follows the answers needs no repair
+ok   c (engine): a named 8 in true/false on a 5-idea article writes 5, each idea once
+ok   c (engine): the teacher is told why the set has 5 rather than 8, in the set and in the result
+ok   c (engine): a usual 8 in true/false on a 2-idea article writes 2, not 3 with a repeat, and says so
+ok   c: with two allowed types, an idea comes back once in the other type
+ok   d: one true of five is under a third, so a rewrite is asked for
+ok   d: two of five is a third or more
+ok   d: for every size from 2 to 15 and every split, the flips leave the rarer answer at least a third
+ok   d (engine): the QA set, 8 asked, every idea a revisit, written F F F F T, is not delivered under a third
+ok   d (engine): past the repair budget, an all-true set is still not delivered all true
+ok   d (engine): a question rewritten for a wrong key cannot tip the set to under a third
+ok   d (engine): a question being rewritten for a wrong key counts toward the balance, so its rewrite is given the rarer answer and nothing is left out
+ok   d (engine): when every rewrite comes back the wrong answer, questions are left out until the set is not one answer, and the teacher is told
+ok   d (engine): the QA set with its rewrite refused leaves out the fewest: two falses, three delivered
+ok   d (engine): a balanced set is delivered whole, with no rewrite and nothing left out
+ok   e (engine): a 5-question set cut to 3 for balance gives one note, with the final count against the request
+ok   e (engine): the note on the card, in the result, in the markdown and in the summary are the same one note
+ok   e (engine): a revisit set cut from 5 to 3 says 3, and the revisit range is questions 1 to 3, not 1 to 5
+ok   e (engine): the questions in the body are numbered 1 to 3 as delivered, with no gap
+ok   e (engine): no number in any note is larger than the 8 asked, and none other than 3, 5, 8 or 2 appears
+ok   e (engine): a named 5 on five ideas, two left out, says so once, without a cap note
+ok   e: with nothing left out the revisit range is the slots'
+ok   e: a dropped question in front of the revisits renumbers the range
+ok   e: when every revisit was dropped the range note is not written
+ok   e: a single revisit left reads as one question
+
+all passed

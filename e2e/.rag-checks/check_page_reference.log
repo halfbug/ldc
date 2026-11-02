@@ -1,0 +1,70 @@
+page target article lookup failed
+PASS page ask 'help me plan this week' -> week
+PASS page ask 'what are the objectives for this week?' -> week
+PASS page ask 'are there videos for this week?' -> week
+PASS page ask 'Any worksheets for this week?' -> week
+PASS page ask 'give me the vocabulary for this week' -> week
+PASS page ask 'what should I reteach from this week?' -> week
+PASS page ask 'is there a quiz for this week?' -> week
+PASS page ask 'find discussion questions for this' -> week
+PASS page ask 'What objectives go with this?' -> week
+PASS page ask "Help me plan this week's lessons on the Revolution" -> week
+PASS page ask 'Is there a video for this lesson?' -> week
+PASS page ask 'Find a printable to go with this article' -> week
+PASS page ask 'Summarize the reading on my screen' -> week
+PASS page ask 'What else is here?' -> week
+PASS page ask 'Anything for today’s lesson?' -> week
+PASS page ask 'I need an exit ticket for this.' -> week
+PASS page ask 'Do you have these in Spanish?' -> week
+PASS page ask "What's the vocabulary for the week?" -> week
+PASS page ask 'can you plan next week for me?' -> next_week
+PASS page ask 'Help me plan next week from this publication.' -> next_week
+PASS page ask "Show me next week's videos" -> next_week
+PASS page ask "What did we cover last week's lesson?" -> previous_week
+PASS page ask 'Review activities for last week' -> previous_week
+PASS page ask 'Give me an overview of this unit' -> unit
+PASS page ask 'What assessments are in the rest of the unit?' -> unit
+PASS page ask 'Which standards does this book cover?' -> publication
+PASS page ask 'videos about this topic' -> week
+PASS topic ask 'anything about the Underground Railroad?' -> None
+PASS topic ask 'search for anything about Plains Indians' -> None
+PASS topic ask 'what do you have on the solar system?' -> None
+PASS topic ask 'look for lessons about the Constitution' -> None
+PASS topic ask 'anything on landforms?' -> None
+PASS topic ask 'find articles about Martin Luther King Jr.' -> None
+PASS topic ask 'Show me images of deserts' -> None
+PASS topic ask 'find me something on needs and wants' -> None
+PASS topic ask 'Do you have anything on igneous rocks?' -> None
+PASS topic ask 'worksheets about cryptocurrency' -> None
+PASS topic ask 'Find the article Why People Move' -> None
+PASS topic ask 'Printables for week 7' -> None
+PASS topic ask 'Videos for week 3' -> None
+PASS topic ask "I'm teaching photosynthesis next week, any videos?" -> None
+PASS topic ask 'We start the water cycle next week. Anything on evaporation?' -> None
+PASS topic ask 'Anything here on volcanoes?' -> None
+PASS topic ask 'Is there anything about the Gold Rush this week?' -> None
+PASS topic ask 'What do you have about fractions for tomorrow?' -> None
+PASS topic ask 'Find videos about volcanoes' -> None
+PASS topic ask 'This year my class loves animals, find me something about habitats' -> None
+PASS topic ask '' -> None
+PASS target WEEK: the page's week, its articles, the edition group (twin 435 shares weeks), labelled by title
+PASS target WEEK admits a twin-edition item placed in the shared week
+PASS target WEEK admits a panel attached to one of the week's articles
+PASS target WEEK refuses another week, another publication's week, and an unplaced item of the publication
+PASS target WEEK refuses an article whose own id matches (articles are placed by week, not by article id)
+PASS target NEXT_WEEK is the following week of the publication
+PASS target PREVIOUS_WEEK before the first week is nothing placed
+PASS target UNIT: the unit's weeks and unit-level items with no week
+PASS target PUBLICATION: every week, and unplaced items of the edition (twin included), not other publications
+PASS target WEEK with no week on screen falls back to the unit
+PASS target with no cue, or no page, is None
+PASS target on a page missing from the structure filters nothing (known False)
+PASS a failed article lookup still admits week-placed items
+PASS filter_hits keeps order and drops unplaced; no target keeps all
+PASS placement_filter WEEK: week ids, placed week ids and the week's articles (numeric id and id list)
+PASS placement_filter carries a numeric article id as a number (the index stores article_id as a number)
+PASS placement_filter UNIT adds the unit ids
+PASS placement_filter PUBLICATION is None (the publication filter places it)
+PASS placement_filter with nothing placed matches nothing, never everything
+
+0 failure(s)

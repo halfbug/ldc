@@ -1,0 +1,90 @@
+PASS nothing named: 4 levels and no scale (so the scale is asked)
+PASS 3 levels out of 12: 4 criteria at 3-2-1
+PASS 0-3 points: 4 levels from zero
+PASS levels only: 5 levels, no points
+PASS a 4-point rubric is 4 levels at one point each
+PASS scored 1-4 is one point per level
+PASS 3 levels over 0-6 steps by 3
+PASS 10 points over 4 levels does not split: one point per level, with a note
+PASS a grade range is not a scale
+PASS 12 levels is not read as 2
+PASS revision: 3 levels drops the old total for one point per level
+PASS revision naming no shape keeps the old one
+PASS split_total keeps the total exact
+PASS scale options lead with one point per level
+PASS header row names each level's points
+PASS named grade: grade 5 / 4th grade / kindergarten / not grade 10
+PASS Grade Now: the selected question, its key, open response
+PASS Grade Now: a student's answer is never read as a question or key
+PASS editor: three questions, numbered as the digest numbers them
+PASS editor: written flags from the variant
+PASS editor: a multi-line question is read whole
+PASS editor: the key is the Answer line
+PASS assignment page: two questions, the open one with its sample answer
+PASS Grade Now: the selected question is scored even when it is not open response
+PASS several written questions, none named: ask which
+PASS which-question options carry the number
+PASS a named question is used
+PASS a named question the page lacks is reported, not guessed
+PASS 'this assignment' with several written questions scores them all
+PASS one written question: used without asking
+PASS no page questions: the teacher's task
+PASS the task line drops the request's lead
+PASS the task line drops clauses that only name the levels or scale (gate row TP2)
+PASS table parses: three criteria, four cells each
+PASS bold is stripped from names
+PASS a wrong number of level columns is a problem
+PASS an empty cell is a problem
+PASS no table is a problem
+PASS data: levels with code points, exact total
+PASS canonical markdown: question line, facts, header, scoring and draft lines
+PASS canonical markdown parses back to the same criteria
+PASS the total is each criterion's top points summed (3 × 3 from zero)
+PASS no points: null points and total, no scoring line
+PASS checklist lines are counted
+PASS a checklist request is recognised
+PASS no scale named: the tool pauses to ask it, before writing
+PASS the pause keeps the levels and the original ask for the resume
+PASS resumed: a rubric card with data.rubric
+PASS the selected question's own wording, never paraphrased
+PASS the writer reads the question and its key
+PASS the writer never reads a student's answer
+PASS the writer is given the code's header row
+PASS the class grade is used and recorded
+PASS the card shows the canonical markdown
+PASS the ref keeps the structure and its material, for revisions and ONLINE-7758
+PASS the browser never receives the material
+PASS editor, several written questions: asks which, with their stems
+PASS the draft's article is read by its id and given to the writer
+PASS the picked question is scored, at 3-2-1-0
+PASS typed task: the named grade wins and nothing is asked
+PASS typed task: from the request, its lead dropped
+PASS a missing question: an error, nothing written
+PASS a table with the wrong number of levels is not stored
+PASS no class grade: the existing grade ask fires
+PASS checklist: written from the stored rubric, one line per criterion
+PASS checklist: titled from the rubric
+PASS checklist with no rubric in the thread: an error
+PASS a revision on a page with no question still works, from the stored material
+PASS the revision is parsed again: four criteria, total recomputed
+PASS the revision keeps the header the code decides
+PASS a checklist asked as a revision writes a checklist, never rewrites the rubric
+PASS a levels edit does not change the criteria; adding, removing or merging one does
+PASS a levels edit asks for every criterion by name and count
+PASS a levels edit that comes back with a criterion dropped is not stored, and says why
+PASS a levels edit keeps every criterion under its earlier name, at the new levels
+PASS an edit that asks to remove a criterion is not held to the old ones
+PASS demo P1-8: an add asks for one more, a remove for one fewer, other criteria changes keep 3 to 5, others keep all
+PASS demo P1-8 setup: the stored rubric has 4 criteria
+PASS demo P1-8: an add on 4 asks for exactly 5 and keeps all 4 by name, and the stored rubric has all 5
+PASS demo P1-8: an add on 5 asks for 6 (past the usual 5) and keeps all 5
+PASS demo P1-8 known negative: an add that replaces a row (the reported fault) is not stored, and says why
+PASS demo P1-8 known negative: an add that renames an earlier criterion is caught by name
+PASS demo P1-8: a seventh criterion is refused before any model call
+PASS demo P1-8: a remove on 5 asks for exactly 4 and stores 4
+PASS demo P1-8 known negative: a remove that removes nothing is not stored
+PASS grade 0 and kindergarten are stored as K
+PASS a grade 0 class's rubric says Kindergarten
+PASS a kindergarten class (grade 0) writes a K rubric for a grade K class
+
+0 failure(s)

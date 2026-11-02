@@ -1,0 +1,99 @@
+ok   hot text: sentence numbers become the passage
+ok   hot text: the passage is an exact excerpt of the article
+ok   hot text: a passage across two paragraphs is refused
+ok   hot text: a heading is not a passage
+ok   hot text: one sentence is a passage (PH-QS-11: 1 to 4)
+ok   hot text: a phrase in the next sentence of the paragraph takes that sentence in
+ok   hot text: a phrase from another paragraph is still refused
+ok   hot text: sentence numbers must be consecutive
+ok   hot text: more than four sentences is refused (PH-QS-11)
+ok   hot text: a phrase the passage does not hold word for word is refused
+ok   hot text: a phrase found twice in the passage is refused
+ok   hot text: overlapping phrases are refused
+ok   hot text: one wrong phrase is enough where the passage holds no more (PH-QS-11, 2026-10-09)
+ok   hot text: no wrong phrase is refused, and the repair is told to add one
+ok   hot text: the correct count follows the passage, four seasons four correct (no cap of 3)
+ok   hot text: a question naming four with three marked correct is refused
+ok   hot text: "Choose 2" with one correct is refused
+ok   hot text: "Select the phrase" with two correct is refused
+ok   named count: words, digits, the singular, and none
+ok   hot text: a revision's written-out passage must be an exact excerpt
+ok   hot text: a revision that keeps the passage is accepted
+ok   hot text: spans are in passage order
+ok   hot text: the key grades 1 for the correct phrases, below 1 for all, 0 for the wrong ones
+ok   hot text: checkResponse's partial credit is ported (one right, one wrong clicked = 0.5)
+ok   hot text: the app shape is the passage and its spans
+ok   hot text: the app shape comes back to the engine's
+ok   hot text: render shows the passage, the phrases and the key
+ok   hot text: earlier_text names the correct phrases
+ok   drawing: text only by default
+ok   drawing: a picture number becomes that article picture
+ok   drawing: a picture the question never sends the student to is refused
+ok   drawing: a line with the question as text and its checklist beside it is read
+ok   drawing: a number past the article's pictures is refused
+ok   drawing: no pictures, no background
+ok   drawing: a background that is not an article picture is dropped, never used
+ok   drawing: a revision keeps the picture the question already had
+ok   drawing: a checklist of one is refused (PH-QS-10: 2 to 5)
+ok   drawing: a checklist of six is refused
+ok   drawing: a checklist written as one string is read as its items
+ok   drawing: the app shape carries the checklist and the picture
+ok   drawing: render shows the checklist as the key
+ok   give-away screen fires on every seeded drawing positive (8)
+ok   give-away screen stays silent on every seeded drawing negative (4)
+ok   give-away screen fires on every seeded hot_text positive (2)
+ok   give-away screen stays silent on every seeded hot_text negative (9)
+ok   the engine screens a written drawing for a given-away answer
+ok   a teacher's own edit is not screened for a given-away answer
+ok   neither type is in the default mix (PH-QS-01)
+ok   a set with no named types never plans either
+ok   a named type is written
+ok   hot text is parked (2026-10-09): not a type, by name or alias, and a set asking for it is never hot text
+ok   generate_questions offers drawing and not hot text
+ok   7767 r3: the description says a drawing can use the article's picture, so the chat calls the tool for it
+ok   the topic door refuses hot text while it is parked
+ok   draft_assignment's own mix is unchanged (the nine core types)
+ok   the writer message for 2 core types is unchanged by the new arguments
+ok   the writer message for 9 core types is unchanged by the new arguments
+ok   a drawing set lists the article's pictures by number
+ok   a hot text set numbers the article's sentences with paragraphs apart
+ok   a drawing set with no pictures says background_image is null
+ok   7767 r2: a teacher's ask for the article's picture asks for one drawing on a listed picture
+ok   page pictures: https only, de-duplicated
+ok   page pictures: anything but a list is none
+ok   7767 r4: an activity page's pictures reach the question tool without article HTML
+ok   7767 r4: pictures come only from the page's list, not re-read from the HTML
+ok   7767 r2: engine: the teacher's picture ask reaches the first write
+ok   7767 r3: engine: a picture ask no drawing met is repaired onto the picture
+ok   7767 r3: engine: without the ask a drawing off the picture is not repaired
+ok   7767 r3: engine: the picture ask outranks the idea the drawing was planned on
+ok   7767 r3: engine: a drawing first written unusably is rewritten with the picture ask
+ok   7767 r4: engine: a repaired drawing is not faulted for what the picture does not already show
+ok   7767 r4: engine: only a check with a drawing on a picture is told the picture is a canvas
+ok   7767 r5: engine: a repair never takes away the picture the teacher asked for
+ok   7767 r5: engine: ...and without the ask a pictureless repair still replaces it
+ok   7767 r5: engine: a repair onto the picture faulted only for the picture keeps it
+ok   7767 r5: _without_picture keeps the task and drops the picture
+ok   codex R4: engine: a first drawing on the picture faulted only for it is delivered on it
+ok   codex R4: engine: a wrong drawing on the picture is replaced by one on it
+ok   codex R4: engine: a wrong drawing whose replacement left the picture off still delivers a drawing
+ok   engine: both questions delivered
+ok   engine: the repair is told why the hot text line could not be used
+ok   engine: the first write carried the numbered sentences and the picture list
+ok   engine: the hot text seed carries the passage and spans
+ok   engine: the drawing seed carries the checklist and the article picture
+ok   7767 r2: a picture ask is read from the teacher's message, and a plain drawing ask is not
+ok   7767 r2: a picture ask that no drawing used is said in the set's notes, by whether the article has pictures
+ok   engine: a hot text slot prefers an idea the planner suited to check all or fill in the blank
+ok   engine: a drawing slot prefers an idea the planner suited to sorting
+ok   choice check: a faulted wrong phrase sends the question to repair, told which phrase
+ok   choice check: the repaired question is delivered with no note
+ok   choice check: still faulted after its repair, it is left out, not delivered with a double-check note
+ok   choice check: the check is given every phrase marked wrong
+ok   hot text: a second question on the same passage is left out, and not written back by the top-up
+ok   revision: a changed hot text the check doubts gives back the question that stood there
+ok   edit with AI: a hot text revision the check doubts is declined, the question unchanged
+ok   edit with AI: a hand-made drawing with no suggested answer can be revised
+ok   edit with AI: the revision keeps the drawing's own background and gets a checklist
+
+ALL OK

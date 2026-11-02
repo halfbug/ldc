@@ -1,0 +1,87 @@
+PASS digest numbers include figures and dates
+PASS provenance passes a reply built from the digest
+PASS provenance did not fire on the negative
+PASS provenance drops a sentence with an invented figure
+PASS provenance keeps the sentences around it
+PASS provenance records the rule only
+PASS spelled numbers before a counted noun are screened
+PASS 'one of them' is not a figure
+PASS list markers and grade numbers are not figures
+PASS an invented table row is dropped whole and the table stays a table
+PASS numbers from the turn's context block are allowed
+PASS claims screen fires: cause: Scores dropped because teachers stopped 
+PASS claims screen fires: cause: The change is due to the holiday.
+PASS claims screen fires: implementation: Implementation is lowest at Pine Element
+PASS claims screen fires: implementation: Teachers at Oak are not using the curric
+PASS claims screen fires: verdict: Oak Elementary is failing on standards.
+PASS claims screen fires: verdict: Two teachers are underperforming.
+PASS claims screen fires: student: Student KDW2MD scored lowest.
+PASS claims screen fires: acted: I've emailed the principals the brief.
+PASS claims screen fires: acted: I have scheduled the export.
+PASS claims screen fires: cause: Scores at Birch didn't rise because teac
+PASS claims screen fires: verdict: Birch is not doing well; it is failing o
+PASS claims screen silent: Pine Elementary has the lowest assessmen
+PASS claims screen silent: Digital activity counts login days; prin
+PASS claims screen silent: Here is a draft email you can send to pr
+PASS claims screen silent: The data holds no causes, so I can say w
+PASS claims screen silent: Teachers listed with no recorded digital
+PASS claims screen silent: I can't give you a cause, because the da
+PASS claims screen silent: Implementation isn't something the data 
+PASS claims screen silent: I can't rank teachers: a count of logins
+PASS admin prompt is its own text
+PASS admin tools are figures and export only
+PASS teacher tool list has no admin tool
+PASS admin prompt forbids implementation, causes and sending
+PASS three schools at 82/66/65 give a 17-point spread with the right names
+PASS one school gives no spread
+PASS little-evidence and unscored schools are left out of the spread
+PASS a table cut short of its schools gives no spread
+PASS the admin prompt tells Scout to quote assessment_spread
+PASS the page's filters are kept when the account can see them
+PASS a window, grade or school the page could not have sent is dropped
+PASS ONLINE-7856: the page's custom range is kept in place of its weeks
+PASS ONLINE-7856: a range before July 1, after today, reversed, malformed or half given is dropped to the weeks
+PASS ONLINE-7856: the context names the custom range by its dates and passes them to the figures
+PASS no filters is no filters
+PASS the context names the page's window, grade and school
+PASS without filters the context is as before
+PASS a teacher's thread document carries no kind
+PASS an admin thread is stored and read back as admin
+PASS a stored teacher thread reads back as teacher
+PASS ONLINE-8093: the admin door continues a thread an action started (recorded turns only)
+PASS ...but not a teacher's thread the model has spoken in
+PASS the reopened transcript tells Insights which threads it can continue
+PASS ONLINE-8093: the admin door does not title (the browser's POST /assistant/thread does, once)
+PASS the teacher door refuses to continue an admin thread
+PASS admin history is trimmed to an administrator's own message, never a lone tool result
+PASS admin core text matches its version pin
+PASS admin core and tools within 4000 tokens (1680)
+PASS figures tool returns the digest
+PASS figures tool sends only valid filters with the admin's own token
+PASS figures tool emits the digest for the browser
+PASS ONLINE-7856: a custom range is sent as from/to in place of weeks
+PASS ONLINE-7856: a half, reversed or malformed range is an error and calls nothing
+PASS out-of-scope school is an error with Laravel's message
+PASS figures still being prepared is an error that forbids figures
+PASS a 422 is reported as invalid filters
+PASS no auth is a clean error
+PASS export offers a download and never claims sending
+PASS ONLINE-7856: an export offered for a custom range carries that range
+PASS admin door: verified by admin context
+PASS admin door: user id stamped from Laravel
+PASS admin door: context on state
+PASS admin door: no publication scope added
+PASS admin door never calls the teacher credits
+{"level":"INFO","location":"__call__:560","message":"Core request refused","timestamp":"2026-10-28 16:50:55,628+0500","service":"CoreLambdaStream","taskName":"Task-7","code":"scout_off","status":403,"path":"/assistant/v2/admin/turn"}
+PASS admin door: flag off or wrong role is scout_off
+{"level":"INFO","location":"__call__:560","message":"Core request refused","timestamp":"2026-10-28 16:50:55,629+0500","service":"CoreLambdaStream","taskName":"Task-7","code":"scout_off","status":403,"path":"/assistant/v2/admin/turn"}
+PASS admin door: a teacher-only account is refused
+PASS teacher door unchanged: credits verify, no admin context
+PASS teacher door never calls the admin context
+{"level":"INFO","location":"__call__:560","message":"Core request refused","timestamp":"2026-10-28 16:50:55,632+0500","service":"CoreLambdaStream","taskName":"Task-7","code":"scout_off","status":403,"path":"/assistant/v2/turn"}
+PASS teacher door: an admin without the teacher flag stays refused
+PASS local admin door: Laravel 401 is not_signed_in
+PASS local admin door: Laravel 403 stays scout_off
+PASS local admin door: Laravel 404 stays scout_off
+
+0 failure(s)

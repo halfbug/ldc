@@ -1,0 +1,56 @@
+PASS a v2 thread's browser turn is written to its transcript
+PASS ...as the request, what ran, then the outcome, each marked recorded
+PASS ...the action keeps what replay reads: capability, status, completion, the teacher's sentence and chip
+PASS ...and of its arguments only refs: no page text, no ids
+PASS ...and nothing written for the model
+PASS the model's history is untouched
+PASS the append bumps the version (Codex R2): 3 -> 4
+PASS ...filtered on owner, the version it read, and no running turn
+PASS a record while a turn is running is refused as a conflict, not acknowledged
+PASS ...including a running turn stamped just now (Mongo hands back naive UTC)
+PASS a running flag older than the turn ceiling plus the margin is a dead turn's: the record is kept
+PASS ...and the stale flag is cleared, filtered on the flag it read
+PASS PIN Sadaf MR101: a pre-deploy flag (no running_at) dated by an old updated_at is a dead turn's: kept
+PASS a record between load and mark_running makes the stale replace conflict (retryable), not overwrite it
+PASS a write that lands between the read and the append is a conflict, not a false success
+PASS a chip-started thread (titled, no document yet) is created by its record
+PASS ...with the listing's title and no model history
+PASS ...and the v2 loader replays it
+PASS a typed turn then continues the same thread: no thread_is_v1, a teacher's thread
+PASS an id with no listing and no document is created for the caller
+PASS ...with a provisional sidebar row, so a failed title request cannot hide it
+PASS a second record on it appends rather than creating again
+PASS another teacher in the district recording into a v2 thread is refused as not found, and nothing is written
+PASS another teacher in the district recording into a titled thread with no document yet is refused, and none is created
+PASS another teacher in the district loading the thread is refused
+PASS a teacher in another district recording into a v2 thread is refused as not found, and nothing is written
+PASS a teacher in another district recording into a titled thread with no document yet is refused, and none is created
+PASS a teacher in another district loading the thread is refused
+PASS a legacy thread's record is kept with its replay, not as a v2 thread
+PASS ...as the v1 rows the old record replayed: the pair, human then ai
+PASS ...dated by the listing row, so it expires with the thread's sidebar row (TTL on created_at)
+PASS the migrated rows are untouched
+PASS another teacher's legacy thread is refused
+PASS a typed turn on a legacy thread is still refused thread_is_v1
+PASS a v2 thread titled before its first turn saved is a new thread to its owner, not thread_is_v1
+PASS ...and still someone else's to another teacher
+PASS the legacy reader returns the migrated rows, then the recorded ones
+PASS ...and nothing to another teacher
+PASS another teacher's delete removes nothing
+PASS the owner's delete removes the migrated document
+PASS a thread with only recorded turns can be adopted by the admin door
+PASS ...a thread the model has spoken in cannot
+{"level":"INFO","location":"_handle_record_turn:1048","message":"Recorded a browser turn","timestamp":"2026-10-28 16:52:16,880+0500","service":"AIAssistant","taskName":"Task-1","thread_id":"56ca9e8e-dae7-442f-a6ad-f57a4806ed91","user_id":"6592","stored":"v2"}
+PASS the route records a v2 thread's turn there, with no checkpoint
+PASS ...and bumps the listing row
+{"level":"INFO","location":"_handle_record_turn:1048","message":"Recorded a browser turn","timestamp":"2026-10-28 16:52:16,881+0500","service":"AIAssistant","taskName":"Task-4","thread_id":"d490bff1-065f-46ff-9b48-97f54a4ea665","user_id":"6592","stored":"v2"}
+PASS a record with no thread id mints one and creates the v2 thread
+{"level":"ERROR","location":"route_failure:28","message":"Error in _handle_record_turn","timestamp":"2026-10-28 16:52:16,881+0500","service":"AIAssistant","taskName":"Task-7","error_class":"ValueError","error":"CONFLICT: The conversation is busy. Try again.","request_id":"9204865d52f64c9a966bc91f839dfd7b"}
+PASS a record during a running turn answers 409 CONFLICT
+{"level":"ERROR","location":"route_failure:28","message":"Error in _handle_record_turn","timestamp":"2026-10-28 16:52:16,881+0500","service":"AIAssistant","taskName":"Task-10","error_class":"ValueError","error":"NOT_FOUND: Thread not found","request_id":"36b5b7ad67864f9cb5fac9a2102f3819"}
+PASS another district's teacher gets 404 NOT_FOUND from the route
+PASS a v1 thread with no migrated copy still opens (empty) and logs a warning naming it
+PASS nothing on the record path imported LangChain or LangGraph
+PASS Try Again replaces the teacher's last real turn, not a recorded one
+
+OK: 0 failure(s)

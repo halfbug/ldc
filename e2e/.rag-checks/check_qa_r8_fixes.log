@@ -1,0 +1,41 @@
+ok   M2: after Undo the earlier remember result reads as removed, with its text and id
+ok   M2: the stored history is not changed
+ok   M2: every other message is passed through as it was
+ok   M2: a row still in the fresh list keeps its Remembered result
+ok   M2: the same text saved again under a new id does not keep the old id remembered
+ok   M2: a turn whose list did not arrive changes nothing
+ok   M2: the turn's built history (what the model is sent) carries the removal
+ok   M2: the teacher block names the removed item under its own heading, with its id
+ok   M2: the current teacher turn opens by naming the removed item (model view only)
+ok   M2: a resumed turn (tool results) is not given the note
+ok   M2: the removed item is not under Remembered
+ok   M2: with the row still there, the built history keeps it remembered
+ok   M2: with the row still there, no Removed section
+ok   M2: with the row still there, the turn is not annotated
+ok   M2: a turn whose list did not arrive adds no Removed section
+ok   QC5: the usual 8 is delivered when one question is left out and the article has ideas to spare
+ok   QC5: the left-out question 2 was replaced in place, from an idea no other question used
+ok   QC5: the replacement rests on its new idea's sentence, not the unsupported one
+ok   QC5: no 'left out' note when the set was filled
+ok   QC5: bounded: one write, one repair, one top-up call
+ok   QC5: the top-up asks only for the short slot and avoids the 7 questions already kept
+ok   S1: 'Write 15' delivers 15 when one is left out and ideas are spare
+ok   QC5: a set with nothing left out makes no extra call
+ok   QC5: with no idea to spare, the set is 7 and says one was left out
+ok   QC5: with no idea to spare, no top-up call is made
+ok   QC5: a replacement the checker rejects is not delivered, and the note stays
+ok   QC5: a usual delivered short is recorded as '7 of your usual 8 questions'
+ok   QC5: the closing never says '8 questions (your usual)' under 7
+ok   QC5: a usual delivered in full still reads '8 questions (your usual)'
+ok   E14: an earlier remember result reads the row's current text after a panel edit
+ok   E14: the stored history is still not changed by an edit
+ok   E14: an unchanged row keeps its result object
+ok   E4: asked again, the earlier answers to the same question are left out of what the model is sent, in pairs
+ok   E4: ...the stored thread is not changed
+ok   E4: another question leaves the history alone
+ok   E4: a recall answer that used a tool is not left out
+ok   E4: the turn built after the edit carries the edited wording in the Remembered list and no earlier answer
+ok   E3: used_settings names the grade and types the set was written at
+ok   E3: what was left open is absent
+
+all passed

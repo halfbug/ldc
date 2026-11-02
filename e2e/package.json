@@ -1,0 +1,16 @@
+{
+    "name": "ldc-e2e",
+    "private": true,
+    "description": "Playwright checks for QA tickets, run against a deployed environment (dev2). Kept outside swo-3.0 and rag; same tool and version as swo-3.0/e2e.",
+    "type": "module",
+    "scripts": {
+        "test": "playwright test",
+        "api": "playwright test --project=api",
+        "ui": "playwright test --project=ui"
+    },
+    "devDependencies": {
+        "@playwright/test": "1.63.0",
+        "@types/node": "^20.19.43",
+        "typescript": "^5.9.3"
+    }
+}

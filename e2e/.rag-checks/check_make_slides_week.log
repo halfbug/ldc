@@ -1,0 +1,36 @@
+PASS from_source keeps the question word for word, the vocabulary and the articles in order
+PASS from_source keeps the SW deck's slides as sent
+PASS from_source: a week with no deck is the skeleton case
+PASS from_source: the teacher's grade wins over the publication's
+PASS a week request reads swo's week slide source, not the index
+PASS case 1: every SW slide is in the draft unchanged and in order
+PASS case 1: Scout's slide sits after the slide it names and is labelled Scout's addition
+PASS case 1: the card's outline names whose each slide is
+PASS case 1: the ref remembers the week, so a change rebuilds from the week
+PASS case 1: the card text lists Studies Weekly and Scout's slides
+PASS a change to a week deck reads the week again and sends the teacher's words
+PASS case 2: a week with no SW deck is a skeleton in issue order with the question word for word
+PASS two SW decks: no slides and no model call; the teacher is offered one article's deck
+PASS a deck over a draft's size is withdrawn, never cut
+PASS a week with no deck and no article text says Scout can't build it, without asking the model
+PASS a week with a deck but no article text still gives its deck
+PASS a week swo refuses makes no slides and says why
+PASS on a week's page a slide request is for that week
+PASS a week the teacher names on the page is the one read
+PASS on an article's page a slide request stays on the article path
+PASS an article's page with too little text is still not a week request
+PASS on an article's page "this week" with no week_id is the scope's week deck, not the article's
+PASS "this article this week" stays on the article path
+PASS a lesson pack's slides part asked "for this week" stays one lesson on the page's article
+PASS "this week" with no week in scope stays on the article path
+PASS a Teacher Resources page with no article text is the scope week's deck, never week text as an article
+PASS a lesson pack's slides part on that page refuses instead of making a deck of the week's resources
+PASS a skeleton with no vocabulary is not described as built from vocabulary
+PASS a week deck takes the publication's grade over a grade the model passed
+PASS a Kindergarten publication reaches swo as grade "K" and the tool says Kindergarten, never grade 0
+PASS a grade the teacher names in the ask wins over the publication's grade
+PASS an article deck is written at the article's publication grade, not the grade the model passed
+PASS an article deck asked for Kindergarten is written at "K" over the publication's grade
+PASS with no publication grade the class grade is used, and Kindergarten is "K"
+PASS a lesson pack's slides for one article never take the week path, even on a week's page
+ALL PASS

@@ -1,0 +1,43 @@
+ok   answered without the model: "Create it now."
+ok   answered without the model: "Create it now"
+ok   answered without the model: "create this"
+ok   answered without the model: "Save it."
+ok   answered without the model: "Publish it"
+ok   answered without the model: "Assign it now."
+ok   answered without the model: "Assign it"
+ok   answered without the model: "Please create it."
+ok   answered without the model: "Can you create it now?"
+ok   answered without the model: "Go ahead and save it"
+ok   answered without the model: "Create and assign it"
+ok   answered without the model: "OK, create it now please"
+ok   answered without the model: "Save this draft"
+ok   answered without the model: "Create the assignment."
+ok   answered without the model: "Create now."
+ok   left to the model: "Create 5 true/false questions about this article"
+ok   left to the model: "Assign it to premium class"
+ok   left to the model: "Save it and add 3 questions"
+ok   left to the model: "Write questions for it"
+ok   left to the model: "Make it harder"
+ok   left to the model: "Create questions"
+ok   left to the model: "Set the due date to Friday"
+ok   left to the model: "Assign it only to Student 1"
+ok   not on the edit form
+ok   not on the classroom create form
+ok   not on a page whose content is not a form
+ok   Assign step, complete draft: left to the Create-and-assign card: "Create it now."
+ok   Assign step, empty draft: fixed reply naming the missing content: "Create it now."
+ok   Assign step, incomplete draft: fixed reply naming what is missing: "Create it now."
+ok   Assign step, complete draft: left to the Create-and-assign card: "Save it."
+ok   Assign step, empty draft: fixed reply naming the missing content: "Save it."
+ok   Assign step, incomplete draft: fixed reply naming what is missing: "Save it."
+ok   Assign step, complete draft: left to the Create-and-assign card: "Assign it now."
+ok   Assign step, empty draft: fixed reply naming the missing content: "Assign it now."
+ok   Assign step, incomplete draft: fixed reply naming what is missing: "Assign it now."
+ok   names what the draft still needs
+ok   says to press Create and that nothing is saved or assigned until then
+ok   says to press Create and that nothing is saved or assigned until then
+ok   tried as a fixed reply, so no model call (and no question generation) runs
+ok   a carried-over set is never the referent of it/this on a draft or form
+ok   a carried-over set is not made into a new set unless the teacher asks to change it (ONLINE-7767 local r4)
+
+OK

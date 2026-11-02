@@ -1,0 +1,51 @@
+PASS  every registry group, the constitution and all 18 tool modules among them, contributes sentences to the v2 screen
+PASS  the v2 walk found model-addressed sentences to prove the screen against
+PASS  every one of the 57 model-addressed sentences in the Core v2 modules is dropped
+PASS  v2 untouched: SFP 1's correctly-sanitised relay
+PASS  v2 untouched: the leveller's correct refusal (relayed 12x in the reply corpus)
+PASS  v2 untouched: the settled shortfall wording — SFP 8 says do not regress it
+PASS  v2 untouched: VP R6-7's Plan-mode explanation — explicitly do not regress
+PASS  v2 untouched: GRD P2's asked-for replacement sentence
+PASS  v2 untouched: a filter-honesty disclosure
+PASS  v2 untouched: an ordinary page answer that names the page's own actions
+PASS  v2 untouched: an answer about the signed-in teacher's own account
+PASS  v2 untouched: the declined-action reply
+PASS  v2 untouched: the answer-keys opening
+PASS  v2 untouched: the rostered co-teacher reply
+PASS  v2 untouched: the compose refusal
+PASS  v2 drops a tool name and keeps the answer
+PASS  v2 drops a ref id and keeps the answer
+PASS  v2 drops a config name and keeps the answer
+PASS  v2 drops a tool-use id and keeps the answer
+PASS  v2 drops a backticked capability id and keeps the answer
+PASS  v2 drops a capability id the page published
+PASS  v2 drops a capability id even when the model drops the dot and re-camelCases the join (gradeNowOpen leaked verbatim, ONLINE-7512)
+PASS  v2 keeps an ordinary sentence using the words remember and forget
+PASS  v2 still drops a one-word tool name in backticks, call syntax or 'the X tool' form
+PASS  v2 cuts a tool-call tag out in place
+PASS  v2 keeps a sentence whose internal name was only a trailing detail, and cuts the name out
+PASS  S8-1's recorded third-person sentence is dropped and the rest of the reply survives
+PASS  v2 drops a planted 'page context' leak and keeps the answer
+PASS  v2 drops a planted 'provided context' leak and keeps the answer
+PASS  v2 drops a planted 'tool result' leak and keeps the answer
+PASS  v2 drops a planted 'action needed' leak and keeps the answer
+PASS  v2 drops a planted 'third person' leak and keeps the answer
+PASS  v2 drops a planted 'apology boilerplate' leak and keeps the answer
+PASS  v2 keeps a capability reason naming "the User ID", alone
+PASS  v2 keeps a capability reason naming "the User ID", appended to a real answer
+PASS  v2 keeps "the user guide", alone
+PASS  v2 keeps "the user guide", appended to a real answer
+PASS  v2 keeps "the user ids", alone
+PASS  v2 keeps "the user ids", appended to a real answer
+PASS  the TS array was actually parsed (6 entries, not silently 0)
+PASS  both lists name the same six phrases, in the same order
+PASS  same regex pattern and flags on both sides for every phrase
+PASS  an internal curriculum id is cut in place, the sentence kept (v1 arm c turn 1)
+PASS  an internal curriculum id is cut in place, the sentence kept (confirm v1 d)
+PASS  an internal curriculum id is cut in place, the sentence kept (v1 control e)
+PASS  an internal curriculum id is cut in place, the sentence kept (v2 control a)
+PASS  an internal curriculum id is cut in place, the sentence kept (a page tag)
+PASS  an internal curriculum id is cut in place, the sentence kept (a bare id)
+PASS  a number that is not a curriculum id is left alone (user ID, an article's position, a year, a week)
+
+all checks passed

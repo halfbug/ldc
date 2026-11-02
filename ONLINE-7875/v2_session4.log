@@ -1,0 +1,242 @@
+   Building ai-assistant-lambda @ file:///home/lenovo/rag/lambdas/ai_assistant
+      Built ai-assistant-lambda @ file:///home/lenovo/rag/lambdas/ai_assistant
+Uninstalled 1 package in 2ms
+Installed 1 package in 1ms
+publication structure unavailable
+settings: sha=7be04d9bfead  dirty=False  effort=low  thinking=  max_tokens=32000  strict=z6mtpcbzm5x1:16  curriculum=u5k53i63fu9b:4  model_main=us.anthropic.claude-sonnet-5  model_fast=us.anthropic.claude-haiku-4-5-20251001-v1:0
+  plain_first:article        routed                71,619 bytes  profile=curriculum label=CURRICULUM/1
+  plain_first:article        other_profile         71,620 bytes  profile=strict     label=CURRICULUM/1
+  plain_first:article        guardrail_off         71,514 bytes  profile=none       label=CURRICULUM/1
+  plain_first:article        small_prompt             428 bytes  profile=curriculum label=CURRICULUM/1
+  plain_first:article        small_prompt_no_gr       323 bytes  profile=none       label=CURRICULUM/1
+  plain_first:article        fast_model            71,564 bytes  profile=curriculum label=CURRICULUM/1
+  plain_first:classrooms     routed                65,354 bytes  profile=strict     label=OTHER/1
+  plain_first:classrooms     other_profile         65,353 bytes  profile=curriculum label=OTHER/1
+  plain_first:classrooms     guardrail_off         65,248 bytes  profile=none       label=OTHER/1
+  plain_first:classrooms     small_prompt             450 bytes  profile=strict     label=OTHER/1
+  plain_first:classrooms     small_prompt_no_gr       344 bytes  profile=none       label=OTHER/1
+  plain_first:classrooms     fast_model            65,299 bytes  profile=strict     label=OTHER/1
+  plain_first:toc            routed                69,448 bytes  profile=strict     label=OTHER/1
+  plain_first:toc            other_profile         69,447 bytes  profile=curriculum label=OTHER/1
+  plain_first:toc            guardrail_off         69,342 bytes  profile=none       label=OTHER/1
+  plain_first:toc            small_prompt             424 bytes  profile=strict     label=OTHER/1
+  plain_first:toc            small_prompt_no_gr       318 bytes  profile=none       label=OTHER/1
+  plain_first:toc            fast_model            69,393 bytes  profile=strict     label=OTHER/1
+  search_second:article      routed                74,963 bytes  profile=curriculum label=CURRICULUM/1
+  search_second:article      other_profile         74,964 bytes  profile=strict     label=CURRICULUM/1
+  search_second:article      guardrail_off         74,858 bytes  profile=none       label=CURRICULUM/1
+  search_second:article      small_prompt           3,453 bytes  profile=curriculum label=CURRICULUM/1
+  search_second:article      small_prompt_no_gr     3,348 bytes  profile=none       label=CURRICULUM/1
+  search_second:article      fast_model            74,908 bytes  profile=curriculum label=CURRICULUM/1
+  search_second:classrooms   routed                69,426 bytes  profile=curriculum label=CURRICULUM/1
+  search_second:classrooms   other_profile         69,427 bytes  profile=strict     label=CURRICULUM/1
+  search_second:classrooms   guardrail_off         69,321 bytes  profile=none       label=CURRICULUM/1
+  search_second:classrooms   small_prompt           3,429 bytes  profile=curriculum label=CURRICULUM/1
+  search_second:classrooms   small_prompt_no_gr     3,324 bytes  profile=none       label=CURRICULUM/1
+  search_second:classrooms   fast_model            68,869 bytes  profile=curriculum label=CURRICULUM/1
+  search_second:toc          routed                72,855 bytes  profile=curriculum label=CURRICULUM/1
+  search_second:toc          other_profile         72,856 bytes  profile=strict     label=CURRICULUM/1
+  search_second:toc          guardrail_off         72,750 bytes  profile=none       label=CURRICULUM/1
+  search_second:toc          small_prompt           3,523 bytes  profile=curriculum label=CURRICULUM/1
+  search_second:toc          small_prompt_no_gr     3,418 bytes  profile=none       label=CURRICULUM/1
+  search_second:toc          fast_model            72,800 bytes  profile=curriculum label=CURRICULUM/1
+
+warming 36 requests (not counted)
+  1/5 plain_first:article        routed              text=7,217 stop=end_turn
+  1/5 plain_first:article        other_profile       text=7,870 stop=end_turn
+  1/5 plain_first:article        guardrail_off       text=5,195 stop=end_turn
+  1/5 plain_first:article        small_prompt        text=4,127 stop=end_turn
+  1/5 plain_first:article        small_prompt_no_gr  text=1,388 stop=end_turn
+  1/5 plain_first:article        fast_model          text=10,377 stop=end_turn
+  1/5 plain_first:classrooms     routed              text=13,788 stop=end_turn
+  1/5 plain_first:classrooms     other_profile       text=9,527 stop=end_turn
+  1/5 plain_first:classrooms     guardrail_off       text=4,162 stop=end_turn
+  1/5 plain_first:classrooms     small_prompt        text=7,589 stop=end_turn
+  1/5 plain_first:classrooms     small_prompt_no_gr  text=1,641 stop=end_turn
+  1/5 plain_first:classrooms     fast_model          text=9,412 stop=end_turn
+  1/5 plain_first:toc            routed              text=9,798 stop=end_turn
+  1/5 plain_first:toc            other_profile       text=8,352 stop=end_turn
+  1/5 plain_first:toc            guardrail_off       text=3,625 stop=end_turn
+  1/5 plain_first:toc            small_prompt        text=3,672 stop=end_turn
+  1/5 plain_first:toc            small_prompt_no_gr  text=1,451 stop=end_turn
+  1/5 plain_first:toc            fast_model          text=5,828 stop=end_turn
+  1/5 search_second:article      routed              text=6,434 stop=end_turn
+  1/5 search_second:article      other_profile       text=6,263 stop=end_turn
+  1/5 search_second:article      guardrail_off       text=4,793 stop=end_turn
+  1/5 search_second:article      small_prompt        text=3,260 stop=end_turn
+  1/5 search_second:article      small_prompt_no_gr  text=1,484 stop=end_turn
+  1/5 search_second:article      fast_model          text=6,516 stop=end_turn
+  1/5 search_second:classrooms   routed              text=6,139 stop=end_turn
+  1/5 search_second:classrooms   other_profile       text=6,804 stop=end_turn
+  1/5 search_second:classrooms   guardrail_off       text=5,634 stop=end_turn
+  1/5 search_second:classrooms   small_prompt        text=3,451 stop=end_turn
+  1/5 search_second:classrooms   small_prompt_no_gr  text=1,428 stop=end_turn
+  1/5 search_second:classrooms   fast_model          text=5,704 stop=end_turn
+  1/5 search_second:toc          routed              text=6,519 stop=end_turn
+  1/5 search_second:toc          other_profile       text=8,005 stop=end_turn
+  1/5 search_second:toc          guardrail_off       text=4,906 stop=end_turn
+  1/5 search_second:toc          small_prompt        text=3,674 stop=end_turn
+  1/5 search_second:toc          small_prompt_no_gr  text=1,798 stop=end_turn
+  1/5 search_second:toc          fast_model          text=8,079 stop=end_turn
+  2/5 plain_first:article        routed              text=8,316 stop=end_turn
+  2/5 plain_first:article        other_profile       text=6,052 stop=end_turn
+  2/5 plain_first:article        guardrail_off       text=3,334 stop=end_turn
+  2/5 plain_first:article        small_prompt        text=4,225 stop=end_turn
+  2/5 plain_first:article        small_prompt_no_gr  text=1,328 stop=end_turn
+  2/5 plain_first:article        fast_model          text=6,660 stop=end_turn
+  2/5 plain_first:classrooms     routed              text=10,586 stop=end_turn
+  2/5 plain_first:classrooms     other_profile       text=10,631 stop=end_turn
+  2/5 plain_first:classrooms     guardrail_off       text=4,203 stop=end_turn
+  2/5 plain_first:classrooms     small_prompt        text=6,310 stop=end_turn
+  2/5 plain_first:classrooms     small_prompt_no_gr  text=1,460 stop=end_turn
+  2/5 plain_first:classrooms     fast_model          text=7,732 stop=end_turn
+  2/5 plain_first:toc            routed              text=8,663 stop=end_turn
+  2/5 plain_first:toc            other_profile       text=10,726 stop=end_turn
+  2/5 plain_first:toc            guardrail_off       text=5,084 stop=end_turn
+  2/5 plain_first:toc            small_prompt        text=4,061 stop=end_turn
+  2/5 plain_first:toc            small_prompt_no_gr  text=1,836 stop=end_turn
+  2/5 plain_first:toc            fast_model          text=12,084 stop=end_turn
+  2/5 search_second:article      routed              text=7,946 stop=end_turn
+  2/5 search_second:article      other_profile       text=5,922 stop=end_turn
+  2/5 search_second:article      guardrail_off       text=3,376 stop=end_turn
+  2/5 search_second:article      small_prompt        text=3,168 stop=end_turn
+  2/5 search_second:article      small_prompt_no_gr  text=1,350 stop=end_turn
+  2/5 search_second:article      fast_model          text=6,180 stop=end_turn
+  2/5 search_second:classrooms   routed              text=6,811 stop=end_turn
+  2/5 search_second:classrooms   other_profile       text=7,736 stop=end_turn
+  2/5 search_second:classrooms   guardrail_off       text=5,033 stop=end_turn
+  2/5 search_second:classrooms   small_prompt        text=3,609 stop=end_turn
+  2/5 search_second:classrooms   small_prompt_no_gr  text=1,529 stop=end_turn
+  2/5 search_second:classrooms   fast_model          text=6,160 stop=end_turn
+  2/5 search_second:toc          routed              text=8,350 stop=end_turn
+  2/5 search_second:toc          other_profile       text=7,726 stop=end_turn
+  2/5 search_second:toc          guardrail_off       text=4,464 stop=end_turn
+  2/5 search_second:toc          small_prompt        text=3,772 stop=end_turn
+  2/5 search_second:toc          small_prompt_no_gr  text=1,449 stop=end_turn
+  2/5 search_second:toc          fast_model          text=7,019 stop=end_turn
+  3/5 plain_first:article        routed              text=6,149 stop=end_turn
+  3/5 plain_first:article        other_profile       text=6,937 stop=end_turn
+  3/5 plain_first:article        guardrail_off       text=2,694 stop=end_turn
+  3/5 plain_first:article        small_prompt        text=3,910 stop=end_turn
+  3/5 plain_first:article        small_prompt_no_gr  text=1,322 stop=end_turn
+  3/5 plain_first:article        fast_model          text=6,689 stop=end_turn
+  3/5 plain_first:classrooms     routed              text=8,385 stop=end_turn
+  3/5 plain_first:classrooms     other_profile       text=8,648 stop=end_turn
+  3/5 plain_first:classrooms     guardrail_off       text=2,538 stop=end_turn
+  3/5 plain_first:classrooms     small_prompt        text=6,549 stop=end_turn
+  3/5 plain_first:classrooms     small_prompt_no_gr  text=1,297 stop=end_turn
+  3/5 plain_first:classrooms     fast_model          text=5,934 stop=end_turn
+  3/5 plain_first:toc            routed              text=7,236 stop=end_turn
+  3/5 plain_first:toc            other_profile       text=7,266 stop=end_turn
+  3/5 plain_first:toc            guardrail_off       text=2,364 stop=end_turn
+  3/5 plain_first:toc            small_prompt        text=4,352 stop=end_turn
+  3/5 plain_first:toc            small_prompt_no_gr  text=1,315 stop=end_turn
+  3/5 plain_first:toc            fast_model          text=6,166 stop=end_turn
+  3/5 search_second:article      routed              text=4,930 stop=end_turn
+  3/5 search_second:article      other_profile       text=4,647 stop=end_turn
+  3/5 search_second:article      guardrail_off       text=2,567 stop=end_turn
+  3/5 search_second:article      small_prompt        text=3,121 stop=end_turn
+  3/5 search_second:article      small_prompt_no_gr  text=1,634 stop=end_turn
+  3/5 search_second:article      fast_model          text=4,409 stop=end_turn
+  3/5 search_second:classrooms   routed              text=5,318 stop=end_turn
+  3/5 search_second:classrooms   other_profile       text=4,658 stop=end_turn
+  3/5 search_second:classrooms   guardrail_off       text=2,558 stop=end_turn
+  3/5 search_second:classrooms   small_prompt        text=3,441 stop=end_turn
+  3/5 search_second:classrooms   small_prompt_no_gr  text=1,534 stop=end_turn
+  3/5 search_second:classrooms   fast_model          text=3,685 stop=end_turn
+  3/5 search_second:toc          routed              text=6,179 stop=end_turn
+  3/5 search_second:toc          other_profile       text=5,912 stop=end_turn
+  3/5 search_second:toc          guardrail_off       text=2,487 stop=end_turn
+  3/5 search_second:toc          small_prompt        text=3,296 stop=end_turn
+  3/5 search_second:toc          small_prompt_no_gr  text=1,519 stop=end_turn
+  3/5 search_second:toc          fast_model          text=5,334 stop=end_turn
+  4/5 plain_first:article        routed              text=6,302 stop=end_turn
+  4/5 plain_first:article        other_profile       text=5,832 stop=end_turn
+  4/5 plain_first:article        guardrail_off       text=2,654 stop=end_turn
+  4/5 plain_first:article        small_prompt        text=3,073 stop=end_turn
+  4/5 plain_first:article        small_prompt_no_gr  text=1,423 stop=end_turn
+  4/5 plain_first:article        fast_model          text=5,281 stop=end_turn
+  4/5 plain_first:classrooms     routed              text=8,457 stop=end_turn
+  4/5 plain_first:classrooms     other_profile       text=8,181 stop=end_turn
+  4/5 plain_first:classrooms     guardrail_off       text=3,353 stop=end_turn
+  4/5 plain_first:classrooms     small_prompt        text=7,070 stop=end_turn
+  4/5 plain_first:classrooms     small_prompt_no_gr  text=1,420 stop=end_turn
+  4/5 plain_first:classrooms     fast_model          text=7,854 stop=end_turn
+  4/5 plain_first:toc            routed              text=11,373 stop=end_turn
+  4/5 plain_first:toc            other_profile       text=9,860 stop=end_turn
+  4/5 plain_first:toc            guardrail_off       text=5,315 stop=end_turn
+  4/5 plain_first:toc            small_prompt        text=3,364 stop=end_turn
+  4/5 plain_first:toc            small_prompt_no_gr  text=1,377 stop=end_turn
+  4/5 plain_first:toc            fast_model          text=8,435 stop=end_turn
+  4/5 search_second:article      routed              text=6,673 stop=end_turn
+  4/5 search_second:article      other_profile       text=6,836 stop=end_turn
+  4/5 search_second:article      guardrail_off       text=5,284 stop=end_turn
+  4/5 search_second:article      small_prompt        text=3,489 stop=end_turn
+  4/5 search_second:article      small_prompt_no_gr  text=1,487 stop=end_turn
+  4/5 search_second:article      fast_model          text=7,497 stop=end_turn
+  4/5 search_second:classrooms   routed              text=6,194 stop=end_turn
+  4/5 search_second:classrooms   other_profile       text=6,890 stop=end_turn
+  4/5 search_second:classrooms   guardrail_off       text=7,723 stop=end_turn
+  4/5 search_second:classrooms   small_prompt        text=3,532 stop=end_turn
+  4/5 search_second:classrooms   small_prompt_no_gr  text=1,720 stop=end_turn
+  4/5 search_second:classrooms   fast_model          text=8,119 stop=end_turn
+  4/5 search_second:toc          routed              text=11,518 stop=end_turn
+  4/5 search_second:toc          other_profile       text=9,657 stop=end_turn
+  4/5 search_second:toc          guardrail_off       text=6,388 stop=end_turn
+  4/5 search_second:toc          small_prompt        text=3,405 stop=end_turn
+  4/5 search_second:toc          small_prompt_no_gr  text=1,759 stop=end_turn
+  4/5 search_second:toc          fast_model          text=9,456 stop=end_turn
+  5/5 plain_first:article        routed              text=9,843 stop=end_turn
+  5/5 plain_first:article        other_profile       text=9,390 stop=end_turn
+  5/5 plain_first:article        guardrail_off       text=4,254 stop=end_turn
+  5/5 plain_first:article        small_prompt        text=3,531 stop=end_turn
+  5/5 plain_first:article        small_prompt_no_gr  text=1,741 stop=end_turn
+  5/5 plain_first:article        fast_model          text=10,910 stop=end_turn
+  5/5 plain_first:classrooms     routed              text=11,473 stop=end_turn
+  5/5 plain_first:classrooms     other_profile       text=11,654 stop=end_turn
+  5/5 plain_first:classrooms     guardrail_off       text=5,647 stop=end_turn
+  5/5 plain_first:classrooms     small_prompt        text=6,549 stop=end_turn
+  5/5 plain_first:classrooms     small_prompt_no_gr  text=1,405 stop=end_turn
+  5/5 plain_first:classrooms     fast_model          text=9,271 stop=end_turn
+  5/5 plain_first:toc            routed              text=7,776 stop=end_turn
+  5/5 plain_first:toc            other_profile       text=8,335 stop=end_turn
+  5/5 plain_first:toc            guardrail_off       text=4,428 stop=end_turn
+  5/5 plain_first:toc            small_prompt        text=3,805 stop=end_turn
+  5/5 plain_first:toc            small_prompt_no_gr  text=1,333 stop=end_turn
+  5/5 plain_first:toc            fast_model          text=12,314 stop=end_turn
+  5/5 search_second:article      routed              text=8,688 stop=end_turn
+  5/5 search_second:article      other_profile       text=7,965 stop=end_turn
+  5/5 search_second:article      guardrail_off       text=9,484 stop=end_turn
+  5/5 search_second:article      small_prompt        text=3,274 stop=end_turn
+  5/5 search_second:article      small_prompt_no_gr  text=1,483 stop=end_turn
+  5/5 search_second:article      fast_model          text=4,894 stop=end_turn
+  5/5 search_second:classrooms   routed              text=5,029 stop=end_turn
+  5/5 search_second:classrooms   other_profile       text=6,734 stop=end_turn
+  5/5 search_second:classrooms   guardrail_off       text=5,653 stop=end_turn
+  5/5 search_second:classrooms   small_prompt        text=4,040 stop=end_turn
+  5/5 search_second:classrooms   small_prompt_no_gr  text=1,540 stop=end_turn
+  5/5 search_second:classrooms   fast_model          text=5,730 stop=end_turn
+  5/5 search_second:toc          routed              text=8,355 stop=end_turn
+  5/5 search_second:toc          other_profile       text=7,589 stop=end_turn
+  5/5 search_second:toc          guardrail_off       text=4,178 stop=end_turn
+  5/5 search_second:toc          small_prompt        text=3,446 stop=end_turn
+  5/5 search_second:toc          small_prompt_no_gr  text=1,515 stop=end_turn
+  5/5 search_second:toc          fast_model          text=7,561 stop=end_turn
+180 rows from /home/lenovo/rag/experiments/ttft_floor_7875/rows.jsonl
+
+sha=7be04d9bfead  dirty=False  effort=low  thinking=  max_tokens=32000  strict=z6mtpcbzm5x1:16  curriculum=u5k53i63fu9b:4  sessions=['2026-10-27T06:48:40Z']
+call          arm                 profile           runs used blk oth err  text50  text90  tail50 out50   lat50 reason  read50  wrt50
+plain_first   routed              curriculum/strict   15   15   0   0   0   8,457  11,473   1,799   490   7,261      0  22,288      0
+plain_first   other_profile       curriculum/strict   15   15   0   0   0   8,352  10,726   1,555   502   6,940      0  22,288      0
+plain_first   guardrail_off       none                15   15   0   0   0   4,162   5,315   4,710   468   5,855      0  22,288      0
+plain_first   small_prompt        curriculum/strict   15   15   0   0   0   4,127   7,070     386   154   3,713      0       -      -
+plain_first   small_prompt_no_gr  none                15   15   0   0   0   1,405   1,741   1,793   163   2,680      0       -      -
+plain_first   fast_model          curriculum/strict   15   15   0   0   0   7,854  12,084   1,879   348   5,598      0  16,924      0
+search_second routed              curriculum          15   15   0   0   0   6,519   8,688     340    91   3,777      0  22,104  1,243
+search_second other_profile       strict              15   15   0   0   0   6,836   8,005     335    89   3,564      0  22,104  1,242
+search_second guardrail_off       none                15   15   0   0   0   4,906   7,723   1,243   100   2,410      0  22,104  1,242
+search_second small_prompt        curriculum          15   15   0   0   0   3,446   3,772      16    71   2,917      0       -      -
+search_second small_prompt_no_gr  none                15   15   0   0   0   1,519   1,759     939    67   1,734      0       -      -
+search_second fast_model          curriculum          15   15   0   0   0   6,180   8,119     343    88   2,962      0  16,528  1,213
+
+used = end_turn with text (percentiles are over these); blk = guardrail_intervened; oth = any other stop; tail50 = last byte minus first text; lat50 = Bedrock's latencyMs; reason = used runs with reasoning first

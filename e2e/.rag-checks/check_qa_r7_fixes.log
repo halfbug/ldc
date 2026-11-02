@@ -1,0 +1,30 @@
+ok   QC5: a remembered count saved with source 'teacher_view' resolves as the teacher's usual
+ok   QC5: a remembered count saved with source 'conversation' resolves as the teacher's usual
+ok   QC5: a remembered count saved with source 'observed' resolves as the teacher's usual
+ok   QC5: a remembered count saved with source None resolves as the teacher's usual
+ok   QC5: no count named, the usual 8 is used
+ok   QC5: the assumption recorded for the closing says 'your usual'
+ok   QC5: the closing names the usual count as 'your usual' (thread d93a7305's own fields)
+ok   T27 C: 'Assign this to my class.' on a gradebook is not drafted from the earlier chat's topic
+ok   T27 C: the refusal tells the model to ask, naming any earlier set first
+ok   T27 C: with no topic and no article on the page, nothing is drafted either (No Grade asks the grade first)
+ok   T27 C: assignment.createDraft with a carried-over question set as draft is refused in rag, with 'ask'
+ok   T27 C: assignment.assign with a carried-over question set as draft is refused in rag, with 'ask'
+ok   T27 C: a draft_assignment ref still goes to the browser, expanded
+ok   T27 C: a draft value that is no ref is left for the page to answer
+ok   a set made in this conversation saves through createDraft from a page without content.saveCopy
+ok   the saved draft holds the set's questions after its article, under the set's title
+ok   assign still refuses a question set as draft
+ok   an empty set is refused
+ok   a carried-over set the teacher names by its ref saves
+ok   a set not written from an article saves without one, titled after its source
+ok   T27 C: a topic in the teacher's own words this turn is named
+ok   T27 C: a topic the teacher gave in an earlier turn of this conversation is named
+ok   T27 C: a topic Scout named back and the teacher agreed to is named
+ok   T27 C: a topic found in a tool result of this conversation is named
+ok   T27 C: a topic the page shows is named
+ok   T27 C: a resumed call (no message) keeps the topic its first call was checked with
+ok   T27 C: a topic made only of generic words is not refused
+ok   T27 C: the carried-over set's own title does not name the topic
+
+all passed

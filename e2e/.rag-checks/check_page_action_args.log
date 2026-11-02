@@ -1,0 +1,11 @@
+PASS malformed '{"students": "all", coins": 5}' is not sent to the page
+PASS malformed '{"students": "all", coins": 5}' goes back to the model as an error
+PASS malformed '{"students": "all", coins: 5, "note": "Finished the unit"}' is not sent to the page
+PASS malformed '{"students": "all", coins: 5, "note": "Finished the unit"}' goes back to the model as an error
+PASS valid JSON in a string reaches the page as its object
+PASS a JSON value that is not an object goes back to the model
+PASS an object is passed through unchanged
+PASS an empty string is no arguments
+PASS absent args is still no arguments
+
+all passed

@@ -1,0 +1,71 @@
+prepare_lesson write failed
+PASS every [R#] names a card that is sent
+PASS every source is cited at least once
+PASS the pack has ## Objective
+PASS the pack has ## Standards
+PASS the pack has ## Background
+PASS the pack has ## Sequence
+PASS the pack has ## Article and video
+PASS the pack has ## A few questions
+PASS the pack has ## Organizer
+PASS the pack has ## What to print
+PASS the pack has ## Reading versions
+PASS the objective is the instructional frame's own, quoted with its panel
+PASS the opener cites the week's enduring understanding
+PASS the standard is the code with its own wording
+PASS the organizer is the week's own organizer worksheet
+PASS printables exclude the organizer
+PASS the sequence is labelled a suggestion
+PASS the placeholder-rule note is not teacher-facing
+PASS reading versions are never invented
+PASS the title falls back to the article, not a literal placeholder
+PASS with neither a week title nor an article, the placeholder is the last resort
+PASS the 45-minute pack fits in 45 minutes
+PASS a 10-minute pack never runs over (AC4)
+PASS a 15-minute pack never runs over (AC4)
+PASS a 20-minute pack never runs over (AC4)
+PASS a 30-minute pack never runs over (AC4)
+PASS a 45-minute pack never runs over (AC4)
+PASS a 60-minute pack never runs over (AC4)
+PASS a 90-minute pack never runs over (AC4)
+PASS a short pack keeps the opener and the reading first
+PASS what did not fit is listed, not silently dropped
+PASS a lesson reads one article: the teaching set's, when there is one
+PASS the week's other articles are listed, with a note that their order is not recorded
+PASS with no frame objective, the pack says so and quotes the enduring understanding instead
+PASS a missing part says so: No objective is written for this week
+PASS a missing part says so: No standards are linked to this week
+PASS a missing part says so: have no background section
+PASS a missing part says so: No video is placed
+PASS a missing part says so: no assessment questions
+PASS a missing part says so: No organizer is placed
+PASS a missing part says so: Nothing printable
+PASS an organizer suggestion is labelled as AI
+PASS ONLINE-7515 QA dev2: another state's standards never reach a teacher's plan; theirs and national ones do
+PASS ONLINE-7515: with no state known, every standard the week links is kept
+PASS ONLINE-7515: when only another state's standards are linked, the plan says none are linked for theirs
+PASS a clean rewrite that keeps every [R#] is used as written, marked clean
+PASS an unsupported claim is caught and rewritten, not silently left in (AC4)
+PASS a rewrite that drops a required [R#] link falls back to the deterministic pack, never link-less (AC4/AC5)
+PASS a failed model call falls back to the deterministic pack rather than blocking it
+PASS the pack is sent as cards and a plan document
+PASS one card per source, in [R#] order
+PASS the document is a weekly plan with its week, so it saves to the lesson-plan editor (AC5)
+PASS the model is told not to repeat it and to say it is a suggestion
+PASS ONLINE-7515 QA dev2: the tool passes the teacher's state, so the card's Built for names no Indiana standard
+PASS ONLINE-7511 (Salman, 2026-09-28): no minutes builds nothing and pauses to ask instead of guessing
+PASS ONLINE-7511: the pause asks for minutes plainly, with no number suggested
+PASS ONLINE-7511: the resume calls prepare_lesson again with the teacher's minutes, week_id carried over
+PASS ONLINE-7511: minutes are optional in the spec, but the model is told the tool asks and waits
+PASS ONLINE-7511: minutes given anywhere (here, the resumed call) are used without asking again
+PASS minutes out of range: ask
+PASS a week in someone else's publication is refused
+PASS an unknown week is not 'nothing exists' silently
+PASS nothing was emitted by a refused call
+PASS a teaching set supplies the week (SCOUT-05 hand-off)
+PASS school_calendar is no longer a kind remember accepts
+PASS class_position is no longer a kind remember accepts
+PASS a school_calendar save is refused and nothing reaches Laravel
+PASS a class_position save is refused and nothing reaches Laravel
+
+0 failure(s)

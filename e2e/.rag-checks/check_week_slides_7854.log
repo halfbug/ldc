@@ -1,0 +1,57 @@
+ok   case1: every SW slide present, in order, unchanged
+ok   case1: the input deck is not mutated
+ok   case1: additions placed right after the slide they name
+ok   case1: additions are labelled Scout's
+ok   case1: the assembly check is clean
+ok   case1: no retry when the reply is valid
+ok   case1: the video and teacher-only slides keep their flags
+ok   case1: the built deck does not share records with the week's deck
+ok   case1: an addition after a slide that is not there is refused, and the retry names it
+ok   case1: an addition after a teacher-only slide is refused
+ok   case1: a name not in the week's sources is refused
+ok   case1: a question line without a question mark is refused
+ok   case1: a discussion addition with no question is refused
+ok   case1: a name in an addition's lines that is not in the week is refused
+ok   case1: a custom addition needs the teacher's own ask
+ok   case1: a custom addition is placed when the teacher asked
+ok   case1: an addition over the band's words is refused
+ok   case1: unreadable twice gives the SW deck alone with one plain line
+ok   case1: an unreadable first reply is replaced by a readable retry
+ok   case1: a worse retry is not kept
+ok   case1: additions stop at the draft's 60-slide cap
+ok   case1: the assembly check catches an altered SW slide
+ok   case1: the assembly check catches SW slides out of order
+ok   case1: the assembly check catches an unlabelled Scout slide
+ok   case2: slide 1 is the week title
+ok   case2: slide 2 is the week question, word for word
+ok   case2: slide 3 is the vocabulary, word for word
+ok   case2: one run per article, in issue order
+ok   case2: each read slide points to the student edition
+ok   case2: the run is read, then discussion, then activity
+ok   case2: the closer returns to the week question
+ok   case2: answer keys are teacher-only and grouped after the closer (social studies)
+ok   case2: every slide is a Scout text block
+ok   case2: science puts each answer key right after its discussion
+ok   case2: no vocabulary slide when the week has no vocabulary
+ok   case2: no question slide without a week question; the closer is the model's question
+ok   case2: a closer with a name not in the week is refused
+ok   case2: an article the reply leaves out keeps its read slide and the retry names it
+ok   case2: a discussion line that is not a question is refused
+ok   case2: a number not in the article is refused
+ok   case2: facts come from the run's own article only
+ok   case2: a slide over the band's words is refused
+ok   case2: more than three discussion slides for one article is a problem and only three are kept
+ok   case2: no two slides share a title; repeated discussions and their answer keys are numbered (QA 2026-10-20)
+ok   case2: vocabulary over two slides is numbered, never two slides titled Vocabulary
+ok   case2: the deck's parts name only what it has: vocabulary only when the week has it
+ok   case2: unreadable twice is an error, not a deck
+ok   case2: no discussion anywhere is an error, not a deck
+ok   empty: no deck and no article text is the plain can't-build message
+ok   empty: one article with text is buildable
+ok   empty: a week with a deck is buildable even with no article text
+ok   answers: an answer not in the article's words is kept as a labelled example
+ok   answers: a grounded answer is not labelled
+ok   answers: the question and its answer are separate lines
+ok   answers: an example answer naming someone not in the article is refused
+
+ALL OK

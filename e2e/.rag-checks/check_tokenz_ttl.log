@@ -1,0 +1,5 @@
+PASS tokenz has exactly one TTL index
+PASS the TTL index is on update_time
+PASS the retention equals history_listing's
+
+0 failed

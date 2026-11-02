@@ -1,0 +1,39 @@
+relevance judge left ids unlabelled, retrying them
+relevance judge left ids unlabelled, retrying them
+relevance judge unchecked: ids still unlabelled after retry
+relevance judge left ids unlabelled, retrying them
+relevance judge unchecked: ids still unlabelled after retry
+relevance judge failed
+relevance judge batch failed
+relevance judge left ids unlabelled, retrying them
+relevance judge batch failed
+relevance judge unchecked: ids still unlabelled after retry
+relevance judge left ids unlabelled, retrying them
+relevance judge unchecked: ids still unlabelled after retry
+PASS judge() of no candidates is an empty list, never a Bedrock call
+PASS placement names publication, unit, week and week title for a placed item
+PASS an unplaced item falls back to its publications' titles
+PASS candidate carries id, title, kind, placement and excerpt (the fields the truth was labelled from)
+PASS media kind includes its media type
+PASS excerpt is capped at EXCERPT_WORDS words
+PASS well-formed tool reply parses by id
+PASS MUTATION: an id given both labels is left out, never guessed
+PASS MUTATION: an unknown label or an id not asked for is left out
+PASS MUTATION: a plain-text reply (no tool call) labels nothing
+PASS labels align to input order across batches
+PASS 30 candidates go in ceil(30/BATCH_SIZE) calls, each at most BATCH_SIZE
+PASS the tool call is forced and temperature 0 is sent
+PASS the teacher's message leads; the tool query is marked context only
+PASS the other-publications note goes on a fallback pool only after a named place (part 12)
+PASS no message: the query stands in as the message, not repeated as context
+PASS screen_line names the publication, unit and week the page is on, and is None when the page names none
+PASS judge() sends the message, the query context, the teacher's screen and the note to the model
+PASS a partial answer is completed by one retry that asks only for the missing id
+PASS MUTATION: an id still missing after the retry makes the whole search unchecked, never dropped or kept
+PASS MUTATION: an empty tool call is unchecked
+PASS MUTATION: a client that cannot be built returns None (unchecked), never an empty/all-pass list
+PASS MUTATION: a converse call that raises (first try and retry) is unchecked, never permissive
+PASS MUTATION: past the deadline the search is unchecked
+PASS MUTATION: one slow batch is re-sent after HEDGE_AFTER_S and answered inside the deadline
+
+0 failure(s)

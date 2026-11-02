@@ -1,0 +1,14 @@
+PASS a remembered state outranks the body's raw user_state
+PASS no remembered state: falls back to the request's own user_state
+PASS ctx.resolved unavailable entirely (a stale/test TurnContext): falls back to user_state
+PASS an unreadable structure list says so instead of asking which publication
+PASS the page's week id confines the search to that week
+PASS the open week gets no stand-in results from other publications
+PASS printables for a week on a TOC page route to the capability: printables
+PASS printables for a week on a TOC page route to the capability: Week 1 worksheets
+PASS printables for a week on a TOC page route to the capability: lesson
+PASS no week: not redirected
+PASS a topic search with a week and no printables word: not redirected
+PASS page without the capability: not redirected
+
+0 failure(s)

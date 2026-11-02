@@ -1,0 +1,20 @@
+ok   one result per item
+ok   the fenced JSON is parsed
+ok   the hallucinated guid (not in the candidate slice) is dropped
+ok   the real suggestion survives, sorted first
+ok   abstain_reason is None when there is a suggestion
+ok   a below-floor suggestion is dropped and the item abstains
+ok   an item missing from the model's JSON still returns a result
+ok   a missing item is an abstain, not silently lost
+ok   no candidates means every item abstains
+ok   no candidates means no model call is made
+ok   an oversized candidate slice raises rather than silently truncating
+ok   every above-CONFIDENCE_FLOOR suggestion is kept, best first
+ok   the code shown is the slice's, not the model's
+ok   the question prompt is sent
+ok   three questions on one slice cost one model call
+ok   results come back in input order, one per question
+ok   suggest takes only items, candidates, usage and model
+ok   no unit prompt remains
+
+all checks passed

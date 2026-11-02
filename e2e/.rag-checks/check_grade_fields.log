@@ -1,0 +1,24 @@
+ok   no marks: the engine's own row has no verdict/confidence/reason/evidence/feedback key
+ok   idea is still carried through
+ok   look_first is still carried through
+ok   D49: no idea is drafted for a concerning answer
+ok   D49: look_first is still concerning, so the browser can order it first
+ok   D49: only a count is logged, never per-row detail
+ok   a 2-word answer is flagged short, deterministically, for 'Read these first'
+ok   a blank answer is flagged short even when the model sets no look_first
+ok   a 7-word answer is not flagged short
+ok   a model-set look_first of 'off_topic' reaches the wire
+ok   a model-set look_first of 'nonsense' reaches the wire
+ok   an unrecognised look_first is read as null, not passed through
+ok   two JSON objects in one reply: the later (corrected) one is read, not dropped as unreadable
+ok   a reply with no grades object at all is still unreadable
+ok   an id given twice in one reply is dropped, not merged
+ok   the user message carries the question
+ok   the user message carries the answer
+ok   the user message never asks about an answer key
+ok   the system prompt never asks for a verdict, confidence, reason, evidence or feedback
+ok   a2 got no reply and is reported ungraded, never defaulted
+ok   a1's row is still returned in full
+ok   old request fields are accepted without error and change nothing about the outcome
+
+ALL OK

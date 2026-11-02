@@ -1,0 +1,6 @@
+  ok   every failed document revise (raised, not ok, came back the same) withdraws its card
+  ok   every failed rubric revise withdraws its card
+  ok   a one-slide change that does not match withdraws its card
+  ok   a withdrawn revise then a retry leave one worksheet card in the stored turn
+
+OK: 0 failure(s)

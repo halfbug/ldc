@@ -1,0 +1,51 @@
+Teacher context fetch failed
+article grade lookup failed: RuntimeError
+PASS QA's named class resolves to its own grade (0, Kindergarten) from the classroom
+PASS ...so no grade is asked for a class that has one
+PASS QA's call records both the class grade and the state
+PASS the closing names them in code, each with its source
+PASS an ended classroom's grade never competes with the one current classroom
+PASS the class named this turn outranks the one on screen
+PASS a partial name matches nothing; the on-screen class still decides
+PASS a local turn gets Laravel's teacher context with the teacher's own token, replacing the browser's
+PASS no token: the browser's value is still dropped
+PASS deployed, the middleware's value stands and nothing is fetched twice
+PASS a Laravel failure leaves the turn with no teacher context, never an error
+PASS a single-grade article beats the class's grade, recorded as the article's
+PASS ...and the closing says the grade came from the article
+PASS no grade is asked for when the article has one
+PASS a grade the teacher names wins over the article's, and is recorded as what they told us
+PASS an article with grade text 'grades 4–5' leaves the class's grade in charge
+PASS an article with grade text None leaves the class's grade in charge
+PASS an article with grade text 'K' leaves the class's grade in charge
+PASS (a) a page article for one grade is written at its grade, not the class's
+PASS (d) the closing names the grade and the state, each with its source
+PASS a set's ref keeps its own title, which a Customized Content save is named after (demo P1-16)
+PASS (a) a page article's grade is asked for nowhere: a class with no grade still writes
+PASS (b) revising keeps the grade the set was written at
+PASS (b) ...also a set written at the class's grade
+PASS (c) a grade the teacher names beats the article's
+PASS (c) ...and beats the grade a revised set was written at
+PASS (c) ...which a later revision then keeps
+PASS (e) a range or no grade in the index: the class's grade is used as before
+PASS (e) an index that cannot be read: the class's grade is used as before
+PASS (e) no article on the page: no grade is looked up
+PASS (e) a set from before this record (no grade in its meta) revises on the resolver's grade
+PASS (f) source_ref writes from the rewrite's text at the rewrite's grade, not the page's
+PASS (f) ...and the closing says Grade 3 came from the teacher's own request
+PASS (f) without source_ref the same turn still uses the page article
+PASS (f) an unknown source_ref is an error, not a silent fall back to the page
+PASS (d) Grade 5 (the article's grade)
+PASS (d) Grade 4 (your class)
+PASS (d) Grade 3 (your usual)
+PASS (d) Grade 3 (what you told me)
+PASS (d) 8 questions (your usual)
+PASS (d) Texas standards (your district)
+PASS (d) Utah standards (your school)
+PASS (d) Michigan standards (your profile)
+PASS (d) Michigan standards
+PASS an article whose index grades list is one grade gives that grade
+PASS a grades list of more than one grade gives no single grade
+PASS the older lo/hi fields still work
+
+0 failure(s)

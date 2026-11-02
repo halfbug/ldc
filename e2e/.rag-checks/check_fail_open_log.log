@@ -1,0 +1,11 @@
+PASS daily cap (v2): fails open
+PASS daily cap (v2): logs the stable line
+PASS in-flight: fails open
+PASS in-flight: logs the stable line
+PASS throttle (error): fails open
+PASS throttle (error): logs the stable line
+PASS throttle (contended): fails open
+PASS throttle (contended): logs the stable line
+PASS daily cap (gateway): logs the stable line
+
+all passed

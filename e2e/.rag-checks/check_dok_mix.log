@@ -1,0 +1,107 @@
+ok   a: Mostly recall on five is one DOK 2 and four DOK 1
+ok   a: Mixed on five has a DOK 1 and a DOK 2 or 3, and reaches DOK 3
+ok   a: Mostly reasoning on five is never DOK 1
+ok   a: Mixed has a DOK 1 and a DOK 2 or 3 from two questions up, for every size to 15
+ok   a: an exact level is every question at that level
+ok   a: when no type was named, a DOK 2 slot becomes multiple choice and a DOK 3 slot open response
+ok   a: an exact DOK 3 on a type that cannot carry it is retyped as open response when no type was named
+ok   a: the teacher's named types are kept, held at DOK 1, and counted as held
+ok   a: a level swaps to a slot that can carry it before anything is held (mixed, named types: 1,2,3,1,2 fits)
+ok   a: multiple choice named alone is held at DOK 2: a DOK 3 slot becomes 2 and is counted as held
+ok   a: fill in the blank and true/false are never above DOK 1 whatever the mode
+ok   a: the caps are open response at 3 and multiple choice at 2, nothing else
+ok   a: a key and stem lifted from one sentence are found, even when the stem asks why
+ok   a: a key told across two adjacent sentences, asked where they are, is lifted too
+ok   a: a key that puts two parts together in new words is not lifted
+ok   a: a key copied from one part, asked from another part, is not lifted (a cause found across the article)
+ok   a: a key that is a number worked out from the article is found ('number')
+ok   a: a stem that retells both parts is found ('retold')
+ok   a: a key that is two stated facts side by side is found ('joined')
+ok   a: a two-part question with a short stem and a key in new words is none of these
+ok   a: a question with no planned parts is never judged by these patterns
+ok   a: a one-word key cannot be judged by its words and is never called lifted
+ok   a: normalise_dok reads the choices, an exact level and 'DOK 3', and Any or nonsense as None
+ok   a: the class line is recall for 1 and reasoning for 2 and 3
+ok   b: no depth in the writer's message unless asked
+ok   b: the idea line names a level only when given one
+ok   b: the checker's message asks for a level only when asked
+ok   b: the writer's cached system prefix carries no depth text
+ok   b: Any writes five questions
+ok   b: Any sends no depth text to the writer or the checker
+ok   b: Any puts no depth in the seeds, details, checks, summary or markdown
+ok   b: Any (default_mix_3) sends the base sha's exact requests and makes its exact output
+ok   b: Any (default_mix_5) sends the base sha's exact requests and makes its exact output
+ok   b: Any (default_mix_5_repair) sends the base sha's exact requests and makes its exact output
+ok   b: Any (typed_open_5) sends the base sha's exact requests and makes its exact output
+ok   b: the baseline compare can fire: the same run asked for a depth differs
+ok   c: Mixed on five delivers five
+ok   c: the writer is told each level and the definitions once, in the task message
+ok   c: the labels are the checker's reading, on the seed beside question_type
+ok   c: Mixed on five has a DOK 1 and a DOK 2 or 3 in what is delivered
+ok   c: the label is never inside the question or its markdown
+ok   c: details carry the target and the label
+ok   c: the summary tells the model the label is Scout's estimate
+ok   c: the checker was asked for a level
+ok   c: a question read on the wrong side of recall is repaired once, and the repair is told why
+ok   c: after the repair the delivered labels are the plan
+ok   c: a repair is one round: a question still off the plan is kept, shown as read, and reported
+ok   c: each question above recall is written from two named parts: its own idea and the planned partner
+ok   c: a recall question is planned on its own idea, with no partner and no link line
+ok   c: a multiple choice key lifted from one sentence is rewritten once, told which sentence and which two parts
+ok   c: a lifted recall question is left alone (recall is allowed to be stated in one sentence)
+ok   c: a two-part multiple choice key that is a number is rewritten once, told to ask how the parts go together
+ok   c: a question above recall that the checker finds answerable from one part is rewritten to need both
+ok   c: with no partner planned, the question rests on its own idea as before and is reported as unlinked
+ok   c: named types that cannot carry the depth say so on the card, in one line, and stay at DOK 1
+ok   c: no such line when the types reach the mix (no types named, or open response)
+ok   c: no such line for Mostly recall, which these types do reach
+ok   c: multiple choice named alone says DOK 3 needs open response, in one line
+ok   c: true/false with multiple choice says the chosen types reach DOK 2 at most, not that open response was used
+ok   c: Mostly reasoning with no types named makes the DOK 3 questions open response and says so on the card
+ok   d: a checker that gave no level gives no label (never a guess), and the set is still delivered
+ok   d: no level is also not an off-plan question to repair
+ok   c: Mostly recall puts one question above recall in five
+ok   c: Mostly reasoning is never DOK 1
+ok   c: 'add a DOK 3 question' is one question at DOK 3
+ok   e: 'harder' on a labelled set tells the writer what harder means in DOK terms and asks the checker for levels
+ok   e: the question that changed is read again, and the untouched keep their labels
+ok   e: the revised markdown has no label
+ok   e: a translation keeps every label and does not ask for depth
+ok   e: 'harder' on a plain set is revised as before: no depth text, no label
+ok   e: a plain set asked for a DOK level by name is labelled
+ok   g1: an add that names a DOK level or a type grows the set; a bare add is still a new set; edits stay edits
+ok   g1: 'DOK 3 question' names no count of 3
+ok   g1: 'add a DOK 3 question' writes one question at DOK 3 after the set, as a follow-up
+ok   g1: ...the four questions there are kept exactly (text, type, order) and one is appended, labelled DOK 3
+ok   g1: ...the reply is given the labels the card shows, and no other level
+ok   g1: ...on one card that marks question 5 as added
+ok   g1: ...also when the model passes no ref and no dok: the latest set grows, at the level the teacher named
+ok   g1: a question Scout reads as DOK 2 is not added as DOK 3: it is written again once, and the DOK 3 one added
+ok   g1: two misses add nothing: the set is unchanged and the reply says Scout could not write one at DOK 3
+ok   g1: a named type that cannot carry the level is refused before anything is written
+ok   g1: an add with no level is as before: one call, the questions it wrote added, no depth line
+ok   g1: the engine writes 'a DOK 3 question' with no type named as open response
+ok   g2: the targets: harder is one up to the type's highest, easier one down to 1, a named level is that level
+ok   g2: the writer is told the labels the teacher sees and the level question 3 must reach
+ok   g2: 'easier' on a DOK 3 question that came back DOK 1 is rewritten once, told what it reads as, and lands on DOK 2
+ok   g2: ...the others are unchanged, and the reply is given the labels
+ok   g2: two misses put the question back as it was, with its label, and say so on the card and to the model
+ok   g2: a move that lands first time is one write, and only that question changes
+ok   g2: a moved question the writer left as it was is a miss too, and is rewritten once
+ok   g2: a plain set is revised as before: one write, no label lines, no label
+ok   g3: Mostly reasoning read as DOK 2 throughout does not say 'The DOK 3 questions are open response'
+ok   g3: ...and the same set read with a DOK 3 still says it
+ok   g3: a set's reply is given the labels the card shows
+ok   g4: a planner call that fails is logged as a warning with its cause, and the set is not planned
+ok   h: a California edition on screen names California standards (this publication), as documents cite them
+ok   h: a publication of no single state names the teacher's own state, as before
+ok   h: assignment drafts use the same rule (one function)
+ok   f: the door takes recall, mixed and reasoning, and Any as nothing
+ok   f: the door has no dok when none was sent
+ok   f: the door refuses 'hard'
+ok   f: the door refuses '3'
+ok   f: the door refuses 3
+ok   f: the door refuses ['mixed']
+ok   f: the tool takes the choices and exact levels, optional
+
+ALL OK

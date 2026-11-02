@@ -1,0 +1,27 @@
+{"level":"INFO","location":"_guard_body:142","message":"student identifiers in a browser payload","timestamp":"2026-10-28 16:51:53,322+0500","service":"CoreRouter","taskName":"starlette.middleware.base.BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.coro","route":"grade","removed":0,"scrub_list_sent":false}
+PASS /assistant/v2/grade: a call that never answers stops at the ceiling
+PASS /assistant/v2/grade: and says so with a retryable turn_ceiling error
+{"level":"INFO","location":"_guard_body:142","message":"student identifiers in a browser payload","timestamp":"2026-10-28 16:51:53,728+0500","service":"CoreRouter","taskName":"starlette.middleware.base.BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.coro","route":"grade","removed":0,"scrub_list_sent":false}
+PASS /assistant/v2/grade: a call that answers in time is untouched
+{"level":"INFO","location":"_guard_body:142","message":"student identifiers in a browser payload","timestamp":"2026-10-28 16:51:53,733+0500","service":"CoreRouter","taskName":"starlette.middleware.base.BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.coro","route":"group","removed":0,"scrub_list_sent":false}
+PASS /assistant/v2/group: a call that never answers stops at the ceiling
+PASS /assistant/v2/group: and says so with a retryable turn_ceiling error
+{"level":"INFO","location":"_guard_body:142","message":"student identifiers in a browser payload","timestamp":"2026-10-28 16:51:54,137+0500","service":"CoreRouter","taskName":"starlette.middleware.base.BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.coro","route":"group","removed":0,"scrub_list_sent":false}
+PASS /assistant/v2/group: a call that answers in time is untouched
+{"level":"INFO","location":"_guard_body:142","message":"student identifiers in a browser payload","timestamp":"2026-10-28 16:51:54,142+0500","service":"CoreRouter","taskName":"starlette.middleware.base.BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.coro","route":"misconceptions","removed":0,"scrub_list_sent":false}
+PASS /assistant/v2/misconceptions: a call that never answers stops at the ceiling
+PASS /assistant/v2/misconceptions: and says so with a retryable turn_ceiling error
+{"level":"INFO","location":"_guard_body:142","message":"student identifiers in a browser payload","timestamp":"2026-10-28 16:51:54,549+0500","service":"CoreRouter","taskName":"starlette.middleware.base.BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.coro","route":"misconceptions","removed":0,"scrub_list_sent":false}
+PASS /assistant/v2/misconceptions: a call that answers in time is untouched
+{"level":"INFO","location":"_guard_body:142","message":"student identifiers in a browser payload","timestamp":"2026-10-28 16:51:54,559+0500","service":"CoreRouter","taskName":"starlette.middleware.base.BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.coro","route":"grade-drawings","removed":0,"scrub_list_sent":false}
+PASS /assistant/v2/grade-drawings: a call that never answers stops at the ceiling
+PASS /assistant/v2/grade-drawings: and says so with a retryable turn_ceiling error
+{"level":"INFO","location":"_guard_body:142","message":"student identifiers in a browser payload","timestamp":"2026-10-28 16:51:54,969+0500","service":"CoreRouter","taskName":"starlette.middleware.base.BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.coro","route":"grade-drawings","removed":0,"scrub_list_sent":false}
+PASS /assistant/v2/grade-drawings: a call that answers in time is untouched
+{"level":"INFO","location":"_guard_body:142","message":"student identifiers in a browser payload","timestamp":"2026-10-28 16:51:54,982+0500","service":"CoreRouter","taskName":"starlette.middleware.base.BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.coro","route":"read-calendar","removed":0,"scrub_list_sent":false}
+PASS /assistant/v2/read-calendar: a call that never answers stops at the ceiling
+PASS /assistant/v2/read-calendar: and says so with a retryable turn_ceiling error
+{"level":"INFO","location":"_guard_body:142","message":"student identifiers in a browser payload","timestamp":"2026-10-28 16:51:55,391+0500","service":"CoreRouter","taskName":"starlette.middleware.base.BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.coro","route":"read-calendar","removed":0,"scrub_list_sent":false}
+PASS /assistant/v2/read-calendar: a call that answers in time is untouched
+
+0 failed

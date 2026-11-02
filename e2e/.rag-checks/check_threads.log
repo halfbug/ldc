@@ -1,0 +1,58 @@
+PASS a new thread is inserted with version 1 at turn start
+PASS ...stamped with when it started, so a dead turn's flag can expire
+PASS the end-of-turn save replaces it at version 2 and clears the running flag
+PASS a concurrent save of a stale copy raises ThreadConflict
+PASS the first writer's messages survive
+PASS PIN thread 37a3b950: the summary is stored without bumping the version
+PASS PIN thread 37a3b950: a resume loaded before the summary save still saves
+PASS a summary for a thread that has moved on is not stored
+PASS a save under another user's id raises ThreadConflict
+PASS the owner's thread is unchanged
+PASS inserting a new thread over an existing id raises ThreadConflict
+PASS a legacy document loads at version 0
+PASS a legacy document saves and gains version 1
+{"level":"WARNING","location":"set_title:683","message":"Could not set v2 sidebar title","timestamp":"2026-10-28 16:53:06,156+0500","service":"CoreThreads","thread_id":"t1","error":"ConnectionFailure('You have not defined a default connection')"}
+PASS another user cannot retitle a thread
+{"level":"WARNING","location":"set_title:683","message":"Could not set v2 sidebar title","timestamp":"2026-10-28 16:53:06,156+0500","service":"CoreThreads","thread_id":"t1","error":"ConnectionFailure('You have not defined a default connection')"}
+PASS the owner can retitle it, without a version bump
+PASS a Stop for a first turn with no thread document yet is recorded early
+PASS the early Stop is seen by that teacher's turn
+PASS an early Stop recorded by another user is not honoured
+PASS a Stop for the running turn sets the flag on the thread
+PASS a Stop for a turn already in the transcript is a no-op
+PASS a Stop on someone else's thread is not_found
+PASS a Stop with no thread id is recorded early by turn id for the caller
+PASS the turn, once its new thread exists, sees that Stop
+PASS the same teacher repeating the Stop is still cancelled
+PASS another user's Stop with that turn id is not_found and leaves the teacher's Stop in place
+PASS another user's Stop with no thread id never cancels the teacher's running turn
+PASS a TTL index on created_at with v1's 157,788,000 s is requested exactly once
+PASS an unreferenced ref is pruned at save, a referenced one kept
+PASS a stored toolResult over 20,000 chars is truncated with a notice
+PASS the in-memory thread is not truncated for the live turn
+{"level":"WARNING","location":"prepare_for_storage:317","message":"Thread document over the storage limit","timestamp":"2026-10-28 16:53:06,157+0500","service":"CoreThreads","bytes":10240,"limit":4000}
+PASS a thread over the byte limit raises ThreadTooLarge
+PASS the oversized thread was not written
+PASS another teacher's delete removes nothing
+PASS the owner's delete removes the document
+PASS a generated title keeps no alias number
+PASS nor does the provisional title
+PASS a number that is not an alias is kept
+PASS a title carries no Markdown
+PASS a copy loaded while a turn runs knows which turn holds the thread
+PASS a second turn cannot mark itself running over a live one
+PASS ...and writes nothing, so the first turn's ask is stored once
+PASS TurnRunning is a ThreadConflict, so every existing conflict handler still catches it
+PASS the first turn still saves its answer
+PASS once it has saved, the thread is free for the next turn
+PASS a leg of the running turn itself (a resume reuses the turn id) is not refused
+PASS a flag left by a dead turn (past the ceiling) does not hold the thread
+PASS PIN Sadaf MR101: a pre-deploy flag (no running_at) left by a dead turn does not hold the thread
+PASS ...so the next turn marks itself running instead of TurnRunning
+PASS ...but a pre-deploy flag set just now (a turn running across the deploy) still holds it
+{"level":"WARNING","location":"preflight:129","message":"Core turn refused: another turn is running","timestamp":"2026-10-28 16:53:06,385+0500","service":"CoreRuntime","taskName":"Task-1","thread_id":"t-dup"}
+PASS the teacher door refuses a second turn before its stream opens, as a retryable 409 turn_running
+PASS ...with a sentence that says the answer is still coming, not that another window changed it
+PASS ...but lets the running turn's own next leg through
+
+0 failure(s)

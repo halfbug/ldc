@@ -1,0 +1,26 @@
+PASS the registry has entries and clusters
+PASS every entry id is unique
+PASS every sentence is listed once: no two entries share a text
+PASS every id is its cluster's name and a number
+PASS every entry names a known cluster, at least one source and at least one emitter
+PASS every entry has a grade from the three allowed
+PASS every entry has a planned home from the five allowed
+PASS every planned home carries a dated reason
+PASS every entry says what it protects (a gate, a commit, a ruling, or that none is recorded)
+PASS every cluster that cites a MEASURED-AND-FAILED entry cites one that exists
+PASS the browser's `forScout` lines were read (not silently none)
+PASS every sentence the code sends to a model has a registry entry (1665 sentences)
+PASS every registry entry is still in the code
+PASS every entry's sources are where the code emits it
+PASS no long text constant is unclassified: each is registered or declared not model-facing
+PASS no module under src/core/prompts is neither swept nor declared rendered elsewhere
+PASS every guidelines module declares RECORDS, so its text is enumerated
+PASS the sanctioned reply wordings are the code's own: both declines, and the clause GRADING_RULE tells the model to say
+PASS the stored summary equals the counts recomputed from the entries
+PASS the file is written one entry per line, as `dumps` writes it
+PASS the token table is present, dated and says how it was measured
+PASS a conditional forScout line is read as its branches, never one joined sentence (misconceptions.ts reteach)
+PASS strings joined with + still read as one line, and ?., ?? and object literals split nothing
+PASS no sentence sent to a model calls the curriculum K-12: Studies Weekly is K–8 (clp replies said "your K-12 curriculum")
+
+all passed

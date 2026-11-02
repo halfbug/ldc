@@ -1,0 +1,25 @@
+PASS every one of the 1105 Phase 0 sentences is a current entry, a dated deletion or a recorded rewrite
+PASS every deletion and rewrite carries a date and a reason
+PASS all 114 must_stay_global sentences of the old constitution are still in the core, word for word
+PASS no must_stay_global sentence anywhere was deleted
+PASS every moved sentence (31) records where from, where to, when and why
+PASS every entry's recorded home is where the code sends it from
+PASS the get_article_resources routing (C25.004-005) is in the core, word for word, and in no tool description
+PASS the 174 rules sent before any tool call at Phase 0 (must_stay_global, C18, C30, T2) still are: in system text or a description, none moved into a result
+PASS the grading rule (C18) and never-claim-done (C30) are still in the core
+PASS no routing sentence (T1), argument limit (T2) or privacy line (T4) was deleted
+PASS no rule moved into a result note or a browser model-only line (the 199 such sentences are unchanged)
+PASS every sentence that says 'above' or 'below' is one whose referent is known
+PASS and in every assembled prompt (agent, plan, with and without a teacher block) its referent is there, in that direction
+PASS the teacher block lists a remembered item while it is remembered
+PASS after `forget`, the next turn's teacher block has neither the item nor its id
+PASS the teacher block is sent as its own cached layer, between the core's and the page's checkpoints
+PASS agent mode: its acting module is sent, the other mode's is not
+PASS agent mode: the module comes after the page's actions and closes the page layer
+PASS plan mode: its acting module is sent, the other mode's is not
+PASS plan mode: the module comes after the page's actions and closes the page layer
+PASS the core's must_stay_global text is within the audit's 5,200 tokens (5,193)
+PASS core plus the 18 tool definitions is within 16,300 tokens (16,287: core 6,867, tools 9,419)
+PASS each acting module is within 1k tokens (the review's per-module cap)
+
+all passed

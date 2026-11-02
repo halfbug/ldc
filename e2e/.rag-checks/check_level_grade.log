@@ -1,0 +1,286 @@
+ok   terms_in keeps only terms present, deduplicated
+ok   readability returns a number
+ok   single-newline page text becomes separate paragraphs
+ok   an invented image marker is dropped
+ok   a real image marker is restored
+ok   leak screen fires on copied prompt text (control)
+ok   leak screen silent on a clean rewrite
+ok   leak screen ignores prompt wording the source itself contains
+ok   grade_phrase names two grades
+ok   article and notes travel as separate parts
+ok   no notes part is sent when there is nothing to put in it
+ok   a rewrite part with only terms still carries its notes
+ok   a revise part with no neighbours or terms sends no notes part
+ok   a revise part with a neighbour still carries its notes
+ok   an empty trailing NOTES FOR YOU heading is dropped from the rewrite
+ok   a NOTES FOR YOU heading with text under it is left for the leak screen
+ok   a clean rewrite is unchanged by the notes guard
+ok   no instruction leaves the prompt exactly as it was (control)
+ok   the teacher's instruction reaches the task part
+ok   the instruction is not in the notes part, which says it is never output
+ok   the instruction sits outside the <article> fence, so it is not read as article text
+ok   instruction leak screen fires when the rewrite copies the ask back (control)
+ok   instruction leak screen is silent on a clean rewrite
+ok   instruction leak screen ignores wording the source itself contains
+ok   without the instruction that same echo is invisible, which is why `extra` exists
+ok   clean rewrite passes
+ok   adapted_content carries §7a fields
+ok   content is HTML
+ok   status streamed before the article
+ok   rewrite uses the main model with the short spec
+ok   rewrite sends no temperature argument
+ok   the meaning check is off by default (measured: it misled more than it caught)
+ok   model summary is short and says not to repeat
+ok   checks record that no instruction was carried (control)
+ok   the teacher's instruction reaches the model
+ok   checks record that an instruction was carried
+ok   a same-grade rewrite with an instruction still succeeds (the panel default)
+ok   problems are reported, not rewritten
+ok   missing term named for the teacher
+ok   leak reported
+ok   meaning_check='show' uses the fast model and shows its words
+ok   meaning_check='log' records problems without showing them
+ok   repair arm fixes and re-checks
+ok   with meaning_check='log', a logged finding steers the repair but is never shown
+ok   repair='deterministic' ignores a logged meaning finding
+ok   repair='deterministic' fixes a lost curriculum term
+ok   an unmoved reading level triggers a repair that states this passage's sentence lengths
+ok   repair modes resolve from bool, name and env spelling
+ok   a slow rewrite keeps emitting status until the article arrives
+ok   no two consecutive statuses repeat a label (the loop drops a repeat, so it would never be seen)
+ok   a slow grading call keeps emitting status
+ok   a refusal is retried once, then the original is shown and said so
+ok   an unreadable check is 'unchecked', not 'pass'
+ok   a long article is split and progress streams per part
+ok   article_from_context reads the curriculum terms the article block prints
+ok   level spec is byte-stable and names itself
+ok   level spec does not require target_grade
+ok   level spec sends differentiation and support advice to an answer or a plan, not a rewrite
+ok   multi-grade article with no target pauses to ask, never refuses
+ok   the question offers one or two grades below the lower one, never up
+ok   the pause carries the paused toolUse id
+ok   multi-grade article with a named target is levelled
+ok   a ref is stored for the rewrite
+ok   "down one grade" on a grade 4 article levels to grade 3 without asking
+ok   "two grades lower" levels to grade 2
+ok   a step outside the window still asks, with the chips
+ok   a request naming no grade still asks
+ok   a grade the page already picked (request.target_grade) is used, not asked again
+ok   unusable target '9' asks rather than refuses
+ok   unusable target '9' gets the fixed kindergarten-to-grade-8 question and chips, never 9 to 12
+ok   unusable target '10' asks rather than refuses
+ok   unusable target '10' gets the fixed kindergarten-to-grade-8 question and chips, never 9 to 12
+ok   unusable target '12' asks rather than refuses
+ok   unusable target '12' gets the fixed kindergarten-to-grade-8 question and chips, never 9 to 12
+ok   unusable target '13' asks rather than refuses
+ok   unusable target '13' gets the fixed kindergarten-to-grade-8 question and chips, never 9 to 12
+ok   unusable target '0' asks rather than refuses
+ok   unusable target '0' gets the fixed kindergarten-to-grade-8 question and chips, never 9 to 12
+ok   unusable target 'banana' asks rather than refuses
+ok   unusable target 'banana' gets the fixed kindergarten-to-grade-8 question and chips, never 9 to 12
+ok   7853 target 'Grade 2' on a grade 3 article is levelled for '2'
+ok   7853 target '1' on a grade 3 article is levelled for '1'
+ok   7853 target 'first grade' on a grade 3 article is levelled for '1'
+ok   7853 target 'K' on a grade 3 article is refused with the reason and the allowed chips
+ok   7853 target 'Kindergarten' on a grade 3 article is refused with the reason and the allowed chips
+ok   7853 target '3' on a grade 3 article is refused with the reason and the allowed chips
+ok   7853 target 'Grade 4' on a grade 3 article is refused with the reason and the allowed chips
+ok   7853 target '8th grade' on a grade 3 article is refused with the reason and the allowed chips
+ok   7853 an article for 'K' has nothing lower: a fixed reply, no leveller call
+ok   7853 an article for '1' has nothing lower: a fixed reply, no leveller call
+ok   7853 an article for 'no grade' has nothing lower: a fixed reply, no leveller call
+ok   7853 chat targets are grades 1 to 8, the same rule as /level-content
+ok   resolve_target: K to 8 resolve, 0 and 9 to 12 do not
+ok   a truncated article is levelled with a visible notice
+ok   a page with no article is refused honestly and nothing is rewritten
+ok   an article card without a source (digest Article text) still levels
+ok   an article with too little reading text says so in a fixed reply, not 'no article on this page'
+ok   a page with no text at all is still 'no article', not 'too little text'
+ok   7853 target options are empty for an unknown grade, K and grade 1
+ok   7853 options for grade 5 are one or two grades down: ['3', '4']
+ok   7853 options for grade 4/5 are one or two grades down: ['2', '3']
+ok   7853 options for grade 2 are one or two grades down: ['1']
+ok   7853 options for grade 3 are one or two grades down: ['1', '2']
+ok   7853 options for grade 7 are one or two grades down: ['5', '6']
+ok   7853 options for grade 8 are one or two grades down: ['6', '7']
+ok   7853 no option is ever the article's grade, above it, or three or more below
+ok   the level tool takes grade and nothing else to decide the level (no direction in its schema)
+ok   the level tool's description no longer teaches the model an easier/harder argument
+ok   grade-5 asks one grade question with one or two grades down, never its own grade
+ok   a stray direction argument changes nothing: the same one question and options
+ok   7853 grade-2 asks with grade 1 only
+ok   each Grade chip resumes the leveller with its number
+ok   two-grade article offers one or two grades below the lower one
+ok   paragraph blocks rebuild the article byte for byte
+ok   headings and image markers are not counted as paragraphs
+ok   the paragraphs a request names are read from its words
+ok   revising one paragraph changes only that block; every other block and separator is byte-identical
+ok   the revision keeps the image and reaches the teacher as a levelled_article card
+ok   a revision that drops a curriculum term from the changed paragraph is flagged, not hidden
+ok   the revise call names the grade and sends only that paragraph as content
+ok   a request that names no paragraph changes nothing and starts no card
+ok   the tool revises by ref: a new ref, its source kept for the next edit, and only paragraph 1 changed
+ok   an unknown revise_ref is an honest error, never a fresh rewritelevel_article engine raised
+Traceback (most recent call last):
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/src/core/tools/level_article.py", line 359, in run
+    result = await level_article(article, target, emit=emit, notice=notice, emit_end=False,
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+                            definitions=(await asyncio.to_thread(curriculum_definitions, article.article_id)) if _glossary_on() else None)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/tests/core/check_level_grade.py", line 939, in level_raises_after_spend
+    raise RuntimeError("unexpected")
+RuntimeError: unexpected
+grade_answers engine raised
+Traceback (most recent call last):
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/src/core/tools/grade_answers.py", line 144, in run
+    outcome = await grade_answers(question, rows, emit=emit, usage=usage)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/tests/core/check_level_grade.py", line 972, in grade_raises_after_spend
+    raise RuntimeError("unexpected")
+RuntimeError: unexpected
+
+ok   a levelled article keeps its Markdown beside its ref, so a later turn can revise part of it
+ok   the change record counts terms kept, names the missing ones, and counts words and sentences
+ok   the change record's formula grade change is the signed source-minus-rewrite move, and None without both readings
+ok   the record line never lets an unchecked rewrite claim every fact was kept
+ok   a revision's record covers only the changed paragraphs
+ok   the tool result for a revision carries the change record the model can quote
+ok   level spec offers revise_ref with an instruction
+ok   a levelled article's source survives the thread store, so the next turn can revise it
+ok   grade wire has the POST /grade shape
+ok   no verdict or feedback key survives onto the wire
+ok   a returned id carries its idea
+ok   a missing id is ungraded, not defaulted
+ok   review uses the main model, kept prompt, no temperature
+ok   review turns thinking off (measured: same output, 17-19% faster)
+ok   45 answers go in three calls of at most 20, each retried once when unreadable
+ok   a failed model call answers 502 with success false
+ok   the deploy middleware's user_id stamp is accepted: 200, same grades (B7, rag 82c6f04)
+ok   a request still carrying the old answerKey/criteria/feedbackOnly/classroomGrade fields is accepted and unaffected by them (gradingClient.ts predates checkpoint 6)
+ok   an empty answer list is a 422
+ok   21 answers is a 422
+ok   duplicate ids are a 422
+ok   grade spec names itself and requires only the question
+ok   answers on a grading page route to the page action in Agent mode
+ok   in Plan mode it describes the page action instead
+ok   no answers and no grading page is an error
+ok   reviewed answers stream as one artifact
+ok   artifact.end carries the ref and the POST /grade-shaped data
+ok   the model gets how many were reviewed, never a verdict or feedback to re-list
+ok   the grade spec scopes the tool to answers students wrote, never scores or report comments
+ok   M1: a question over its cap is a 422
+ok   M1: an answer over 4,000 characters is a 422
+ok   M1: the response reports usage and cost for the daily cap
+ok   M1: the chat door applies the same answer cap
+ok   M3: a forged delimiter stays inside the child's own JSON item
+ok   M3: a marker appears only inside JSON-encoded data, never as framing
+ok   M3: an id given twice in the reply is left unread, the other kept
+ok   H2: an article past the section cap is refused honestly with no model call and nothing emitted
+ok   H2: the output budget is checked before any model call
+ok   H2: whole-article and section calls carry their own token caps
+ok   H2: the tool says too long plainly, without offering to try again
+ok   M4: the title is escaped inside its attribute
+ok   M4: a closing tag in the body cannot end the article block
+ok   M4: the untrusted-content rule sits right before the article block
+ok   M4: the untrusted-content rule is on the leak screen
+ok   stream: the tool asks the engine to leave the end to it
+ok   stream: the tool sends artifact.end with the ref and payload, then adapted_content
+ok   stream: status, artifact.start, deltas, artifact.end, then adapted_content last
+ok   stream: the text arrives in many pieces and equals the final article, with no replace
+ok   stream: artifact.end carries the adapted_content payload
+ok   stream: a discarded refusal is taken back with replace, then the retry streams
+ok   stream: a fenced reply is corrected by a final replace to the cleaned article
+ok   stream: raw HTML never streams and never reaches adapted_content
+ok   stream: sections written in parallel still stream in order, with no replace
+ok   sizes: the default keeps a short article whole
+ok   sizes: a latency arm can split a short article into parallel sections
+ok   sizes: a split short article still streams in order and equals the final article
+ok   stream: a failure after text was shown ends the artifact as incomplete, with no adapted_content
+ok   resume: the grade question carries a deterministic continuation for level_article
+ok   resume: values are exactly the offered labels, mapped to grade numbers
+ok   resume: the continuation carries no argument but the picked grade
+ok   resume: a fallback instruction is set for answers that are not an offered label
+ok   resume: the options and resume stay off the wire's shape
+ok   resume: the article's own grade is never a value (grade 5)
+ok   resume: the article's own grade is never a value (grade 4, 5)
+ok   resume: an exact offered label maps through values to target_grade
+ok   resume: 'Grade 3 please' never sets target_grade (goes back to the model)
+ok   resume: 'make it grade 2' never sets target_grade (goes back to the model)
+ok   resume: 'the easiest one' never sets target_grade (goes back to the model)
+ok   resume: an exact offered VALUE ('3') sets target_grade to that grade
+ok   resume: typed 'grade 3' runs level_article with target_grade 3
+ok   resume: typed 'Grade 4' runs level_article with target_grade 4
+ok   resume: typed '3rd' runs level_article with target_grade 3
+ok   resume: typed '4' runs level_article with target_grade 4
+ok   7853 resume: typed 'Grade 5' on a grade 5 article asks again in code with the down-only sentence
+ok   7853 resume: typed '6' on a grade 5 article asks again in code with the down-only sentence
+ok   7853 resume: typed '8' on a grade 5 article asks again in code with the down-only sentence
+ok   7853 resume: typed 'K' on a grade 5 article asks again in code with the down-only sentence
+ok   7853 resume: typed 'Kindergarten' on a grade 5 article asks again in code with the down-only sentence
+ok   7853 resume: typed '1' on a grade 5 article asks again in code with the down-only sentence
+ok   7853 resume: typed '2' on a grade 5 article asks again in code with the down-only sentence
+ok   7853 resume: typed '9' on a grade 5 article asks again in code with the down-only sentence
+ok   7853 resume: typed '13' on a grade 5 article asks again in code with the down-only sentence
+ok   7853 resume: typed 'Grade 12' on a grade 5 article asks again in code with the down-only sentence
+ok   7853 resume: 'Grade 3' can only ever set grade 3 or 4 on a grade 5 article
+ok   7853 resume: 'Grade 4' can only ever set grade 3 or 4 on a grade 5 article
+ok   7853 resume: '3' can only ever set grade 3 or 4 on a grade 5 article
+ok   7853 resume: '4' can only ever set grade 3 or 4 on a grade 5 article
+ok   7853 resume: '5' can only ever set grade 3 or 4 on a grade 5 article
+ok   7853 resume: 'Grade 5' can only ever set grade 3 or 4 on a grade 5 article
+ok   7853 resume: 'grade 3' can only ever set grade 3 or 4 on a grade 5 article
+ok   7853 resume: '12' can only ever set grade 3 or 4 on a grade 5 article
+ok   7853 resume: 'K' can only ever set grade 3 or 4 on a grade 5 article
+ok   7853 resume: '0' can only ever set grade 3 or 4 on a grade 5 article
+ok   a levelled card keeps "grade N"; Kindergarten is said in words
+ok   the engine's own titles name Kindergarten in words unless a caller names one, and the Adjust Text Level door names none
+ok   a reteach draft's levelled article is titled the same way
+ok   resume: running the continuation's args levels the article at the chosen grade
+ok   usage: a failed rewrite reports the tokens it spent
+ok   usage: an engine that raises still reports its partial spend and ends its card incomplete
+ok   usage: a refusal before any model call reports zero spend
+ok   usage: a failed grading call reports the tokens it spent
+ok   usage: a grading engine that raises reports the tokens it spent
+ok   usage: a grading refusal before any model call reports zero spend
+ok   ctx.usage: the engine records into the tool's own Usage, which forwards each call into ctx.usage live
+ok   ctx.usage: data.usage is this tool's own spend, never the turn's running total
+ok   ctx.usage: a tool that made no call reports zero, even on a turn that already spent (no double count)
+ok   the glossary lists each kept curriculum term with its own first definition sentence, by first appearance, and nothing undefined
+ok   the three rows the judge rejected are gone, and the usable row on the same article stays
+ok   a proper name is excluded whatever its definition says, because same-surname rows describe a different personper-grade guidelines override ignored
+per-grade guidelines override ignored
+per-grade guidelines override ignored
+per-grade guidelines override ignored
+
+ok   a definition is cut at its first sentence, but never at an abbreviation's full stop
+ok   no definitions, or no kept term, gives no glossary
+ok   a levelled article with definitions ends with the glossary; the change record counts the rewrite only
+ok   the streamed card is replaced with the text that ends with the glossary
+ok   the glossary is off by default
+ok   the task part says the grade in words and carries no measured number
+ok   every grade EL/TK, K and 1-8 has a record with a measured sentence length, its article counts, and no invented rule
+ok   each band is recorded only where its sample is real: FK at grades 2-8, the publisher's Lexile at K, 2, 3 and 4
+ok   the readability band stays an internal check: no grade's band reaches the prompt
+ok   an override file replaces values by grade id and marks the record content_team
+ok   an override that is not JSON at all is ignored, and the placeholder values stand
+ok   an override that is a JSON list is ignored, and the placeholder values stand
+ok   an override that is a grade this record set does not have is ignored, and the placeholder values stand
+ok   an override that is values that are not an object is ignored, and the placeholder values stand
+ok   removing the unusable override clears the recorded fault
+ok   an unknown grade adds no writing rules
+ok   grade labels are normalised
+ok   the per-grade override file is not the register's per-id area file, which is a different shape
+ok   the leveller's notes carry the target grade's worded rows and the vocabulary-versus-concepts note
+ok   structure and the counted rows never reach the leveller
+ok   concepts and academic terminology are left out for another subject and for no subject
+ok   Kindergarten is named as Kindergarten, EL/TK has no rows, and a mixed class reads at its lowest grade
+ok   a rewrite that copies a rule the leveller read is caught by the leak screen
+ok   question wording reads vocabulary, sentences and concrete-versus-abstract for the class grade, nothing more
+ok   student materials read the class grade's rows, with academic terms for social studies only
+ok   a term matches its text whichever apostrophe either uses
+ok   the change record does not call a term missing because the rewrite curled its apostrophe
+ok   ctx.usage: a rewrite cancelled mid-stream (Stop) leaves its estimated spend in ctx.usage
+ok   ctx.usage: a grading call cancelled mid-stream leaves its estimated spend in ctx.usage
+
+all checks passed

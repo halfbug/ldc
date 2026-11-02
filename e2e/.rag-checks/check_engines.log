@@ -1,0 +1,579 @@
+ok   validate accepts good multiple_choice
+ok   validate rejects broken multiple_choice
+ok   validate accepts good true_false
+ok   validate rejects broken true_false
+ok   validate accepts good open_response
+ok   validate rejects broken open_response
+ok   validate accepts good check_all
+ok   validate rejects broken check_all
+ok   validate accepts good fill_in_the_blank
+ok   validate rejects broken fill_in_the_blank
+ok   validate accepts good matching
+ok   validate rejects broken matching
+ok   validate accepts good sorting
+ok   validate rejects broken sorting
+ok   validate accepts good grouping
+ok   validate rejects broken grouping
+ok   validate accepts good numeric
+ok   validate rejects broken numeric
+ok   validate accepts good drawing
+ok   validate rejects broken drawing
+ok   fill_in_the_blank blank count must match option lists
+ok   true_false answer is a string
+ok   matching exposes pairs
+ok   sorting exposes terms
+ok   grouping exposes groups
+ok   multiple_choice keeps index answer
+ok   plan cycles requested types
+ok   plan varies by default
+ok   a default 5-question set has no check-all item; a 10-question set still does
+ok   a check-all the teacher asks for is always written
+ok   aliases resolve
+ok   JSONL line parser tolerates trailing comma
+ok   compose kind aliases
+ok   adapter strips digest header
+ok   adapter reads grade, id and terms
+ok   adapter returns None without an article
+ok   an article page's HTML reaches the engines as text, one paragraph per <p> with a blank line between, no tags
+ok   a digest without kind source is read as before
+ok   a levelled article keeps its paragraphs on the card, live and stored: no sentence runs into the next
+ok   write_artifact returns a ref
+ok   write_artifact emits artifact.end with the ref
+ok   write_artifact does not return the document to the model
+ok   generate_questions stores the app-shaped set
+ok   generate_questions artifact.end carries data and ref
+ok   a week-long lesson plan starts its card as a weekly plan
+ok   "for this week" in the teacher's own message makes a weekly plan when the brief is empty
+ok   tools refuse plainly with no article
+ok   specs are stable dicts
+ok   page_units: two units, in order, each with its own weeks
+ok   page_units: a single-unit page still parses to one unit, not zero
+ok   page_units: a page with no unit headings parses to no units
+ok   PIN R90: a whole-publication lesson plan pauses to ask, and writes nothing yet
+ok   PIN R90: the question offers exactly the overview/unit-by-unit choice
+ok   PIN R90: the pause carries a deterministic resume back into write_artifact
+ok   NEGATIVE R90: a single unit's own page does not ask (Salman's ruling: same as today)
+ok   NEGATIVE R90: a single week's own page does not ask
+ok   NEGATIVE R90: a single article's own page does not ask
+ok   PIN R90: the 'overview' answer runs write_artifact directly, no second pause
+ok   PIN R90: the 'overview' answer's brief carries no unit-by-unit instruction
+ok   PIN R90: the 'unit-by-unit' answer runs write_artifact directly, no second pause
+ok   PIN R90: the 'unit-by-unit' answer's brief names both units and asks for one section each
+ok   the criterion support check is off unless its flag is set
+ok   a weekly plan reads the whole week's resources, scoped to the teacher's publications
+ok   a week outside the teacher's publications gives the plan no resources
+ok   the weekly plan spec follows the week's articles and says when it uses this week's materials
+ok   a table of contents with no week id gives 0 questions and an honest result, with no card and no model call
+ok   a named week with a real id writes questions from that week's articles
+ok   questions about the article on an article page read no week material
+ok   an exit ticket is not written from a table of contents
+ok   week material is labelled as a week's resources, and every question names its article
+ok   a chosen week_id overrides the page's week, and the plan is written from that week
+ok   a week outside the teacher's publications is an honest error, with no card and no document
+ok   a chosen week with no publications in scope is refused (M2)
+ok   a week the page lists but the index lacks is planned from the page alone, never from the page's own week
+ok   a worksheet or questions for a listed week the index lacks are refused, without sending the model back to the ids
+ok   with no week_id and no week in scope, nothing changes
+ok   questions for a chosen week are written from that week's articles
+ok   questions for a week outside the teacher's publications are refused
+ok   week_id is offered on both tools
+ok   a week label that is the page's own week resolves to the scope's id
+ok   'this week' in the teacher's message uses the page's week, whatever id the model passed
+ok   an id that is not a week on this page is refused with the valid id, and never sent to search
+ok   'Week 2', 'week:2295', 'Week 1: Title' and a title resolve against the page's own week list
+ok   a label that matches more than one week is refused, saying to ask the teacher and not to search
+ok   a label the page cannot resolve lists the page's weeks
+ok   week_id tells the model to omit it for the week on screen and never pass a label or a searched week
+ok   a count nobody gave is not passed, whatever the model passed ('week 1' is not a count): the article sizes the set (ONLINE-7578)
+ok   a count the teacher gives in this message is kept, in digits or words
+ok   a count from an earlier teacher message in the thread is kept
+ok   a bare-number answer and a resumed answer keep their count
+ok   a count stated in the page's own action is kept
+ok   a count with the question type between the number and the noun is kept (B4 cat.AS3)
+ok   a week or chapter number is not a count, and the model's count stays out of a page's ids and limits
+ok   the model's count is kept when the teacher's own words say that number
+ok   ONLINE-7578 rule 5: a number above 15 in the teacher's words reaches the engine as asked, even when the model passed the schema's 15, so the set can say 15 is the most per request
+ok   ONLINE-7578 rule 2: a named 1 or 2 is passed as asked, never raised to the default's minimum of 3
+ok   a count is a number attached to what is counted; a week number is not a count
+ok   a remembered count wins over the model's own guess: it goes to the engine as the usual count, capped there by what the article supports (ONLINE-7578)
+ok   the teacher's own count this turn outranks a remembered one
+ok   a remembered/classroom grade is passed to the engine without being asked
+ok   a remembered Spanish preference makes a second set via the existing revise engine
+ok   the Spanish set's own ref is reported back to the model alongside the English one
+ok   no teacher_context (available=False): no count and no usual, so the article sizes the set
+ok   assumed: the grade Scout used but the teacher never named is recorded
+ok   assumed: the remembered count is recorded, with its source
+ok   assumed: a grade the teacher named is recorded as theirs, and no count or other field is
+ok   a model-guessed count equal to the old default of 5 does not silently beat a remembered usual count
+ok   assumed: the remembered count that won is recorded, with its source
+ok   an empty message still falls back to the remembered count, never a bare model guess
+ok   the teacher's own named count this turn still outranks a remembered usual count
+ok   with nothing remembered, an unnamed model guess is not passed: the article sizes the set
+ok   the noisy page still lets the remembered count win (unchanged by this fix)
+ok   assumed: the remembered count is recorded even though the page's own noise would make the old code think the teacher named it
+ok   a count the teacher actually typed this turn is never recorded as an assumption
+ok   no period length is assumed: a plan names minutes only when the teacher or the page gives them
+ok   a class email adds no note about one student and no placeholders; listed week items are not work done
+ok   a newsletter paragraph is one paragraph of 60–110 words, and a table of contents is described only by its titles
+ok   a weekly plan claims a standard only where an activity teaches it, varies activities, and keeps thin weeks shortQuestion planner failed
+Question planner failed
+
+ok   a weekly plan for a chosen week is titled from the page's Week N line, not the publication
+ok   a weekly plan for the scope's week uses the scope's week name, numbered when the page gives the number
+ok   a week page's own title is used when nothing else names the week
+ok   with no resolvable week the model's title stays
+ok   a weekly assessment the page only mentions is an event, not a file to print or hand out
+ok   a week whose resources list its assessment questions has an assessment; the no-file label is only for one that does not (B1 lrw.LP8)
+ok   a weekly plan names an assessment or material only if the page or the week's resources list it
+ok   a single blank given a flat option list is wrapped, not rejected
+ok   two blanks with one flat option list are still rejected
+ok   the checker judges week material against the week's resources, not missing article text
+ok   app shape round-trips for matching
+ok   app shape round-trips for sorting
+ok   app shape round-trips for grouping
+ok   app shape round-trips for multiple_choice
+ok   app shape round-trips for true_false
+ok   language: Spanish article
+ok   language: English article
+ok   revise passes the stored set and the instruction
+ok   revise stores the revised set under a new ref
+ok   revise keeps the old ref intact
+ok   revise emits artifact.end with the new ref
+ok   revise with an unknown ref is a plain error
+ok   PIN: a topic-generated set (no page article at all) can still be revised, against its own source
+ok   PIN: revising a set never silently switches to whatever article the page shows now
+ok   a ref with no stored source (predating this fix) still falls back to the page, not an error
+ok   PIN: a freshly generated set records its own source article, unprompted
+ok   short table row padded to header width
+ok   well-formed markdown unchanged
+ok   pipes outside tables untouched
+ok   fence wraps once and defuses look-alike tags
+ok   strip_html_tags removes an onerror image
+ok   strip_html_tags keeps comparisons and prose
+ok   streaming filter removes a tag split across chunks
+ok   streaming filter passes plain text through
+ok   clean_strings sanitises nested question fields
+ok   30 questions verified in 2 calls, not 30
+ok   every question gets a verdict
+ok   questions article block keeps the hostile title inside the article
+ok   questions verify block keeps the hostile title inside the article
+ok   compose article block keeps the hostile title inside the article
+ok   fidelity check keeps the hostile title inside the article
+ok   adjudication keeps the hostile title inside the article
+ok   focus and avoid-list cannot start a prompt line or close a block
+ok   document title and brief stay on one line
+ok   a hostile grade stays on one line
+ok   engines cap a 120k-character article at MAX_ARTICLE_CHARS with a visible note
+ok   a cancelled stream is closed
+ok   a cancelled stream records 100 estimated output tokens and the 200-token input estimate
+ok   a normal finish records only Bedrock's numbers, never an estimate as well
+ok   a stalled complete() gives up within two idle timeouts, closing and counting both attempts
+ok   a cancelled complete() closes its stream and counts the input it sent
+ok   write_artifact: a stalled stream ends the tool within the idle timeout
+ok   write_artifact: the card gets one artifact.end marked incomplete
+ok   write_artifact: the error outcome reports the estimated spend
+ok   write_artifact: every stream it opened was closed
+ok   generate_questions: a stalled stream ends the tool within the idle timeout
+ok   generate_questions: the card gets one artifact.end marked incomplete
+ok   generate_questions: the error outcome reports the estimated spend
+ok   generate_questions: every stream it opened was closed
+ok   write_artifact: a transient error midway is retried once from the start
+ok   write_artifact: a transient error midway is retried once from the start: logged with the error's class and code, never its message or the text
+ok   write_artifact: a request error midway is not retried
+ok   write_artifact: a request error midway is not retried: logged with the error's class and code, never its message or the text
+ok   write_artifact: a second transient error ends the tool incomplete
+ok   write_artifact: a second transient error ends the tool incomplete: logged with the error's class and code, never its message or the text
+ok   write_artifact: a cancelled tool leaves its estimated spend in ctx.usage, and the turn reads it
+ok   write_artifact: the tool's own data.usage and the turn's live usage agree, so nothing is counted twice
+ok   generate_questions: a cancelled tool leaves its estimated spend in ctx.usage, and the turn reads it
+ok   generate_questions: the tool's own data.usage and the turn's live usage agree, so nothing is counted twice
+ok   write_artifact: an error outcome with no model call reports zero usage
+ok   generate_questions: an error outcome with no model call reports zero usage
+ok   a report page is page material, not an article
+ok   an article digest is still an article
+ok   page material is labelled as the page on screen, never as an article
+ok   the system prompt forbids refusing inside a document and inventing what a student did
+ok   the family email is for the whole class only; one student's update routes to insights.studentProfile
+ok   newsletter, student feedback and weekly plan are kinds, with aliases
+ok   a week or multi-day ask is a weekly plan; one lesson stays a lesson
+ok   the count a teacher asks for is read from the brief, for counted kinds only
+ok   discussion questions are counted without their sentence frames
+ok   exit ticket items are counted before the answer key
+ok   discussion questions numbered as **1.** are counted too
+ok   the count is read from the teacher's own message when the brief leaves it out
+ok   vocabulary terms are the rows of the first table
+ok   a document with the wrong count is rewritten once, to exactly the count asked
+ok   a lesson plan asked for the week is written as a weekly plan, and says so to the model
+ok   writer refusal: the Q5 refusal is a failed result carrying the writer's reason
+ok   writer refusal: the Q5 refusal's result names no writer and nothing declining
+ok   writer refusal: the Q5 refusal never reaches the card, which is withdrawn
+ok   writer refusal: a declining opening before a substitute document is a failed result carrying the writer's reason
+ok   writer refusal: a declining opening before a substitute document's result names no writer and nothing declining
+ok   writer refusal: a declining opening before a substitute document never reaches the card, which is withdrawn
+ok   writer refusal: the stream stops at the end of the declining line
+ok   writer refusal: a document is written and shown whole ('# Missing Work Reminder\n')
+ok   writer refusal: a document is written and shown whole ('Subject: Missing work\n\nD')
+ok   writer refusal: a document is written and shown whole ("I can't wait to see ever")
+ok   writer refusal: a document is written and shown whole ('Short note.')
+ok   writer refusal: the opening alone decides, case and apostrophes included
+ok   writer refusal: write_artifact returns an error with the reason and no ref
+ok   writer refusal: the turn keeps no card for it, so a reopen shows none
+ok   writer refusal: the code closing says nothing is ready
+ok   looked up: the latest three ok insights results, oldest first, nothing else
+ok   looked up: an item-writing kind and a thread with no lookup take none
+ok   looked up: the class's missing work is in the writer's prompt, fenced, with what it is
+ok   looked up: the fact check reads it as a source too
+ok   looked up: so the note is written, not withdrawn
+ok   looked up: a whole-class reminder about missing work is a family email, and names no student
+ok   looked up: the turn carries the thread's action results to the tools
+ok   page questions are read from the article page and kept out of the article text
+ok   a printed multiple choice question becomes a seed with its choices and key
+ok   a printed true/false question keeps its key
+ok   a printed open response keeps its text and sample answer
+ok   a question number that is not on the page gives no seedcompose stream failed
+instructional frame for resources failed
+
+ok   revising a question keeps its concept, evidence and type
+ok   generate_questions revises the question printed on the page, starting from that question
+ok   a page question number that is not on the page is an error with zero usage
+ok   a revision shows the current set before the model writes a word
+ok   the changed item replaces its original in place, and the untouched item stays
+ok   a revised page question keeps its number on screen
+ok   a revision keeps every section it does not change byte-identical
+ok   a revision replaces, inserts after and deletes whole sections by heading, across stream chunks
+ok   only the changed sections are fact-checked, and a fix lands inside them
+ok   the document as it stands shows at once, before the first edit
+ok   the revision prompt carries the document, the request and the section rules
+ok   an edit that names no section of the document changes nothing and says so
+ok   a replaced section takes its subsections with it, and keeps the kind, the title and the rest
+ok   a revision cut off by a transient error is retried from the document as it was, not from the failed edits
+ok   a revise_ref sends the stored document, its kind and its title to the engine, never a new weekly plan
+ok   a revision comes back under a new ref, the old ref intact, and artifact.end carries the new ref
+ok   a revise_ref this conversation does not have is a plain error
+ok   write_artifact offers revise_ref and instruction
+ok   a day-count change is rewritten whole from the stored document, keeping the kind and the title
+ok   a rewrite fact-checks only the blocks that are new
+ok   edits that leave a section twice are replaced by a whole rewrite
+ok   a change to days, periods, minutes or order is structural; a section edit or a question is not
+ok   a revised document never has a section twice, and its days are in order
+ok   a chosen week that is not the page's is planned from that week alone: no page article, title, terms or week
+ok   a lesson plan and questions for that week carry nothing of the page's article either
+ok   the page's own week still pairs the page's article with its week's material
+ok   'next week', 'last week' and 'previous week' resolve against the page's ordered weeks around its own week
+ok   the first week's 'last week', the last week's 'next week' and a page with no week of its own are asked about
+ok   'this article next week' and 'the last week of the unit' are not a relative week
+ok   'plan next week' with no week_id plans the page's next week, titled for the week it was written from
+ok   'next week' from the page's last week is asked about, never planned as the week on screen
+ok   a plan for the page's own week keeps that week's title
+ok   a plan cites only the publisher's standards, marks one addressed only with the activity that targets it, and says when none are linked
+ok   standard codes are read from a plan's Standards section and inline Standards lines, as plans write them
+ok   a plan citing a code the publisher did not link is rewritten once, naming the code and the listed ones
+ok   a listed code, with or without its state, needs no rewrite
+ok   with no standards linked, any cited code is rewritten away
+ok   'standards aren't linked' where the publisher lists standards becomes the not-a-focus list; with no list it stays
+ok   with no customization the plan request is exactly as before
+ok   inputs are capped and normalised, and SWO's source block is carried unchanged or marked not provided
+ok   a plan that meets the teacher's choices has no problems
+ok   timed steps that do not add up to the teacher's minutes are a problem
+ok   a success criterion not listed word for word, or checked by no item, is a problem
+ok   a standard outside the teacher's selection is a problem
+ok   a consideration with no heading of its own is a problem
+ok   minutes on numbered steps count when a day has no timed headings; a heading's own timed steps count once; 'included above' never
+ok   a weekly plan's minutes and allocated sections are checked day by day
+ok   section minutes come from the teacher's total: they add up exactly, in fives from 40 minutes, and no section is empty
+ok   a lesson plan's own steps carry its minutes: no allocated section is looked for
+ok   a customized plan is requested with the teacher's inputs fenced as data, minutes on its steps and its skeleton
+ok   a reply short of the teacher's choices gets one retry naming the problem, and the retried reply is kept
+ok   a plan still short after the retry says so on the plan, in the form's words
+ok   the teacher's wording never reaches the model: the retry still reads the SC tag
+ok   the Built for line names minutes, criteria and standards, and a source only when SWO sent its state
+ok   the Built for line names the grade the plan was written at when SWO sent one, and none when it did not
+ok   the Built for line says 1 success criterion for one criterion
+ok   the form's inputs set the kind and title and reach the engine; a 2-day brief does not retype the plan
+ok   the form's publication reaches the engine, where it picks the plan's family (ONLINE-7854)
+ok   the ref and artifact.end carry the provenance, with SWO's source block exactly as sent
+ok   without inputs the engine gets no teacher inputs, and the chat plan's provenance names no teacher input (D9)
+ok   no lesson-plan source field is computed in rag
+ok   a form turn with no teacher scope still reads the form's article: its id reaches the plan and its resources
+ok   a customized lesson plan stays a lesson plan whatever its summary message says about days
+ok   a customized lesson plan times its own steps (ONLINE-7854): no allocated sections, Studies Weekly plan or not
+ok   a customized weekly plan keeps the generic template, and says why
+ok   a weekly plan adapting the week's Studies Weekly plans gets the adapt rule; a lesson plan is built on its plan instead
+ok   teacher text, title included, reaches the engine only inside the teacher_inputs fence, its look-alike tags escaped
+ok   the untrusted rule next to the teacher's customization names the teacher_inputs fence
+ok   a fact-check fix never rewrites the teacher's success criteria; the other fixes still apply
+ok   the fixtures below are what the renderer really emits, so a format change reaches these checks
+ok   the many-standards fixture really is over the listing cap, so it exercises the codes-only line
+ok   every code given to the renderer comes back out of what it rendered, through the unit heading and codes line
+ok   unit-level standards are cited only as linked to the unit, in both plan specs
+ok   'not linked' on a unit-level list becomes the unit label with its codes
+ok   unit-level codes labelled as this week's are relabelled to the unit; a real week list keeps its week label
+ok   the week's article titles are read from the publisher's list, in order
+ok   an article counts as covered when the plan names it anywhere, including as left out
+ok   when the week fits its days, a 'not covered' line does not cover an article: the repair places it
+ok   with more articles than the days can hold, naming the ones left out is enough
+ok   an empty 'not covered' line or section is removed
+ok   a weekly plan missing some of the week's articles gets one repair naming them, and the placed plan is kept
+ok   still missing after the repair, the plan says which articles are not covered
+ok   a repair that leaves more articles out is not kept: the draft stays and the note names only its gaps
+ok   a plan that places every article, and a lesson plan, get no coverage repair
+ok   a long linked list shows exactly 5 codes, the ones sharing words with the plan first, then publisher order, and says how many more
+ok   the addressed line is never cut, however long
+ok   a bulleted linked list keeps 5 bullets and adds one 'and N more' bullet; the rest of the plan is untouched
+ok   a linked list of 5 or fewer is left as it is
+ok   the section strings are B2's: its header and the prefixes of a student's misses
+ok   the per-question grade card counts as item-level by its header, or by a student's misses, whichever parts are present
+ok   feedback on a page with item-level results loses the totals-only opener and blank lines, and keeps every other line
+ok   effort and trait praise is cut from item-level feedback: a label clause trimmed, an effort-only sentence dropped
+ok   feedback with item-level results praises only what the page shows, never effort or character
+ok   with no publisher objective in the source, a plan's objectives are headed as Scout's draft, once; a stated one leaves it
+ok   a customized plan marks a selected standard addressed only when an item or check covers it, otherwise builds toward it
+ok   a code both claimed and listed as not a focus loses its claim; the not-a-focus listing and every other claim stay
+ok   a builds-toward line is left alone, and a plan with no contradiction is unchanged
+ok   verb demand rises from recall to explain to compare to evaluate
+ok   an objective whose only related check item asks below its demand is unmet, and that item is the one to rewrite
+ok   a customized plan says plainly when the article cannot support a success criterion, and never invents the missing part
+ok   moving the feedback guidelines into records leaves the student feedback prompt byte-identical
+ok   the student note no longer praises effort nobody described, and changes nothing else (PH-FB-01 vs PH-FB-04)
+ok   each feedback record carries its basis, its question and the text the prompt uses
+ok   each of B2's student lines that names misses is item-level on its own, including the combined form
+ok   a per-question card with nothing graded is still totals only, and a misses prefix needs a Student alias
+ok   student feedback on a page with only totals is a template; with item-level results it names those items
+ok   feedback written from totals alone gets one repair, and the template it returns is kept
+ok   still prose after the repair, the engine writes the template itself: names and scores kept, nothing invented
+ok   a template on a totals-only page, and feedback on a page with item-level results, get no repair
+ok   a customized plan asks for a What changed section only when SWO sent the Studies Weekly plan as text
+ok   a What changed section is removed when the source is absent, empty or not provided, with the sections around it kept
+ok   compose removes a What changed section from a plan with no Studies Weekly plan text, and keeps it with one
+ok   a plan with no readable article text is refused with the stable reason code, and no card is started
+ok   an article whose text is a stub is told apart from no article: its text could not be read, and a topic is offered
+ok   with a Studies Weekly lesson plan in its resources, that plan is offered instead
+ok   a page with no article keeps its own wording and the same reason code
+ok   student feedback on a per-question page comes back without the totals-only opener, recorded in its checks
+ok   a plan whose headings carry the minutes mid-line is read as its real total, not as zero
+ok   that plan no longer tells the teacher its timed sections add up to 0 minutes
+ok   normalising moves only the minutes: a heading that already ends with them is untouched
+ok   the moved heading keeps its own words, and its bold markers, in order
+ok   a step marked as already included above is still not counted twice
+ok   the chat path carries no summary ceiling, and the record says why it was withdrawn
+ok   both summary records carry a basis and the content question they answer
+ok   the question prompt is point 1's scope rule (now carrying the third-party decline and the creation exception) plus the unchanged question guidelines
+ok   the default type mix is the same ten types, in the same order
+ok   the mix is values on a record, so the content team can replace the list itself and not only wording
+ok   an override that sends a new list replaces the mix, and one that sends neither text nor values fails the check
+ok   the lesson-plan spec is ONLINE-7854's, byte for byte
+ok   the section-order record names the families, each with its code-built skeleton
+ok   each moved clause is in the spec exactly as the record holds it
+ok   the section-order record says in its basis that the old sections were not the publisher's structure
+ok   the compose system prompt is point 1's scope rule (now carrying the third-party decline and the creation exception) plus point 19's figure-fidelity sentence, plus ONLINE-7507's student-wording rule
+ok   moving the week shape into a record leaves the weekly spec byte-identical
+ok   the customized plan still states its precedence, from the record
+ok   the craft record names what it rests on, and says it is the line the rest sit on top of
+ok   an override the reader can use is applied, and records no fault
+ok   a file that is not JSON leaves the placeholder wording in force instead of raising
+ok   a file in the other reader's shape leaves the placeholder wording in force
+ok   an override with no source is not applied silently
+ok   each ignored file is logged as an error naming the file, for us and not for the teacher
+ok   a clean run says nothing about faults, and a fallen-back run names the file in its row's details
+ok   the one criterion that really outran its article is still asked about
+ok   the criterion that produced the false shortfall is never asked about: an article naming four kinds of cloud
+       over-satisfies a criterion asking for three
+ok   the pedantic fossils case is out too, and most criteria cost no call at all
+ok   a criterion asking for a reason is asked about however it is worded
+ok   a criterion wanting each actor's own part is asked about even with no reason word in it
+ok   the prompt tells the model that asking for less than the article gives is not a shortfall
+ok   with the flag off nothing is asked and nothing is recorded
+ok   a criterion the article fully supports costs one call and changes nothing
+ok   a criterion the article only partly supports gets the honesty line, named in the repair
+ok   a plan that already says it is not asked to say it again
+ok   a rewrite that comes back still silent about what is missing is not kept
+ok   a reply the engine cannot read leaves the plan alone and says so, rather than raising
+ok   the honesty-line rule reaches the model from the record, word for word
+ok   the verb patterns compile from the record with their sources unchanged
+ok   the labels are the same four, including the level nothing matches
+ok   the mapping answers what it answered before the move, phrase by phrase
+ok   both records carry a basis that names what was measured, and their content question
+ok   the grading prompt no longer asks for a verdict, confidence, reason, evidence or feedback
+ok   ONLINE-7512: every answer's output schema carries only idea and look_first
+ok   ONLINE-7512/D49: a concerning answer is told to carry no idea
+ok   its basis says D12 is decided, unimplemented, and not measurable from anything we hold
+ok   no praise-or-extension instruction exists in the grading prompt, which is what the record says
+ok   a record that says it is not in force is in none of the prompts we send
+ok   the records that ARE in force do reach a prompt, so the check above is not passing on silence
+ok   PH-QS-02 is recorded as designed, measured and never in force, with its plans and its numbers
+ok   no DOK plan reaches the question engine today, which is what that record claims
+ok   craft ownership still reaches the compose system prompt, from its own area
+ok   the custom-plan precedence still reaches the customization rules, from the lesson-plan area
+ok   the weekly module is now the week and nothing else
+ok   ONLINE-7510 (QA SC04-01): which-students-need-help-most always calls insights.students, even when asked from a page (e.g. the gradebook) that could answer it directly
+ok   ONLINE-7511 (Salman, 2026-09-28): a statement of teaching context is answered with a search and an offer, never a built set (ONLINE-7588: trigger in the core, follow-up in offer_match's description, nothing lost)
+ok   ONLINE-7511 offer in code: the rule hands the offer to offer_match and carries none of its wording
+ok   ONLINE-7511 (Salman, 2026-09-28): the offer flow never builds a plan with an invented length (ONLINE-7588: in offer_match's description, read before the next turn's call)
+ok   ONLINE-7511 (Salman, 2026-09-28): neither build tool's description invites a bare statement of context
+ok   ONLINE-7532: no grant to write codes from general knowledge; an outside framework is declined for the catalogue
+ok   ONLINE-7513 revert: standards facts come only from Studies Weekly links; suggestions only when asked
+ok   the constitution's SCOPE_RULE now declines third-party sources and carries the labelled creation-with-no-match exception, both reachable from the shared constant
+ok   ONLINE-7515: pacing is quoted from its actions (core); prep packs come from prepare_lesson (its description)
+ok   ONLINE-7511 (Salman, 2026-09-28): prepare_lesson is never told to invent a length
+ok   ONLINE-7532 v2: a lookup reply never offers AI-suggested material of any kind unasked
+ok   ONLINE-7515: page figures never stand in for pacing.where on where a class is
+ok   ONLINE-7517: standards results and coverage beyond the page call insights.standards, never as a grade
+ok   ONLINE-7517 (Salman, 2026-09-28): a thin figure is never hidden, only marked little evidence
+ok   ONLINE-7517 (Salman, 2026-09-28): an AI-added topic match must be labelled matched by AI
+ok   ONLINE-7507 dup-reply: the scope procedure says not to reply before the lookup returns, and to send exactly one decline, never both wordings
+ok   dev2 round 3 B2: a student search is answered from what the page says about them, not refused
+ok   QA 2026-09-30: Scout knows the teacher sees real names, and looks again when an ask is repeated
+ok   ONLINE-7511 loose ends: a well-shaped offer is not mistaken for a recitation of the constitution
+ok   ONLINE-7588 phase 2 fix: C25.004-005 are in the core and not in get_article_resources' description
+ok   ONLINE-7588 Phase 2: C3 deleted with its reason recorded
+ok   ONLINE-7588 Phase 2: C6 memory reading moved to the teacher block
+ok   ONLINE-7588 Phase 2: C6.008 forget check moved to the teacher block
+ok   ONLINE-7588 Phase 2: C10.005 moved to the teacher block ('below' rewritten 'above', recorded)
+ok   ONLINE-7588 Phase 2: C12 duplicate of level_article's description
+ok   ONLINE-7588 Phase 2: C13 roster deleted as a repeat of the descriptions
+ok   ONLINE-7588 Phase 2: C14 moved to ask_user's description
+ok   ONLINE-7588 Phase 2: C15 moved to write_artifact's description
+ok   ONLINE-7588 Phase 2: C16.002 moved to level_article's description
+ok   ONLINE-7588 Phase 2: C17.003 duplicate of prepare_lesson's description
+ok   ONLINE-7588 Phase 2: C25.002 moved to search_curriculum's description
+ok   ONLINE-7588 Phase 2: C25.003 moved to build_teaching_set's description
+ok   ONLINE-7588 Phase 2: C26.003-004 moved to offer_match's description
+ok   ONLINE-7588 Phase 2: C29 moved to the Agent acting module
+ok   ONLINE-7588 Phase 2: C32 moved to the Plan acting module; its mode-free sentences to both modules
+ok   the constitution is point 1's scope rule (withdrawing the old two-kinds-of-knowledge grant) plus the unchanged craft ownership text
+ok   ONLINE-7507 AC7: the constitution carries every PH-SW record's wording
+ok   R78: the 'already checked' claim is not part of the shared constant engines import
+ok   ONLINE-7588 Phase 2: chat's core no longer carries it, and the registry records the deletion with its words
+ok   R78: the v2 engines that sit behind chat's decline gate carry no claim only chat could make
+ok   the record holds the whole paragraph, not a fragment of it
+ok   its basis separates the decision from the rule that is enforced elsewhere
+ok   a rule that is not in force cannot be resolved for a prompt, by name or by joining the module
+ok   the rules that ARE in force still resolve, so the check above is not passing on an empty resolver
+ok   a withdrawn rule is still readable on its own record, which is where its status is visible
+ok   PH-FB-04 records its measurement, its control, and that the policy is still the content team's
+ok   the rule it was made consistent with is still the one it cites, and both still reach the model
+ok   summary is not a kind the engine knows
+ok   and the tool offers one nowhere in its spec: not in the kind enum, not in the description
+ok   the rules that served only that kind are gone with it
+ok   both summary records are readable and neither is in force, so the history survives the deletion
+ok   neither record can reach a prompt now that both are withdrawn
+ok   with the flag off the engine is given no terms and the prompt is unchanged
+ok   with the flag on it is given only the terms the article actually prints
+ok   a split file narrows it to the engine's own half, and the held-out half never reaches the prompt
+ok   an unreadable split file falls back to every present term rather than to none
+ok   the prompt offers the terms as context and asks for no more of them
+ok   a question naming a given term records it, in the question's own words not the article's
+ok   a term named only in a choice or an answer still counts, since the student reads those too
+ok   a question naming none of them records none, rather than nothing
+ok   it reads the question, never the article: a term only the article uses is not recorded
+ok   the question-terms flag says it is untested rather than measured, and where to read why
+ok   and it is still off, so nothing about this ships
+ok   the question engine no longer claims its terms are a week-scoped list
+ok   an artifact carries the guidelines version in its stored payload and on its card
+ok   the card records which given terms the question names, and which it was given
+ok   a list of standards travels as its count, never as the codes
+ok   a problem sentence travels as its word count, so a gate can see there was one without shipping the text
+ok   a sentence travels as its word count, never as the sentence
+ok   short verdicts stay readable and counts pass through
+ok   no teaching material reaches the card: no standard code, no objective, no problem sentence
+ok   the summary is bounded whatever the engine records
+ok   with the rule off the card says nothing about it
+ok   a rule that ran and changed nothing is on the card as exactly that, not as silence
+ok   the counts say what it found, what it rewrote and what it still found
+ok   a repair the model could not do is named rather than counted as a clean run
+ok   the objectives themselves stay off the card, which the teacher's browser receives
+ok   the checks a plan ran are on its card, where a measurement can read them
+ok   and the material still does not travel with them
+ok   the card says what the engine had to work from, so a rate can be split by page kind before it is read
+ok   it is counts of the inputs, never the inputs
+ok   with the flag off nothing is checked or called
+ok   with the flag on, one repair rewrites only the item below its objective's demand, and the plan is re-checked
+ok   compose drops a claim the plan contradicts and records it
+ok   a named section asked for at the start is moved directly after the title, with nothing else changed
+ok   before or after another section places it next to that section; an ask with no place, or a missing section, is left to the model
+ok   revise moves the named section without a model call and says what moved
+ok   a section already where the teacher asked is reported as already there, never as moved
+ok   a revision that comes back the same is reported as not changed, never as done
+ok   a lesson plan made in chat carries provenance: its kind, the accepted standards only, and the article as its source
+ok   its objective is the plan's own, marked as Scout's draft when the plan marks it so
+ok   a plan that states no objective gets none in its provenance, never one made up
+ok   a weekly plan's Built for is its week's goal, not Day 1's objective, and not marked drafted by Day 1's draft
+ok   Built for carries no markdown asterisks
+ok   a goal line Scout drafted itself is still marked as Scout's draft
+ok   a weekly plan's goal comes from its own line, never prose that mentions a week's goal
+ok   a resource file name is never read as a standard code
+ok   compose marks a plan's objectives as Scout's draft when its material states none
+ok   compose removes effort praise from item-level feedback and records it
+ok   an item still unanswerable from the article after repair is gated out of delivery, not padded in
+ok   the repair round got a real chance at it first (this is a gate on the post-repair verdict, not a skip)
+ok   the deterministic line itself: exactly the answerable question reaches the card, nothing padded in
+ok   the repair message dropped the off-article focus rather than repeating it
+ok   required_topic: the repair keeps the focus instead of re-aiming at the article
+ok   required_topic: ...so an item the article cannot answer is left out, not replaced
+ok   required_topic: the verifier is asked whether the question is about the teacher's topic
+ok   required_topic: a well-grounded question about a different subject is left out, not delivered
+ok   required_topic: a question the verifier calls on-topic is delivered untouched
+ok   no topic given: the verifier is never asked about one
+ok   no topic given: a stray on_topic verdict is ignored, not acted on
+ok   R104: the chat model's constitution carries the grading caveat rule
+ok   R104/7512-cp6: the rule says Scout doesn't grade or suggest marks, offers read-first and grouping, and never volunteers
+ok   R104: the rule does not refuse — it offers what Scout does instead
+ok   7512-cp6: no grading text still promises a grade or asks for a hand-check of Scout's grades
+ok   R104: the suggested-grades card the teacher sees carries the caveat
+ok   R104: the grade_answers tool result tells the chat model to say it
+ok   7512-cp6: grade_answers' spec no longer offers a grade, answer key or criteria
+ok   R104: the grade engine's own JSON-only prompt is deliberately unchanged
+ok   7511: no article on the page writes from the search's first article
+ok   7511: a named article from the search is used
+ok   7511: an id no search in this conversation returned is refused, nothing written
+ok   7511: a found article outside the teacher's publications now is refused
+ok   7511: with no search in the conversation the page refusal is unchanged
+ok   7767: ...and a topic the teacher named is sent to an article search, not to opening a page
+ok   7767: an activity found by the search is never written from (['count', 'types'])
+ok   7767: ...the error steers to an article search or ask_user, not to opening a page (['count', 'types'])
+ok   7767: an activity found by the search is never written from (['article_id', 'count', 'types'])
+ok   7767: ...the error steers to an article search or ask_user, not to opening a page (['article_id', 'count', 'types'])
+ok   7767: with an activity ranked first, the found article is written from
+ok   7767 r4: a drawing from a searched article lists that article's own pictures
+ok   7767 r4: ...and a set with no drawing and no picture ask reads no pictures
+ok   7767 r4: ...an article whose pictures can't be read is still written from, with none
+ok   7767 r2: the parts a teacher listed are read from the focus and from the message
+ok   7767 r2: an article naming none of the asked parts is refused when a found one names more
+ok   7767 r2: ...and the article naming all of them is written from, with no coverage note
+ok   7767 r5: ...and the writer is told to name every one of them
+ok   7767 r5: a question naming fewer of them than the article covers says which it leaves out
+ok   7767 r5: ...and Scout is told not to claim it covers them all
+ok   7767 r2: when no found article names any part, the model searches again with only the topic
+ok   7767 r2: ...once: a second miss tells the teacher plainly, nothing written
+ok   7767 r2: an article naming only some parts is written from, kept to those parts
+ok   7767 r2: ...and its notes say plainly which parts it covers and which it leaves out
+ok   7767 r2: one question on the listed parts is planned on every idea naming one, and only those
+ok   7767 r2: ...and with one or no idea naming them the planned slot is unchanged
+ok   Q1: a draft's Article block is written from by its own id, with no search
+ok   Q1: and at that article's own grade from the index, as on an article page (ONLINE-7522)
+ok   Q1: the block's id wins over a search's first result with another article
+ok   Q1: the block's id passed as article_id is the same article
+ok   Q1: another article the search found, named on purpose, is still the search's
+ok   Q1: a block id outside the teacher's publications is refused, and its text is never read
+ok   Q1: two Article blocks and no id named: ask which, naming both, nothing written
+ok   Q1: ...and the one the teacher picks is written from
+ok   Q1: a block named by title alone gives no article: the page refusal stands, nothing written
+ok   Q1: a form that names no article keeps the original refusal
+ok   7511: the article on the page still wins
+ok   SCG-05: a searched article named on an article page is the one written from, not the page's
+ok   SCG-05: the set's title names the searched article
+ok   SCG-05: a prefixed article id names the same searched article
+ok   SCG-05: an unresolvable article id on an article page is refused, never the page's article instead
+ok   SCG-05: with no search in the conversation a named article is refused, not swapped for the page's
+ok   SCG-05: the page's own article id writes from the page
+ok   SCG-05: no article_id on an article page writes from the page
+ok   offer in code: full data renders the whole template, ids never printed
+ok   offer in code: a part the data lacks is left out, never guessed
+ok   offer in code: minutes the teacher already gave are used, not asked again
+ok   offer in code: on another publication's article, the offer opens with where it is not
+ok   offer in code: no search this turn, an earlier turn's search, or a result that is not there offers nothing
+ok   offer in code: the reply screen passes every rendered offer unchanged
+ok   offer in code: "no, quiz questions" after an offer of R2 writes from R2, not the search's first article
+ok   offer in code: before any offer the latest found article is the search's first
+
+ALL OK

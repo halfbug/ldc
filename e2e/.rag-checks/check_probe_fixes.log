@@ -1,0 +1,43 @@
+ok   P3: a fresh request with every idea already asked gets the usual 8, not the floor of 3
+ok   P3: no 'rather than your usual' note when the usual was written
+ok   P3: the questions coming back say so once, with what the earlier sets asked
+ok   P3: with no usual, a fresh request is the article's full capacity (15 of 22 ideas)
+ok   P3: a follow-up is still sized from the ideas not yet asked (here the floor, 3)
+ok   P3: the ideas not yet asked come first, then ideas come back
+ok   P3: a question coming back never takes the type an earlier set asked its idea in
+ok   P3: with no earlier sets, a fresh request and a follow-up are sized alike, as before
+ok   P3: a usual the article cannot fill and a question coming back: what the article supports is said once
+ok   P3: ...and with earlier sets, the second note keeps what they asked
+ok   P3: a note alone still says what the article supports
+ok   P3: the reply says each note once
+ok   P2: the ask decides new set, add to this set, or edit
+ok   P2: with no message (a resumed turn), the model's instruction decides
+ok   P2: the teacher's message outranks the model's instruction
+ok   P2: 'another 15' and 'five more' name their counts
+ok   P2: 'Write another 15.' with no count in the call is a named 15
+ok   P2: 'another 30' is named as 30, so the engine writes 15 with the cap's note
+ok   P2: 'Write another 15.' with revise_ref is written by the planner, not revise
+ok   P2: ...as a follow-up of 15, from the set's own article, with set one as exclusions
+ok   P2: ...and the new set is its own set: set one is unchanged, the new ref holds only the new questions
+ok   P2: ...at the grade set one was written at
+ok   P2: an edit still goes to revise
+ok   P2: 'add 2 more to this set' on a 14-question set goes through the planner with room for 1
+ok   P2: ...the same set grows to the cap: its 14 questions kept, 1 added
+ok   P2: ...with the cap's note first, then the planner's, on the card and the ref
+ok   P2: ...on one card: the engine's own card events are not sent
+ok   P2: a set already at 15 takes no more; the teacher is offered a new set
+ok   P2: a revision never grows a set past 15; the set says what was left out
+ok   P2: a revision within the cap is as before, with no note
+ok   P5: the five stubs are replaced by the newest set for this article, every question with its text
+ok   P5: the other arguments go as given
+ok   P5: with no set made here, the action is refused with what to do
+ok   P5: a set made for another article is not sent in their place
+ok   P5: questions found by their text in a set go as the stored questions (a teacher's pick of two)
+ok   P5: a question not in any set made here is replaced by the newest set
+ok   P5: a list holding a set's ref sends that set's questions, not a list inside a list
+ok   P5: a set's ref is expanded as before
+ok   P5: no questions argument stays no questions argument
+ok   P5: words in place of questions are left for the page to answer
+ok   P5: on a page showing no article, the newest set is sent
+
+all passed

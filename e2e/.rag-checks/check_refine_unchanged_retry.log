@@ -1,0 +1,29 @@
+PASS the section editor's no edit at all is marked no_edit and counts as unchanged
+PASS the section editor's an edit naming no section of the document is marked no_edit and counts as unchanged
+PASS same: an unchanged revision is tried once more, whole, with the firmer instruction
+PASS same: the retry's change is the result, marked retried
+PASS same: unchanged again, nothing more is tried (one retry, no loop)
+PASS same: and the result is still the unchanged text, for the tool to withdraw
+PASS no_edit: an unchanged revision is tried once more, whole, with the firmer instruction
+PASS no_edit: the retry's change is the result, marked retried
+PASS no_edit: unchanged again, nothing more is tried (one retry, no loop)
+PASS no_edit: and the result is still the unchanged text, for the tool to withdraw
+PASS a retry that loses most of the document is not ok, so the tool withdraws it and the original stands
+PASS error: not an unchanged revision, so no retry
+PASS place: not an unchanged revision, so no retry
+PASS changed: not an unchanged revision, so no retry
+PASS without retry_unchanged (a one-document revise) an unchanged result is not retried
+PASS a shorter ask keeps its own one retry and rule, not a second one for unchanged
+PASS the same words with other spacing count as unchanged; one changed word does not
+PASS set refine: the unchanged worksheet is retried once with the one-document words and the firmer rule
+PASS set refine: the other parts are not retried
+PASS set refine: one card per part and one pack header, no duplicate or withdrawn card
+PASS set refine: the worksheet is changed in place under its title
+PASS set refine: the reply names all three as changed and nothing as kept
+PASS set refine: unchanged twice, the worksheet is tried exactly twice
+PASS set refine: unchanged twice, the earlier worksheet stands and the reply says so
+PASS a REPLACE of Question 1 that drops its question mark is skipped as unmatched
+PASS a REPLACE of Question 1 that still asks is applied
+PASS a section that never asked, and a non-question heading, are not blocked
+
+all refine unchanged-retry checks passed

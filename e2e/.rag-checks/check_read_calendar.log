@@ -1,0 +1,46 @@
+ok   valid rows come back, sorted by date
+ok   a row carries exactly starts_on, ends_on, kind and title
+ok   the stated first and last day are returned
+ok   nothing is flagged for a clean reading
+ok   the wire holds rows, the stated days, notes, model and usage only
+ok   one model call, with each page sent as an image block and never as text
+ok   the school year and the course title are sent as context
+ok   the prompt treats page text as data
+ok   a reversed range is dropped and named (known positive)
+ok   a date outside the school year is dropped and named (known positive)
+ok   a range that overlaps the year is cut to it (known negative for the screen)
+ok   an impossible date, a non-ISO date, an unknown kind and a blank title are each dropped
+ok   a title loses tags and control characters
+ok   pd_day and substitute are kept as kinds
+ok   the prompt names pd_day and substitute
+ok   a title is cut to the cap
+ok   the same row twice is one row
+ok   a stated day outside the year, or not a date, is not returned
+ok   the model's own notes are kept, cleaned
+ok   no rows and no notes says nothing was found
+ok   garbage text is a failure, not an empty success (known positive)
+ok   the second try is a new request, not a replay
+ok   a fenced reply with a trailing comma still reads (known negative for the failure)
+ok   a garbage first reply is retried once and the second is used
+ok   a model error is a failure with the fixed message
+ok   a good body is accepted
+ok   not an object is refused
+ok   no images is refused
+ok   seven pages is refused
+ok   a page that is not an image is refused
+ok   a webp page is refused
+ok   a page over the cap is refused
+ok   a page with bad base64 is refused
+ok   no first day is refused
+ok   an impossible last day is refused
+ok   a reversed year is refused
+ok   a ten-year span is refused
+ok   a long title is refused
+ok   a refused body is a 422 with no rows
+ok   a good body is a 200 with rows
+ok   a reply that cannot be read is a 502
+ok   the route has its own throttle kind
+ok   the kind has limits and a noun
+ok   the route shares grading's in-flight pool and has a body cap that holds six pages
+
+0 failed

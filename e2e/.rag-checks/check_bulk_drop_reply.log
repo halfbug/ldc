@@ -1,0 +1,18 @@
+ok   answered without the model: "Remove all students from this class"
+ok   answered without the model: "Drop everyone except Rose Thompson"
+ok   answered without the model: "drop all but Sam"
+ok   answered without the model: "Please remove the whole class"
+ok   answered without the model: "Unenroll every student"
+ok   answered without the model: "kick out all the kids"
+ok   not a bulk drop: "Drop Rose Thompson from pretty class"
+ok   not a bulk drop: "Restore everyone"
+ok   not a bulk drop: "How do I remove a student?"
+ok   not a bulk drop: "Assign this to all students"
+ok   not a bulk drop: "Show me everyone who is missing work"
+ok   not a bulk drop: "Remove all of them from the teaching set"
+ok   not a bulk drop: "Delete all of my drafts"
+ok   not a bulk drop: "Remove everyone's names from the letter"
+ok   the reply points to the People page and says it isn't done at once
+ok   it is the first fixed reply the runtime tries, so it runs before any model call
+
+OK

@@ -1,0 +1,10 @@
+ok   a lesson plan with the form open is refused, and the refusal names the form's Generate
+ok   ...and it forbids saying the plan is on the form
+ok   a weekly plan is refused too, even when only setTime is offered (Generate withdrawn by an older page)
+ok   the kind's alias ('plan') is refused the same way
+ok   the form is detected by its own actions only
+ok   a worksheet asked for on the form is not refused by this guard
+ok   a lesson plan on a page without the form is not refused by this guard
+ok   the form's own compose turn (custom) is exempt, and the guard runs before the article is read
+
+passed: 0 failure(s)

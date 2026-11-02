@@ -1,0 +1,5 @@
+node_modules/
+results/
+.env
+.rag-head/
+swo-3.0

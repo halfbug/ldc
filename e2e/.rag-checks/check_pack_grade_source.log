@@ -1,0 +1,42 @@
+PASS no grade named, the article's one grade 5: the pack is written at 5, not the usual 3
+PASS its header says where grade 5 came from, never 'your usual'
+PASS no part's brief calls grade 5 the teacher's usual
+PASS a grade the teacher names wins over the article's grade
+PASS a grade fixed in the teacher's shortcut wins over the article's grade
+PASS with no class or remembered grade, the article's one grade is used without asking
+PASS a publication that spans grades (no one index grade) falls back to the usual grade, said as one
+PASS the page's own grade (the first of the range) is never used as the pack's grade
+PASS no index grade but the page shows one grade 4: the pack is written at 4, not the usual 3
+PASS a range with no class or remembered grade asks the grade once, nothing written
+PASS a pack for a week's chosen article on the table of contents is written at its one grade 5
+PASS grade_token('K') is 'K'
+PASS grade_token('0') is 'K'
+PASS grade_token('Kindergarten') is 'K'
+PASS grade_token('**Kindergarten**') is 'K'
+PASS grade_token('Grade 1') is '1'
+PASS grade_token('4') is '4'
+PASS grade_token(4) is '4'
+PASS grade_token('4th grade') is '4'
+PASS grade_token("Grade 5 (the article's grade)") is '5'
+PASS grade_token('grades 3-5') is None
+PASS grade_token('') is None
+PASS grade_token(None) is None
+PASS a grade line rewritten as '**Grade:** Grade 1' is put back to Kindergarten, the rest of the change kept
+PASS a grade line rewritten as '**Grade**: 1' is put back to Kindergarten, the rest of the change kept
+PASS a grade line rewritten as 'Grade: Grade 1' is put back to Kindergarten, the rest of the change kept
+PASS a grade line rewritten as '- **Grade level:** 1' is put back to Kindergarten, the rest of the change kept
+PASS a grade line rewritten as '* Grade: 1st' is put back to Kindergarten, the rest of the change kept
+PASS a revise that kept the grade line is left exactly as it came back
+PASS a document with no grade line of its own is left alone
+PASS a scoring line that says how to grade is not a grade line
+PASS a grade mentioned in a sentence is not a grade line
+PASS each part's ref records the grade it was written at
+PASS every refined part was revised reading the pack's grade K, not the article's grade 1
+PASS a refine that rewrote the grade line keeps Kindergarten in every new version
+PASS the other changes of that refine are kept
+PASS the card is sent the restored text before it closes
+PASS each new version records grade K, so the next refine keeps it too
+PASS "Make it for grade 2" revises reading grade 2, and its grade line says Grade 2
+PASS an older ref with no recorded grade is revised against the page's article as before
+
+all pack grade source and refine grade checks passed

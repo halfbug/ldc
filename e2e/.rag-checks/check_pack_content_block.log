@@ -1,0 +1,28 @@
+PASS the chip '30 minutes' reads as the request that asked it, exactly as that turn read
+PASS the chip '45 minutes' reads as the request that asked it, exactly as that turn read
+PASS the chip '60 minutes' reads as the request that asked it, exactly as that turn read
+PASS the chip 'No set time' reads as the request that asked it, exactly as that turn read
+PASS a chip's machine value sent in place of its label reads the same way
+PASS a typed answer is still the teacher's words, read as a follow-up to the request
+PASS an action card's result still reads its producing request
+PASS a chip after a harmful request reads that harmful request, never a lone '45 minutes'
+PASS a chip offered by an ask_user card (options on the wire only) reads as its request
+PASS an empty answer is no chip
+PASS an answer containing a chip label is not that chip
+PASS a blocked document is an error with the content-block reason
+PASS a blocked document keeps no ref, on the card or in the store
+PASS the model is told a content check stopped it and not to write it again, never 'offer to try again'
+PASS the turn records the block by its toolUse id
+PASS the model's second write in that turn is refused with no card
+PASS a revise in that turn is refused too
+PASS a part under the same toolUse (a pack's own part) still runs
+PASS a new turn starts with no record, so it writes
+PASS a blocked check call after a finished draft leaves the document stored as usual
+PASS any other failure keeps its ref and its 'offer to try again'
+PASS a blocked revise keeps the original, says a content check stopped it, and records the block
+PASS the turn records the pack by its toolUse id
+PASS after the pack, the model's own lesson plan, worksheet, exit ticket or slides is refused with no card
+PASS a document the pack does not make is not refused by the pack record
+PASS a pack with no part written points to Retry and tells the model not to write any part itself
+
+all passed

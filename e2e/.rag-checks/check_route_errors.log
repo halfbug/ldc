@@ -1,0 +1,233 @@
+Error loading configuration from Parameter Store: You must specify a region.
+Traceback (most recent call last):
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/src/config/config.py", line 257, in get_config
+    param_store_config = _load_parameter_store_config(config.PARAMETER_STORE_PREFIX)
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/src/config/config.py", line 175, in _load_parameter_store_config
+    ssm_client = boto3.client('ssm')
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/boto3/__init__.py", line 93, in client
+    return _get_default_session().client(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/boto3/session.py", line 337, in client
+    return self._session.create_client(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        service_name, **create_client_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/context.py", line 123, in wrapper
+    return func(*args, **kwargs)
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/session.py", line 1031, in create_client
+    client = client_creator.create_client(
+        service_name=service_name,
+    ...<8 lines>...
+        auth_token=auth_token,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/client.py", line 161, in create_client
+    client_args = self._get_client_args(
+        service_model,
+    ...<10 lines>...
+        partition_data,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/client.py", line 561, in _get_client_args
+    return args_creator.get_client_args(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        service_model,
+        ^^^^^^^^^^^^^^
+    ...<10 lines>...
+        partition_data,
+        ^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/args.py", line 121, in get_client_args
+    final_args = self.compute_client_args(
+        service_model,
+    ...<5 lines>...
+        scoped_config,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/args.py", line 265, in compute_client_args
+    endpoint_config = self._compute_endpoint_config(
+        service_name=service_name,
+    ...<4 lines>...
+        s3_config=s3_config,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/args.py", line 459, in _compute_endpoint_config
+    return self._resolve_endpoint(**resolve_endpoint_kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/args.py", line 577, in _resolve_endpoint
+    return endpoint_bridge.resolve(
+           ~~~~~~~~~~~~~~~~~~~~~~~^
+        service_name, region_name, endpoint_url, is_secure
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/client.py", line 675, in resolve
+    resolved = self.endpoint_resolver.construct_endpoint(
+        service_name,
+    ...<2 lines>...
+        use_fips_endpoint=use_fips_endpoint,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/regions.py", line 237, in construct_endpoint
+    result = self._endpoint_for_partition(
+        partition,
+    ...<3 lines>...
+        use_fips_endpoint,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/regions.py", line 285, in _endpoint_for_partition
+    raise NoRegionError()
+botocore.exceptions.NoRegionError: You must specify a region.
+Failed to load Parameter Store config
+Traceback (most recent call last):
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/src/config/config.py", line 257, in get_config
+    param_store_config = _load_parameter_store_config(config.PARAMETER_STORE_PREFIX)
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/src/config/config.py", line 175, in _load_parameter_store_config
+    ssm_client = boto3.client('ssm')
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/boto3/__init__.py", line 93, in client
+    return _get_default_session().client(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/boto3/session.py", line 337, in client
+    return self._session.create_client(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        service_name, **create_client_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/context.py", line 123, in wrapper
+    return func(*args, **kwargs)
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/session.py", line 1031, in create_client
+    client = client_creator.create_client(
+        service_name=service_name,
+    ...<8 lines>...
+        auth_token=auth_token,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/client.py", line 161, in create_client
+    client_args = self._get_client_args(
+        service_model,
+    ...<10 lines>...
+        partition_data,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/client.py", line 561, in _get_client_args
+    return args_creator.get_client_args(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        service_model,
+        ^^^^^^^^^^^^^^
+    ...<10 lines>...
+        partition_data,
+        ^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/args.py", line 121, in get_client_args
+    final_args = self.compute_client_args(
+        service_model,
+    ...<5 lines>...
+        scoped_config,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/args.py", line 265, in compute_client_args
+    endpoint_config = self._compute_endpoint_config(
+        service_name=service_name,
+    ...<4 lines>...
+        s3_config=s3_config,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/args.py", line 459, in _compute_endpoint_config
+    return self._resolve_endpoint(**resolve_endpoint_kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/args.py", line 577, in _resolve_endpoint
+    return endpoint_bridge.resolve(
+           ~~~~~~~~~~~~~~~~~~~~~~~^
+        service_name, region_name, endpoint_url, is_secure
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/client.py", line 675, in resolve
+    resolved = self.endpoint_resolver.construct_endpoint(
+        service_name,
+    ...<2 lines>...
+        use_fips_endpoint=use_fips_endpoint,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/regions.py", line 237, in construct_endpoint
+    result = self._endpoint_for_partition(
+        partition,
+    ...<3 lines>...
+        use_fips_endpoint,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/regions.py", line 285, in _endpoint_for_partition
+    raise NoRegionError()
+botocore.exceptions.NoRegionError: You must specify a region.
+{"level":"INFO","location":"_route:206","message":"Handling request","timestamp":"2026-10-28 16:52:22,327+0500","service":"AIAssistant","taskName":"starlette.middleware.base.BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.coro","user_id":"u1","path":"/thread/messages","method":"POST"}
+Traceback (most recent call last):
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/src/services/assistant_service.py", line 942, in _handle_load_conversation
+    listing_row = HistoryListing.objects(thread_id=thread_id, user_id=user_id).first()
+                  ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/tests/core/check_route_errors.py", line 38, in __call__
+    raise RuntimeError(UPSTREAM)
+RuntimeError: ServerSelectionTimeoutError: mongo-prod-shard-00.internal:27017 timed out
+{"level":"ERROR","location":"route_failure:28","message":"Error in _handle_load_conversation","timestamp":"2026-10-28 16:52:22,328+0500","service":"AIAssistant","taskName":"starlette.middleware.base.BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.coro","error_class":"RuntimeError","error":"ServerSelectionTimeoutError: mongo-prod-shard-00.internal:27017 timed out","request_id":"722623a3aff944f9b5ee5ba03fa90a0d"}
+PASS FastAPI door, thread/messages: a forced failure is a 500 with the apology and a request id, no upstream text
+PASS FastAPI door, thread/messages: the log line carries the class, the message and the same request id
+{"level":"INFO","location":"_route:206","message":"Handling request","timestamp":"2026-10-28 16:52:22,333+0500","service":"AIAssistant","taskName":"starlette.middleware.base.BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.coro","user_id":"u1","path":"/thread/pin","method":"PUT"}
+{"level":"ERROR","location":"route_failure:28","message":"Error in _handle_pin_thread","timestamp":"2026-10-28 16:52:22,333+0500","service":"AIAssistant","taskName":"starlette.middleware.base.BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.coro","error_class":"RuntimeError","error":"ServerSelectionTimeoutError: mongo-prod-shard-00.internal:27017 timed out","request_id":"6b7a7b882fe44202afabb1d7088d0112"}
+PASS FastAPI door, thread/pin: a forced failure is a 500 with the apology and a request id, no upstream text
+PASS FastAPI door, thread/pin: the log line carries the class, the message and the same request id
+{"level":"INFO","location":"_route:206","message":"Handling request","timestamp":"2026-10-28 16:52:22,337+0500","service":"AIAssistant","taskName":"starlette.middleware.base.BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.coro","user_id":"u1","path":"/thread/record","method":"POST"}
+{"level":"ERROR","location":"route_failure:28","message":"Error in _handle_record_turn","timestamp":"2026-10-28 16:52:22,338+0500","service":"AIAssistant","taskName":"starlette.middleware.base.BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.coro","error_class":"RuntimeError","error":"ServerSelectionTimeoutError: mongo-prod-shard-00.internal:27017 timed out","request_id":"d2c38a3394cd45d5a072fbeaaee931ba"}
+PASS FastAPI door, thread/record: a forced failure is a 500 with the apology and a request id, no upstream text
+PASS FastAPI door, thread/record: the log line carries the class, the message and the same request id
+{"level":"INFO","location":"_route:206","message":"Handling request","timestamp":"2026-10-28 16:52:22,341+0500","service":"AIAssistant","taskName":"starlette.middleware.base.BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.coro","user_id":"u1","path":"/thread/search","method":"POST"}
+{"level":"ERROR","location":"route_failure:28","message":"Error in _handle_search_threads","timestamp":"2026-10-28 16:52:22,341+0500","service":"AIAssistant","taskName":"starlette.middleware.base.BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.coro","error_class":"RuntimeError","error":"ServerSelectionTimeoutError: mongo-prod-shard-00.internal:27017 timed out","request_id":"330c7c06139c4927b17d06b4b5ae38e7"}
+PASS FastAPI door, thread/search: a forced failure is a 500 with the apology and a request id, no upstream text
+PASS FastAPI door, thread/search: the log line carries the class, the message and the same request id
+{"level":"INFO","location":"_route:206","message":"Handling request","timestamp":"2026-10-28 16:52:22,345+0500","service":"AIAssistant","taskName":"starlette.middleware.base.BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.coro","user_id":"u1","path":"/thread","method":"DELETE"}
+{"level":"ERROR","location":"route_failure:28","message":"Error in _handle_delete_thread","timestamp":"2026-10-28 16:52:22,351+0500","service":"AIAssistant","taskName":"starlette.middleware.base.BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.coro","error_class":"RuntimeError","error":"ServerSelectionTimeoutError: mongo-prod-shard-00.internal:27017 timed out","request_id":"e05f3b9aa3284c909765c04e0c6bb147"}
+PASS FastAPI door, thread delete: a forced failure is a 500 with the apology and a request id, no upstream text
+PASS FastAPI door, thread delete: the log line carries the class, the message and the same request id
+{"level":"INFO","location":"lambda_handler:47","message":"🌐 Processing API Gateway request","timestamp":"2026-10-28 16:52:22,477+0500","service":"AIAssistant","cold_start":true,"function_name":"ai-assistant","function_memory_size":2048,"function_arn":"arn:aws:lambda:us-west-2:0:function:ai-assistant","function_request_id":"req-1","path":"/prod/assistant/thread/messages","method":"POST","request_id":"req-1"}
+{"level":"INFO","location":"_handle_assistant_api_gateway:142","message":"Processing AI Assistant API request","timestamp":"2026-10-28 16:52:22,478+0500","service":"AIAssistant","cold_start":true,"function_name":"ai-assistant","function_memory_size":2048,"function_arn":"arn:aws:lambda:us-west-2:0:function:ai-assistant","function_request_id":"req-1","taskName":"Task-21","request_id":"req-1","context":"namespace(aws_request_id='req-1', function_name='ai-assistant', memory_limit_in_mb=2048, invoked_function_arn='arn:aws:lambda:us-west-2:0:function:ai-assistant', get_remaining_time_in_millis=<function <lambda> at 0x7369fa76eac0>)"}
+{"level":"INFO","location":"_handle_assistant_api_gateway:220","message":"✅ Request data validated","timestamp":"2026-10-28 16:52:22,478+0500","service":"AIAssistant","cold_start":true,"function_name":"ai-assistant","function_memory_size":2048,"function_arn":"arn:aws:lambda:us-west-2:0:function:ai-assistant","function_request_id":"req-1","taskName":"Task-21","user_id":"u1","request_id":"req-1"}
+{"level":"INFO","location":"_route:206","message":"Handling request","timestamp":"2026-10-28 16:52:22,480+0500","service":"AIAssistant","cold_start":true,"function_name":"ai-assistant","function_memory_size":2048,"function_arn":"arn:aws:lambda:us-west-2:0:function:ai-assistant","function_request_id":"req-1","taskName":"Task-21","user_id":"u1","path":"/thread/messages","method":"POST"}
+Traceback (most recent call last):
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/src/services/assistant_service.py", line 942, in _handle_load_conversation
+    listing_row = HistoryListing.objects(thread_id=thread_id, user_id=user_id).first()
+                  ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/tests/core/check_route_errors.py", line 38, in __call__
+    raise RuntimeError(UPSTREAM)
+RuntimeError: ServerSelectionTimeoutError: mongo-prod-shard-00.internal:27017 timed out
+{"level":"ERROR","location":"route_failure:28","message":"Error in _handle_load_conversation","timestamp":"2026-10-28 16:52:22,481+0500","service":"AIAssistant","cold_start":true,"function_name":"ai-assistant","function_memory_size":2048,"function_arn":"arn:aws:lambda:us-west-2:0:function:ai-assistant","function_request_id":"req-1","taskName":"Task-21","error_class":"RuntimeError","error":"ServerSelectionTimeoutError: mongo-prod-shard-00.internal:27017 timed out","request_id":"4dfdca62647b467bbdfb7659b1d9e5b7"}
+{"level":"INFO","location":"_handle_assistant_api_gateway:241","message":"AI Assistant service Response","timestamp":"2026-10-28 16:52:22,481+0500","service":"AIAssistant","cold_start":true,"function_name":"ai-assistant","function_memory_size":2048,"function_arn":"arn:aws:lambda:us-west-2:0:function:ai-assistant","function_request_id":"req-1","taskName":"Task-21","user_id":"u1","path":"/prod/assistant/thread/messages","method":"POST","success":false,"response_keys":["error","request_id","success"]}
+{"level":"INFO","location":"_handle_assistant_api_gateway:251","message":"AI Assistant request completed","timestamp":"2026-10-28 16:52:22,482+0500","service":"AIAssistant","cold_start":true,"function_name":"ai-assistant","function_memory_size":2048,"function_arn":"arn:aws:lambda:us-west-2:0:function:ai-assistant","function_request_id":"req-1","taskName":"Task-21","success":false,"user_id":"u1","path":"/prod/assistant/thread/messages","method":"POST","request_id":"req-1"}
+PASS Lambda door, thread/messages: a forced failure is a 500 with the apology and a request id, no upstream text
+{"level":"INFO","location":"lambda_handler:47","message":"🌐 Processing API Gateway request","timestamp":"2026-10-28 16:52:22,483+0500","service":"AIAssistant","cold_start":false,"function_name":"ai-assistant","function_memory_size":2048,"function_arn":"arn:aws:lambda:us-west-2:0:function:ai-assistant","function_request_id":"req-1","path":"/prod/assistant/thread/pin","method":"PUT","request_id":"req-1"}
+{"level":"INFO","location":"_handle_assistant_api_gateway:142","message":"Processing AI Assistant API request","timestamp":"2026-10-28 16:52:22,483+0500","service":"AIAssistant","cold_start":false,"function_name":"ai-assistant","function_memory_size":2048,"function_arn":"arn:aws:lambda:us-west-2:0:function:ai-assistant","function_request_id":"req-1","taskName":"Task-24","request_id":"req-1","context":"namespace(aws_request_id='req-1', function_name='ai-assistant', memory_limit_in_mb=2048, invoked_function_arn='arn:aws:lambda:us-west-2:0:function:ai-assistant', get_remaining_time_in_millis=<function <lambda> at 0x7369fa76eac0>)"}
+{"level":"INFO","location":"_handle_assistant_api_gateway:220","message":"✅ Request data validated","timestamp":"2026-10-28 16:52:22,483+0500","service":"AIAssistant","cold_start":false,"function_name":"ai-assistant","function_memory_size":2048,"function_arn":"arn:aws:lambda:us-west-2:0:function:ai-assistant","function_request_id":"req-1","taskName":"Task-24","user_id":"u1","request_id":"req-1"}
+{"level":"INFO","location":"_route:206","message":"Handling request","timestamp":"2026-10-28 16:52:22,483+0500","service":"AIAssistant","cold_start":false,"function_name":"ai-assistant","function_memory_size":2048,"function_arn":"arn:aws:lambda:us-west-2:0:function:ai-assistant","function_request_id":"req-1","taskName":"Task-24","user_id":"u1","path":"/thread/pin","method":"PUT"}
+{"level":"ERROR","location":"route_failure:28","message":"Error in _handle_pin_thread","timestamp":"2026-10-28 16:52:22,484+0500","service":"AIAssistant","cold_start":false,"function_name":"ai-assistant","function_memory_size":2048,"function_arn":"arn:aws:lambda:us-west-2:0:function:ai-assistant","function_request_id":"req-1","taskName":"Task-24","error_class":"RuntimeError","error":"ServerSelectionTimeoutError: mongo-prod-shard-00.internal:27017 timed out","request_id":"33b5311dcec54d2db841c6f7b8768a46"}
+{"level":"INFO","location":"_handle_assistant_api_gateway:241","message":"AI Assistant service Response","timestamp":"2026-10-28 16:52:22,484+0500","service":"AIAssistant","cold_start":false,"function_name":"ai-assistant","function_memory_size":2048,"function_arn":"arn:aws:lambda:us-west-2:0:function:ai-assistant","function_request_id":"req-1","taskName":"Task-24","user_id":"u1","path":"/prod/assistant/thread/pin","method":"PUT","success":false,"response_keys":["error","request_id","success"]}
+{"level":"INFO","location":"_handle_assistant_api_gateway:251","message":"AI Assistant request completed","timestamp":"2026-10-28 16:52:22,484+0500","service":"AIAssistant","cold_start":false,"function_name":"ai-assistant","function_memory_size":2048,"function_arn":"arn:aws:lambda:us-west-2:0:function:ai-assistant","function_request_id":"req-1","taskName":"Task-24","success":false,"user_id":"u1","path":"/prod/assistant/thread/pin","method":"PUT","request_id":"req-1"}
+PASS Lambda door, thread/pin: a forced failure is a 500 with the apology and a request id, no upstream text
+{"level":"INFO","location":"lambda_handler:47","message":"🌐 Processing API Gateway request","timestamp":"2026-10-28 16:52:22,486+0500","service":"AIAssistant","cold_start":false,"function_name":"ai-assistant","function_memory_size":2048,"function_arn":"arn:aws:lambda:us-west-2:0:function:ai-assistant","function_request_id":"req-1","path":"/prod/assistant/thread/record","method":"POST","request_id":"req-1"}
+{"level":"INFO","location":"_handle_assistant_api_gateway:142","message":"Processing AI Assistant API request","timestamp":"2026-10-28 16:52:22,486+0500","service":"AIAssistant","cold_start":false,"function_name":"ai-assistant","function_memory_size":2048,"function_arn":"arn:aws:lambda:us-west-2:0:function:ai-assistant","function_request_id":"req-1","taskName":"Task-27","request_id":"req-1","context":"namespace(aws_request_id='req-1', function_name='ai-assistant', memory_limit_in_mb=2048, invoked_function_arn='arn:aws:lambda:us-west-2:0:function:ai-assistant', get_remaining_time_in_millis=<function <lambda> at 0x7369fa76eac0>)"}
+{"level":"INFO","location":"_handle_assistant_api_gateway:220","message":"✅ Request data validated","timestamp":"2026-10-28 16:52:22,486+0500","service":"AIAssistant","cold_start":false,"function_name":"ai-assistant","function_memory_size":2048,"function_arn":"arn:aws:lambda:us-west-2:0:function:ai-assistant","function_request_id":"req-1","taskName":"Task-27","user_id":"u1","request_id":"req-1"}
+{"level":"INFO","location":"_route:206","message":"Handling request","timestamp":"2026-10-28 16:52:22,486+0500","service":"AIAssistant","cold_start":false,"function_name":"ai-assistant","function_memory_size":2048,"function_arn":"arn:aws:lambda:us-west-2:0:function:ai-assistant","function_request_id":"req-1","taskName":"Task-27","user_id":"u1","path":"/thread/record","method":"POST"}
+{"level":"ERROR","location":"route_failure:28","message":"Error in _handle_record_turn","timestamp":"2026-10-28 16:52:22,487+0500","service":"AIAssistant","cold_start":false,"function_name":"ai-assistant","function_memory_size":2048,"function_arn":"arn:aws:lambda:us-west-2:0:function:ai-assistant","function_request_id":"req-1","taskName":"Task-27","error_class":"RuntimeError","error":"ServerSelectionTimeoutError: mongo-prod-shard-00.internal:27017 timed out","request_id":"e7135e631c90423a98ab8461b82eead8"}
+{"level":"INFO","location":"_handle_assistant_api_gateway:241","message":"AI Assistant service Response","timestamp":"2026-10-28 16:52:22,487+0500","service":"AIAssistant","cold_start":false,"function_name":"ai-assistant","function_memory_size":2048,"function_arn":"arn:aws:lambda:us-west-2:0:function:ai-assistant","function_request_id":"req-1","taskName":"Task-27","user_id":"u1","path":"/prod/assistant/thread/record","method":"POST","success":false,"response_keys":["error","request_id","success"]}
+{"level":"INFO","location":"_handle_assistant_api_gateway:251","message":"AI Assistant request completed","timestamp":"2026-10-28 16:52:22,487+0500","service":"AIAssistant","cold_start":false,"function_name":"ai-assistant","function_memory_size":2048,"function_arn":"arn:aws:lambda:us-west-2:0:function:ai-assistant","function_request_id":"req-1","taskName":"Task-27","success":false,"user_id":"u1","path":"/prod/assistant/thread/record","method":"POST","request_id":"req-1"}
+PASS Lambda door, thread/record: a forced failure is a 500 with the apology and a request id, no upstream text
+{"level":"INFO","location":"lambda_handler:47","message":"🌐 Processing API Gateway request","timestamp":"2026-10-28 16:52:22,488+0500","service":"AIAssistant","cold_start":false,"function_name":"ai-assistant","function_memory_size":2048,"function_arn":"arn:aws:lambda:us-west-2:0:function:ai-assistant","function_request_id":"req-1","path":"/prod/assistant/thread/search","method":"POST","request_id":"req-1"}
+{"level":"INFO","location":"_handle_assistant_api_gateway:142","message":"Processing AI Assistant API request","timestamp":"2026-10-28 16:52:22,489+0500","service":"AIAssistant","cold_start":false,"function_name":"ai-assistant","function_memory_size":2048,"function_arn":"arn:aws:lambda:us-west-2:0:function:ai-assistant","function_request_id":"req-1","taskName":"Task-30","request_id":"req-1","context":"namespace(aws_request_id='req-1', function_name='ai-assistant', memory_limit_in_mb=2048, invoked_function_arn='arn:aws:lambda:us-west-2:0:function:ai-assistant', get_remaining_time_in_millis=<function <lambda> at 0x7369fa76eac0>)"}
+{"level":"INFO","location":"_handle_assistant_api_gateway:220","message":"✅ Request data validated","timestamp":"2026-10-28 16:52:22,489+0500","service":"AIAssistant","cold_start":false,"function_name":"ai-assistant","function_memory_size":2048,"function_arn":"arn:aws:lambda:us-west-2:0:function:ai-assistant","function_request_id":"req-1","taskName":"Task-30","user_id":"u1","request_id":"req-1"}
+{"level":"INFO","location":"_route:206","message":"Handling request","timestamp":"2026-10-28 16:52:22,489+0500","service":"AIAssistant","cold_start":false,"function_name":"ai-assistant","function_memory_size":2048,"function_arn":"arn:aws:lambda:us-west-2:0:function:ai-assistant","function_request_id":"req-1","taskName":"Task-30","user_id":"u1","path":"/thread/search","method":"POST"}
+{"level":"ERROR","location":"route_failure:28","message":"Error in _handle_search_threads","timestamp":"2026-10-28 16:52:22,489+0500","service":"AIAssistant","cold_start":false,"function_name":"ai-assistant","function_memory_size":2048,"function_arn":"arn:aws:lambda:us-west-2:0:function:ai-assistant","function_request_id":"req-1","taskName":"Task-30","error_class":"RuntimeError","error":"ServerSelectionTimeoutError: mongo-prod-shard-00.internal:27017 timed out","request_id":"8b31d900fa6647df8048cb59a6437cb6"}
+{"level":"INFO","location":"_handle_assistant_api_gateway:241","message":"AI Assistant service Response","timestamp":"2026-10-28 16:52:22,490+0500","service":"AIAssistant","cold_start":false,"function_name":"ai-assistant","function_memory_size":2048,"function_arn":"arn:aws:lambda:us-west-2:0:function:ai-assistant","function_request_id":"req-1","taskName":"Task-30","user_id":"u1","path":"/prod/assistant/thread/search","method":"POST","success":false,"response_keys":["error","request_id","success"]}
+{"level":"INFO","location":"_handle_assistant_api_gateway:251","message":"AI Assistant request completed","timestamp":"2026-10-28 16:52:22,490+0500","service":"AIAssistant","cold_start":false,"function_name":"ai-assistant","function_memory_size":2048,"function_arn":"arn:aws:lambda:us-west-2:0:function:ai-assistant","function_request_id":"req-1","taskName":"Task-30","success":false,"user_id":"u1","path":"/prod/assistant/thread/search","method":"POST","request_id":"req-1"}
+PASS Lambda door, thread/search: a forced failure is a 500 with the apology and a request id, no upstream text
+{"level":"INFO","location":"lambda_handler:47","message":"🌐 Processing API Gateway request","timestamp":"2026-10-28 16:52:22,491+0500","service":"AIAssistant","cold_start":false,"function_name":"ai-assistant","function_memory_size":2048,"function_arn":"arn:aws:lambda:us-west-2:0:function:ai-assistant","function_request_id":"req-1","path":"/prod/assistant/thread","method":"DELETE","request_id":"req-1"}
+{"level":"INFO","location":"_handle_assistant_api_gateway:142","message":"Processing AI Assistant API request","timestamp":"2026-10-28 16:52:22,491+0500","service":"AIAssistant","cold_start":false,"function_name":"ai-assistant","function_memory_size":2048,"function_arn":"arn:aws:lambda:us-west-2:0:function:ai-assistant","function_request_id":"req-1","taskName":"Task-33","request_id":"req-1","context":"namespace(aws_request_id='req-1', function_name='ai-assistant', memory_limit_in_mb=2048, invoked_function_arn='arn:aws:lambda:us-west-2:0:function:ai-assistant', get_remaining_time_in_millis=<function <lambda> at 0x7369fa76eac0>)"}
+{"level":"INFO","location":"_handle_assistant_api_gateway:220","message":"✅ Request data validated","timestamp":"2026-10-28 16:52:22,491+0500","service":"AIAssistant","cold_start":false,"function_name":"ai-assistant","function_memory_size":2048,"function_arn":"arn:aws:lambda:us-west-2:0:function:ai-assistant","function_request_id":"req-1","taskName":"Task-33","user_id":"u1","request_id":"req-1"}
+{"level":"INFO","location":"_route:206","message":"Handling request","timestamp":"2026-10-28 16:52:22,491+0500","service":"AIAssistant","cold_start":false,"function_name":"ai-assistant","function_memory_size":2048,"function_arn":"arn:aws:lambda:us-west-2:0:function:ai-assistant","function_request_id":"req-1","taskName":"Task-33","user_id":"u1","path":"/thread","method":"DELETE"}
+{"level":"ERROR","location":"route_failure:28","message":"Error in _handle_delete_thread","timestamp":"2026-10-28 16:52:22,491+0500","service":"AIAssistant","cold_start":false,"function_name":"ai-assistant","function_memory_size":2048,"function_arn":"arn:aws:lambda:us-west-2:0:function:ai-assistant","function_request_id":"req-1","taskName":"Task-33","error_class":"RuntimeError","error":"ServerSelectionTimeoutError: mongo-prod-shard-00.internal:27017 timed out","request_id":"2e904d369a6e4069ab1cb124e57e3f71"}
+{"level":"INFO","location":"_handle_assistant_api_gateway:241","message":"AI Assistant service Response","timestamp":"2026-10-28 16:52:22,492+0500","service":"AIAssistant","cold_start":false,"function_name":"ai-assistant","function_memory_size":2048,"function_arn":"arn:aws:lambda:us-west-2:0:function:ai-assistant","function_request_id":"req-1","taskName":"Task-33","user_id":"u1","path":"/prod/assistant/thread","method":"DELETE","success":false,"response_keys":["error","request_id","success"]}
+{"level":"INFO","location":"_handle_assistant_api_gateway:251","message":"AI Assistant request completed","timestamp":"2026-10-28 16:52:22,492+0500","service":"AIAssistant","cold_start":false,"function_name":"ai-assistant","function_memory_size":2048,"function_arn":"arn:aws:lambda:us-west-2:0:function:ai-assistant","function_request_id":"req-1","taskName":"Task-33","success":false,"user_id":"u1","path":"/prod/assistant/thread","method":"DELETE","request_id":"req-1"}
+PASS Lambda door, thread delete: a forced failure is a 500 with the apology and a request id, no upstream text
+{"level":"INFO","location":"_route:206","message":"Handling request","timestamp":"2026-10-28 16:52:22,495+0500","service":"AIAssistant","cold_start":false,"function_name":"ai-assistant","function_memory_size":2048,"function_arn":"arn:aws:lambda:us-west-2:0:function:ai-assistant","function_request_id":"req-1","taskName":"starlette.middleware.base.BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.coro","user_id":"u1","path":"/thread/pin","method":"PUT"}
+{"level":"ERROR","location":"route_failure:28","message":"Error in _handle_pin_thread","timestamp":"2026-10-28 16:52:22,495+0500","service":"AIAssistant","cold_start":false,"function_name":"ai-assistant","function_memory_size":2048,"function_arn":"arn:aws:lambda:us-west-2:0:function:ai-assistant","function_request_id":"req-1","taskName":"starlette.middleware.base.BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.coro","error_class":"ValueError","error":"NOT_FOUND: Thread not found","request_id":"aa7daa90aa6343b0996e655febd6c057"}
+PASS a handler's own NOT_FOUND is still a 404 with its message
+
+0 failure(s)

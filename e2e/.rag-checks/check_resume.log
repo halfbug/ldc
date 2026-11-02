@@ -1,0 +1,92 @@
+{"level":"WARNING","location":"recent_savable_refs:258","message":"Could not look up earlier savable refs","timestamp":"2026-10-28 16:52:21,458+0500","service":"CoreThreads","error":"ConnectionFailure('You have not defined a default connection')"}
+PASS the resumed request keeps the original level_article toolUse
+PASS the last message is the toolResult for that toolUse
+PASS the toolResult carries the teacher's answer
+PASS the toolResult carries the resume_instruction
+PASS the pause is cleared once answered
+{"level":"WARNING","location":"recent_savable_refs:258","message":"Could not look up earlier savable refs","timestamp":"2026-10-28 16:52:21,527+0500","service":"CoreThreads","error":"ConnectionFailure('You have not defined a default connection')"}
+PASS without a resume_instruction the toolResult is just the answer
+{"level":"WARNING","location":"recent_savable_refs:258","message":"Could not look up earlier savable refs","timestamp":"2026-10-28 16:52:21,529+0500","service":"CoreThreads","error":"ConnectionFailure('You have not defined a default connection')"}
+PASS an exact label runs the paused tool once, with the label's machine value
+PASS the tool's own events reach the stream before turn.end
+PASS the original paused toolUse's result carries the answer and the real outcome
+PASS the deterministic path does not fall back to the instruction
+PASS the model is still called afterwards, to write the closing
+PASS the continuation's toolResult is stored exactly once
+{"level":"WARNING","location":"recent_savable_refs:258","message":"Could not look up earlier savable refs","timestamp":"2026-10-28 16:52:21,532+0500","service":"CoreThreads","error":"ConnectionFailure('You have not defined a default connection')"}
+PASS free text does not run the tool directly
+PASS free text falls back to the model with the resume_instruction
+{"level":"WARNING","location":"recent_savable_refs:258","message":"Could not look up earlier savable refs","timestamp":"2026-10-28 16:52:21,535+0500","service":"CoreThreads","error":"ConnectionFailure('You have not defined a default connection')"}
+PASS a label missing from values does not run the tool
+{"level":"WARNING","location":"recent_savable_refs:258","message":"Could not look up earlier savable refs","timestamp":"2026-10-28 16:52:21,538+0500","service":"CoreThreads","error":"ConnectionFailure('You have not defined a default connection')"}
+PASS a grade question answered 'Make a lesson pack for this article' runs no tool
+PASS 'Make a lesson pack for this article' is sent as a new request, without the instruction
+PASS the question is closed
+{"level":"WARNING","location":"recent_savable_refs:258","message":"Could not look up earlier savable refs","timestamp":"2026-10-28 16:52:21,544+0500","service":"CoreThreads","error":"ConnectionFailure('You have not defined a default connection')"}
+PASS a grade question answered 'second grade please' runs no tool
+PASS 'second grade please' still goes to the model as an answer, with the instruction
+{"level":"WARNING","location":"recent_savable_refs:258","message":"Could not look up earlier savable refs","timestamp":"2026-10-28 16:52:21,547+0500","service":"CoreThreads","error":"ConnectionFailure('You have not defined a default connection')"}
+PASS a grade question answered 'one lower than that' runs no tool
+PASS 'one lower than that' still goes to the model as an answer, with the instruction
+{"level":"WARNING","location":"recent_savable_refs:258","message":"Could not look up earlier savable refs","timestamp":"2026-10-28 16:52:21,550+0500","service":"CoreThreads","error":"ConnectionFailure('You have not defined a default connection')"}
+PASS 'Make a lesson pack for this article' over a grade question runs the lesson pack
+{"level":"WARNING","location":"recent_savable_refs:258","message":"Could not look up earlier savable refs","timestamp":"2026-10-28 16:52:21,553+0500","service":"CoreThreads","error":"ConnectionFailure('You have not defined a default connection')"}
+PASS 'second grade please' over a grade question is not dispatched
+{"level":"WARNING","location":"recent_savable_refs:258","message":"Could not look up earlier savable refs","timestamp":"2026-10-28 16:52:21,556+0500","service":"CoreThreads","error":"ConnectionFailure('You have not defined a default connection')"}
+PASS 'What is this article about?' over a grade question is not dispatched
+{"level":"WARNING","location":"recent_savable_refs:258","message":"Could not look up earlier savable refs","timestamp":"2026-10-28 16:52:21,559+0500","service":"CoreThreads","error":"ConnectionFailure('You have not defined a default connection')"}
+PASS an exact offered machine value runs the tool with that value
+PASS the machine-value path answers the original toolUse without the instruction
+{"level":"WARNING","location":"recent_savable_refs:258","message":"Could not look up earlier savable refs","timestamp":"2026-10-28 16:52:21,561+0500","service":"CoreThreads","error":"ConnectionFailure('You have not defined a default connection')"}
+PASS '9' does not run the tool and falls back to the instruction
+{"level":"WARNING","location":"recent_savable_refs:258","message":"Could not look up earlier savable refs","timestamp":"2026-10-28 16:52:21,565+0500","service":"CoreThreads","error":"ConnectionFailure('You have not defined a default connection')"}
+PASS 'grade 3 please' does not run the tool and falls back to the instruction
+{"level":"WARNING","location":"recent_savable_refs:258","message":"Could not look up earlier savable refs","timestamp":"2026-10-28 16:52:21,567+0500","service":"CoreThreads","error":"ConnectionFailure('You have not defined a default connection')"}
+PASS a declined page action closes with the fixed not-saved reply, no model decision
+{"level":"WARNING","location":"recent_savable_refs:258","message":"Could not look up earlier savable refs","timestamp":"2026-10-28 16:52:21,570+0500","service":"CoreThreads","error":"ConnectionFailure('You have not defined a default connection')"}
+PASS an approved page action is answered by the model as before
+PASS a declined answer to a question (prompt, not action) is not treated as a declined action
+PASS an offered week label resumes with its id
+PASS a typed week number beyond the offered six resolves against the page's list
+PASS a typed title resolves regardless of case and punctuation
+PASS a typed number two units share is never picked: ask again with just those two
+PASS text that names no listed week asks again with the offered weeks, never a guess
+{"level":"WARNING","location":"recent_savable_refs:258","message":"Could not look up earlier savable refs","timestamp":"2026-10-28 16:52:21,574+0500","service":"CoreThreads","error":"ConnectionFailure('You have not defined a default connection')"}
+PASS an ambiguous typed week re-emits pending_prompt with just the matches and ends the turn paused
+PASS the re-ask adds no toolResult, so the paused toolUse is still the one answered next
+PASS the resumed call keeps its other arguments
+{"level":"WARNING","location":"recent_savable_refs:258","message":"Could not look up earlier savable refs","timestamp":"2026-10-28 16:52:21,577+0500","service":"CoreThreads","error":"ConnectionFailure('You have not defined a default connection')"}
+PASS a typed grade 10 re-emits the grade question with the fixed K-8 sentence and the same chips, no model call
+{"level":"WARNING","location":"recent_savable_refs:258","message":"Could not look up earlier savable refs","timestamp":"2026-10-28 16:52:21,579+0500","service":"CoreThreads","error":"ConnectionFailure('You have not defined a default connection')"}
+PASS an approved action marks its paused row resolved and stores action id, resolution and completion
+PASS reloading that thread returns no open pause, top-level or on any row
+{"level":"WARNING","location":"recent_savable_refs:258","message":"Could not look up earlier savable refs","timestamp":"2026-10-28 16:52:21,586+0500","service":"CoreThreads","error":"ConnectionFailure('You have not defined a default connection')"}
+PASS a declined action persists "declined" on the paused row and the result row
+{"level":"WARNING","location":"recent_savable_refs:258","message":"Could not look up earlier savable refs","timestamp":"2026-10-28 16:52:21,589+0500","service":"CoreThreads","error":"ConnectionFailure('You have not defined a default connection')"}
+PASS an answered question is stored as "answered" when the browser sends no resolution
+{"level":"WARNING","location":"recent_savable_refs:258","message":"Could not look up earlier savable refs","timestamp":"2026-10-28 16:52:21,592+0500","service":"CoreThreads","error":"ConnectionFailure('You have not defined a default connection')"}
+PASS a confirmed approval with no resolution stores confirmed and the raw status, never an inferred "approved"
+PASS a genuinely open pause still returns open, top-level and on its row
+PASS a pause stored before resolutions existed, no longer pending, reads as resolved "unknown" and never open
+{"level":"WARNING","location":"recent_savable_refs:258","message":"Could not look up earlier savable refs","timestamp":"2026-10-28 16:52:21,595+0500","service":"CoreThreads","error":"ConnectionFailure('You have not defined a default connection')"}
+PASS an unverified result stores its code on the action_result row
+PASS and returns it on reopen, on that row
+PASS ⚠️ the code never reaches the model: no message sent to the loop names E_UNVERIFIED
+{"level":"WARNING","location":"recent_savable_refs:258","message":"Could not look up earlier savable refs","timestamp":"2026-10-28 16:52:21,598+0500","service":"CoreThreads","error":"ConnectionFailure('You have not defined a default connection')"}
+PASS a real failure's code is stored too, so the badge can still tell it apart
+{"level":"WARNING","location":"recent_savable_refs:258","message":"Could not look up earlier savable refs","timestamp":"2026-10-28 16:52:21,601+0500","service":"CoreThreads","error":"ConnectionFailure('You have not defined a default connection')"}
+PASS a record with no code behaves as today: the key is stored as None, not omitted or invented
+PASS and reads back as null, same as an old record predating this field
+PASS a genuinely pre-migration row (no code key at all) reads back with no code, no crash
+PASS display links: an in-app path is kept, anything else is dropped
+PASS display template: the chip's three strings are kept, anything else dropped
+PASS display extras: the four known keys are kept as sent
+PASS display extras: wrong shapes, empty and oversize values are dropped (sized as sent, non-ASCII unescaped)
+PASS display extras: the approval card's preview is kept as sent
+PASS display extras: an approval preview that is not a dict, is empty or is over 8 KB is dropped (the rest kept)
+{"level":"WARNING","location":"recent_savable_refs:258","message":"Could not look up earlier savable refs","timestamp":"2026-10-28 16:52:21,605+0500","service":"CoreThreads","error":"ConnectionFailure('You have not defined a default connection')"}
+PASS display extras: stored on the action_result row and returned on reopen
+PASS ⚠️ display extras never reach the model
+PASS a result with no extras stores None, as a row written before the field reads
+
+0 failure(s)

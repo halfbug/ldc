@@ -1,0 +1,77 @@
+{"level":"INFO","location":"_log_turn:271","message":"core_turn","timestamp":"2026-10-28 16:53:02,535+0500","service":"CoreTelemetry","thread_id":"th-1","turn_id":"tu-1","outcome":"complete","ok":true,"model_name":"us.anthropic.claude-sonnet-5","tools":["search_curriculum","write_artifact"],"llm_calls":2,"mode":"agent","ttft_ms":812.4,"total_ms":9430.0,"input_tokens":1000000,"output_tokens":100000,"cache_read_tokens":1000000,"cache_write_tokens":0,"cost_usd":3.52,"synthetic":false,"telemetry_written":true,"daily_usage":"scheduled","telemetry_ms":99.6}
+PASS written through the injected writer
+PASS tokenz-compatible keys present
+PASS ok and paused derived
+PASS processing_time is seconds
+PASS sonnet cost at billed rates incl. cache read
+PASS user_id stringified
+PASS text-like extra keys dropped
+PASS Bedrock camelCase usage normalised
+PASS haiku inference-profile id prices
+PASS unknown model -> cost None, not a guess
+PASS unknown model priced at the dearest row when asked to (the daily cap never under-counts)
+PASS unknown outcome recorded as error with the raw value
+PASS every contract outcome accepted
+PASS stopped (teacher pressed Stop) is its own outcome: not error, no outcome_invalid, not ok, not paused
+{"level":"WARNING","location":"record_turn:318","message":"core_turn telemetry write failed","timestamp":"2026-10-28 16:53:02,536+0500","service":"CoreTelemetry","thread_id":"x","error":"RuntimeError('mongo down')"}
+{"level":"INFO","location":"_log_turn:271","message":"core_turn","timestamp":"2026-10-28 16:53:02,536+0500","service":"CoreTelemetry","thread_id":"x","turn_id":"y","outcome":"paused","ok":true,"model_name":"us.anthropic.claude-sonnet-5","tools":[],"input_tokens":0,"output_tokens":0,"cache_read_tokens":0,"cache_write_tokens":0,"cost_usd":0.0,"synthetic":false,"telemetry_written":false,"daily_usage":"skipped_no_user","telemetry_ms":0.2}
+PASS a failing writer never raises and reports written=False
+{"level":"WARNING","location":"record_turn:310","message":"core_turn telemetry could not build a row","timestamp":"2026-10-28 16:53:02,536+0500","service":"CoreTelemetry","error":"ValueError(\"could not convert string to float: 'not-a-number'\")"}
+PASS a bad argument never raises
+{"level":"INFO","location":"_log_turn:271","message":"core_turn","timestamp":"2026-10-28 16:53:02,536+0500","service":"CoreTelemetry","thread_id":"th","turn_id":"tu","outcome":"complete","ok":true,"model_name":"us.anthropic.claude-sonnet-5","tools":[],"input_tokens":0,"output_tokens":0,"cache_read_tokens":0,"cache_write_tokens":0,"cost_usd":0.0,"synthetic":false,"telemetry_written":true,"daily_usage":"skipped_no_user","telemetry_ms":0.0}
+PASS log line carries no text from extra
+PASS all 11 ctx_* context stats kept with their values (incl. string enum ctx_summary)
+PASS ctx_summary enum values all kept
+{"level":"INFO","location":"_log_turn:271","message":"core_turn","timestamp":"2026-10-28 16:53:02,536+0500","service":"CoreTelemetry","thread_id":"th","turn_id":"tu","outcome":"complete","ok":true,"model_name":"us.anthropic.claude-sonnet-5","tools":[],"input_tokens":1200,"output_tokens":300,"cache_read_tokens":9000,"cache_write_tokens":50,"cost_usd":0.0080575,"synthetic":false,"telemetry_written":true,"daily_usage":"called","telemetry_ms":0.0}
+PASS daily usage called once with the user_id key, every token count (cached included) and the turn's dollars
+{"level":"INFO","location":"_log_turn:271","message":"core_turn","timestamp":"2026-10-28 16:53:02,537+0500","service":"CoreTelemetry","thread_id":"th","turn_id":"tu","outcome":"complete","ok":true,"model_name":"us.anthropic.claude-sonnet-5","tools":[],"input_tokens":0,"output_tokens":0,"cache_read_tokens":20000,"cache_write_tokens":0,"cost_usd":0.0044,"synthetic":false,"telemetry_written":true,"daily_usage":"called","telemetry_ms":0.0}
+PASS a turn of cached reads only still adds its dollars (the old token cap counted nothing)
+{"level":"INFO","location":"_log_turn:271","message":"core_turn","timestamp":"2026-10-28 16:53:02,537+0500","service":"CoreTelemetry","thread_id":"th","turn_id":"tu","outcome":"complete","ok":true,"model_name":"us.anthropic.claude-sonnet-5","tools":[],"input_tokens":10,"output_tokens":0,"cache_read_tokens":0,"cache_write_tokens":0,"cost_usd":0.25,"synthetic":false,"telemetry_written":true,"daily_usage":"called","telemetry_ms":0.0}
+PASS the runtime's own turn cost (engines included) is the record's dollars
+{"level":"WARNING","location":"call:158","message":"core_turn daily usage update failed","timestamp":"2026-10-28 16:53:02,537+0500","service":"CoreTelemetry","user_id":"u1","cost_usd":5.5e-05,"error":"RuntimeError('AccessDeniedException: dynamodb:UpdateItem')"}
+{"level":"INFO","location":"_log_turn:271","message":"core_turn","timestamp":"2026-10-28 16:53:02,537+0500","service":"CoreTelemetry","thread_id":"th","turn_id":"tu","outcome":"error","ok":false,"tools":[],"input_tokens":10,"output_tokens":0,"cache_read_tokens":0,"cache_write_tokens":0,"synthetic":false,"telemetry_written":true,"daily_usage":"called","telemetry_ms":0.1}
+PASS a failing usage update never raises and still writes telemetry
+{"level":"INFO","location":"_log_turn:271","message":"core_turn","timestamp":"2026-10-28 16:53:02,537+0500","service":"CoreTelemetry","thread_id":"th","turn_id":"tu","outcome":"complete","ok":true,"tools":[],"input_tokens":5,"output_tokens":5,"cache_read_tokens":0,"cache_write_tokens":0,"synthetic":false,"telemetry_written":true,"daily_usage":"skipped_no_user","telemetry_ms":0.0}
+{"level":"INFO","location":"_log_turn:271","message":"core_turn","timestamp":"2026-10-28 16:53:02,537+0500","service":"CoreTelemetry","thread_id":"th","turn_id":"tu","outcome":"paused","ok":true,"tools":[],"input_tokens":0,"output_tokens":0,"cache_read_tokens":0,"cache_write_tokens":0,"synthetic":false,"telemetry_written":true,"daily_usage":"skipped_no_tokens","telemetry_ms":0.0}
+PASS skipped for a blank user and for a zero-token turn
+{"level":"INFO","location":"_log_turn:271","message":"core_turn","timestamp":"2026-10-28 16:53:02,538+0500","service":"CoreTelemetry","thread_id":"th","turn_id":"tu","outcome":"complete","ok":true,"tools":[],"input_tokens":7,"output_tokens":3,"cache_read_tokens":0,"cache_write_tokens":0,"synthetic":false,"telemetry_written":true,"daily_usage":"scheduled","telemetry_ms":0.3}
+PASS default path runs in the background with the right total
+{"level":"WARNING","location":"call:158","message":"core_turn daily usage update failed","timestamp":"2026-10-28 16:53:02,538+0500","service":"CoreTelemetry","user_id":"u4","cost_usd":3.3e-05,"error":"RuntimeError('AccessDenied')"}
+{"level":"INFO","location":"_log_turn:271","message":"core_turn","timestamp":"2026-10-28 16:53:02,538+0500","service":"CoreTelemetry","thread_id":"th","turn_id":"tu","outcome":"complete","ok":true,"tools":[],"input_tokens":1,"output_tokens":1,"cache_read_tokens":0,"cache_write_tokens":0,"synthetic":false,"telemetry_written":true,"daily_usage":"scheduled","telemetry_ms":0.4}
+PASS background failure is swallowed (turn returns normally)
+{"level":"INFO","location":"_log_turn:271","message":"core_turn","timestamp":"2026-10-28 16:53:02,750+0500","service":"CoreTelemetry","taskName":"Task-1","thread_id":"th","turn_id":"tu","outcome":"complete","ok":true,"model_name":"us.anthropic.claude-sonnet-5","tools":[],"input_tokens":40,"output_tokens":2,"cache_read_tokens":0,"cache_write_tokens":0,"cost_usd":0.00011,"synthetic":false,"telemetry_written":true,"daily_usage":"called","telemetry_ms":201.1}
+PASS arecord_turn: awaited increment completes before return, right total
+{"level":"WARNING","location":"arecord_turn:388","message":"core_turn telemetry timed out","timestamp":"2026-10-28 16:53:02,952+0500","service":"CoreTelemetry","taskName":"Task-6","thread_id":"th","timeout_s":0.2}
+{"level":"INFO","location":"_log_turn:271","message":"core_turn","timestamp":"2026-10-28 16:53:02,952+0500","service":"CoreTelemetry","taskName":"Task-6","thread_id":"th","turn_id":"tu","outcome":"complete","ok":true,"tools":[],"input_tokens":1,"output_tokens":1,"cache_read_tokens":0,"cache_write_tokens":0,"synthetic":false,"daily_usage":"timeout","telemetry_ms":201.4}
+PASS arecord_turn: a timeout never raises and returns promptly
+{"level":"INFO","location":"_log_turn:271","message":"core_turn","timestamp":"2026-10-28 16:53:05,751+0500","service":"CoreTelemetry","taskName":"Task-11","thread_id":"th","turn_id":"tu-stop","outcome":"stopped","ok":false,"tools":[],"input_tokens":30,"output_tokens":4,"cache_read_tokens":0,"cache_write_tokens":0,"synthetic":false,"telemetry_written":true,"daily_usage":"called","telemetry_ms":1.0}
+PASS arecord_turn keeps outcome stopped (the path B1's runtime uses)
+{"level":"WARNING","location":"do_write:366","message":"core_turn telemetry write failed","timestamp":"2026-10-28 16:53:05,753+0500","service":"CoreTelemetry","taskName":"Task-17","thread_id":"th","error":"RuntimeError('mongo down')"}
+{"level":"WARNING","location":"do_usage:379","message":"core_turn daily usage update failed","timestamp":"2026-10-28 16:53:05,754+0500","service":"CoreTelemetry","taskName":"Task-18","user_id":"u7","cost_usd":1.65e-05,"error":"RuntimeError('AccessDeniedException: dynamodb:UpdateItem')"}
+{"level":"INFO","location":"_log_turn:271","message":"core_turn","timestamp":"2026-10-28 16:53:05,754+0500","service":"CoreTelemetry","taskName":"Task-16","thread_id":"th","turn_id":"tu","outcome":"error","ok":false,"tools":[],"input_tokens":3,"output_tokens":0,"cache_read_tokens":0,"cache_write_tokens":0,"synthetic":false,"telemetry_written":false,"daily_usage":"failed","telemetry_ms":1.5}
+PASS arecord_turn: failing writer and updater degrade open
+{"level":"WARNING","location":"arecord_turn:354","message":"core_turn telemetry could not build a row","timestamp":"2026-10-28 16:53:05,755+0500","service":"CoreTelemetry","taskName":"Task-21","error":"ValueError(\"could not convert string to float: 'nope'\")"}
+PASS arecord_turn: a bad argument never raises
+{"level":"INFO","location":"_log_turn:271","message":"core_turn","timestamp":"2026-10-28 16:53:05,755+0500","service":"CoreTelemetry","taskName":"Task-24","thread_id":"x","turn_id":"y","outcome":"paused","ok":true,"tools":[],"input_tokens":9,"output_tokens":9,"cache_read_tokens":0,"cache_write_tokens":0,"synthetic":false,"telemetry_written":true,"daily_usage":"skipped_no_user","telemetry_ms":0.3}
+PASS arecord_turn: blank user skipped
+{"level":"INFO","location":"_log_turn:271","message":"core_turn","timestamp":"2026-10-28 16:53:05,757+0500","service":"CoreTelemetry","taskName":"Task-29","thread_id":"th","turn_id":"tu","outcome":"complete","ok":true,"tools":[],"input_tokens":120,"output_tokens":30,"cache_read_tokens":0,"cache_write_tokens":0,"synthetic":false,"telemetry_written":true,"daily_usage":"called","telemetry_ms":0.7}
+{"level":"INFO","location":"_log_turn:271","message":"core_turn","timestamp":"2026-10-28 16:53:05,759+0500","service":"CoreTelemetry","taskName":"Task-34","thread_id":"th","turn_id":"tu","outcome":"error","ok":false,"tools":[],"input_tokens":120,"output_tokens":30,"cache_read_tokens":0,"cache_write_tokens":0,"synthetic":false,"telemetry_written":true,"daily_usage":"called","telemetry_ms":0.7}
+{"level":"INFO","location":"_log_turn:271","message":"core_turn","timestamp":"2026-10-28 16:53:05,760+0500","service":"CoreTelemetry","taskName":"Task-39","thread_id":"th","turn_id":"tu","outcome":"idle_timeout","ok":false,"tools":[],"input_tokens":120,"output_tokens":30,"cache_read_tokens":0,"cache_write_tokens":0,"synthetic":false,"telemetry_written":true,"daily_usage":"called","telemetry_ms":0.7}
+{"level":"INFO","location":"_log_turn:271","message":"core_turn","timestamp":"2026-10-28 16:53:05,762+0500","service":"CoreTelemetry","taskName":"Task-44","thread_id":"th","turn_id":"tu","outcome":"paused","ok":true,"tools":[],"input_tokens":120,"output_tokens":30,"cache_read_tokens":0,"cache_write_tokens":0,"synthetic":false,"telemetry_written":true,"daily_usage":"called","telemetry_ms":0.7}
+{"level":"INFO","location":"_log_turn:271","message":"core_turn","timestamp":"2026-10-28 16:53:05,764+0500","service":"CoreTelemetry","taskName":"Task-49","thread_id":"th","turn_id":"tu","outcome":"stopped","ok":false,"tools":[],"input_tokens":120,"output_tokens":30,"cache_read_tokens":0,"cache_write_tokens":0,"synthetic":false,"telemetry_written":true,"daily_usage":"called","telemetry_ms":0.8}
+{"level":"INFO","location":"_log_turn:271","message":"core_turn","timestamp":"2026-10-28 16:53:05,767+0500","service":"CoreTelemetry","taskName":"Task-54","thread_id":"th","turn_id":"tu","outcome":"tool_error","ok":false,"tools":[],"input_tokens":120,"output_tokens":30,"cache_read_tokens":0,"cache_write_tokens":0,"synthetic":false,"telemetry_written":true,"daily_usage":"called","telemetry_ms":1.1}
+PASS every outcome adds its usage record once through record_usage (['complete', 'error', 'idle_timeout', 'paused', 'stopped', 'tool_error'])
+PASS telemetry no longer offers a request-start hook
+{"level":"INFO","location":"_log_turn:271","message":"core_turn","timestamp":"2026-10-28 16:53:05,768+0500","service":"CoreTelemetry","thread_id":"th","turn_id":"tu-log","outcome":"complete","ok":true,"tools":[],"input_tokens":1,"output_tokens":1,"cache_read_tokens":0,"cache_write_tokens":0,"synthetic":false,"ctx_fallback":true,"ctx_article_cut_chars":1200,"ctx_resource_lookup_failed":false,"ctx_summary":"failed","tool_name_corrections":2,"telemetry_written":true,"daily_usage":"called","telemetry_ms":0.1}
+PASS core_turn log line carries ctx_fallback, ctx_article_cut_chars, ctx_resource_lookup_failed, ctx_summary, tool_name_corrections
+PASS build_row accepts first_content_ms (an unknown kwarg would drop the whole telemetry row)
+PASS first_content_ms absent -> stored as None, not 0
+{"level":"INFO","location":"_log_turn:271","message":"core_turn","timestamp":"2026-10-28 16:53:05,769+0500","service":"CoreTelemetry","thread_id":"th","turn_id":"tu-fc","outcome":"complete","ok":true,"tools":[],"first_content_ms":950.0,"input_tokens":0,"output_tokens":0,"cache_read_tokens":0,"cache_write_tokens":0,"synthetic":false,"telemetry_written":true,"daily_usage":"skipped_no_tokens","telemetry_ms":0.1}
+{"level":"INFO","location":"_log_turn:271","message":"core_turn","timestamp":"2026-10-28 16:53:05,769+0500","service":"CoreTelemetry","thread_id":"th","turn_id":"tu-nofc","outcome":"complete","ok":true,"tools":[],"input_tokens":0,"output_tokens":0,"cache_read_tokens":0,"cache_write_tokens":0,"synthetic":false,"telemetry_written":true,"daily_usage":"skipped_no_tokens","telemetry_ms":0.1}
+PASS core_turn log line carries first_content_ms, and None (JSON null) when missing
+PASS no region anywhere: the DynamoDB client uses the stack's us-west-2
+PASS AWS_REGION only (which botocore ignores) is the region used
+{"level":"INFO","location":"_log_turn:271","message":"core_turn","timestamp":"2026-10-28 16:53:05,908+0500","service":"CoreTelemetry","thread_id":"th","turn_id":"tu-stage","outcome":"complete","ok":true,"tools":[],"input_tokens":0,"output_tokens":0,"cache_read_tokens":0,"cache_write_tokens":0,"synthetic":false,"ctx_build_ms":41.5,"model_ms":2300.0,"first_model_ms":1800.0,"tools_ms":950.5,"model_steps":2,"engine_calls":1,"telemetry_written":true,"daily_usage":"skipped_no_tokens","telemetry_ms":0.1}
+PASS core_turn log line carries ctx_build_ms, model_ms, first_model_ms, tools_ms, model_steps, engine_calls
+
+0 failure(s)

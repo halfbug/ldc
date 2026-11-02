@@ -1,0 +1,31 @@
+PASS passes (suggest ran=False): I've saved the draft assignment; it covers Texas standards TEKS 2.15(B).
+PASS passes (suggest ran=True): I've saved the draft assignment; it covers Texas standards TEKS 2.15(B).
+PASS passes (suggest ran=False): I've assigned the quiz, built for the suggested standards.
+PASS passes (suggest ran=True): I've assigned the quiz, built for the suggested standards.
+PASS passes (suggest ran=False): I've saved your lesson plan, built for standards TEKS 2.15(B).
+PASS passes (suggest ran=True): I've saved your lesson plan, built for standards TEKS 2.15(B).
+PASS no-op without the tool: I've added an AI-suggested standard to your question; review it in the card above.
+PASS fires: I've added an AI-suggested standard to your question; review it in the card above.
+PASS no-op without the tool: I added the suggested standards to that question.
+PASS fires: I added the suggested standards to that question.
+PASS no-op without the tool: The standards have been attached to your question.
+PASS fires: The standards have been attached to your question.
+PASS no-op without the tool: The suggestions are in the card above for you to review.
+PASS fires: The suggestions are in the card above for you to review.
+PASS no-op without the tool: Your suggested standard is in the card below.
+PASS fires: Your suggested standard is in the card below.
+PASS no-op without the tool: I've linked the standard to your question.
+PASS fires: I've linked the standard to your question.
+PASS passes: The suggested standards are in the card to review.
+PASS passes: I added a question about rivers to your draft.
+PASS passes: The card above shows your class average.
+PASS passes: Here are three questions on rivers. Want me to adjust the grade level?
+PASS passes: Standard UT.3.2 covers early settlement.
+PASS one replacement, later claim dropped, other sentences kept
+PASS empty text passes through
+PASS P3 streamed word by word: the replacement stands alone and the next sentence keeps its space
+PASS a long claim sentence is replaced whole, with none of its later clauses shown
+PASS without the tool the same stream passes untouched
+PASS the chat loop runs every reply through the screen
+
+all passed

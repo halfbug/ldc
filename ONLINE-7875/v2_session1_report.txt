@@ -1,0 +1,18 @@
+180 rows from /home/lenovo/rag/experiments/ttft_floor_7875/rows.jsonl
+
+sha=53f823b43967  dirty=False  effort=low  thinking=  max_tokens=32000  strict=z6mtpcbzm5x1:16  curriculum=u5k53i63fu9b:4  sessions=['2026-10-21T07:15:15Z']
+call          arm                 profile           runs used blk oth err  text50  text90  tail50 out50   lat50 reason  read50  wrt50
+plain_first   routed              curriculum/strict   15   15   0   0   0   6,835   8,553   1,672   488   7,182      0  22,288      0
+plain_first   other_profile       curriculum/strict   15   15   0   0   0   6,774   8,652   1,132   475   7,078      0  22,288      0
+plain_first   guardrail_off       none                15   15   0   0   0   2,365   2,578   4,749   508   6,145      0  22,288      0
+plain_first   small_prompt        curriculum/strict   15   15   0   0   0   4,095   7,516      35   148   3,744      0       -      -
+plain_first   small_prompt_no_gr  none                15   15   0   0   0   1,450   1,615   1,350   144   2,648      0       -      -
+plain_first   fast_model          curriculum/strict   15   15   0   0   0   5,488   5,669     365   279   4,689      0  16,924      0
+search_second routed              curriculum          15   15   0   0   0   4,939   6,762      27    99   3,863      0  22,104  1,212
+search_second other_profile       strict              15   15   0   0   0   4,901   5,445      24    98   3,697      0  22,104  1,212
+search_second guardrail_off       none                15   15   0   0   0   2,355   2,784   1,030    88   2,494      0  22,104  1,212
+search_second small_prompt        curriculum          15   15   0   0   0   3,201   3,486      14    68   2,907      0       -      -
+search_second small_prompt_no_gr  none                15   15   0   0   0   1,460   1,584     792    71   1,868      0       -      -
+search_second fast_model          curriculum          15   15   0   0   0   4,092   4,931      38    86   3,059      0  16,528  1,214
+
+used = end_turn with text (percentiles are over these); blk = guardrail_intervened; oth = any other stop; tail50 = last byte minus first text; lat50 = Bedrock's latencyMs; reason = used runs with reasoning first

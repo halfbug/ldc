@@ -1,0 +1,21 @@
+ok   an article's Studies Weekly lesson plan is found; none, or a pointer panel, is not
+ok   a week with one article's lesson plan has a plan; a week with none does not
+ok   with a Studies Weekly plan, code shows its activities under ## Lesson Plan in the plan's own order, word for word
+ok   ...and the one request asks only for Scout's part, marking an added step as Scout's addition
+ok   ...and the plan says nothing of a missing plan
+ok   without one, the writer fills its family's skeleton and is not told to adapt a plan
+ok   ...the plan's first line under its title says Scout worked from the article
+ok   ...and the tool result tells the reply to say it
+ok   a pointer panel reads as no plan
+ok   an article whose resources could not be read is still said to be written from the article
+ok   a plan from a page that is not an article (no resources) carries no such line
+ok   a weekly plan with the week's lesson plans is told to build each day from its article's plan, in order
+ok   a weekly plan for a week with no lesson plan says Scout worked from the articles
+ok   the Custom Lesson Plan form's plan is unchanged: no adapt rule, no added line (its Built for line says it)
+ok   the templated reply says it too, right after the plan is ready
+ok   ...and says nothing of it when the plan adapted Studies Weekly's
+ok   a lesson pack's header says the same when its plan had no Studies Weekly plan, and not when it had one
+ok   the pack reads a plan with activities as one to adapt
+ok   ...and a pointer panel as none
+
+OK: 0 failure(s)

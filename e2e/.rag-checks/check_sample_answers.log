@@ -1,0 +1,63 @@
+PASS the kind is a write_artifact kind, with its aliases
+PASS the tool's kind enum offers it
+PASS typed question from 'Show a strong and a weak answer'
+PASS typed question from 'Show a strong and a weak answer for question 2'
+PASS typed question from 'can you show a strong and weak answer to this ques'
+PASS typed question from 'Show a strong and a weak answer that match this ru'
+PASS typed question from 'Show a strong and a weak answer for this question:'
+PASS typed question from 'Show me an exemplar and a non-exemplar answer for:'
+PASS typed question from 'Write a good and a bad answer to "Why did the Pony'
+PASS the writer's two answers parse, strong first, with their notes and paragraphs
+PASS a missing weak answer is a problem
+PASS an answer with no Why line is a problem
+PASS two strong answers are a problem
+PASS the notes' rubric criteria are found by code
+PASS the canonical Markdown labels both as made-up and says neither is a student's work
+PASS the canonical Markdown parses back to the same samples (a revision reads it)
+PASS Grade Now: the selected written question, word for word, with its key
+PASS Grade Now: the writer gets the question and its key, never a student's answer
+PASS the card and the ref hold the same structure; the canonical Markdown replaced the draft
+PASS no rubric in the thread: none is linked and the request names no criteria
+PASS the grade reaches the writer
+PASS the model is told the samples are on the card and labelled as made-up
+PASS a selected question that is not written: an error, nothing written
+PASS the editor: a named question, with its key and the draft's article by id
+PASS a number the page does not list is an error
+PASS two written questions and no rubric: one pause listing them, nothing written
+PASS resumed with the pick: that question, with the original ask kept
+PASS two written questions and a rubric for one of them: that one, with no pause
+PASS the rubric's criteria go to the writer with the naming rule
+PASS a rubric for another question is not linked
+PASS typed: the teacher's question, from the article on the page
+PASS typed with a rubric in the thread: the latest rubric is linked
+PASS typed with no article and no key: an error, nothing written
+PASS no question anywhere: an error asking which question
+PASS the rubric card's chip: no page question, so the rubric's own question and stored article
+PASS the chip on a page that shows the rubric's question: that page question with its key, not the first one
+PASS the chip on a page selecting another question: the rubric's question, never the selected one
+PASS the brief names a question only when it says so outright
+PASS no question in the message: the one the brief names, as typed
+PASS a brief naming a page question: that page question with its key, not a typed copy and no pause
+PASS an earlier turn's typed question, on a page with several written questions: that question, no pause
+PASS an earlier turn's typed question, on a page with none: that question
+PASS a page whose selected question is written still wins over an earlier typed one
+PASS a rubric made after the typed question: the rubric's question
+PASS no grade known: the existing grade ask, before writing
+PASS a draft missing a part is an error: the card is closed incomplete and nothing is stored
+PASS the ceiling is the class grade + 3 or the article + 1, whichever is higher
+PASS a one-sentence answer still gets a reading grade
+PASS a sample above the ceiling is rewritten once, plainer, and the check says so
+PASS a rewrite that is no plainer is not used, and the check says the sample is still above
+PASS samples within the ceiling are never sent for a rewrite
+PASS the ref payload holds the samples and the material they were written from
+PASS a revision is written from the stored material, never the page, and parsed again
+PASS a revision that comes back the same is an error, and the original stays
+PASS a note's met and missed criteria are read in the rubric's words
+PASS naming the zones needs a zone's name, not the question's words
+PASS the weak sample naming no zone cannot meet Names the Climate Zones
+PASS the corrected note claims nothing the answer does not show
+PASS a strong sample that names the zones keeps its claims
+PASS a note with no claim is left as written
+PASS on the card, the weak note no longer claims a criterion its answer does not meet
+
+0 failure(s)

@@ -1,0 +1,163 @@
+{"level":"INFO","location":"__call__:560","message":"Core request refused","timestamp":"2026-10-28 16:51:41,378+0500","service":"CoreLambdaStream","taskName":"Task-1","code":"not_signed_in","status":401,"path":"/assistant/v2/turn"}
+PASS no Authorization header is a 401 JSON
+{"level":"INFO","location":"__call__:560","message":"Core request refused","timestamp":"2026-10-28 16:51:41,380+0500","service":"CoreLambdaStream","taskName":"Task-1","code":"not_signed_in","status":401,"path":"/assistant/v2/turn"}
+PASS malformed token is a 401 JSON, Laravel not called
+{"level":"INFO","location":"__call__:560","message":"Core request refused","timestamp":"2026-10-28 16:51:41,380+0500","service":"CoreLambdaStream","taskName":"Task-1","code":"bad_host","status":400,"path":"/assistant/v2/turn"}
+PASS missing ?host= is a 400 JSON
+{"level":"INFO","location":"__call__:560","message":"Core request refused","timestamp":"2026-10-28 16:51:41,381+0500","service":"CoreLambdaStream","taskName":"Task-1","code":"bad_host","status":403,"path":"/assistant/v2/turn"}
+PASS foreign host is a 403 JSON
+{"level":"INFO","location":"__call__:560","message":"Core request refused","timestamp":"2026-10-28 16:51:41,381+0500","service":"CoreLambdaStream","taskName":"Task-1","code":"bad_host","status":403,"path":"/assistant/v2/turn"}
+PASS production host refused where only stage is allowed
+{"level":"INFO","location":"__call__:560","message":"Core request refused","timestamp":"2026-10-28 16:51:41,382+0500","service":"CoreLambdaStream","taskName":"Task-1","code":"not_signed_in","status":401,"path":"/assistant/v2/turn"}
+PASS expired token (Laravel 401) is a 401 JSON
+{"level":"INFO","location":"__call__:560","message":"Core request refused","timestamp":"2026-10-28 16:51:41,382+0500","service":"CoreLambdaStream","taskName":"Task-1","code":"not_signed_in","status":401,"path":"/assistant/v2/turn"}
+PASS Laravel login page (HTML 200) is a 401 JSON
+{"level":"INFO","location":"__call__:560","message":"Core request refused","timestamp":"2026-10-28 16:51:41,384+0500","service":"CoreLambdaStream","taskName":"Task-1","code":"not_signed_in","status":401,"path":"/assistant/v2/turn"}
+PASS Laravel redirect is a 401 JSON, not followed
+PASS zero credits never blocks (R110)
+{"level":"INFO","location":"__call__:560","message":"Core request refused","timestamp":"2026-10-28 16:51:41,390+0500","service":"CoreLambdaStream","taskName":"Task-1","code":"scout_off","status":403,"path":"/assistant/v2/turn"}
+PASS the assistant flag off (Laravel 404) is a 403 scout_off JSON
+{"level":"WARNING","location":"_fetch:286","message":"Credits check failed upstream","timestamp":"2026-10-28 16:51:41,391+0500","service":"CoreLambdaStream","taskName":"Task-1","status":500}
+{"level":"INFO","location":"__call__:560","message":"Core request refused","timestamp":"2026-10-28 16:51:41,391+0500","service":"CoreLambdaStream","taskName":"Task-1","code":"auth_unavailable","status":503,"path":"/assistant/v2/turn"}
+PASS Laravel 500 is a retryable 503 JSON
+{"level":"WARNING","location":"_fetch:282","message":"Credits check unreachable","timestamp":"2026-10-28 16:51:41,392+0500","service":"CoreLambdaStream","taskName":"Task-1","error":"ConnectTimeout"}
+{"level":"INFO","location":"__call__:560","message":"Core request refused","timestamp":"2026-10-28 16:51:41,392+0500","service":"CoreLambdaStream","taskName":"Task-1","code":"auth_unavailable","status":503,"path":"/assistant/v2/turn"}
+PASS Laravel timeout is a retryable 503 JSON
+{"level":"INFO","location":"__call__:560","message":"Core request refused","timestamp":"2026-10-28 16:51:41,392+0500","service":"CoreLambdaStream","taskName":"Task-1","code":"invalid_body","status":400,"path":"/assistant/v2/turn"}
+PASS invalid JSON body is a 400 JSON
+{"level":"INFO","location":"__call__:560","message":"Core request refused","timestamp":"2026-10-28 16:51:41,394+0500","service":"CoreLambdaStream","taskName":"Task-1","code":"body_too_large","status":413,"path":"/assistant/v2/turn"}
+PASS oversized body is a 413 JSON
+PASS a path outside v2 is a 404 JSON
+PASS valid token streams SSE
+PASS credits endpoint derived from ?host= with the caller's header
+PASS request.state.user_id is Laravel's user_id
+PASS request.state.user_id_authenticated is True after the credits check
+PASS missing body user_id is filled from the token
+PASS the rest of the body is untouched
+PASS an unmarked request is not synthetic
+PASS x-swo-synthetic alone does NOT mark the request synthetic
+PASS x-swo-synthetic with a wrong secret does not mark it
+PASS x-swo-synthetic with the shared secret marks the request synthetic
+PASS with no secret configured nothing is synthetic, even with a secret header
+PASS the synthetic secret never appears in a log line
+PASS a 60 KB body (a class grading batch) is accepted
+PASS the body cap is 300 KB
+PASS a verified token is cached for 30 s by default
+PASS matching body user_id passes (number or string)
+{"level":"INFO","location":"__call__:560","message":"Core request refused","timestamp":"2026-10-28 16:51:41,411+0500","service":"CoreLambdaStream","taskName":"Task-1","code":"identity_mismatch","status":403,"path":"/assistant/v2/turn"}
+PASS a different body user_id is a 403 JSON
+PASS a verified token is cached (no second Laravel call)
+{"level":"INFO","location":"__call__:560","message":"Core request refused","timestamp":"2026-10-28 16:51:41,416+0500","service":"CoreLambdaStream","taskName":"Task-1","code":"not_signed_in","status":401,"path":"/assistant/v2/turn"}
+PASS a different token is not served from the cache
+{"level":"INFO","location":"__call__:560","message":"Core request refused","timestamp":"2026-10-28 16:51:41,417+0500","service":"CoreLambdaStream","taskName":"Task-1","code":"not_signed_in","status":401,"path":"/assistant/v2/turn"}
+{"level":"INFO","location":"__call__:560","message":"Core request refused","timestamp":"2026-10-28 16:51:41,417+0500","service":"CoreLambdaStream","taskName":"Task-1","code":"not_signed_in","status":401,"path":"/assistant/v2/turn"}
+{"level":"INFO","location":"__call__:560","message":"Core request refused","timestamp":"2026-10-28 16:51:41,418+0500","service":"CoreLambdaStream","taskName":"Task-1","code":"not_signed_in","status":401,"path":"/assistant/v2/turn"}
+PASS a repeated rejected token is still a 401 JSON
+PASS a rejected token costs one Laravel call, not three
+{"level":"INFO","location":"__call__:560","message":"Core request refused","timestamp":"2026-10-28 16:51:41,419+0500","service":"CoreLambdaStream","taskName":"Task-1","code":"scout_off","status":403,"path":"/assistant/v2/turn"}
+{"level":"INFO","location":"__call__:560","message":"Core request refused","timestamp":"2026-10-28 16:51:41,419+0500","service":"CoreLambdaStream","taskName":"Task-1","code":"scout_off","status":403,"path":"/assistant/v2/turn"}
+PASS the scout_off 403 is cached the same way
+{"level":"WARNING","location":"_fetch:286","message":"Credits check failed upstream","timestamp":"2026-10-28 16:51:41,420+0500","service":"CoreLambdaStream","taskName":"Task-1","status":500}
+{"level":"INFO","location":"__call__:560","message":"Core request refused","timestamp":"2026-10-28 16:51:41,420+0500","service":"CoreLambdaStream","taskName":"Task-1","code":"auth_unavailable","status":503,"path":"/assistant/v2/turn"}
+{"level":"WARNING","location":"_fetch:286","message":"Credits check failed upstream","timestamp":"2026-10-28 16:51:41,421+0500","service":"CoreLambdaStream","taskName":"Task-1","status":500}
+{"level":"INFO","location":"__call__:560","message":"Core request refused","timestamp":"2026-10-28 16:51:41,421+0500","service":"CoreLambdaStream","taskName":"Task-1","code":"auth_unavailable","status":503,"path":"/assistant/v2/turn"}
+PASS a Laravel 5xx is never cached (fails closed each time)
+PASS a rejection is remembered for at most 30 s
+PASS a rejection under another host or token has its own entry
+PASS scope: a widened client list is cut to Laravel's list (order kept, deduplicated)
+PASS scope: a widened request is logged with counts, never the ids
+{"level":"WARNING","location":"_bind_identity:670","message":"Core request named publications outside the caller's access","timestamp":"2026-10-28 16:51:41,426+0500","service":"CoreLambdaStream","taskName":"Task-1","user_id":"4242","path":"/assistant/v2/turn","dropped":1,"claimed":1,"allowed":2}
+PASS scope: R83 - naming only ids outside access falls back to the caller's own, never the claim or empty
+PASS scope: an explicit empty client list stays empty - a deliberate choice, not a mismatch
+PASS scope: a turn with no client list gets the caller's own publications
+PASS scope: a non-list client value is ignored (the caller's own list)
+{"level":"WARNING","location":"_bind_identity:670","message":"Core request named publications outside the caller's access","timestamp":"2026-10-28 16:51:41,433+0500","service":"CoreLambdaStream","taskName":"Task-1","user_id":"4242","path":"/assistant/v2/grade","dropped":1,"claimed":2,"allowed":2}
+PASS scope: the grade route's list is cut the same way
+PASS scope: a grade body without the field is left without it
+{"level":"WARNING","location":"_caller_from:359","message":"Credits response has no readable publication_ids field; refusing the request","timestamp":"2026-10-28 16:51:41,439+0500","service":"CoreLambdaStream","taskName":"Task-1"}
+{"level":"INFO","location":"__call__:560","message":"Core request refused","timestamp":"2026-10-28 16:51:41,439+0500","service":"CoreLambdaStream","taskName":"Task-1","code":"auth_unavailable","status":503,"path":"/assistant/v2/turn"}
+PASS scope: R83 - a missing publication_ids field from Laravel is refused, never the body as sent
+{"level":"WARNING","location":"_caller_from:359","message":"Credits response has no readable publication_ids field; refusing the request","timestamp":"2026-10-28 16:51:41,441+0500","service":"CoreLambdaStream","taskName":"Task-1"}
+{"level":"INFO","location":"__call__:560","message":"Core request refused","timestamp":"2026-10-28 16:51:41,441+0500","service":"CoreLambdaStream","taskName":"Task-1","code":"auth_unavailable","status":503,"path":"/assistant/v2/turn"}
+PASS scope: an unreadable publication_ids from Laravel is still a 503
+{"level":"WARNING","location":"_bind_identity:670","message":"Core request named publications outside the caller's access","timestamp":"2026-10-28 16:51:41,444+0500","service":"CoreLambdaStream","taskName":"Task-1","user_id":"4242","path":"/assistant/v2/turn","dropped":1,"claimed":2,"allowed":2}
+{"level":"WARNING","location":"_bind_identity:670","message":"Core request named publications outside the caller's access","timestamp":"2026-10-28 16:51:41,446+0500","service":"CoreLambdaStream","taskName":"Task-1","user_id":"77","path":"/assistant/v2/turn","dropped":1,"claimed":2,"allowed":1}
+{"level":"WARNING","location":"_bind_identity:670","message":"Core request named publications outside the caller's access","timestamp":"2026-10-28 16:51:41,447+0500","service":"CoreLambdaStream","taskName":"Task-1","user_id":"4242","path":"/assistant/v2/turn","dropped":1,"claimed":2,"allowed":2}
+PASS scope: each caller's cached list is their own (4242 keeps 68, 77 keeps 900; ints normalised)
+PASS state: Laravel's state reaches the turn, upper-cased, replacing the browser's
+PASS state: a caller Laravel gives no state has none, whatever the browser sent
+PASS state: other paths are not given one
+PASS state: only a two-letter code is a state
+{"level":"WARNING","location":"_bind_identity:670","message":"Core request named publications outside the caller's access","timestamp":"2026-10-28 16:51:41,464+0500","service":"CoreLambdaStream","taskName":"Task-1","user_id":"5130","path":"/assistant/v2/turn","dropped":1,"claimed":2,"allowed":1}
+PASS scope: a masquerade token is scoped to the impersonated teacher's list from Laravel
+PASS scope: scoped_publication_ids keeps order, drops non-ids, counts outsiders
+PASS scope: R83 - a claim entirely outside access falls back to that access, and an empty allowed set still yields nothing
+PASS teacher_context: the browser's own value is always replaced
+PASS teacher_context: fetched again on the very next turn, never cached (AC6)
+PASS teacher_context: not fetched for a grade batch
+{"level":"WARNING","location":"fetch_teacher_context:337","message":"Teacher context unreachable","timestamp":"2026-10-28 16:51:41,478+0500","service":"CoreLambdaStream","taskName":"Task-29","error":"ConnectTimeout"}
+PASS teacher_context: a Laravel outage answers None, and the turn still streams
+PASS teacher_context: the caller's Authorization and api base are held for remember/forget, off the wire
+PASS sha header on a stream
+{"level":"INFO","location":"__call__:560","message":"Core request refused","timestamp":"2026-10-28 16:51:41,483+0500","service":"CoreLambdaStream","taskName":"Task-1","code":"not_signed_in","status":401,"path":"/assistant/v2/turn"}
+PASS sha header on a refusal
+PASS readiness probe needs no token
+PASS no CORS headers from the function by default
+{"level":"INFO","location":"__call__:566","message":"Core request over a spend limit","timestamp":"2026-10-28 16:51:41,487+0500","service":"CoreLambdaStream","taskName":"Task-1","user_id":"4242","code":"DAILY_LIMIT_EXCEEDED"}
+PASS over the daily limit is a 429 JSON checked with Laravel's user_id
+PASS the spend check gets Laravel's raised_spend_cap: off for a teacher, on for a staff email
+PASS refusals are logged
+PASS no token appears in any log line
+{"level":"INFO","location":"_guard_identifiers:129","message":"student identifiers in a browser payload","timestamp":"2026-10-28 16:51:41,512+0500","service":"CoreRouter","taskName":"Task-1","route":"turn","removed":0,"scrub_list_sent":false}
+PASS real core_router: empty message is a 4xx JSON after auth
+{"level":"INFO","location":"__call__:560","message":"Core request refused","timestamp":"2026-10-28 16:51:41,513+0500","service":"CoreLambdaStream","taskName":"Task-1","code":"identity_mismatch","status":403,"path":"/assistant/v2/turn"}
+PASS real core_router: another teacher's body user_id is refused before any stream
+{"level":"INFO","location":"_guard_identifiers:129","message":"student identifiers in a browser payload","timestamp":"2026-10-28 16:51:41,627+0500","service":"CoreRouter","taskName":"Task-1","route":"turn","removed":0,"scrub_list_sent":false}
+{"level":"INFO","location":"_guard_identifiers:129","message":"student identifiers in a browser payload","timestamp":"2026-10-28 16:51:41,631+0500","service":"CoreRouter","taskName":"Task-1","route":"turn","removed":0,"scrub_list_sent":false}
+PASS real core_router: matching body user_id streams 200 as Laravel's id
+PASS real core_router: absent body user_id streams 200 as Laravel's id
+{"level":"WARNING","location":"_bind_identity:670","message":"Core request named publications outside the caller's access","timestamp":"2026-10-28 16:51:41,632+0500","service":"CoreLambdaStream","taskName":"Task-1","user_id":"4242","path":"/assistant/v2/turn","dropped":1,"claimed":2,"allowed":2}
+{"level":"INFO","location":"_guard_identifiers:129","message":"student identifiers in a browser payload","timestamp":"2026-10-28 16:51:41,634+0500","service":"CoreRouter","taskName":"Task-1","route":"turn","removed":0,"scrub_list_sent":false}
+PASS real core_router: the runtime receives Laravel's scope (no list → own publications; widened → intersection)
+PASS real core_router: the ChatRequest carries Laravel's state
+{"level":"INFO","location":"_guard_identifiers:129","message":"student identifiers in a browser payload","timestamp":"2026-10-28 16:51:41,641+0500","service":"CoreRouter","taskName":"starlette.middleware.base.BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.coro","route":"turn","removed":0,"scrub_list_sent":false}
+PASS unauthenticated state id (marker=None) is ignored; the body id is used
+{"level":"INFO","location":"_guard_identifiers:129","message":"student identifiers in a browser payload","timestamp":"2026-10-28 16:51:41,646+0500","service":"CoreRouter","taskName":"starlette.middleware.base.BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.coro","route":"turn","removed":0,"scrub_list_sent":false}
+PASS unauthenticated state id (marker='true') is ignored; the body id is used
+{"level":"INFO","location":"__call__:575","message":"Core request over the in-flight limit","timestamp":"2026-10-28 16:51:41,662+0500","service":"CoreLambdaStream","taskName":"Task-46","user_id":"4242","pool":"turn"}
+PASS two concurrent turns run
+PASS a third concurrent turn is a retryable 429 JSON before the app runs
+PASS grading has its own pool while two turns are running
+PASS finished turns release their leases, and the next turn runs
+PASS chat, lesson plan, action and grade are offered with their kinds; reading a thread is not
+PASS admitted requests reach the app
+PASS a throttled chat turn is a 429 JSON before the app runs
+PASS the refusal says what to do, in the teacher's terms
+PASS a throttled turn gives back its in-flight lease
+PASS a throttled kind does not block another kind
+PASS a marking failure still releases the lease it took
+PASS the next turn after a marking failure runs and releases its own lease
+PASS no table configured: limiting is off and the store is never called
+PASS two leases taken in slots 0 and 1
+PASS a lease carries expires_at and a DynamoDB ttl of now + ceiling + 60 s
+PASS a third lease for the same user and pool is FULL
+PASS another user is not limited by u1
+PASS the grade pool is separate
+PASS a released slot is reused
+PASS an expired lease (a crashed turn) is taken over
+{"level":"INFO","location":"release:470","message":"In-flight lease not released","timestamp":"2026-10-28 16:51:41,682+0500","service":"CoreLambdaStream","error":"ClientError"}
+PASS releasing a stale lease does not free the newer holder's slot
+{"level":"WARNING","location":"acquire:458","message":"Limit check failed open","timestamp":"2026-10-28 16:51:41,682+0500","service":"CoreLambdaStream","limit":"inflight","error":"ClientError"}
+PASS a store error lets the request through (None)
+PASS CORE_INFLIGHT_SLOTS=0 turns the limit off
+PASS authorizer host mapping importable
+PASS parity: stage-online.studiesweekly.com -> https://stage-online-api.studiesweekly.com/
+PASS parity: online.studiesweekly.com -> https://online-api.studiesweekly.com/
+PASS parity: dev-online.studiesweekly.com -> https://dev-online-api.studiesweekly.com/
+PASS parity: qa-2-online.studiesweekly.com -> https://qa-2-online-api.studiesweekly.com/
+PASS parity: stage-online.studiesweekly.com:443 -> https://stage-online-api.studiesweekly.com/
+PASS parity: localhost is refused by both
+PASS parity: evil.example.com is refused by both
+PASS parity: online.studiesweekly.com.evil.example.com is refused by both
+
+0 failure(s)

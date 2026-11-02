@@ -1,0 +1,18 @@
+PASS no grade named, the article's one grade 4: the exit ticket is written at 4, not the usual 3
+PASS its assumption is grade 4 from the article, never 'your usual'
+PASS the brief says grade 4 is the article's grade and never calls it the usual
+PASS the ref records the grade it was written at
+PASS a grade the teacher names wins over the article's grade, and the index is not read
+PASS a grade fixed in the teacher's shortcut wins over the article's grade
+PASS the article's one grade outranks the class grade too (a worksheet)
+PASS with no class or remembered grade, the article's one grade is used without asking
+PASS an article that spans grades (no one index grade) falls back to the usual grade, said as one
+PASS a range with no class or remembered grade asks the grade once, nothing written
+PASS a page that is not an article never reads an article grade
+PASS the form on pub 518 with no grade sent: the plan is written at the article's grade 4, not guessed
+PASS the article's one grade outranks the class grade SWO sent
+PASS a range article takes the grade SWO sent
+PASS with no grade anywhere the plan still guesses, labelled as a guess
+PASS the Built for line names the grade the plan was written at
+
+all document and form grade source checks passed

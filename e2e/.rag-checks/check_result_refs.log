@@ -1,0 +1,19 @@
+PASS the QA sentence, verbatim, keeps the title and loses the result number
+PASS rewritten: The first result (R1) covers maps.
+PASS rewritten: Results R2 and R5 cover trade; R1–R3 are videos.
+PASS rewritten: R4 covers the Navajo.
+PASS rewritten: Both (R1-R3) help, and so does (results R6, R7 and R9).
+PASS rewritten: Work on **R3** first; R17's excerpt mentions bison.
+PASS untouched after a search: Standards RI3, RF2d, ELAGSE3RL1 and ELAGSE5RL5 apply.
+PASS untouched after a search: Try RF.5.4, RF.K.3c, RI.2.9, K.RI.6.A and 5.RI.6.A.b with SF.EL.SR.B3.
+PASS untouched after a search: CCSS RI.4.1 and R.1 and ELA.3.R.1.1 stay as written.
+PASS untouched after a search: R2D2 is a droid, eval row R2-18 is not a result, and Room R12 is down the hall.
+PASS scoped: with no search in the conversation an R-number is left alone
+PASS the screen turns on mid-turn once a search result joins the live message list
+PASS streamed sentence by sentence equals the whole reply screened (shown = stored)
+PASS a replayed reply screened again comes out identical
+PASS no R-number survives the reply
+PASS the chat loop's reply screen sees the turn's messages
+PASS both numbered-result notes tell the model not to write an R-number, and still turn the screen on
+
+all passed

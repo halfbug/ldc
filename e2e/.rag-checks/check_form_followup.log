@@ -1,0 +1,34 @@
+{"level":"INFO","location":"_route:206","message":"Handling request","timestamp":"2026-10-28 16:51:22,644+0500","service":"AIAssistant","taskName":"Task-1","user_id":"u1","path":"generate-from-topic","method":"POST"}
+ok   G1: 'add a DOK 3 question' writes one question at DOK 3, as a follow-up after the three there
+ok   G1: ...the three are kept exactly, a fourth is added with a DOK 3 chip, and the set is marked as added
+ok   G1: ...from the article the set came from (the id sent, not a new search)
+{"level":"INFO","location":"_route:206","message":"Handling request","timestamp":"2026-10-28 16:51:22,646+0500","service":"AIAssistant","taskName":"Task-4","user_id":"u1","path":"generate-from-topic","method":"POST"}
+ok   G1: a named type is added as that type, one question, and no level is asked of it
+{"level":"INFO","location":"_route:206","message":"Handling request","timestamp":"2026-10-28 16:51:22,648+0500","service":"AIAssistant","taskName":"Task-7","user_id":"u1","path":"generate-from-topic","method":"POST"}
+ok   G1: a set at the cap takes nothing and says so
+{"level":"INFO","location":"_route:206","message":"Handling request","timestamp":"2026-10-28 16:51:22,649+0500","service":"AIAssistant","taskName":"Task-10","user_id":"u1","path":"generate-from-topic","method":"POST"}
+ok   G4: 'add a true or false DOK 3 question' is refused before anything is written, offering open response
+ok   G4: ...and it is not a new multiple choice set from another article
+{"level":"INFO","location":"_route:206","message":"Handling request","timestamp":"2026-10-28 16:51:22,650+0500","service":"AIAssistant","taskName":"Task-13","user_id":"u1","path":"generate-from-topic","method":"POST"}
+ok   G2: 'make question 5 easier' on a 3-question set says question 5 is not in it, and changes nothing
+{"level":"INFO","location":"_route:206","message":"Handling request","timestamp":"2026-10-28 16:51:22,651+0500","service":"AIAssistant","taskName":"Task-16","user_id":"u1","path":"generate-from-topic","method":"POST"}
+ok   G2: 'make question 3 easier' on a DOK 3 question lands on DOK 2 (one level), the others unchanged, via the shared revise
+{"level":"INFO","location":"_route:206","message":"Handling request","timestamp":"2026-10-28 16:51:22,653+0500","service":"AIAssistant","taskName":"Task-21","user_id":"u1","path":"generate-from-topic","method":"POST"}
+ok   an article that can no longer be read leaves the set as it was, with a plain reply
+{"level":"INFO","location":"_route:206","message":"Handling request","timestamp":"2026-10-28 16:51:22,654+0500","service":"AIAssistant","taskName":"Task-24","user_id":"u1","path":"generate-from-topic","method":"POST"}
+ok   a follow-up with no article id is the same plain reply, not a search for another article
+ok   a follow-up that neither adds nor edits is not a set change
+ok   no set sent: even 'add a DOK 3 question' is the request it always was
+ok   the door takes the set, with the type normalised and a DOK label kept
+ok   the door has no set when none was sent
+ok   the door refuses current_set 'x'
+ok   the door refuses current_set '[1]'
+ok   the door refuses current_set "[{'question': {}}]"
+ok   the door refuses current_set "[{'question_type': 'nonsense',"
+ok   the door refuses current_set "[{'question_type': 'open_respo"
+ok   scoped_article looks the id up inside the teacher's publications only, and an id outside them is None
+ok   scoped_article with no publications reads nothing
+ok   the article chat: 'make question 5 easier' on a 3-question set is refused plainly, the set unchanged
+ok   missing_question_numbers: 'last' and in-range numbers exist; 0 and beyond do not
+
+ALL OK

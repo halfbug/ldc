@@ -1,0 +1,136 @@
+   order: ['yield:turn.start', 'yield:status', 'ensure_listing', 'yield:status', 'loop', 'yield:text.delta', 'save', 'yield:turn.end', 'touch_listing', 'precompute', 'save_summary', 'telemetry', 'generator_returned']
+PASS turn.end reaches the client
+PASS exactly one terminal event
+PASS thread saved before turn.end
+PASS telemetry runs after turn.end
+PASS telemetry finishes before the generator returns
+PASS the listing finishes before the generator returns
+PASS the runtime does not title the thread (POST /assistant/thread does, once; ONLINE-8093)
+PASS summary precompute runs after turn.end and before telemetry
+PASS the precomputed summary is saved on its own, not as a second thread save
+PASS telemetry carries the precompute time
+PASS nothing is yielded to the client after turn.end
+PASS telemetry carries context stats and build time
+PASS telemetry outcome is complete
+PASS demo P1-5: a page turn names its steps, reading the page and then working out the next step
+PASS turn.start is sent at once
+PASS first_content_ms is recorded for the first content actually sent
+PASS tool_name_corrections is always written, as int 0 on a normal turn
+PASS a turn with no model spend reports cost_usd 0.0 in turn.end and telemetry, never null
+PASS later turns see what the thread made: the latest question set in full, with its answer key
+PASS an older item of the same kind is an outline only, never its answer keys
+PASS a lesson plan's markdown and a levelled article's text (tags stripped) are shown, oldest first
+PASS resources a tool looked up are not shown as something the assistant made
+PASS a ref that is no longer in the history, or none at all, adds no block
+PASS a body over the limit is cut with a marked notice, never silently
+PASS a turn on a thread that made questions sends them to the loop, after the cache point
+PASS a thread that made nothing gets no such block
+PASS answer keys for a set made in this thread are listed from the set: every type, in order
+PASS the article's own questions, keys put into a document, no made set, or a key that cannot be listed go to the model
+PASS a turn asking for answer keys hands the loop the listing as its whole reply; another ask hands it nothing
+PASS a compose turn hands the loop a write_artifact call with the form's kind and title, and its inputs on ctx
+PASS the teacher's row for a compose turn is the summary, not an empty message
+PASS the form's source reaches ctx exactly as sent, with no keys added
+PASS with no page text the article comes from its index record; a weekly plan passes its week id
+PASS a completed action with an after-state closes with the app's own sentence
+PASS a saved draft closes with the app's own sentence, whitespace-normalised, never the model's paraphrase
+PASS a saved draft with another part to the ask, an error or no sentence still goes to the model
+PASS unchanged, no after-state, an error, a question's answer or no message still go to the model
+PASS a save or create keeps the model's closing even when verified; a tab switch gets the fixed one
+PASS only toggles and view switches close with the fixed sentence: the 20-capability table
+PASS the closing is the app's own result sentence, as the live tab switch sends it
+PASS demo P1-5: a resumed turn says it is reading the results, not "Continuing"
+PASS a resumed turn after a verified change hands the loop the fixed closing; an unchanged one hands it none
+PASS a switch asked alone closes with the app's sentence; a switch with a question goes to the model
+PASS the teacher's ask is their last typed message, never a tool result
+PASS at the landing site a switch plus a question hands the loop no fixed closing; the switch alone still gets it
+PASS an ask that also wants questions, an assignment, a message, another set, or says no, never gets the stored keys
+PASS a plain request for the set's keys still lists them
+PASS a compose turn's engine reads the summary, not a message typed beside the form
+PASS when the ask dispatches an engine, the loop gets that call and never the stored keys as its reply
+PASS what changed on a levelled article is its record: level, counts, terms kept and missing, facts not checked
+PASS the reading level is said only as a move relative to the original, never as an absolute formula grade
+PASS is the meaning the same is the terms kept and an unchecked meaning, never a claim that it is the same
+PASS a meaning or importance cue makes it a meaning question; a change cue alone makes it a change question
+PASS change and meaning asks are served; a specific fact, a part, or a combined ask goes to the model
+PASS no curriculum terms in the text says so, and a missing reading level is not printed
+PASS with no change record, or no levelled article in the thread, the model answers
+PASS what changed shows up to two aligned sentence pairs, meaning shows one, each an original sentence and its rewrite
+PASS when the page is not the text that was levelled (counts differ), no example is shown
+PASS sentences that share too few words are never shown as a pair
+PASS after a paragraph revision the record is worded as the revised paragraphs only, with no example
+PASS no reply built from a record claims the facts or meaning were kept
+PASS a turn hands the loop the record reply with its example for change and meaning asks, and nothing for a fact question
+PASS a list lead-in ending ':' is never part of an example
+PASS a meaning question after a paragraph revision keeps "I can't confirm" capitalised after the prefix
+PASS a plain feedback request on a totals-only grade summary is a student_feedback call named for the assessment
+PASS only a plain imperative feedback request dispatches; questions, compound asks and other documents go to the model
+PASS per-question results, a page that is not a grade summary, or no write_artifact tool never dispatch
+PASS at the landing site the totals-only feedback turn gets the student_feedback call; the per-question page gets none
+PASS a compose turn gives the loop a refusal naming the article, and a weekly plan names the week's material
+PASS an ordinary chat turn gives the loop no refusal text
+PASS with plan text on the form, the refusal offers the Studies Weekly lesson plan
+PASS with an empty or absent panel it offers a topic instead, never a plan that is not there
+PASS every refusal still names the article and what was missing, whichever offer it makes
+PASS the form's own state reaches the refusal: a form reporting plan text gets the publisher offer, an absent panel gets the topic one
+PASS the weekly plan refusal offers a week or a topic, and claims nothing about a publisher plan
+PASS a turn whose loop stopped on a direct refusal reports outcome refused, not complete
+PASS on a rostered card a plain co-teacher how-to gets the fixed rostered reply
+PASS a non-rostered card, a card with no line, or a compound or other ask goes to the model
+PASS at the landing site the rostered card's turn closes with the fixed reply; the non-rostered card's turn goes to the model
+PASS a plain category question on the categories page is a training.openCategory call with the page's own name
+PASS only a listed category, asked as the whole message, dispatches
+PASS Plan mode (no page_action), a page without the action, or a page without the list never dispatches
+PASS at the landing site the category turn hands the loop the open call and its fixed lead sentence; another ask gets neither
+PASS the button's exact request revises that document with the fixed approach instruction and its own kind and title
+PASS another wording, an unknown ref, or a ref that is not a document goes to the model
+PASS at the landing site the button's request hands the loop the revision call; a typed request hands it none
+PASS both states arrive: the model reads the page state before and after, in that order
+PASS only an after-state reads as before, and never claims a before
+PASS B7's error with no before tells the model the earlier state is not known, and is an error result
+PASS a successful result with no state (navigation) gets no not-known sentence
+PASS a page action that moved the browser tells the model the page it now sees is the one it opened
+PASS at the landing site a resumed error turn hands the model the not-known sentence in its tool result
+PASS a declined action renders byte-identical to B7's thread, with no before-unknown sentence
+PASS turn.end adds reason no_article_text and keeps outcome tool_error; a tool error with no reason has no reason key
+PASS an ask about one standard code dispatches search_curriculum with that code as the query
+PASS a compound, plural, vague or code-free ask stays with the model
+PASS no search_curriculum on the turn, or an article on the page (get_article_resources answers it), and nothing dispatches
+PASS at the landing site the standard ask hands the loop that search_curriculum call; another ask does not
+PASS a dispatched search or page action streams no lead-in; the making engines still do; level_article still does not
+PASS write_artifact's own resolved title wins outright
+PASS generate_questions names only article_id, resolved against this conversation's own search results -- not the page on screen (the reported fault)
+PASS an article_id no search returned falls back to the page, same as before this fix
+PASS a revise names the set's own article, not the page on screen (local retest 2026-09-30: "Customized Content")
+PASS no resolved input at all (the model used the page's own article) still names the page
+PASS a quiz with no article_id on a page with no article names the searched article the tool writes from
+PASS on an article page, a quiz with no article_id is the page's article, so the lead-in names the page
+PASS a revise call's resolved title wins over the page on screen; every other call falls back to the page
+PASS a dispatched quiz after a search writes from the found article, and its lead-in names that article
+PASS a dispatched quiz with no search in the conversation is unchanged, so the page's article is used
+PASS QA ONLINE-7509 #3: 'this article' keeps the page's article even after a search found another
+PASS write_artifact with no title never borrows a searched article
+PASS a quiz named from a non-first search hit stays the latest found article next turn, so the shortcut's tool input and its lead-in agree (QA item 26)
+PASS the live Teacher Resources card carries no article body, so the compose dispatch cannot fire there
+PASS on a card with the article body the ask is dispatched, with its arguments read, and never left to a page action
+PASS with no article body on the card (the Teacher Resources tab, and a form card) nothing is dispatched: the model decides
+PASS a form card is never an article, whatever text it carries (has_article returns on kind first)
+PASS a lone approved toggle still closes with the app's own sentence and no model call (cfdef8a)
+PASS an ask carrying a second part hands the turn to the model instead of ending it, so the second part is at least seen
+PASS the guard reads the teacher's own words, not the result: the same result with a one-part ask still closes
+PASS a two-part ask carries the outstanding note into the resumed turn, naming what has been done rather than guessing what is left
+PASS a one-part ask is unchanged, byte for byte, so an ordinary approval reads as it did
+PASS 'Completion: done' is left out of an ok result, and kept for every other completion and for a non-ok status
+PASS what is 'done' comes from the thread's own successful action rows, in order, and a failed one is not counted as done
+PASS the note is decided by the teacher's words, not by the result: the same result with a one-part ask carries none
+PASS the digest answers what the turn could do: its capability ids, a count, the mode and the state version
+PASS it carries NO page text: a card holding student names keeps only a sha of itself
+PASS the sha answers 'was it the same card': equal for the same card, different for a changed one
+PASS a page publishing more ids than the cap keeps the count and the sha rather than a long list
+PASS an unserialisable card still produces a digest rather than failing the turn
+PASS a real turn stores the card digest on its assistant row, so the question survives the turn
+PASS the where-assigned call carries the class the work was assigned to, not the class on screen
+PASS a plain where-did-you-assign-it ask dispatches assignment.open page:grade for the most recent assign
+PASS anything but the plain ask, no prior assign, no page_action, or a page without assignment.open goes to the model
+
+0 failure(s)

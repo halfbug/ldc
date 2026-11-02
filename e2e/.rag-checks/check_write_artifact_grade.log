@@ -1,0 +1,21 @@
+PASS the resumed answer outranks even a real classroom grade
+PASS a named grade is not itself an assumption - the teacher just said it
+PASS a real classroom grade is used
+PASS ...and recorded as an assumption, with its source
+PASS a remembered grade is used and recorded
+PASS an article-only resolved grade is left for the page's own prompt rule, not applied here
+PASS nothing resolved: no override, no assumption
+PASS ctx.resolved is None (a stale TurnContext outside a real turn): no crash, no override
+PASS an assumed class grade is labelled with its source and as not named by the teacher
+PASS a remembered grade says so
+PASS no assumed grade, no line
+PASS a chat write appends that line to the brief the engine reads, right where the resolved grade is applied
+PASS week articles all grade 5 (list form): grade 5
+PASS week article with lo=hi=5: grade 5
+PASS a range is not a grade
+PASS articles of different grades give none
+PASS the 0-12 no-grade span gives none
+PASS no articles gives none
+PASS no week id gives none
+
+0 failure(s)

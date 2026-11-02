@@ -1,0 +1,69 @@
+PASS explicit cancel: the turn ends with turn.end status stopped
+PASS explicit cancel: turn.start then exactly one terminal event
+PASS explicit cancel: the turn was marked running in the store first
+PASS history keeps only the emitted prose plus the stop note, no dangling toolUse
+PASS transcript row is status stopped with the emitted text
+PASS a finished artifact keeps its ref
+PASS the open artifact is incomplete, with no ref, and keeps what was shown
+PASS a ref created but never shown is dropped
+PASS telemetry outcome is stopped
+PASS telemetry says whether the turn was dispatched (this one was not)
+PASS HIGH 2: a stopped turn records the spend made before Stop, in telemetry and turn.end
+{"level":"INFO","location":"stream_turn:226","message":"Client left before the turn finished; treating it as Stop","timestamp":"2026-10-28 16:52:46,171+0500","service":"CoreRuntime","taskName":"Task-8"}
+Task exception was never retrieved
+future: <Task finished name='Task-20' coro=<wait_for() done, defined at /home/lenovo/.local/share/uv/python/cpython-3.13.13-linux-x86_64-gnu/lib/python3.13/asyncio/tasks.py:459> exception=TimeoutError()>
+Traceback (most recent call last):
+  File "/home/lenovo/.local/share/uv/python/cpython-3.13.13-linux-x86_64-gnu/lib/python3.13/asyncio/tasks.py", line 507, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/src/core/runtime.py", line 2551, in _run_turn
+    result = await _run_unless_stopped(continue_then_loop(), cancel, thread_id, turn_id, cfg.cancel_poll_s, user_id)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/src/core/runtime.py", line 2143, in _run_unless_stopped
+    await asyncio.wait({loop_task, stop_wait}, return_when=asyncio.FIRST_COMPLETED)
+  File "/home/lenovo/.local/share/uv/python/cpython-3.13.13-linux-x86_64-gnu/lib/python3.13/asyncio/tasks.py", line 451, in wait
+    return await _wait(fs, timeout, return_when, loop)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/.local/share/uv/python/cpython-3.13.13-linux-x86_64-gnu/lib/python3.13/asyncio/tasks.py", line 537, in _wait
+    await waiter
+asyncio.exceptions.CancelledError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/lenovo/.local/share/uv/python/cpython-3.13.13-linux-x86_64-gnu/lib/python3.13/asyncio/tasks.py", line 506, in wait_for
+    async with timeouts.timeout(timeout):
+               ~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/lenovo/.local/share/uv/python/cpython-3.13.13-linux-x86_64-gnu/lib/python3.13/asyncio/timeouts.py", line 116, in __aexit__
+    raise TimeoutError from exc_val
+TimeoutError
+PASS disconnect: the turn stops and persists as stopped within ~1 s
+PASS disconnect: telemetry outcome is stopped
+PASS an early Stop ends the turn as stopped before the loop is ever invoked
+PASS an early Stop still sends exactly one terminal turn.end
+PASS an abandoned turn ends at its ceiling inside the task, with telemetry
+PASS the ceiling outcome is recorded as an error with code turn_ceiling
+PASS HIGH 2: the ceiling records the spend made before it
+PASS HIGH 1: after the ceiling the loop task is cancelled and makes no further model call
+PASS A17: the stream stays open until the ceiling turn's telemetry is recorded
+PASS A17: the teacher still gets the turn_ceiling error
+{"level":"WARNING","location":"recent_savable_refs:258","message":"Could not look up earlier savable refs","timestamp":"2026-10-28 16:52:50,670+0500","service":"CoreThreads","error":"ConnectionFailure('You have not defined a default connection')"}
+PASS HIGH 1: Stop during the continuation tool cancels it and ends the turn stopped
+PASS HIGH 2: the stopped continuation records the engine's spend
+{"level":"WARNING","location":"recent_savable_refs:258","message":"Could not look up earlier savable refs","timestamp":"2026-10-28 16:52:51,877+0500","service":"CoreThreads","error":"ConnectionFailure('You have not defined a default connection')"}
+PASS HIGH 1: the ceiling cancels the continuation tool and ends with turn_ceiling
+PASS HIGH 2: the ceiling during the continuation records the engine's spend
+PASS HIGH 2: a budget_exhausted exit records the spend made before it
+{"level":"ERROR","location":"_run_turn:2666","message":"Core turn failed","timestamp":"2026-10-28 16:52:54,889+0500","service":"CoreRuntime","taskName":"Task-65","error":"RuntimeError('boom')","exception":"Traceback (most recent call last):\n  File \"/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/src/core/runtime.py\", line 2551, in _run_turn\n    result = await _run_unless_stopped(continue_then_loop(), cancel, thread_id, turn_id, cfg.cancel_poll_s, user_id)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/src/core/runtime.py\", line 2145, in _run_unless_stopped\n    return loop_task.result()\n           ~~~~~~~~~~~~~~~~^^\n  File \"/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/src/core/runtime.py\", line 2525, in continue_then_loop\n    return await run_loop(\n           ^^^^^^^^^^^^^^^\n    ...<23 lines>...\n            if not action_result and continuation is None and direct_call is None else None))\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/tests/core/check_stop.py\", line 395, in spends_then_raises\n    raise raised\nRuntimeError: boom","exception_name":"RuntimeError","stack_trace":{"type":"RuntimeError","value":"boom","module":"builtins","frames":[{"file":"/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/src/core/runtime.py","line":2551,"function":"_run_turn","statement":"result = await _run_unless_stopped(continue_then_loop(), cancel, thread_id, turn_id, cfg.cancel_poll_s, user_id)"},{"file":"/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/src/core/runtime.py","line":2145,"function":"_run_unless_stopped","statement":"return loop_task.result()"},{"file":"/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/src/core/runtime.py","line":2525,"function":"continue_then_loop","statement":"return await run_loop("},{"file":"/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/tests/core/check_stop.py","line":395,"function":"spends_then_raises","statement":"raise raised"}]}}
+PASS HIGH 2: a internal exit records the spend made before it
+PASS cancel on a running turn answers cancelled
+PASS cancel uses the body user_id when unauthenticated (local)
+PASS cancel after turn.end is a no-op
+PASS cancel on someone else's thread is a JSON 404
+PASS cancel without a turn_id is a JSON 400
+PASS ONLINE-8051: cancel with a null thread_id (Stop before turn.start) is recorded by turn id
+PASS ONLINE-8051: cancel with thread_id omitted is the same
+PASS ONLINE-8051: another user's turn id is a JSON 404
+PASS ONLINE-8051: no thread_id and no turn_id is still a JSON 400
+
+0 failure(s)

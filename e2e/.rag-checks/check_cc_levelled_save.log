@@ -1,0 +1,17 @@
+ok   same turn: the save is sent with the grade 3 rewrite the turn made, and the questions
+ok   same chat, later turn: the earlier rewrite is reused when it matches the article and the grade
+ok   a continuation leg with no ask takes the newest rewrite of this article
+ok   same chat, other grade: refused with what to do, so a fresh grade 3 rewrite is made
+ok   several rewrites: the one at the asked grade is sent, not the newest
+ok   no rewrite in this conversation: refused, so the model levels first
+ok   a rewrite of another article is never saved under this one
+ok   useLevelled false copies the article as published
+ok   a plain save after a rewrite holds the rewrite (the default the card states)
+ok   a save of questions without useLevelled is left as asked
+ok   a levelled value from the model is replaced by the thread's own
+ok   ...and dropped when the thread has none
+ok   a save naming one set (str) and no title is named after the set
+ok   a save naming one set (list) and no title is named after the set
+ok   ...and a title the model gave is kept
+
+all passed

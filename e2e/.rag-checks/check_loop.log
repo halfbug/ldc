@@ -1,0 +1,173 @@
+PASS text streams as text.delta
+PASS ask_user pauses the turn
+PASS pending_prompt emitted with the toolUse id
+PASS pending records the paused id
+PASS assistant toolUse message persisted
+PASS resume completes
+PASS roles alternate after resume
+PASS Plan mode publishes no page_action
+PASS tools list ends with a cachePoint
+PASS Sonnet 5 request carries no temperature
+PASS page_action pauses in Agent mode
+PASS pending_action carries service stateVersion and args
+PASS sibling tool results are held with the pause
+PASS the second pause is refused as an error result
+PASS only one pause event is emitted
+PASS status label shown for a service tool
+PASS every service tool has a status label
+{"level":"WARNING","location":"_attempts:401","message":"Model stream went idle","timestamp":"2026-10-28 16:51:47,682+0500","service":"CoreLoop","taskName":"Task-18","attempt":1,"emitted":false}
+PASS idle call before any text is retried and succeeds
+PASS the abandoned attempt is counted and timed, so a stall is visible in the turn's own row
+{"level":"WARNING","location":"_attempts:401","message":"Model stream went idle","timestamp":"2026-10-28 16:51:47,985+0500","service":"CoreLoop","taskName":"Task-21","attempt":1,"emitted":true}
+PASS idle after text raises idle_timeout (retryable)
+PASS text, reasoning, toolUse at index 2: toolUse keeps its name and id
+PASS signed reasoning is replayed with its signature
+PASS no nameless toolUse is ever stored
+{"level":"ERROR","location":"_once:527","message":"toolUse delta with no matching contentBlockStart","timestamp":"2026-10-28 16:51:47,990+0500","service":"CoreLoop","taskName":"Task-29","index":2,"known":{"0":"text"}}
+PASS toolUse delta without a start raises a retryable stream_invariant
+PASS the malformed assistant message is not stored
+PASS unsigned reasoning is dropped from replay
+{"level":"ERROR","location":"_run_loop:1098","message":"Refusing to send a history Bedrock would reject","timestamp":"2026-10-28 16:51:47,993+0500","service":"CoreLoop","taskName":"Task-35","problems":["messages[1].content[1] toolUse"],"shape":[{"role":"user","blocks":["text"]},{"role":"assistant","blocks":["text","toolUse:'':tu_x"]},{"role":"user","blocks":["toolResult:tu_x"]}]}
+PASS a nameless toolUse in history is refused before sending
+{"level":"WARNING","location":"_assemble:312","message":"Model called a tool name Bedrock cannot replay; stored sanitised","timestamp":"2026-10-28 16:51:47,996+0500","service":"CoreLoop","taskName":"Task-38","called":"article.setTab","stored":"article_setTab"}
+PASS a capability id called as a tool is stored with a replayable name
+PASS the stored toolUse carries no extra fields
+PASS the call is answered as an error that points to page_action
+PASS the turn continues and completes
+PASS the correction is counted, with the name the model used
+PASS cancelling a turn closes the in-flight Bedrock event stream
+PASS two parallel engines plus a failing tool give an exact total: 2 loop calls + 4 engine calls, no double count
+PASS engine calls are counted from the accumulator
+PASS engine cost is included in cost_usd
+PASS only 3 of 5 tool calls in one step actually run
+PASS every one of the 5 toolUse blocks gets a toolResult
+PASS the 2 extra calls are refused with an error telling the model to call fewer
+{"level":"WARNING","location":"_run_loop:1091","message":"Turn token budget exhausted","timestamp":"2026-10-28 16:51:48,228+0500","service":"CoreLoop","taskName":"Task-66","input":5000,"output":10,"input_budget":1000,"output_budget":60000}
+PASS an exhausted token budget ends the turn with a non-retryable budget_exhausted
+PASS the pause stores its resume_instruction
+PASS the resume_instruction never goes out on the wire
+PASS the model's own tool call stays on the main model, with no forced tool choice
+PASS the closing after an engine tool is on the fast model, with the closing note and no reasoning blocks
+PASS the closing is shown the finished material's own opening (Time: 50 minutes), capped, not the whole body
+PASS the main model's own first call carries no closing material
+PASS the main model's own history keeps its reasoning block
+PASS the template closing is the default for fully specified engine calls
+PASS direct dispatch is on by default
+PASS CORE_DIRECT_DISPATCH=0 turns direct dispatch off
+PASS after a non-engine tool the next call stays on the main model
+PASS dispatch forces only a clear single-engine ask
+PASS no article on the page, no dispatch
+PASS a dispatched level_article never streams a lead-in (it may still ask a grade); other engines do
+PASS direct arguments are read only from exact plain asks; any other qualifier goes to the model
+PASS a bare weekly-plan ask is dispatched only when its week resolves on the page
+PASS run 15c N6: "Plan this week" on a page offering the week form opens the form, not the engine
+PASS run 15c N6: no week scope, another capability, or no page_action on the turn: the engine as before
+PASS run 15c N6: another week is not this page's form, so it still goes to the engine
+PASS the weekly brief carries the grade, publication and chosen week the card states
+PASS a card with no grade field gets no grade in the brief, even when a publication name or scope grades mention one
+PASS a card that states nothing gets an empty brief
+PASS the brief names the items the page lists under the chosen week, and only those
+PASS a page that lists no items for the week adds none (an article card's week line)
+PASS no write_artifact on the turn, no weekly dispatch
+PASS template closing: no model call at all, and the closing names only what the stored material says
+PASS template closing leaves a valid history: toolUse, its toolResult, then the assistant's closing
+PASS planner-routed single engine step: one model call (the planner), then the template, no closing call
+PASS without template_single the planner-routed step keeps the fast-model closing
+PASS closing_text: no model call, the reply is exactly that text, and the history stays valid
+PASS an ask that wants a follow-up after the material keeps a model closing
+PASS Customized Content or 'with N questions' keeps a model closing after one engine call; a single-material ask does not
+PASS a deterministic resume closes with the template and no model call, and the levelled reply carries the warning
+PASS direct dispatch: the only model call is the fast closing, and the engine got the exact arguments
+PASS direct dispatch stores the lead-in and a replayable toolUse, answered by its toolResult
+PASS a repeat of the same label within the window is dropped, a later one is shown
+PASS a tool that showed a status hands back to the turn's own label when it finishes
+PASS a tool that showed no status adds none when it finishes
+PASS a planner engine call with no sentence of its own gets exactly one lead-in, shown first
+PASS the stored lead-in sits after the planner's reasoning and before its toolUse
+PASS no planner lead-in for level_article (it may ask a grade), or when the planner wrote its own sentence
+PASS after a failed engine the main model is replayed the assistant turn starting with its reasoning
+PASS a one-question set closes as "Your question is ready.", never "Your 1 questions"
+PASS a larger set keeps its count
+PASS a Kindergarten rewrite closes in words, and a numbered grade is unchanged
+PASS the assumption line names the grade and the state, between the ready line and the offer
+PASS a remembered ('usual') field gets its own parenthetical
+PASS no assumed fields at all: no assumption sentence
+PASS draft_assignment shares the same deterministic closing machinery as the other engine tools
+PASS a fresh assignment draft closes with its question count; its card names it
+PASS a classroom's real (known but unstated) grade and state are named in the closing, deterministically
+PASS one document's closing does not repeat the title its card shows
+PASS two documents in one turn are each named, to tell them apart
+PASS a revised document names the sections it changed, in the teacher's words, and says the rest is unchanged
+PASS a paragraph revision names its paragraph; a whole rewrite and a new document still close as before
+PASS a section edited twice in one revision is named once
+PASS a plural kind closes with "are": strong and weak answers are ready, and are updated
+PASS a totals-only feedback template closes as a template to fill in; feedback from item-level results closes as ready
+PASS after a refused call the model is told its earlier text is already shown; with no earlier text, nothing is added
+PASS a refused direct call with a refusal text makes no model call and no search, and ends with that text
+PASS the refused turn leaves a valid history: toolUse, its error toolResult, then the refusal
+PASS a chat dispatch with no refusal text still lets the model answer the refusal, as before
+PASS the v2 screen drops a tool name, a ref id and a recited constitution sentence from the stream and the stored reply
+PASS the model's own history keeps its raw text; only what the teacher sees and the transcript are screened
+PASS a reply that was all internal text is replaced by a short apology, never silence
+PASS every fixed reply and closing the runtime writes passes the v2 screen unchanged
+PASS a page's own capability id and a backticked id are dropped; a tool-call tag is cut out in place
+PASS held text is released only through its last whole sentence; a clause break or a long run releases nothing
+PASS an abbreviation, an initial or a list number does not end a sentence; a colon does not either
+PASS a recitation with a clause break in it is dropped whole: none of it reaches the teacher or the transcript
+PASS no fragment of a screened sentence is shown or stored: leak (internal vocabulary)
+PASS no fragment of a screened sentence is shown or stored: wording (label)
+PASS no fragment of a screened sentence is shown or stored: names (hidden-names claim)
+PASS at the landing site a bare known code is shown and stored with its prefix; nothing else changes
+PASS a multi-paragraph reply and a list reply are shown and stored byte for byte, at every piece width
+PASS first text is the first whole sentence, released as soon as its full stop and a space are held, and the reply is whole
+PASS a refused engine's data.reason is kept on the loop result; an error without a reason leaves it unset
+PASS the unlinked citation from B4's own failing row is dropped, and the linked one beside it is kept
+PASS a multi-word title matching no linked article fails too, so a citation carrying no id is still checked
+PASS the one-word-title hole is real and pinned so it cannot be forgotten
+PASS a title in the set NEVER silences an id that failed: 9,867 of 18,830 live articles share a title (B3)
+PASS a citation that says plainly it is not linked is kept: refusing to offer it would be the worse answer
+PASS with no claim of linkage nothing is screened, so ordinary article talk is untouched
+PASS a turn with no standard_links leaves the screen inert, and an empty map is not 'nothing is linked'
+PASS at the landing site the turn's own standard_links arm the screen: the unlinked citation reaches neither the teacher nor the transcript
+PASS a bolded standard code is not read as a cited article, so a correct sentence is not dropped for bolding one
+PASS a bolded phrase that is not title-shaped is left alone: the screen's errors fall towards keeping a true sentence
+PASS a title-shaped citation the lookup never returned still fails: the shape test narrows what is checked, not whether
+PASS the shape test itself: codes and lower-case phrases are not titles; title-cased names are
+PASS build_request carries guardrailConfig when GUARDRAIL_ID is set
+PASS build_request carries no guardrailConfig when no guardrail is configured
+{"level":"WARNING","location":"_once:573","message":"Bedrock guardrail intervened","timestamp":"2026-10-28 16:51:49,898+0500","service":"CoreLoop","taskName":"Task-257","guardrail_verdicts":[]}
+PASS a guardrail intervention is a distinct, non-retryable error
+PASS the text already streamed to the browser before the block is not stored as a successful assistant turn
+PASS guardrail verdicts name policy, type and action only
+PASS an absent trace has no verdicts
+PASS both guardrail log lines fired
+PASS no guardrail log line carries the trace or the matched text
+PASS EMAIL ANONYMIZED alone is not a block
+PASS PHONE ANONYMIZED alone is not a block
+PASS USERNAME ANONYMIZED alone is not a block
+PASS a real PII BLOCK (e.g. an SSN) is still a block
+PASS a topic policy BLOCK is still a block
+PASS a content filter BLOCK is still a block
+PASS a mix on one turn — EMAIL ANONYMIZED and an SSN BLOCKED together — is still a block: the config lets ANONYMIZE and BLOCK share one policy, and a response can carry both at once
+PASS no trace at all fails safe as blocked
+PASS a trace with assessments but nothing flagged BLOCKED is not a block
+{"level":"INFO","location":"_once:579","message":"Bedrock guardrail masked PII only, turn continues","timestamp":"2026-10-28 16:51:49,901+0500","service":"CoreLoop","taskName":"Task-266","guardrail_verdicts":["pii:EMAIL:ANONYMIZED"]}
+PASS an ANONYMIZE-only intervention completes the turn, not raises
+PASS the masked text is appended to history as a normal assistant turn
+{"level":"WARNING","location":"_once:573","message":"Bedrock guardrail intervened","timestamp":"2026-10-28 16:51:49,902+0500","service":"CoreLoop","taskName":"Task-269","guardrail_verdicts":["pii:US_SOCIAL_SECURITY_NUMBER:BLOCKED"]}
+PASS a real BLOCK still raises guardrail_intervened
+PASS the blocked message is the ticket's exact wording (ONLINE-6554)
+PASS the text streamed before a real block is still not stored as a successful turn
+PASS offer_match: the rendered offer is the whole reply and the turn ends with no model call after it
+PASS offer_match: the history ends toolUse, toolResult, the offer, and stays valid
+PASS offer_match with no search this turn is an error the model answers; no reply is forced
+PASS a profile turn about Student K22235 never labels the reply with the previous turn's Student K22234, streamed or stored
+PASS a student the teacher named in this ask is left as written
+PASS a turn whose profile resolved no student rewrites nothing
+PASS a picked grade is saved as {'grade': n}, K as 0
+PASS the lead-in is told a quiz is being made, and a plan by its kind
+PASS a question hit's article is remembered; an assessment question with no article is not
+PASS N2: the hidden-names sentence is dropped whole, streamed and stored alike
+PASS P3: a replaced standards claim leaves no glued fragment, and the turn does not end on the fallback line
+
+0 failure(s)

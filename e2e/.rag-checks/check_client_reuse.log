@@ -1,0 +1,39 @@
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 54744)
+Traceback (most recent call last):
+  File "/home/lenovo/.local/share/uv/python/cpython-3.13.13-linux-x86_64-gnu/lib/python3.13/socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/.local/share/uv/python/cpython-3.13.13-linux-x86_64-gnu/lib/python3.13/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/.local/share/uv/python/cpython-3.13.13-linux-x86_64-gnu/lib/python3.13/socketserver.py", line 766, in __init__
+    self.handle()
+    ~~~~~~~~~~~^^
+  File "/home/lenovo/.local/share/uv/python/cpython-3.13.13-linux-x86_64-gnu/lib/python3.13/http/server.py", line 447, in handle
+    self.handle_one_request()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/lenovo/.local/share/uv/python/cpython-3.13.13-linux-x86_64-gnu/lib/python3.13/http/server.py", line 435, in handle_one_request
+    method()
+    ~~~~~~^^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/tests/core/check_client_reuse.py", line 62, in do_GET
+    self.wfile.write(body)
+    ~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/lenovo/.local/share/uv/python/cpython-3.13.13-linux-x86_64-gnu/lib/python3.13/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+    ~~~~~~~~~~~~~~~~~~^^^
+BrokenPipeError: [Errno 32] Broken pipe
+----------------------------------------
+PASS five teacher-context fetches in one instance open one connection
+     local teacher-context fetch: 15.42 ms with a client per call (5 connections), 38.14 ms reused (plain HTTP on 127.0.0.1, so no TLS handshake saved)
+PASS a new event loop gets its own client and the calls still work
+PASS a pooled connection Laravel closed is retried once on a fresh connection
+PASS a timed-out GET is not retried
+PASS two thread titles and two summaries build two Bedrock clients, not four
+PASS the title client keeps a 20 s read, 5 s connect and one attempt
+PASS the summary client keeps its caller's 8 s read and one attempt
+PASS three health probes share one Mongo client with the 1.5 s timeouts
+PASS a rotated URI gets a fresh probe client and the old one is closed
+PASS the thread routes build no MongoClient of their own (v1 checkpoints are read from core_legacy_threads, ONLINE-8093)
+
+0 failure(s)

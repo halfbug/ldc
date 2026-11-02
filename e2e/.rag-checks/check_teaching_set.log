@@ -1,0 +1,112 @@
+
+--- discovery ---
+PASS organizer: a worksheet titled by an organizer form is an organizer
+PASS organizer: the form named in the opening counts too
+PASS organizer: an ordinary printable is not an organizer
+PASS organizer: 'Web Mapping' is not a concept web
+PASS organizer: only worksheets can be organizers
+PASS kind groups cover every kind a teacher is shown
+PASS grouping: groups contiguous, in the order of their best hit, rank kept inside
+PASS grade: from the item's grades
+PASS grade: a range
+PASS grade: kindergarten
+PASS grade: every grade says nothing
+PASS grade: questions keep their own lo/hi label
+PASS reason: the title's shared words first
+PASS reason: words the text mentions, with light stemming
+PASS reason: no shared word is said to be a meaning match to the topic, never an invented one
+PASS reason: with no topic, a meaning match still says only that it is related
+PASS reason: a standard link wins
+PASS organizer suggestion: dates -> timeline
+PASS organizer suggestion: compare -> Venn
+PASS organizer suggestion: default web
+
+--- search_curriculum ---
+PASS standard ask: material wording around a code
+PASS standard ask: a meaning question stays a definition ask
+PASS standard ask: no code, no standard ask
+PASS organizer kind: teacher words name it
+PASS organizer kind: only organizer worksheets survive an organizer ask
+PASS organizer kind: untouched when worksheets were asked for too
+PASS organizer kind: untouched for other asks
+PASS AC2/AC3: results come from every publication in scope, never outside it
+PASS AC3: every card row carries its group, grade and a one-line reason
+PASS AC1: card rows are grouped by type
+PASS AC3: the grade comes from the item
+PASS AC5: a standard ask's cards are its linked article and tagged question, each saying how it is linked
+PASS AC5: outcome found, and the linked set reaches the tool data for the citation screen
+PASS AC5: an unknown code shows no cards and says it is not a standard linked here
+PASS AC5: a known code with nothing linked says none is linked, with no cards
+PASS AC5: a failed link lookup is 'could not check', never 'none'
+
+--- teaching sets ---
+PASS AC6: one judge call over every slot's leading candidates
+PASS AC6: items grouped by type in the set's slot order, the weekly assessment just before the questions
+PASS AC6: the article slot holds the relevant article, never the judged-out one or another school's
+PASS AC6: an organizer where one fits (a Venn worksheet), printables without organizers
+PASS AC6: a video, not an image, in the video slot
+PASS AC6: every item has its reason
+PASS AC6: standards covered = the article's own (this state only when known) plus the questions' tags
+PASS AC4: no item from a publication outside the teacher's scope
+PASS the set is stored as a teaching_set ref
+PASS AC7 (needs the set in this thread): an unknown ref is refused
+PASS AC7: an alternative swaps only that item; every other item is byte-identical
+PASS AC7: the old ref is unchanged and a new ref is minted
+PASS a 'shorter' ask says video length is not recorded
+PASS a swapped-in item gets a new key, never the retired one
+PASS AC7: no alternate left: the item is removed and the reply says there is no other
+PASS AC7: remove drops exactly those items and keeps the rest
+PASS scope is re-checked at revision: an alternate outside today's publications is never swapped in
+PASS AC7: an unknown key is refused and the valid keys are listed
+PASS unchecked: the set is still built and says relevance could not be checked
+PASS organizer: none fits -> a suggested form with its reason, and no card
+PASS Spanish asked and none exists: the set says so
+PASS no publications: nothing is searched
+
+--- thin sets, grade, reasons, empty-slot fallback ---
+PASS thin set with the topic in another publication: not_owned, named, no items shown
+PASS thin set with nothing anywhere: none, no items
+PASS a thin set's reason never cites request filler
+PASS with no topic, request filler still never becomes the reason
+PASS thin set whose catalogue items are judged keyword-only: none, never not_owned
+PASS reason: a topic word that is also request wording still counts ('needs and wants')
+PASS reason: a long topic word matches its family, quoted as the item spells it
+PASS grade distance: a grade-3 ask ranks grade 2 above TK, and an unstated grade is not penalised
+PASS reason cites a content word of the topic
+PASS a named grade the publications do not serve is said plainly
+PASS a served grade with no item marked for it is said too
+PASS empty-slot fallback: a key on an empty slot says the slot is empty, keeps every item, never errors
+PASS empty-slot fallback: the reply says why (the pool had a relevant organizer, removed by the teacher)
+PASS a key naming no slot is still refused
+PASS a named grade orders the pool before the judge window: the grade-4 article ranked 11th is chosen
+
+--- QA 7511: vocabulary once, class grade, state tie-break, weekly assessment ---
+PASS QA #1: each vocabulary term is listed once (case and spaces ignored), alternates included
+PASS QA #1: the copy kept is the anchor article's week's, even when another copy ranked first
+PASS QA #1: with no anchor copy, the nearest grade then the class's state wins, and order is kept
+PASS QA #2 decide: the relevant grade-4 video from the class's state is chosen over the higher-ranked ones
+PASS QA #2 decide: alternates keep the order closer grade, then state (B, then A)
+PASS QA #2 decide: the unrelated same-grade video is nowhere in the set
+PASS QA #2 decide: at equal grade, the class's state, then a national edition, then another state
+PASS QA #2 decide: with no state known, rank is kept among equal grades
+PASS QA #2: the set carries the class grade, where it came from, and the items' own grades
+PASS QA #2: the model reads it as the class's grade and is told the items' grades
+PASS QA #2: a revision recomputes the items' grades (grade-2 term removed -> grade 4)
+PASS QA #2: every item graded for the class grade shows no spread
+PASS QA #3: a meaning-only match says what it is related to
+PASS QA #4: the anchor week's weekly assessment is its own item, never another week's
+PASS QA #4: it opens the week that holds it (no article id, the anchor's week)
+PASS QA #4: its reason says what it is
+PASS QA #4: no weekly assessment in the index for that week: an empty slot that says so
+PASS QA #4: the lookup is confined to the teacher's publications and the anchor's week
+PASS mutation: the fake index really enforces the scope filter (a filter-less query returns 99's item)
+PASS a set prefers English, then the article's own items, then its publication, Spanish last unless asked
+PASS asked for Spanish, the Spanish item leads
+PASS the page's publication edition of an article ranks first
+PASS build() starts its anchor from the page's publication
+PASS of identical editions, the open page's copy is kept in the best twin's place
+PASS a later content_results does not replace the turn's teaching set (stored and sent)
+PASS a revised teaching set does replace the earlier one
+PASS without a teaching set, the last content_results still wins
+
+0 failure(s)

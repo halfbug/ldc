@@ -1,0 +1,43 @@
+publication structure unavailable
+
+--- embedding clock ---
+PASS timed_embeds returns fn's result unchanged
+PASS timed_embeds counts the embedding's wall time
+PASS an embed outside any clock still works and records nowhere
+PASS a function that never embeds reports 0 ms
+PASS pooled embeddings count once, as the phase's wall time, not once per worker
+PASS timed_embeds lets fn's exception through
+PASS the clock is closed after fn raises
+
+--- search_curriculum stages ---
+PASS one search counts one search_calls
+PASS search_retrieve_ms covers the search
+PASS search_embed_ms is the embedding inside it
+PASS search_target_ms and search_resolve_ms are recorded
+PASS no standards lookup ran, so no standards wait is recorded
+PASS every stage value is a number, never text
+PASS a second search in the same turn adds to the same totals
+PASS add_stage_timing skips a context without stage_timings instead of failing
+
+--- guardrail wait and first text ---
+PASS the model stage records the guardrail label wait before the call
+PASS stage_split carries guardrail_wait_ms
+PASS stage_split carries the first call's own first text, counted from when it was sent
+PASS the loop result holds the turn's own stage_timings dict, not a copy
+PASS stage_split carries the first call's fresh input and cache-read tokens
+PASS stage_split carries the first call's cache-write tokens
+PASS with no label to wait for, the wait is near zero, not missing
+PASS no model call: the new model fields are None, never 0
+PASS a dispatched turn with no model call reports no guardrail wait
+{"level":"WARNING","location":"_attempts:401","message":"Model stream went idle","timestamp":"2026-10-28 16:52:43,105+0500","service":"CoreLoop","taskName":"Task-13","attempt":1,"emitted":false}
+PASS an idle stall before any text is one provider retry
+
+--- core_turn log line ---
+{"level":"INFO","location":"_log_turn:271","message":"core_turn","timestamp":"2026-10-28 16:52:43,107+0500","service":"CoreTelemetry","thread_id":"th","turn_id":"tu","outcome":"complete","ok":true,"model_name":"us.anthropic.claude-sonnet-5","tools":[],"input_tokens":0,"output_tokens":0,"cache_read_tokens":0,"cache_write_tokens":0,"cost_usd":0.0,"synthetic":false,"provider_retries":1,"guardrail_wait_ms":1820.4,"first_model_text_ms":2210.0,"first_call_input_tokens":3120,"first_call_cache_read_tokens":17685,"first_call_cache_write_tokens":0,"search_calls":1,"search_target_ms":3.1,"search_retrieve_ms":3900.2,"search_embed_ms":610.5,"search_resolve_ms":140.0,"search_standards_wait_ms":0.0,"telemetry_written":true,"daily_usage":"skipped_no_user","telemetry_ms":0.4}
+PASS a core_turn line was logged
+PASS every new field is on the core_turn line with its value
+{"level":"INFO","location":"_log_turn:271","message":"core_turn","timestamp":"2026-10-28 16:52:43,107+0500","service":"CoreTelemetry","thread_id":"th","turn_id":"tu2","outcome":"complete","ok":true,"model_name":"us.anthropic.claude-sonnet-5","tools":[],"input_tokens":0,"output_tokens":0,"cache_read_tokens":0,"cache_write_tokens":0,"cost_usd":0.0,"synthetic":false,"telemetry_written":true,"daily_usage":"skipped_no_user","telemetry_ms":0.1}
+PASS a turn whose stages did not run passes them as None, never 0
+PASS no new field ever carries text
+
+ALL PASS

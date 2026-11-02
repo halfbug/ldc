@@ -1,0 +1,92 @@
+ok   mix read from the teacher's words, short answer held back rather than folded in
+ok   short answer is never silently substituted: SWO's own gap is said, open response offered
+ok   a bare article is not a count
+ok   digits and true/false
+ok   a drawing question is not written, and the teacher is told why
+ok   a drawing question asked for without a count is still explained
+ok   all short answer: nothing in the mix, everything held back
+ok   kind label from the request
+ok   due date only when the teacher named one
+ok   instructions follow the question types
+ok   stored multiple choice -> choice texts and index key
+ok   stored true/false
+ok   stored check-all
+ok   stored fill-in-the-blank
+ok   stored matching (a JSON string, as the model stores it)
+ok   stored open response keeps the model answer
+ok   a drawing question has no engine shape
+ok   the reviewer reads each question with its key
+ok   a clean quiz: no concerns, no fix call made
+ok   the checker's own doubtful key becomes one concern, with a fix from the Haiku call
+ok   no Sonnet call: both calls used the fast model
+ok   without an article, the key checker can't run: None (unchecked), never 'nothing'
+ok   an unreadable checker is also None, never 'nothing'
+ok   the teacher's mix reaches the engine, short answer held out of it
+ok   the page article is used when it fits the topic
+ok   the draft is complete: title, instructions, questions, points, due, article
+ok   the held-back short answer is said, not folded in
+ok   the article's own SWO-linked standards are attached to every question, and at the top level
+ok   one draft card: start and end rewritten to assignment_draft
+ok   nothing is saved: the model is told to offer a confirmed save
+ok   page_action expands the draft ref for the save card
+ok   a further draft on the same article avoids the questions already drafted from it
+ok   a due date the teacher never named is dropped from the draft; the usual default is named instead
+ok   'only questions' drops the article from the draft
+ok   asking for short answer alone drafts nothing yet, and asks first
+ok   a revision keeps title and due, adds the questions, re-points them
+ok   the revision revises the stored set
+ok   7518 versions get neutral letters in the order made, never the kind
+ok   7518 a version's kind is in a teacher-only note, labelled as AI
+ok   7518 the engine is told the version's kind of support
+ok   7518 the model is pointed at one assignVersionPart call per version, never a kind in a title
+ok   7518 a version needs a draft or assignment to be a version of
+ok   7518 an unknown version kind is refused
+ok   7518 morning changes item 5: with no level_grade, the version stands alone and asks which grade
+ok   7518 morning changes item 5: a named grade levels the article with the existing v2 leveler
+ok   7518 morning changes item 5: a grade Scout can't rewrite for is said, not guessed at
+ok   7518 morning changes item 5: never levels the article for on_level or extension
+ok   7498 a draft with no level_grade makes no levelling call, carries no levelled text and no grade note
+ok   7498 a named grade calls the leveller once and puts the levelled article on the draft
+ok   7498 the levelling note names the grade the teacher chose and carries the AI label
+ok   7498 grade 13 is refused: no levelling call, no levelled text, the grade limit said
+ok   7578 level_grade '9' is outside kindergarten to grade 8 for a draft: no levelling call, the limit is said
+ok   7578 level_grade '10' is outside kindergarten to grade 8 for a draft: no levelling call, the limit is said
+ok   7578 level_grade '12' is outside kindergarten to grade 8 for a draft: no levelling call, the limit is said
+ok   7498 changing the questions of a levelled draft keeps its levelled article without levelling again
+ok   7498 an extension version of a levelled draft is not given the easier text
+ok   7853 level_grade 'K' on a grade 3 article is refused: no levelling call, the choices said
+ok   7853 level_grade 'Kindergarten' on a grade 3 article is refused: no levelling call, the choices said
+ok   7853 level_grade '3' on a grade 3 article is refused: no levelling call, the choices said
+ok   7853 level_grade '4' on a grade 3 article is refused: no levelling call, the choices said
+ok   7853 level_grade 1 on a grade 3 article levels two grades down
+ok   7578 levelling a levelled draft again at grade 2 replaces the grade 1 note
+ok   7498 the model is told never to pick the grade or the article for a levelled draft
+ok   no article and no topic: an honest refusal, no questions
+ok   a past quiz is updated for the page's article as a new draft
+ok   its drawing question is left out and the teacher is told why
+ok   a lone fuzzy library hit is never silently accepted as the requested title
+ok   an exact title match (case/space-insensitive) still resolves on its own
+ok   SC02-01: a class with no determinable grade is asked once, not drafted silently
+ok   SC02-01: a resolved grade and state are both recorded as assumptions for the closing line
+ok   SC02-01: reusing a past assignment never asks for a grade - it already has one
+ok   7522: a draft from the page article uses the article's own grade, with its source
+ok   7522: a revised draft keeps the grade it was written at
+ok   7522: a grade the teacher names wins over the article's
+ok   a teaching set's article is drafted from
+ok   stored checks come first; an AI key concern on an already-flagged key adds nothing
+ok   the check card says which kind and labels AI
+ok   the check changes nothing and says so
+ok   a clean draft gets 'Nothing to check', not an invented concern
+ok   a review that could not run is said, never shown as all clear
+ok   another teacher's assignment: Laravel's reason is relayed
+ok   the library search passes the teacher's words and dates
+ok   results reach the model with ids and last time's numbers
+ok   titles are data: a fence in a title is escaped
+ok   the library card carries the rows
+ok   clean-up lists renames with suggested names, look-alikes and archive candidates
+ok   no signed-in connection: a plain refusal
+ok   an article's own standards are read
+ok   an article with none attaches none
+ok   a lookup that can't run attaches none, never an error
+
+0 failure(s)

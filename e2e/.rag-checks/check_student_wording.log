@@ -1,0 +1,47 @@
+PASS positive (diagnosis): screened — 'Student K22226 is clearly on the autism spectrum based on this pattern.'
+PASS positive (diagnosis): screened — 'It looks like Student K22229 might have ADHD.'
+PASS positive (diagnosis): screened — 'Student K22224 seems dyslexic given these scores.'
+PASS positive (diagnosis): screened — 'Student K2222C has a learning disability.'
+PASS positive (diagnosis): screened — 'Students K22225 and K22227 both show signs of an emotional disturbance.'
+PASS positive (trait): screened — 'Student K22223 is lazy about turning in work.'
+PASS positive (trait): screened — 'Student K22228 is just unmotivated.'
+PASS positive (trait): screened — 'Student K2222B is a gifted student who barely tries.'
+PASS positive (trait): screened — 'Your class has several at-risk students this term.'
+PASS positive (trait): screened — 'Student K22225 is a low learner in reading.'
+PASS positive (trait): screened — 'Student K22227 is struggling this quarter.'
+PASS positive (trait): screened — 'Student K22224 is falling behind the rest of the class.'
+PASS positive (prediction): screened — 'Student K22226 will fail this course.'
+PASS positive (prediction): screened — 'Student K22229 is unlikely to pass the state test.'
+PASS positive (prediction): screened — 'Student K2222C will not catch up this year.'
+PASS positive (prediction): screened — 'Student K22223 needs to repeat this grade.'
+PASS positive (prediction): screened — 'Student K22228 is going to fall further behind if nothing changes.'
+PASS positive (prediction (pronoun bound to a prior alias in the same reply)): screened — 'Student K22225 turned in her reading log. She will not graduate on time at this rate.'
+PASS positive (trait (class-bound pronoun)): screened — 'Your class has three students who missed the deadline. They are troubled kids who cause problems for everyone.'
+PASS positive (diagnosis): screened — "Student K2222B's disorder explains the missed assignments."
+PASS positive rate 100% meets design's 85% bar on this authored set (not the frozen Gate B one)
+PASS negative kept: 'Student K22226 has finished 3 of 5 assignments as of Tuesday.'
+PASS negative kept: 'Student K22229 scored below 60% on the last quiz.'
+PASS negative kept: "Student K22224's assignment status is missing for Week 3."
+PASS negative kept: 'Student K2222C has not started the reading yet.'
+PASS negative kept: 'Student K22223 answered 8 of 10 questions correctly on the exit ticket.'
+PASS negative kept: 'Students K22225 and K22227 both submitted their worksheets today.'
+PASS negative kept: 'Your class averaged 74% on the assessment.'
+PASS negative kept: 'Student K22228 attempted the quiz twice, scoring 40% then 65%.'
+PASS negative kept: 'You could offer Student K2222B extra practice on fractions.'
+PASS negative kept: "Student K22226's last submission was on Monday at 9:14am."
+PASS negative kept: 'The colonists were struggling under new taxes imposed by the crown.'
+PASS negative kept: 'Historians believe the expedition would likely fail without more supplies.'
+PASS negative kept: 'The article says the miners had a disorder caused by poor ventilation.'
+PASS negative kept: 'The teacher wrote: "my student is really struggling with this unit."'
+PASS negative drop rate 0% meets design's <=1% bar on this authored set
+PASS a known positive fires end-to-end through __call__, dropping only the offending sentence
+PASS the fire is recorded as telemetry (rule id, alias count), never the sentence text
+PASS a pronoun bound to an alias in the previous sentence is in scope
+PASS no alias anywhere: a bare pronoun sentence is not in scope on its own
+PASS 'your class' puts the class in scope
+PASS a lone number, e.g. a phone extension, is not mistaken for a student alias
+PASS always_in_scope drops a labelling sentence with no alias present at all
+PASS mutation test: an empty lexicon raises at import rather than shipping a screen that passes everything
+PASS PH-SW-03's real lexicon is non-empty (the precondition it exists to catch is not itself true today)
+
+0 failure(s)

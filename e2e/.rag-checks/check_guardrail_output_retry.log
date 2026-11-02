@@ -1,0 +1,24 @@
+PASS output-only block: the call is regenerated once and the turn completes
+PASS output-only block: nothing of the blocked attempt reaches the client
+PASS output-only block: usage includes both calls
+PASS output-only block: one structured log line with the verdicts and the outcome
+PASS output block twice: the same non-retryable guardrail error as before
+PASS output block twice: no third call
+PASS output block twice: Bedrock's message is shown once, as before
+PASS output block twice: the log line says the retry failed
+PASS input block: today's error
+PASS input block: not retried
+PASS input block: the blocked message shows as before
+PASS input and output block: today's error
+PASS input and output block: not retried
+PASS input and output block: the blocked message shows as before
+PASS no trace: today's error
+PASS no trace: not retried
+PASS no trace: the blocked message shows as before
+PASS shown text: not retried
+PASS masked PII: completes with one call
+PASS the held-back messages are the Terraform strings
+PASS a prefix of a blocked message could still be one
+PASS ordinary text is not held
+
+0 failure(s)

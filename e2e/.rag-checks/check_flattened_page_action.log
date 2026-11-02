@@ -1,0 +1,15 @@
+PASS destination lifted into args
+PASS a nested value is never overwritten by a sibling
+PASS a coincidental, undeclared sibling key is left alone
+PASS a capability with no declared requirement is a no-op
+PASS no page card, nothing to check the sibling against, nothing lifted
+PASS R5: optional args restated as siblings are lifted too
+PASS R5: a nested optional value wins, and an undeclared sibling stays out
+PASS R5: an object type's own fields are not declared args
+PASS a flattened queued call still pauses
+PASS destination recovered from the flattened sibling
+PASS without a page card the call still pauses but stays unhealed
+PASS a properly-nested call reads through untouched
+PASS R5: a flattened content.saveCopy reaches the browser with its title and useLevelled
+
+v2 page_action flattened-arg self-heal verified.

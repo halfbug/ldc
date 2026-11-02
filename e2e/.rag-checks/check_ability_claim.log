@@ -1,0 +1,63 @@
+PASS fires: Since the teacher's known grade is K, the Michigan Studies W
+PASS fires: I don't have a direct action to trigger that sort myself, so
+PASS fires: I don't have any tool for facial recognition or matching ima
+PASS fires: I don't see an action on this page for removing a publicatio
+PASS fires: There's no email action on this page — the sharing options h
+PASS fires: This page doesn't offer a pacing action, so I can't determin
+PASS fires: It's not among the actions available on this page.
+PASS fires: That data isn't returned by my tools.
+PASS fires: That capability isn't offered on this page.
+PASS fires: Scoring students is done in the Grade section, so I can't ta
+PASS fires: I can't navigate to that page for you.
+PASS fires: The writer tool needs assignment data directly rather than t
+PASS fires: The question generator needs an actual article to pull from,
+PASS fires: It looks like the document writer needs an article open on s
+PASS fires: I can't generate these through the automatic question writer
+PASS fires: I wasn't able to suggest any standards for that — the tool c
+PASS fires: It looks like the system isn't picking up an article to gene
+PASS fires: It looks like the article didn't actually load into view for
+PASS fires: Or I can let the tool ask you that directly.
+PASS fires: The writer declined because the page has no assignment data.
+PASS fires: The teacher sees these as cards on their screen if you'd lik
+PASS stays: - **Currents Graphic Organizer** (pdf) — password protected,
+PASS stays: I'm in Plan mode right now, so I can't open it for you, but 
+PASS stays: Studies Weekly doesn't have a direct parent-messaging tool —
+PASS stays: I don't have the Tools quiz results in front of me on this p
+PASS stays: Here's a quick way to raise the rigor without new tools: swa
+PASS stays: A timeline is a useful tool for sequencing events.
+PASS stays: Until you respond, you can't open, archive, or reorder that 
+PASS stays: There's no action item for you here; the plan is saved.
+PASS stays: Open the Teacher Actions menu and choose Share LINK with Goo
+PASS stays: I can't open this article — the page shows it's not accessib
+PASS stays: That field is set automatically by the system and can't be e
+PASS stays: Created and Last Updated dates are shown but are read-only —
+PASS stays: It stays in the system with its student count and history, j
+PASS stays: Recognizing it as the tool on a map that identifies the card
+PASS stays: **Answer:** A) A car mechanic fixing an engine
+PASS stays: - **California USA Studies Weekly (grade 5)** — "The Human C
+PASS stays: In 1955 she refused to give up her seat on a city bus.
+PASS stays: - The opposite pattern from assessments — best in Week 2, th
+PASS stays: The tab disappears once every invitation has been accepted o
+PASS stays: The French metric system, which uses units of ten, spread ac
+PASS stays: Click a card to open it.
+PASS stays: The cards below cover map skills and the five themes of geog
+PASS stays: During the activity the teacher sees which students hold mat
+PASS keeps only the clause that says something else: Since the teacher's known grade is K, the Michigan
+PASS keeps only the clause that says something else: I don't have a direct action to trigger that sort 
+PASS keeps only the clause that says something else: There's no email action on this page — the sharing
+PASS keeps only the clause that says something else: I don't have visibility into that from here — that
+PASS keeps only the clause that says something else: To confirm: I don't have a page action for that.
+PASS keeps only the clause that says something else: The writer tool needs assignment data directly rat
+PASS keeps only the clause that says something else: I'd need to know the grade you're targeting — or I
+PASS keeps only the clause that says something else: The teacher sees these as cards on their screen if
+PASS keeps only the clause that says something else: The teacher sees these as cards on their screen if
+PASS the line this screen arms on is the one search_curriculum writes
+PASS O1 with cards on screen: the narrating clause goes and 'Click a card to open it.' takes its place, once
+PASS a later narrating sentence on the same turn is dropped, not replaced again
+PASS without cards nothing is added; a sentence with nothing else to say is dropped
+PASS C1's reply loses the sentence about the writer and keeps the rest
+PASS the line this screen arms on is the one search_curriculum writes
+PASS a clean reply is unchanged and nothing is recorded
+PASS the chat loop runs every reply through the screen, last in the chain
+
+all passed

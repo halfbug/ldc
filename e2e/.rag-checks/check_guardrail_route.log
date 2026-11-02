@@ -1,0 +1,338 @@
+PASS classifier: the prompt is G-GT's frozen prompt, byte for byte
+PASS classifier: Haiku 4.5, unaffected by CORE_MODEL_FAST
+PASS classifier: the output cap leaves room for CURRICULUM on every fast model
+PASS classifier: Haiku 4.5 is called at temperature 0 with no thinking field
+PASS classifier: Haiku 5.5 gets thinking disabled (or the label cap goes to thinking) and no temperature
+PASS classifier: the user turn is G-GT's (request only, no title)
+PASS classifier: a first turn (no earlier requests) sends G-GT's user turn unchanged
+PASS follow-up: the earlier requests come first, quoted, oldest first, and the request is the last line
+PASS follow-up: an earlier request is read up to its cap, never in full past it
+PASS follow-up: the last three typed teacher requests, oldest first, never the current one again
+PASS follow-up: no transcript, no earlier requests
+PASS classifier: only an exact CURRICULUM is CURRICULUM
+{"level":"INFO","location":"_settle:179","message":"guardrail_route","timestamp":"2026-10-28 16:51:36,690+0500","service":"GuardrailRoute","taskName":"Task-2","label":"CURRICULUM","ms":0.6,"profile":"R2","cost_usd":0.0003465}
+PASS route: CURRICULUM runs under R2 with R2's pinned version
+PASS route: R2 keeps the call's trace setting
+{"level":"INFO","location":"_settle:179","message":"guardrail_route","timestamp":"2026-10-28 16:51:36,692+0500","service":"GuardrailRoute","taskName":"Task-7","label":"OTHER","ms":0.2,"profile":"C0","cost_usd":0.0003465}
+PASS route: OTHER runs under C0
+{"level":"INFO","location":"_settle:179","message":"guardrail_route","timestamp":"2026-10-28 16:51:36,694+0500","service":"GuardrailRoute","taskName":"Task-12","label":"OTHER","ms":0.2,"profile":"C0","cost_usd":0.0003465}
+PASS route: a malformed label runs under C0
+{"level":"WARNING","location":"_classify:170","message":"Guardrail classifier failed","timestamp":"2026-10-28 16:51:36,695+0500","service":"GuardrailRoute","taskName":"Task-17","error":"RuntimeError"}
+{"level":"INFO","location":"_settle:179","message":"guardrail_route","timestamp":"2026-10-28 16:51:36,695+0500","service":"GuardrailRoute","taskName":"Task-17","label":"ERROR","ms":0.4,"profile":"C0","cost_usd":0.0002728}
+PASS route: a classifier error runs under C0
+{"level":"INFO","location":"_settle:179","message":"guardrail_route","timestamp":"2026-10-28 16:51:36,897+0500","service":"GuardrailRoute","taskName":"Task-22","label":"TIMEOUT","ms":200.8,"profile":"C0","cost_usd":0.0002728}
+PASS route: a late classifier runs under C0
+PASS route: the model call waits for the timeout, not the classifier
+{"level":"INFO","location":"_settle:179","message":"guardrail_route","timestamp":"2026-10-28 16:51:37,297+0500","service":"GuardrailRoute","taskName":"Task-26","label":"EMPTY","profile":"C0","cost_usd":0.0}
+PASS route: an empty request runs under C0 with no classifier call
+{"level":"INFO","location":"_settle:179","message":"guardrail_route","timestamp":"2026-10-28 16:51:37,299+0500","service":"GuardrailRoute","taskName":"Task-30","label":"TOO_LONG","profile":"C0","cost_usd":0.0}
+PASS route: a request too long to read whole runs under C0 with no call
+{"level":"INFO","location":"_settle:179","message":"guardrail_route","timestamp":"2026-10-28 16:51:37,300+0500","service":"GuardrailRoute","taskName":"Task-34","label":"TOO_LONG","profile":"C0","cost_usd":0.0}
+PASS route: a follow-up too long to read whole runs under C0 with no call, earlier requests or not
+{"level":"INFO","location":"_settle:179","message":"guardrail_route","timestamp":"2026-10-28 16:51:37,302+0500","service":"GuardrailRoute","taskName":"Task-38","label":"EMPTY","profile":"C0","cost_usd":0.0}
+PASS route: an empty follow-up runs under C0 with no call
+{"level":"WARNING","location":"_classify:170","message":"Guardrail classifier failed","timestamp":"2026-10-28 16:51:37,303+0500","service":"GuardrailRoute","taskName":"Task-43","error":"RuntimeError"}
+{"level":"INFO","location":"_settle:179","message":"guardrail_route","timestamp":"2026-10-28 16:51:37,303+0500","service":"GuardrailRoute","taskName":"Task-43","label":"ERROR","ms":0.5,"profile":"C0","cost_usd":0.0003509}
+PASS route: a classifier error on a follow-up runs under C0
+{"level":"INFO","location":"_settle:179","message":"guardrail_route","timestamp":"2026-10-28 16:51:37,307+0500","service":"GuardrailRoute","taskName":"Task-48","label":"OTHER","ms":0.3,"profile":"C0","cost_usd":0.0003465}
+PASS route: a follow-up labelled OTHER runs under C0 (the earlier request never decides alone)
+{"level":"INFO","location":"_settle:179","message":"guardrail_route","timestamp":"2026-10-28 16:51:37,309+0500","service":"GuardrailRoute","taskName":"Task-53","label":"CURRICULUM","ms":0.4,"profile":"R2","cost_usd":0.0003465}
+PASS route: a follow-up labelled CURRICULUM with its earlier request runs under R2, one call
+PASS route: a guarded call outside any labelled turn runs under C0
+{"level":"INFO","location":"_settle:179","message":"guardrail_route","timestamp":"2026-10-28 16:51:37,412+0500","service":"GuardrailRoute","taskName":"Task-61","label":"CURRICULUM","ms":100.5,"profile":"R2","cost_usd":0.0003465}
+Error loading configuration from Parameter Store: You must specify a region.
+Traceback (most recent call last):
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/src/config/config.py", line 257, in get_config
+    param_store_config = _load_parameter_store_config(config.PARAMETER_STORE_PREFIX)
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/src/config/config.py", line 175, in _load_parameter_store_config
+    ssm_client = boto3.client('ssm')
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/boto3/__init__.py", line 93, in client
+    return _get_default_session().client(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/boto3/session.py", line 337, in client
+    return self._session.create_client(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        service_name, **create_client_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/context.py", line 123, in wrapper
+    return func(*args, **kwargs)
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/session.py", line 1031, in create_client
+    client = client_creator.create_client(
+        service_name=service_name,
+    ...<8 lines>...
+        auth_token=auth_token,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/client.py", line 161, in create_client
+    client_args = self._get_client_args(
+        service_model,
+    ...<10 lines>...
+        partition_data,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/client.py", line 561, in _get_client_args
+    return args_creator.get_client_args(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        service_model,
+        ^^^^^^^^^^^^^^
+    ...<10 lines>...
+        partition_data,
+        ^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/args.py", line 121, in get_client_args
+    final_args = self.compute_client_args(
+        service_model,
+    ...<5 lines>...
+        scoped_config,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/args.py", line 265, in compute_client_args
+    endpoint_config = self._compute_endpoint_config(
+        service_name=service_name,
+    ...<4 lines>...
+        s3_config=s3_config,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/args.py", line 459, in _compute_endpoint_config
+    return self._resolve_endpoint(**resolve_endpoint_kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/args.py", line 577, in _resolve_endpoint
+    return endpoint_bridge.resolve(
+           ~~~~~~~~~~~~~~~~~~~~~~~^
+        service_name, region_name, endpoint_url, is_secure
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/client.py", line 675, in resolve
+    resolved = self.endpoint_resolver.construct_endpoint(
+        service_name,
+    ...<2 lines>...
+        use_fips_endpoint=use_fips_endpoint,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/regions.py", line 237, in construct_endpoint
+    result = self._endpoint_for_partition(
+        partition,
+    ...<3 lines>...
+        use_fips_endpoint,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/regions.py", line 285, in _endpoint_for_partition
+    raise NoRegionError()
+botocore.exceptions.NoRegionError: You must specify a region.
+Failed to load Parameter Store config
+Traceback (most recent call last):
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/src/config/config.py", line 257, in get_config
+    param_store_config = _load_parameter_store_config(config.PARAMETER_STORE_PREFIX)
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/src/config/config.py", line 175, in _load_parameter_store_config
+    ssm_client = boto3.client('ssm')
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/boto3/__init__.py", line 93, in client
+    return _get_default_session().client(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/boto3/session.py", line 337, in client
+    return self._session.create_client(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        service_name, **create_client_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/context.py", line 123, in wrapper
+    return func(*args, **kwargs)
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/session.py", line 1031, in create_client
+    client = client_creator.create_client(
+        service_name=service_name,
+    ...<8 lines>...
+        auth_token=auth_token,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/client.py", line 161, in create_client
+    client_args = self._get_client_args(
+        service_model,
+    ...<10 lines>...
+        partition_data,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/client.py", line 561, in _get_client_args
+    return args_creator.get_client_args(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        service_model,
+        ^^^^^^^^^^^^^^
+    ...<10 lines>...
+        partition_data,
+        ^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/args.py", line 121, in get_client_args
+    final_args = self.compute_client_args(
+        service_model,
+    ...<5 lines>...
+        scoped_config,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/args.py", line 265, in compute_client_args
+    endpoint_config = self._compute_endpoint_config(
+        service_name=service_name,
+    ...<4 lines>...
+        s3_config=s3_config,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/args.py", line 459, in _compute_endpoint_config
+    return self._resolve_endpoint(**resolve_endpoint_kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/args.py", line 577, in _resolve_endpoint
+    return endpoint_bridge.resolve(
+           ~~~~~~~~~~~~~~~~~~~~~~~^
+        service_name, region_name, endpoint_url, is_secure
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/client.py", line 675, in resolve
+    resolved = self.endpoint_resolver.construct_endpoint(
+        service_name,
+    ...<2 lines>...
+        use_fips_endpoint=use_fips_endpoint,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/regions.py", line 237, in construct_endpoint
+    result = self._endpoint_for_partition(
+        partition,
+    ...<3 lines>...
+        use_fips_endpoint,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/regions.py", line 285, in _endpoint_for_partition
+    raise NoRegionError()
+botocore.exceptions.NoRegionError: You must specify a region.
+PASS turn: four concurrent engine calls share one classifier call
+PASS turn: the classifier call is billed once, with the engine's usage (v1 doors)
+PASS log: one line with the label and the profile
+PASS log: no request text in it
+PASS off, C0 alone (B2 not configured): the routed request is the very object built before B2
+PASS off, C0 alone (B2 not configured): the engine sends exactly what it sent before B2
+PASS off, C0 alone (B2 not configured): no classifier call
+PASS off, nothing set (local dev): the routed request is the very object built before B2
+PASS off, nothing set (local dev): the engine sends exactly what it sent before B2
+PASS off, nothing set (local dev): no classifier call
+PASS off, R2 set without C0: the routed request is the very object built before B2
+PASS off, R2 set without C0: the engine sends exactly what it sent before B2
+PASS off, R2 set without C0: no classifier call
+PASS misconfig: R2 id with no version refuses at config load
+PASS misconfig: R2 id with no version refuses at the guarded call
+PASS misconfig: R2 id with no version starts no classifier call
+PASS misconfig: C0 id with no version refuses at config load (unchanged)
+{"level":"CRITICAL","location":"guardrail_misconfigured_handler:75","message":"Scout v2 refused: guardrail misconfigured","timestamp":"2026-10-28 16:51:37,969+0500","service":"App","taskName":"starlette.middleware.base.BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.coro","error":"GUARDRAIL_CURRICULUM_ID is set but GUARDRAIL_CURRICULUM_VERSION is blank; set a published version number, not the unpinned DRAFT","path":"/assistant/v2/turn"}
+{"level":"INFO","location":"level_content:62","message":"Level request received","timestamp":"2026-10-28 16:51:37,975+0500","service":"LevelRouter","taskName":"starlette.middleware.base.BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.coro","user_id":"","content_length":12,"current_grade":"5","target_grade":"3","has_user_instructions":false}
+{"level":"INFO","location":"_route:206","message":"Handling request","timestamp":"2026-10-28 16:51:37,975+0500","service":"AIAssistant","taskName":"starlette.middleware.base.BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.coro","user_id":"","path":"level-content","method":"POST"}
+{"level":"CRITICAL","location":"_guardrail_refusal:324","message":"Request refused: guardrail misconfigured","timestamp":"2026-10-28 16:51:37,975+0500","service":"AIAssistant","taskName":"starlette.middleware.base.BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.coro","error":"GUARDRAIL_CURRICULUM_ID is set but GUARDRAIL_CURRICULUM_VERSION is blank; set a published version number, not the unpinned DRAFT"}
+{"level":"INFO","location":"generate_questions_from_topic:98","message":"Topic question generation request received","timestamp":"2026-10-28 16:51:37,979+0500","service":"QuestionRouter","taskName":"starlette.middleware.base.BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.coro","topic_length":9,"count":5}
+{"level":"INFO","location":"_route:206","message":"Handling request","timestamp":"2026-10-28 16:51:37,979+0500","service":"AIAssistant","taskName":"starlette.middleware.base.BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.coro","user_id":"","path":"generate-from-topic","method":"POST"}
+{"level":"CRITICAL","location":"_guardrail_refusal:324","message":"Request refused: guardrail misconfigured","timestamp":"2026-10-28 16:51:37,980+0500","service":"AIAssistant","taskName":"starlette.middleware.base.BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.coro","error":"GUARDRAIL_CURRICULUM_ID is set but GUARDRAIL_CURRICULUM_VERSION is blank; set a published version number, not the unpinned DRAFT"}
+{"level":"INFO","location":"revise_question:139","message":"Question revision request received","timestamp":"2026-10-28 16:51:37,983+0500","service":"QuestionRouter","taskName":"starlette.middleware.base.BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.coro","question_type":"multiple_choice"}
+{"level":"INFO","location":"_route:206","message":"Handling request","timestamp":"2026-10-28 16:51:37,983+0500","service":"AIAssistant","taskName":"starlette.middleware.base.BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.coro","user_id":"","path":"revise-question","method":"POST"}
+{"level":"CRITICAL","location":"_guardrail_refusal:324","message":"Request refused: guardrail misconfigured","timestamp":"2026-10-28 16:51:37,983+0500","service":"AIAssistant","taskName":"starlette.middleware.base.BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.coro","error":"GUARDRAIL_CURRICULUM_ID is set but GUARDRAIL_CURRICULUM_VERSION is blank; set a published version number, not the unpinned DRAFT"}
+PASS misconfig R2: v2 turn answers 503 guardrail_misconfigured
+PASS misconfig R2: level answers 503 guardrail_misconfigured
+PASS misconfig R2: topic answers 503 guardrail_misconfigured
+PASS misconfig R2: revise answers 503 guardrail_misconfigured
+PASS misconfig R2: no model-reaching v1 handler ran
+{"level":"INFO","location":"_guard_identifiers:129","message":"student identifiers in a browser payload","timestamp":"2026-10-28 16:51:37,987+0500","service":"CoreRouter","taskName":"starlette.middleware.base.BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.coro","route":"turn","removed":0,"scrub_list_sent":false}
+{"level":"ERROR","location":"preflight:122","message":"Core thread store unavailable","timestamp":"2026-10-28 16:51:38,104+0500","service":"CoreRuntime","taskName":"starlette.middleware.base.BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.coro","error":"ConnectionFailure('You have not defined a default connection')"}
+{"level":"INFO","location":"level_content:62","message":"Level request received","timestamp":"2026-10-28 16:51:38,107+0500","service":"LevelRouter","taskName":"starlette.middleware.base.BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.coro","user_id":"","content_length":12,"current_grade":"5","target_grade":"3","has_user_instructions":false}
+{"level":"INFO","location":"_route:206","message":"Handling request","timestamp":"2026-10-28 16:51:38,108+0500","service":"AIAssistant","taskName":"starlette.middleware.base.BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.coro","user_id":"","path":"level-content","method":"POST"}
+{"level":"INFO","location":"level_content:87","message":"Levelling completed","timestamp":"2026-10-28 16:51:38,108+0500","service":"LevelRouter","taskName":"starlette.middleware.base.BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.coro","user_id":""}
+{"level":"INFO","location":"generate_questions_from_topic:98","message":"Topic question generation request received","timestamp":"2026-10-28 16:51:38,111+0500","service":"QuestionRouter","taskName":"starlette.middleware.base.BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.coro","topic_length":9,"count":5}
+{"level":"INFO","location":"_route:206","message":"Handling request","timestamp":"2026-10-28 16:51:38,111+0500","service":"AIAssistant","taskName":"starlette.middleware.base.BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.coro","user_id":"","path":"generate-from-topic","method":"POST"}
+{"level":"INFO","location":"generate_questions_from_topic:114","message":"Topic question generation completed","timestamp":"2026-10-28 16:51:38,111+0500","service":"QuestionRouter","taskName":"starlette.middleware.base.BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.coro","status":"success"}
+{"level":"INFO","location":"revise_question:139","message":"Question revision request received","timestamp":"2026-10-28 16:51:38,114+0500","service":"QuestionRouter","taskName":"starlette.middleware.base.BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.coro","question_type":"multiple_choice"}
+{"level":"INFO","location":"_route:206","message":"Handling request","timestamp":"2026-10-28 16:51:38,114+0500","service":"AIAssistant","taskName":"starlette.middleware.base.BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.coro","user_id":"","path":"revise-question","method":"POST"}
+{"level":"INFO","location":"revise_question:154","message":"Question revision completed","timestamp":"2026-10-28 16:51:38,115+0500","service":"QuestionRouter","taskName":"starlette.middleware.base.BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.coro","status":"success"}
+PASS configured B2: the v1 doors are not refused
+PASS configured B2: the spy fires, so the silence above means something
+{"level":"INFO","location":"_settle:179","message":"guardrail_route","timestamp":"2026-10-28 16:51:38,139+0500","service":"GuardrailRoute","taskName":"Task-130","label":"CURRICULUM","ms":0.3,"profile":"R2","cost_usd":0.0003465}
+{"level":"INFO","location":"_load_pricing_data:86","message":"Loaded pricing data","timestamp":"2026-10-28 16:51:38,174+0500","service":"CreditsService","taskName":"Task-129","total_models":113,"models_with_pricing":78}
+{"level":"INFO","location":"calculate_credits:259","message":"💰 CREDITS CALCULATION","timestamp":"2026-10-28 16:51:38,174+0500","service":"CreditsService","taskName":"Task-129","total_tokens":333,"tokens_per_credit":2000,"credits_calculated":1,"latency_ms":"0.002","calculation_method":"ceiling_division"}
+PASS v1 _handle_level_content: CURRICULUM sends every model call under R2
+PASS v1 _handle_level_content: one classifier call, on the teacher's own words
+{"level":"INFO","location":"_settle:179","message":"guardrail_route","timestamp":"2026-10-28 16:51:38,176+0500","service":"GuardrailRoute","taskName":"Task-136","label":"OTHER","ms":0.2,"profile":"C0","cost_usd":0.0003465}
+{"level":"INFO","location":"calculate_credits:259","message":"💰 CREDITS CALCULATION","timestamp":"2026-10-28 16:51:38,178+0500","service":"CreditsService","taskName":"Task-135","total_tokens":333,"tokens_per_credit":2000,"credits_calculated":1,"latency_ms":"0.001","calculation_method":"ceiling_division"}
+PASS v1 _handle_level_content: OTHER sends every model call under C0
+PASS v1 _handle_level_content: the classifier's tokens are in the door's spend
+{"level":"INFO","location":"_settle:179","message":"guardrail_route","timestamp":"2026-10-28 16:51:38,185+0500","service":"GuardrailRoute","taskName":"Task-142","label":"CURRICULUM","ms":0.4,"profile":"R2","cost_usd":0.0003465}
+PASS v1 _handle_generate_questions_from_topic: CURRICULUM sends every model call under R2
+PASS v1 _handle_generate_questions_from_topic: one classifier call, on the teacher's own words
+{"level":"INFO","location":"_settle:179","message":"guardrail_route","timestamp":"2026-10-28 16:51:38,189+0500","service":"GuardrailRoute","taskName":"Task-146","label":"OTHER","ms":0.4,"profile":"C0","cost_usd":0.0003465}
+PASS v1 _handle_generate_questions_from_topic: OTHER sends every model call under C0
+PASS v1 _handle_generate_questions_from_topic: the classifier's tokens are in the door's spend
+{"level":"INFO","location":"_settle:179","message":"guardrail_route","timestamp":"2026-10-28 16:51:38,192+0500","service":"GuardrailRoute","taskName":"Task-150","label":"CURRICULUM","ms":0.3,"profile":"R2","cost_usd":0.0003465}
+PASS v1 _handle_revise_question: CURRICULUM sends every model call under R2
+PASS v1 _handle_revise_question: one classifier call, on the teacher's own words
+{"level":"INFO","location":"_settle:179","message":"guardrail_route","timestamp":"2026-10-28 16:51:38,194+0500","service":"GuardrailRoute","taskName":"Task-154","label":"OTHER","ms":0.2,"profile":"C0","cost_usd":0.0003465}
+PASS v1 _handle_revise_question: OTHER sends every model call under C0
+PASS v1 _handle_revise_question: the classifier's tokens are in the door's spend
+{"level":"INFO","location":"_settle:179","message":"guardrail_route","timestamp":"2026-10-28 16:51:38,197+0500","service":"GuardrailRoute","taskName":"Task-159","label":"CURRICULUM","ms":0.2,"profile":"R2","cost_usd":0.0003465}
+{"level":"WARNING","location":"_cancel_seen:2117","message":"Cancel poll failed","timestamp":"2026-10-28 16:51:38,261+0500","service":"CoreRuntime","taskName":"Task-158","error":"ConnectionFailure('You have not defined a default connection')"}
+PASS v2 turn: CURRICULUM runs every loop call under R2
+PASS v2 turn: a new thread's classifier call reads the teacher's message only
+PASS v2 turn: the row carries the label and profile, not the request
+{"level":"INFO","location":"_settle:179","message":"guardrail_route","timestamp":"2026-10-28 16:51:38,277+0500","service":"GuardrailRoute","taskName":"Task-167","label":"OTHER","ms":0.4,"profile":"C0","cost_usd":0.0003465}
+{"level":"WARNING","location":"_cancel_seen:2117","message":"Cancel poll failed","timestamp":"2026-10-28 16:51:38,287+0500","service":"CoreRuntime","taskName":"Task-166","error":"ConnectionFailure('You have not defined a default connection')"}
+PASS v2 turn: OTHER runs every loop call under C0
+{"level":"WARNING","location":"_cancel_seen:2117","message":"Cancel poll failed","timestamp":"2026-10-28 16:51:38,312+0500","service":"CoreRuntime","taskName":"Task-174","error":"ConnectionFailure('You have not defined a default connection')"}
+PASS v2 turn, B2 off: C0 on every call, no classifier call, no route field on the row
+PASS v2 turn: the classifier call (300 input tokens here) is in the turn's spend, once
+{"level":"INFO","location":"_settle:179","message":"guardrail_route","timestamp":"2026-10-28 16:51:38,327+0500","service":"GuardrailRoute","taskName":"Task-182","label":"CURRICULUM","ms":0.3,"profile":"R2","cost_usd":0.0003465}
+{"level":"WARNING","location":"_cancel_seen:2117","message":"Cancel poll failed","timestamp":"2026-10-28 16:51:38,336+0500","service":"CoreRuntime","taskName":"Task-181","error":"ConnectionFailure('You have not defined a default connection')"}
+PASS v2 follow-up: the classifier reads the reply with the thread's earlier requests, oldest first
+PASS v2 follow-up: CURRICULUM runs every loop call under R2
+{"level":"INFO","location":"_settle:179","message":"guardrail_route","timestamp":"2026-10-28 16:51:38,340+0500","service":"GuardrailRoute","taskName":"Task-190","label":"OTHER","ms":0.2,"profile":"C0","cost_usd":0.0003465}
+{"level":"WARNING","location":"_cancel_seen:2117","message":"Cancel poll failed","timestamp":"2026-10-28 16:51:38,350+0500","service":"CoreRuntime","taskName":"Task-189","error":"ConnectionFailure('You have not defined a default connection')"}
+PASS v2 follow-up: OTHER runs every loop call under C0
+{"level":"INFO","location":"_settle:179","message":"guardrail_route","timestamp":"2026-10-28 16:51:38,355+0500","service":"GuardrailRoute","taskName":"Task-198","label":"CURRICULUM","ms":0.3,"profile":"R2","cost_usd":0.0003465}
+{"level":"WARNING","location":"recent_savable_refs:258","message":"Could not look up earlier savable refs","timestamp":"2026-10-28 16:51:38,356+0500","service":"CoreThreads","error":"ConnectionFailure('You have not defined a default connection')"}
+{"level":"WARNING","location":"_cancel_seen:2117","message":"Cancel poll failed","timestamp":"2026-10-28 16:51:38,366+0500","service":"CoreRuntime","taskName":"Task-197","error":"ConnectionFailure('You have not defined a default connection')"}
+PASS v2 action result: read as the request that produced the card, exactly as that turn was
+PASS v2 action result: CURRICULUM runs the continuation under R2
+{"level":"INFO","location":"_settle:179","message":"guardrail_route","timestamp":"2026-10-28 16:51:38,370+0500","service":"GuardrailRoute","taskName":"Task-206","label":"OTHER","ms":0.2,"profile":"C0","cost_usd":0.0003465}
+{"level":"WARNING","location":"recent_savable_refs:258","message":"Could not look up earlier savable refs","timestamp":"2026-10-28 16:51:38,371+0500","service":"CoreThreads","error":"ConnectionFailure('You have not defined a default connection')"}
+{"level":"WARNING","location":"_cancel_seen:2117","message":"Cancel poll failed","timestamp":"2026-10-28 16:51:38,379+0500","service":"CoreRuntime","taskName":"Task-205","error":"ConnectionFailure('You have not defined a default connection')"}
+PASS v2 action result: an approval of a request labelled OTHER runs under C0
+{"level":"INFO","location":"_settle:179","message":"guardrail_route","timestamp":"2026-10-28 16:51:38,393+0500","service":"GuardrailRoute","taskName":"Task-214","label":"CURRICULUM","ms":0.2,"profile":"R2","cost_usd":0.0003465}
+{"level":"WARNING","location":"recent_savable_refs:258","message":"Could not look up earlier savable refs","timestamp":"2026-10-28 16:51:38,394+0500","service":"CoreThreads","error":"ConnectionFailure('You have not defined a default connection')"}
+{"level":"WARNING","location":"_cancel_seen:2117","message":"Cancel poll failed","timestamp":"2026-10-28 16:51:38,404+0500","service":"CoreRuntime","taskName":"Task-213","error":"ConnectionFailure('You have not defined a default connection')"}
+PASS v2 action result: a decline is read as the same request, never the browser's note
+{"level":"INFO","location":"_settle:179","message":"guardrail_route","timestamp":"2026-10-28 16:51:38,440+0500","service":"GuardrailRoute","taskName":"Task-221","label":"EMPTY","profile":"C0","cost_usd":0.0}
+{"level":"WARNING","location":"_cancel_seen:2117","message":"Cancel poll failed","timestamp":"2026-10-28 16:51:38,452+0500","service":"CoreRuntime","taskName":"Task-221","error":"ConnectionFailure('You have not defined a default connection')"}
+PASS v2 action result: no teacher request in the thread runs under C0 with no call
+{"level":"INFO","location":"_settle:179","message":"guardrail_route","timestamp":"2026-10-28 16:51:38,467+0500","service":"GuardrailRoute","taskName":"Task-229","label":"CURRICULUM","ms":0.3,"profile":"R2","cost_usd":0.0003465}
+{"level":"WARNING","location":"recent_savable_refs:258","message":"Could not look up earlier savable refs","timestamp":"2026-10-28 16:51:38,467+0500","service":"CoreThreads","error":"ConnectionFailure('You have not defined a default connection')"}
+{"level":"WARNING","location":"_cancel_seen:2117","message":"Cancel poll failed","timestamp":"2026-10-28 16:51:38,476+0500","service":"CoreRuntime","taskName":"Task-228","error":"ConnectionFailure('You have not defined a default connection')"}
+PASS v2 question answer: the teacher's answer is read as a follow-up to the request that asked it
+{"level":"INFO","location":"_settle:179","message":"guardrail_route","timestamp":"2026-10-28 16:51:38,481+0500","service":"GuardrailRoute","taskName":"Task-237","label":"CURRICULUM","ms":0.2,"profile":"R2","cost_usd":0.0003465}
+{"level":"WARNING","location":"recent_savable_refs:258","message":"Could not look up earlier savable refs","timestamp":"2026-10-28 16:51:38,481+0500","service":"CoreThreads","error":"ConnectionFailure('You have not defined a default connection')"}
+{"level":"WARNING","location":"_cancel_seen:2117","message":"Cancel poll failed","timestamp":"2026-10-28 16:51:38,491+0500","service":"CoreRuntime","taskName":"Task-236","error":"ConnectionFailure('You have not defined a default connection')"}
+PASS v2 Try Again with no message: read as the request being retried, with the requests before it
+PASS compose: the label reads the summary and every field the teacher typed, not the publisher's standard text
+{"level":"INFO","location":"_settle:179","message":"guardrail_route","timestamp":"2026-10-28 16:51:38,497+0500","service":"GuardrailRoute","taskName":"Task-245","label":"CURRICULUM","ms":0.2,"profile":"R2","cost_usd":0.0003465}
+{"level":"WARNING","location":"_cancel_seen:2117","message":"Cancel poll failed","timestamp":"2026-10-28 16:51:38,506+0500","service":"CoreRuntime","taskName":"Task-244","error":"ConnectionFailure('You have not defined a default connection')"}
+{"level":"WARNING","location":"_cancel_seen:2117","message":"Cancel poll failed","timestamp":"2026-10-28 16:51:38,526+0500","service":"CoreRuntime","taskName":"Task-248","error":"ConnectionFailure('You have not defined a default connection')"}
+PASS v2 compose: the form turn is labelled from the form, not from its empty message
+PASS tag: the caller's request is never changed ('')
+PASS tag: nothing typed (chip, form, approval): every input is checked as today
+PASS tag: the caller's request is never changed ('What is the main ide')
+PASS tag: no guardrail on the call: unchanged
+PASS tag: the caller's request is never changed ('What is the main ide')
+PASS tag: the teacher's own block becomes the only guarded input, the article stays plain text
+PASS tag: the caller's request is never changed ('What is the main ide')
+PASS tag: a prompt quoting the request is split around it, so the model reads the same words
+PASS tag: the caller's request is never changed ('What is the main ide')
+PASS tag, mid-loop: the teacher's block in an earlier message is tagged; nothing is appended
+PASS tag: the caller's request is never changed ('What is the main ide')
+PASS tag, an engine prompt without the request: the request is appended as the only guarded input
+PASS route: tagging applies with B2 off (CURRICULUM) and the profile is still c0guard
+{"level":"INFO","location":"_settle:179","message":"guardrail_route","timestamp":"2026-10-28 16:51:38,529+0500","service":"GuardrailRoute","taskName":"Task-258","label":"CURRICULUM","ms":0.2,"profile":"R2","cost_usd":0.0003465}
+PASS route: tagging applies with B2 on (CURRICULUM) and the profile is still r2guard
+{"level":"INFO","location":"_settle:179","message":"guardrail_route","timestamp":"2026-10-28 16:51:38,530+0500","service":"GuardrailRoute","taskName":"Task-262","label":"OTHER","ms":0.3,"profile":"C0","cost_usd":0.0003465}
+PASS route: tagging applies with B2 on (OTHER) and the profile is still c0guard
+{"level":"WARNING","location":"_cancel_seen:2117","message":"Cancel poll failed","timestamp":"2026-10-28 16:51:38,542+0500","service":"CoreRuntime","taskName":"Task-266","error":"ConnectionFailure('You have not defined a default connection')"}
+PASS v2 turn: every loop call guards only the typed message
+{"level":"WARNING","location":"_cancel_seen:2117","message":"Cancel poll failed","timestamp":"2026-10-28 16:51:38,568+0500","service":"CoreRuntime","taskName":"Task-273","error":"ConnectionFailure('You have not defined a default connection')"}
+PASS v2 compose: a form turn tags nothing, so its fields stay in the guarded input
+PASS terraform: R2 relaxes exactly G-GT-B2's output filters (VIOLENCE LOW, HATE NONE, MISCONDUCT LOW)
+PASS terraform: R2's managed profanity list blocks input and only detects output
+PASS terraform: R2's topics are the strict topics, not a copy
+PASS terraform: the curriculum outputs give the Lambdas the newest published curriculum version
+PASS terraform: Scout Core v2 gets GUARDRAIL_CURRICULUM_ID/VERSION from the module
+PASS terraform: the v1 Lambda gets the same two values
+
+0 failed

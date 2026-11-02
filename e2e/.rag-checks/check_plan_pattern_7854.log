@@ -1,0 +1,16 @@
+ok   each family's own markers name it, and a plan with none is the step family
+ok   the family record and plan_build's skeletons name the same seven families
+ok   with a Studies Weekly plan the family is that plan's, whatever the publication says
+ok   with two Studies Weekly plans the family is the first one's, not a marker found in the second
+ok   without one, the publication's family; then science by grade band; then social studies by grade band
+ok   only a weekly plan carries an adapt rule in its request: a lesson plan is built on its Studies Weekly plan by code
+ok   the spec asks for the pattern: steps under ## Lesson Plan, answers in bold, Scout's extras in one closing section
+ok   time is given once on a Pacing line, never per step, unless the teacher gave minutes on the form
+ok   the final customization check sums the timed top-level steps, not the nested questions
+ok   What changed ends at the next H3, so a later part is never cut with it
+ok   an indexed plan reads back as its exported text: each chunk's overlap with the one before appears once
+ok   a chunk that does not repeat the one before is kept whole
+ok   a customized plan's period is the teacher's own words, so the fact check never corrects its pacing line
+ok   an extension or differentiation line names only what the article or the publisher resources give (gate 3 adapted-84876)
+
+ALL OK

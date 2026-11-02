@@ -1,0 +1,8 @@
+PASS unset: one retry
+PASS 0 is honoured: no retry
+PASS 2 is read
+PASS negative falls back to the default
+PASS unreadable falls back to the default
+PASS 0 timeouts and caps keep their defaults
+
+0 failed

@@ -1,0 +1,248 @@
+Error loading configuration from Parameter Store: You must specify a region.
+Traceback (most recent call last):
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/src/config/config.py", line 257, in get_config
+    param_store_config = _load_parameter_store_config(config.PARAMETER_STORE_PREFIX)
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/src/config/config.py", line 175, in _load_parameter_store_config
+    ssm_client = boto3.client('ssm')
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/boto3/__init__.py", line 93, in client
+    return _get_default_session().client(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/boto3/session.py", line 337, in client
+    return self._session.create_client(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        service_name, **create_client_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/context.py", line 123, in wrapper
+    return func(*args, **kwargs)
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/session.py", line 1031, in create_client
+    client = client_creator.create_client(
+        service_name=service_name,
+    ...<8 lines>...
+        auth_token=auth_token,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/client.py", line 161, in create_client
+    client_args = self._get_client_args(
+        service_model,
+    ...<10 lines>...
+        partition_data,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/client.py", line 561, in _get_client_args
+    return args_creator.get_client_args(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        service_model,
+        ^^^^^^^^^^^^^^
+    ...<10 lines>...
+        partition_data,
+        ^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/args.py", line 121, in get_client_args
+    final_args = self.compute_client_args(
+        service_model,
+    ...<5 lines>...
+        scoped_config,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/args.py", line 265, in compute_client_args
+    endpoint_config = self._compute_endpoint_config(
+        service_name=service_name,
+    ...<4 lines>...
+        s3_config=s3_config,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/args.py", line 459, in _compute_endpoint_config
+    return self._resolve_endpoint(**resolve_endpoint_kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/args.py", line 577, in _resolve_endpoint
+    return endpoint_bridge.resolve(
+           ~~~~~~~~~~~~~~~~~~~~~~~^
+        service_name, region_name, endpoint_url, is_secure
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/client.py", line 675, in resolve
+    resolved = self.endpoint_resolver.construct_endpoint(
+        service_name,
+    ...<2 lines>...
+        use_fips_endpoint=use_fips_endpoint,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/regions.py", line 237, in construct_endpoint
+    result = self._endpoint_for_partition(
+        partition,
+    ...<3 lines>...
+        use_fips_endpoint,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/regions.py", line 285, in _endpoint_for_partition
+    raise NoRegionError()
+botocore.exceptions.NoRegionError: You must specify a region.
+Failed to load Parameter Store config
+Traceback (most recent call last):
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/src/config/config.py", line 257, in get_config
+    param_store_config = _load_parameter_store_config(config.PARAMETER_STORE_PREFIX)
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/src/config/config.py", line 175, in _load_parameter_store_config
+    ssm_client = boto3.client('ssm')
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/boto3/__init__.py", line 93, in client
+    return _get_default_session().client(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/boto3/session.py", line 337, in client
+    return self._session.create_client(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        service_name, **create_client_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/context.py", line 123, in wrapper
+    return func(*args, **kwargs)
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/session.py", line 1031, in create_client
+    client = client_creator.create_client(
+        service_name=service_name,
+    ...<8 lines>...
+        auth_token=auth_token,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/client.py", line 161, in create_client
+    client_args = self._get_client_args(
+        service_model,
+    ...<10 lines>...
+        partition_data,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/client.py", line 561, in _get_client_args
+    return args_creator.get_client_args(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        service_model,
+        ^^^^^^^^^^^^^^
+    ...<10 lines>...
+        partition_data,
+        ^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/args.py", line 121, in get_client_args
+    final_args = self.compute_client_args(
+        service_model,
+    ...<5 lines>...
+        scoped_config,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/args.py", line 265, in compute_client_args
+    endpoint_config = self._compute_endpoint_config(
+        service_name=service_name,
+    ...<4 lines>...
+        s3_config=s3_config,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/args.py", line 459, in _compute_endpoint_config
+    return self._resolve_endpoint(**resolve_endpoint_kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/args.py", line 577, in _resolve_endpoint
+    return endpoint_bridge.resolve(
+           ~~~~~~~~~~~~~~~~~~~~~~~^
+        service_name, region_name, endpoint_url, is_secure
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/client.py", line 675, in resolve
+    resolved = self.endpoint_resolver.construct_endpoint(
+        service_name,
+    ...<2 lines>...
+        use_fips_endpoint=use_fips_endpoint,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/regions.py", line 237, in construct_endpoint
+    result = self._endpoint_for_partition(
+        partition,
+    ...<3 lines>...
+        use_fips_endpoint,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/regions.py", line 285, in _endpoint_for_partition
+    raise NoRegionError()
+botocore.exceptions.NoRegionError: You must specify a region.
+PASS no teacher_context: available is False
+PASS no teacher_context: no grade, no block
+PASS an empty teacher_context: available is True (Laravel answered), nothing resolved
+PASS grade: the on-screen classroom's own real grade
+PASS grade: a classroom-scoped memory outranks the classroom's own grade
+PASS grade: a memory scoped to a different classroom does not apply here
+PASS grade: a classroom id the teacher_context does not list is ignored, not trusted
+PASS grade: a placeholder classroom grade falls through to a teacher-level memory
+PASS grade: no classroom on screen, one real grade among current classrooms
+PASS grade: two distinct classroom grades and no memory falls back to the article's
+PASS grade: nothing known at all falls back to the article's own grade
+PASS grade: nothing known and no article grade either: unresolved
+PASS state: Laravel's derived state, with its source
+PASS state: a remembered state outranks Laravel's derived one
+PASS question_count: remembered, whichever way the row was saved
+PASS question_types: remembered
+PASS question_languages: remembered
+PASS notes: only non-blank note rows are collected
+PASS memories: every remembered row is kept, for listing them all
+PASS block: has a name and is cached as the per-teacher layer
+PASS block: names the known grade with its source
+PASS block: names the known state with its source
+PASS block: lists every remembered row with its id
+PASS block: the text of a row is used as given
+PASS block: says only listed items are remembered now
+PASS block: forbids remembering anything about a student
+PASS block: an unresolvable memory row is skipped, not raised
+PASS about: on Account Settings with mixed-grade classes the block is not only the state
+PASS about: the teacher's own name, username, email, school and district are listed (the email as its stand-in)
+PASS about: the state reads as a name
+PASS about: a teacher-only user reads as a teacher, and nothing more
+PASS about: each class is listed with its grade and subjects
+PASS about: an ended placeholder class says so rather than showing a fake grade
+PASS about: active, ended and archived counts and the student total are given as numbers
+PASS about: the publication count comes with the first few titles
+PASS about: About you comes before Known and Remembered
+PASS about: the block tells the model to summarise from all three sections and to count students, never name them
+PASS about: a teacher who is also a district admin is named as both, with the district
+PASS about: every role reads in order
+PASS about: twenty classes are all listed, none cut off for a 'more'
+PASS about: an unusually long class list stops at 40 and says how many more
+PASS about: the block tells the model to give classes as counts and list them only when asked which
+PASS summary: 17 classes across four grades are counted by grade in order, Kindergarten first, in one line
+PASS summary: no class name is in About you
+PASS summary: every class is still listed, under its own only-when-asked heading, for a follow-up
+PASS summary: username and email are under Sign-in details only, never in About you
+PASS summary: the rule keeps sign-in details for when they are asked for
+PASS recall ask: 'What do you remember about me?' is one
+PASS recall ask: 'what do you know about me' is one
+PASS recall ask: 'What else do you know about me?' is one
+PASS recall ask: 'Can you tell me what you have saved about me?' is one
+PASS recall ask: 'What do you remember?' is one
+PASS recall ask: 'What do you know about volcanoes?' is not one
+PASS recall ask: 'Remember that I teach grade 4.' is not one
+PASS recall ask: 'Which classes exactly?' is not one
+PASS recall ask: 'What do you remember about the Cabrillo article?' is not one
+PASS recall ask: 'Forget what you know about me' is not one
+PASS recall reply: the remembered item as saved, then the classes sentence word for word, then who they are
+PASS recall reply: never a class name, the email or a username
+PASS recall reply: a follow-up for the class list is left to the model
+PASS recall reply: no teacher context, no reply
+PASS recall reply: each item word for word, an edit kept, in the order Laravel lists them
+PASS recall reply: a class's row names its class, once
+PASS recall reply: a row with no words of its own reads by its kind
+PASS recall reply: nothing remembered says so, then the classes sentence
+PASS recall reply: with no profile or classes, the items and the state only
+PASS recall reply: a second role is named with its place
+PASS recall reply: the built turn carries no recall note (the reply is code's), and the stored turn is unchanged
+PASS recall reply: the runtime closes a recall ask with it, a regenerated one too, before any model call
+PASS summary: the stand-in instruction still comes with the sign-in details
+PASS about: a payload without profile or teaching still lists the classes, and says no role or count it lacks
+PASS E1: an email-shaped username that is the email reads as the one stand-in, and no address reaches the model
+PASS E1: the model is told to write the stand-in as shown
+PASS E1: a different email-shaped username has its own stand-in
+PASS E1: a plain username is shown as it is, and needs no stand-in
+PASS E1: with no email there is no stand-in and no stand-in instruction
+PASS E1: rag never restores the address (the guardrail masks it again after a restore); swo's display does
+PASS E1: every reply screen passes the stand-in untouched
+PASS grade_needs_ask: the teacher's own words this turn always win, whatever the resolver has
+PASS grade_needs_ask: no resolver at all (a stale TurnContext, or teacher-context unavailable this turn) never forces a pause - the old behaviour (the model decides) stands
+PASS grade_needs_ask: available=False (Laravel did not answer this turn) never forces a pause
+PASS grade_needs_ask: a placeholder classroom grade, no memory, no article - asks
+PASS grade_needs_ask: the article's grade alone (source='article') still asks - it is offered, not applied
+PASS grade_needs_ask: a real classroom grade never asks
+PASS grade_needs_ask: a remembered teacher-level grade never asks
+PASS stored memory: {'grade': 3} reads as 3 and {'state': 'WV'} as WV
+PASS ONLINE-7762: each class's row names its class, so two classes' rows are not the same line twice
+PASS ONLINE-7762: a row for a class no longer listed says so; a teacher-level row is unchanged
+PASS ONLINE-7762: the recall rule lists items in the words they are listed with, not restated
+PASS ONLINE-7762: with no account details the recall rule also lists items in their own words
+PASS ONLINE-7762: the blank-grade ask's row names the class it was saved for
+PASS a raw classroom id in a saved row is shown as the class name, or as not on the list
+
+0 failure(s)

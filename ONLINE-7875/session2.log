@@ -1,0 +1,161 @@
+effort='low' thinking='' guardrail=z6mtpcbzm5x1:16 main=us.anthropic.claude-sonnet-5 fast=us.anthropic.claude-haiku-4-5-20251001-v1:0
+  plain_first:article          baseline         71,318 chars  guardrail=True
+  plain_first:article          tiny_prompt         161 chars  guardrail=True
+  plain_first:article          guardrail_off    71,318 chars  guardrail=False
+  plain_first:article          haiku            71,318 chars  guardrail=True
+  plain_first:classrooms       baseline         65,042 chars  guardrail=True
+  plain_first:classrooms       tiny_prompt         172 chars  guardrail=True
+  plain_first:classrooms       guardrail_off    65,042 chars  guardrail=False
+  plain_first:classrooms       haiku            65,042 chars  guardrail=True
+  plain_first:search_page      baseline         66,803 chars  guardrail=True
+  plain_first:search_page      tiny_prompt         161 chars  guardrail=True
+  plain_first:search_page      guardrail_off    66,803 chars  guardrail=False
+  plain_first:search_page      haiku            66,803 chars  guardrail=True
+  search_second:article        baseline         72,540 chars  guardrail=True
+  search_second:article        tiny_prompt       1,173 chars  guardrail=True
+  search_second:article        guardrail_off    72,540 chars  guardrail=False
+  search_second:article        haiku            72,540 chars  guardrail=True
+  search_second:classrooms     baseline         66,276 chars  guardrail=True
+  search_second:classrooms     tiny_prompt       1,194 chars  guardrail=True
+  search_second:classrooms     guardrail_off    66,276 chars  guardrail=False
+  search_second:classrooms     haiku            66,276 chars  guardrail=True
+  search_second:search_page    baseline         68,150 chars  guardrail=True
+  search_second:search_page    tiny_prompt       1,288 chars  guardrail=True
+  search_second:search_page    guardrail_off    68,150 chars  guardrail=False
+  search_second:search_page    haiku            68,150 chars  guardrail=True
+
+warming 24 requests (not counted)
+  run 1/5 plain_first:article          baseline       text=6807.7 reason=None err=False
+  run 1/5 plain_first:article          tiny_prompt    text=2921.3 reason=None err=False
+  run 1/5 plain_first:article          guardrail_off  text=2133.5 reason=None err=False
+  run 1/5 plain_first:article          haiku          text=4709.4 reason=None err=False
+  run 1/5 plain_first:classrooms       baseline       text=9138.3 reason=9138.1 err=False
+  run 1/5 plain_first:classrooms       tiny_prompt    text=4048.3 reason=None err=False
+  run 1/5 plain_first:classrooms       guardrail_off  text=5278.8 reason=5278.6 err=False
+  run 1/5 plain_first:classrooms       haiku          text=3678.5 reason=None err=False
+  run 1/5 plain_first:search_page      baseline       text=6212.6 reason=None err=False
+  run 1/5 plain_first:search_page      tiny_prompt    text=5189.9 reason=None err=False
+  run 1/5 plain_first:search_page      guardrail_off  text=2157.6 reason=None err=False
+  run 1/5 plain_first:search_page      haiku          text=5570.2 reason=None err=False
+  run 1/5 search_second:article        baseline       text=4973.3 reason=None err=False
+  run 1/5 search_second:article        tiny_prompt    text=3480.8 reason=None err=False
+  run 1/5 search_second:article        guardrail_off  text=2108.3 reason=None err=False
+  run 1/5 search_second:article        haiku          text=4018.7 reason=None err=False
+  run 1/5 search_second:classrooms     baseline       text=4810.1 reason=None err=False
+  run 1/5 search_second:classrooms     tiny_prompt    text=3839.7 reason=None err=False
+  run 1/5 search_second:classrooms     guardrail_off  text=2114.7 reason=None err=False
+  run 1/5 search_second:classrooms     haiku          text=4405.5 reason=None err=False
+  run 1/5 search_second:search_page    baseline       text=6163.0 reason=None err=False
+  run 1/5 search_second:search_page    tiny_prompt    text=4130.2 reason=None err=False
+  run 1/5 search_second:search_page    guardrail_off  text=2308.7 reason=None err=False
+  run 1/5 search_second:search_page    haiku          text=4080.8 reason=None err=False
+  run 2/5 plain_first:article          baseline       text=6148.5 reason=None err=False
+  run 2/5 plain_first:article          tiny_prompt    text=3212.4 reason=None err=False
+  run 2/5 plain_first:article          guardrail_off  text=2194.5 reason=None err=False
+  run 2/5 plain_first:article          haiku          text=4817.3 reason=None err=False
+  run 2/5 plain_first:classrooms       baseline       text=10307.9 reason=10306.9 err=False
+  run 2/5 plain_first:classrooms       tiny_prompt    text=5193.6 reason=None err=False
+  run 2/5 plain_first:classrooms       guardrail_off  text=9209.1 reason=9207.7 err=False
+  run 2/5 plain_first:classrooms       haiku          text=4116.6 reason=None err=False
+  run 2/5 plain_first:search_page      baseline       text=6636.0 reason=None err=False
+  run 2/5 plain_first:search_page      tiny_prompt    text=5768.9 reason=None err=False
+  run 2/5 plain_first:search_page      guardrail_off  text=2087.2 reason=None err=False
+  run 2/5 plain_first:search_page      haiku          text=5612.6 reason=None err=False
+  run 2/5 search_second:article        baseline       text=4649.8 reason=None err=False
+  run 2/5 search_second:article        tiny_prompt    text=3205.6 reason=None err=False
+  run 2/5 search_second:article        guardrail_off  text=2200.0 reason=None err=False
+  run 2/5 search_second:article        haiku          text=4201.9 reason=None err=False
+  run 2/5 search_second:classrooms     baseline       text=5281.1 reason=None err=False
+  run 2/5 search_second:classrooms     tiny_prompt    text=3742.1 reason=None err=False
+  run 2/5 search_second:classrooms     guardrail_off  text=2040.2 reason=None err=False
+  run 2/5 search_second:classrooms     haiku          text=4427.0 reason=None err=False
+  run 2/5 search_second:search_page    baseline       text=6135.1 reason=None err=False
+  run 2/5 search_second:search_page    tiny_prompt    text=3680.0 reason=None err=False
+  run 2/5 search_second:search_page    guardrail_off  text=2200.3 reason=None err=False
+  run 2/5 search_second:search_page    haiku          text=4580.0 reason=None err=False
+  run 3/5 plain_first:article          baseline       text=5456.7 reason=None err=False
+  run 3/5 plain_first:article          tiny_prompt    text=2904.9 reason=None err=False
+  run 3/5 plain_first:article          guardrail_off  text=2132.0 reason=None err=False
+  run 3/5 plain_first:article          haiku          text=4645.6 reason=None err=False
+  run 3/5 plain_first:classrooms       baseline       text=8779.4 reason=8767.5 err=False
+  run 3/5 plain_first:classrooms       tiny_prompt    text=5335.8 reason=None err=False
+  run 3/5 plain_first:classrooms       guardrail_off  text=9145.3 reason=9139.7 err=False
+  run 3/5 plain_first:classrooms       haiku          text=3370.9 reason=None err=False
+  run 3/5 plain_first:search_page      baseline       text=6034.3 reason=None err=False
+  run 3/5 plain_first:search_page      tiny_prompt    text=5690.1 reason=None err=False
+  run 3/5 plain_first:search_page      guardrail_off  text=2173.3 reason=None err=False
+  run 3/5 plain_first:search_page      haiku          text=5803.2 reason=None err=False
+  run 3/5 search_second:article        baseline       text=4643.8 reason=None err=False
+  run 3/5 search_second:article        tiny_prompt    text=3394.5 reason=None err=False
+  run 3/5 search_second:article        guardrail_off  text=2217.7 reason=None err=False
+  run 3/5 search_second:article        haiku          text=3942.8 reason=None err=False
+  run 3/5 search_second:classrooms     baseline       text=4994.0 reason=None err=False
+  run 3/5 search_second:classrooms     tiny_prompt    text=4069.8 reason=None err=False
+  run 3/5 search_second:classrooms     guardrail_off  text=2355.5 reason=None err=False
+  run 3/5 search_second:classrooms     haiku          text=4372.5 reason=None err=False
+  run 3/5 search_second:search_page    baseline       text=5349.3 reason=None err=False
+  run 3/5 search_second:search_page    tiny_prompt    text=3774.8 reason=None err=False
+  run 3/5 search_second:search_page    guardrail_off  text=2265.0 reason=None err=False
+  run 3/5 search_second:search_page    haiku          text=4684.0 reason=None err=False
+  run 4/5 plain_first:article          baseline       text=5285.1 reason=None err=False
+  run 4/5 plain_first:article          tiny_prompt    text=2971.6 reason=None err=False
+  run 4/5 plain_first:article          guardrail_off  text=2074.4 reason=None err=False
+  run 4/5 plain_first:article          haiku          text=4750.2 reason=None err=False
+  run 4/5 plain_first:classrooms       baseline       text=8786.0 reason=8780.7 err=False
+  run 4/5 plain_first:classrooms       tiny_prompt    text=5112.0 reason=None err=False
+  run 4/5 plain_first:classrooms       guardrail_off  text=9060.0 reason=9059.7 err=False
+  run 4/5 plain_first:classrooms       haiku          text=3263.1 reason=None err=False
+  run 4/5 plain_first:search_page      baseline       text=6558.9 reason=None err=False
+  run 4/5 plain_first:search_page      tiny_prompt    text=6044.6 reason=None err=False
+  run 4/5 plain_first:search_page      guardrail_off  text=2140.3 reason=None err=False
+  run 4/5 plain_first:search_page      haiku          text=5222.0 reason=None err=False
+  run 4/5 search_second:article        baseline       text=4519.6 reason=None err=False
+  run 4/5 search_second:article        tiny_prompt    text=3733.9 reason=None err=False
+  run 4/5 search_second:article        guardrail_off  text=2172.4 reason=None err=False
+  run 4/5 search_second:article        haiku          text=4207.6 reason=None err=False
+  run 4/5 search_second:classrooms     baseline       text=4785.9 reason=None err=False
+  run 4/5 search_second:classrooms     tiny_prompt    text=3770.6 reason=None err=False
+  run 4/5 search_second:classrooms     guardrail_off  text=2073.0 reason=None err=False
+  run 4/5 search_second:classrooms     haiku          text=4065.4 reason=None err=False
+  run 4/5 search_second:search_page    baseline       text=5527.7 reason=None err=False
+  run 4/5 search_second:search_page    tiny_prompt    text=3863.5 reason=None err=False
+  run 4/5 search_second:search_page    guardrail_off  text=1892.8 reason=None err=False
+  run 4/5 search_second:search_page    haiku          text=4040.4 reason=None err=False
+  run 5/5 plain_first:article          baseline       text=6544.9 reason=None err=False
+  run 5/5 plain_first:article          tiny_prompt    text=2798.7 reason=None err=False
+  run 5/5 plain_first:article          guardrail_off  text=2176.2 reason=None err=False
+  run 5/5 plain_first:article          haiku          text=5261.5 reason=None err=False
+  run 5/5 plain_first:classrooms       baseline       text=9717.8 reason=9713.5 err=False
+  run 5/5 plain_first:classrooms       tiny_prompt    text=8001.0 reason=None err=False
+  run 5/5 plain_first:classrooms       guardrail_off  text=6092.9 reason=6092.5 err=False
+  run 5/5 plain_first:classrooms       haiku          text=3436.6 reason=None err=False
+  run 5/5 plain_first:search_page      baseline       text=6800.4 reason=None err=False
+  run 5/5 plain_first:search_page      tiny_prompt    text=5439.5 reason=None err=False
+  run 5/5 plain_first:search_page      guardrail_off  text=2071.8 reason=None err=False
+  run 5/5 plain_first:search_page      haiku          text=5558.6 reason=None err=False
+  run 5/5 search_second:article        baseline       text=5105.2 reason=None err=False
+  run 5/5 search_second:article        tiny_prompt    text=3437.0 reason=None err=False
+  run 5/5 search_second:article        guardrail_off  text=2113.4 reason=None err=False
+  run 5/5 search_second:article        haiku          text=4189.3 reason=None err=False
+  run 5/5 search_second:classrooms     baseline       text=5053.5 reason=None err=False
+  run 5/5 search_second:classrooms     tiny_prompt    text=3675.9 reason=None err=False
+  run 5/5 search_second:classrooms     guardrail_off  text=2086.3 reason=None err=False
+  run 5/5 search_second:classrooms     haiku          text=3733.0 reason=None err=False
+  run 5/5 search_second:search_page    baseline       text=6073.5 reason=None err=False
+  run 5/5 search_second:search_page    tiny_prompt    text=3768.9 reason=None err=False
+  run 5/5 search_second:search_page    guardrail_off  text=2099.6 reason=None err=False
+  run 5/5 search_second:search_page    haiku          text=4889.4 reason=None err=False
+240 runs from /home/lenovo/ldc/ONLINE-7875/runs.jsonl; sessions: ['2026-10-20T08:28Z', '2026-10-20T08:42Z']
+
+call           variant          n err  text p50  text p90 event p50 reason p50 w/ reason resp p50 read p50 write p50
+plain_first    baseline        30   0    6749.6   10307.9    6749.4     9138.1     10/30   2710.3    21201         0
+plain_first    tiny_prompt     30   0    5193.6    5852.5    5193.5          -      0/30   1897.2        0         0
+plain_first    guardrail_off   30   0    2209.6    9060.0    2209.5     8273.6     10/30   2152.3    21201         0
+plain_first    haiku           30   0    4761.0    5703.8    4760.9          -      0/30   2163.3    16064         0
+
+call           variant          n err  text p50  text p90 event p50 reason p50 w/ reason resp p50 read p50 write p50
+search_second  baseline        30   0    5277.8    6135.1    5277.2          -      0/30   2814.8    21673         0
+search_second  tiny_prompt     30   0    3768.9    4069.8    3768.6          -      0/30   1886.1        0         0
+search_second  guardrail_off   30   0    2264.4    2355.5    2264.3          -      0/30   2263.5    21673         0
+search_second  haiku           30   0    4201.9    4889.4    4201.8          -      0/30   2350.2    16407         0
+

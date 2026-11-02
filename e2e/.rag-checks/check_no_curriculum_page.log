@@ -1,0 +1,18 @@
+ok   a 'No questions were written' refusal is kept on the turn
+ok   another error or a written set is not
+ok   after that refusal, write_artifact refuses a worksheet, and passes the refusal on
+ok   after that refusal, write_artifact refuses a exit_ticket, and passes the refusal on
+ok   after that refusal, write_artifact refuses a discussion_questions, and passes the refusal on
+ok   after that refusal, write_artifact refuses a document, and passes the refusal on
+ok   a lesson plan, slides or a revise in the same turn are not refused by it
+ok   with no refusal in the turn a worksheet is written as before
+ok   a chat lesson or weekly plan on Classrooms with no article found has nothing to plan from
+ok   ...but a found article or chosen week, an article page, a page with resources, or a unit or publication page is
+ok   other documents on Classrooms are not this guard's business
+ok   the refusal names the page, says no article was found, and forbids planning from the page
+ok   the plan guard runs for chat plans only, before the grade is asked
+ok   a set that came back with no questions is withdrawn and refused, so write_artifact can't write it instead
+ok   a quiz asked on Classrooms with nothing found is announced with no subject, not 'Classrooms'
+ok   on an article, week, unit or publication page the page still names it
+
+passed: 0 failure(s)

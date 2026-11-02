@@ -1,0 +1,31 @@
+ok   _request carries guardrailConfig when GUARDRAIL_ID is set
+ok   _request carries no guardrailConfig when no guardrail is configured
+ok   Haiku 5.5: thinking disabled is sent and temperature is not
+ok   Haiku 4.5: temperature is kept and no thinking field is sent
+ok   Haiku 5.5 with thinking left to the model sends no thinking field
+ok   Sonnet 5.5 gets no thinking field (it rejects disabled); Sonnet 5 still does
+ok   Haiku 5.5 is priced at its own row, a tenth of Haiku 4.5's
+ok   the engine model defaults are the service's, not a second copy
+ok   an ordinary stream is untouched by the guardrail wiring
+{"level":"WARNING","location":"_stream_once:327","message":"Bedrock guardrail intervened","timestamp":"2026-10-28 16:51:47,027+0500","service":"CoreRuntime","taskName":"Task-4","guardrail_verdicts":[]}
+ok   stream_text raises a distinct, non-retryable EngineModelError on a guardrail intervention
+ok   a guardrail intervention is never retried: exactly one call was made
+ok   usage is still recorded for the blocked call
+ok   the blocked message is the ticket's exact wording (ONLINE-6554)
+{"level":"WARNING","location":"_stream_once:327","message":"Bedrock guardrail intervened","timestamp":"2026-10-28 16:51:47,028+0500","service":"CoreRuntime","taskName":"Task-8","guardrail_verdicts":[]}
+ok   complete() raises the same distinct, non-retryable error on a guardrail intervention
+ok   complete() is never retried on a guardrail intervention either
+ok   complete()'s blocked message is the same shared text as stream_text's
+{"level":"INFO","location":"_stream_once:334","message":"Bedrock guardrail masked PII only, call continues","timestamp":"2026-10-28 16:51:47,029+0500","service":"CoreRuntime","taskName":"Task-12","guardrail_verdicts":["pii:EMAIL:ANONYMIZED"]}
+ok   stream_text: an ANONYMIZE-only intervention returns the masked text, not an error
+ok   stream_text: usage is still recorded for an ANONYMIZE-only call
+{"level":"WARNING","location":"_stream_once:327","message":"Bedrock guardrail intervened","timestamp":"2026-10-28 16:51:47,029+0500","service":"CoreRuntime","taskName":"Task-15","guardrail_verdicts":["pii:US_SOCIAL_SECURITY_NUMBER:BLOCKED"]}
+ok   stream_text: a real BLOCK (e.g. an SSN) still raises, not a silent pass-through
+ok   stream_text: the real BLOCK is never retried
+{"level":"INFO","location":"_stream_once:334","message":"Bedrock guardrail masked PII only, call continues","timestamp":"2026-10-28 16:51:47,030+0500","service":"CoreRuntime","taskName":"Task-19","guardrail_verdicts":["pii:EMAIL:ANONYMIZED"]}
+ok   complete(): an ANONYMIZE-only intervention returns the masked text, not an error
+{"level":"WARNING","location":"_stream_once:327","message":"Bedrock guardrail intervened","timestamp":"2026-10-28 16:51:47,031+0500","service":"CoreRuntime","taskName":"Task-22","guardrail_verdicts":["pii:US_SOCIAL_SECURITY_NUMBER:BLOCKED"]}
+ok   complete(): a real BLOCK still raises, not a silent pass-through
+ok   complete(): the real BLOCK is never retried
+
+ALL OK

@@ -1,0 +1,637 @@
+publication structure unavailable
+search_curriculum failed
+unit standards lookup failed
+week_resources_markdown lookup failed
+week_resources_markdown lookup failed
+get_article_resources failed
+resources_markdown lookup failed
+resources_markdown lookup failed
+
+--- protocol ---
+PASS search_curriculum satisfies CoreTool
+PASS search_curriculum spec is JSON-serialisable and identical across reads
+PASS get_article_resources satisfies CoreTool
+PASS get_article_resources spec is JSON-serialisable and identical across reads
+PASS search_help satisfies CoreTool
+PASS search_help spec is JSON-serialisable and identical across reads
+PASS search_curriculum takes no publication_ids from the model
+
+--- filters ---
+PASS lesson_plan narrows on panel_type
+PASS several kinds become $or
+PASS 7767: an article search excludes activities (SWO stores them as article records)
+PASS legacy index maps article to pdf
+PASS legacy index has no lesson plans (no filter, explained in the result)
+PASS rebuilt publication filter is the list field
+PASS empty scope adds no clause
+PASS filters combine with $and
+
+--- search_curriculum (faked index) ---
+PASS scope comes from the request, not the model's publication_ids
+PASS unknown kinds are ignored and said so
+PASS chunks and same-body editions are deduplicated
+PASS content_results emitted in v1 shape
+PASS card ids are integers and the publication is the teacher's
+PASS status emitted first
+PASS unambiguous article gets its in-app path
+PASS lesson plan result labelled as a lesson plan
+PASS model told not to write links for cards
+PASS model told to summarise instead of listing card titles
+
+--- the model sees exactly the cards ---
+FAIL frontend contentResults.ts found (set SKIP_FRONTEND_CHECKS=1 where swo-3.0 is absent)  /home/lenovo/ldc/e2e/swo-3.0/frontend-v3/ai/services/contentResults.ts
+PASS PIN: the markdown list and the cards are the same items in the same order
+PASS PIN: each markdown item carries its card index R1..Rn
+PASS PIN: the model is told the exact card count
+PASS PIN (M4): result items are fenced as retrieved content, instructions outside
+PASS PIN (M4): a title or excerpt cannot close the retrieved fence
+PASS exactly one content_results event per search
+
+--- M2: search_curriculum with no publications searches nothing ---
+PASS PIN search_curriculum with None scope refuses: no query, no events, no cards
+PASS PIN search_curriculum with empty list scope refuses: no query, no events, no cards
+PASS PIN search_curriculum with blank strings scope refuses: no query, no events, no cards
+PASS the refusal names the cause and forbids suggesting articles from memory
+PASS no results says so, no cards
+PASS ONLINE-7507 AC2: content_results is emitted even with zero cards, so the 'Searched…' line still draws
+PASS a failed search is an error, never 'nothing found'
+PASS grade filter leaves ungraded kinds untouched
+
+--- get_article_resources (faked records) ---
+PASS defaults to the article on screen, with its week
+PASS lesson plan chunks stitched in order, title not repeated
+PASS vocabulary term with its definition
+PASS standard listed with state and number
+PASS existing question stem listed
+PASS full payload stored as a ref
+PASS status emitted
+PASS an article outside the teacher's publications is refused
+PASS PIN standards: a week with standards keeps its own list and the unit is never looked up
+PASS PIN standards: no week standards -> the unit's, under a unit-level heading, with descriptions
+PASS PIN (B3 adjacency sweep) the unit-level qualifier is on EVERY standard line, not only the heading: one line quoted on its own still says it is the unit's and not this week's
+PASS PIN standards: the plan checker reads unit-level codes as the listed standards
+PASS PIN standards: more than UNIT_STANDARDS_LISTED unit standards -> the count and every code, no descriptions
+PASS PIN standards: no week and no unit standards -> exactly the old line, which the plan checker already knows
+PASS PIN standards: a failed unit lookup keeps the week's 'none' line and the rest of the resources
+PASS PIN standards: get_article_resources shows the same unit-level standards as resources_markdown
+PASS PIN resources_markdown: an id copied with the page's 'article:' prefix reads the same article
+PASS PIN get_article_resources: an 'article:' prefixed id fetches the bare id
+PASS PIN get_article_resources: a bracketed '[article:34039]', as the table of contents prints it, fetches the bare id
+PASS resources_markdown renders the same material for engines
+PASS resources_markdown refuses outside the scope it is given
+
+--- M2: no publications reads nothing ---
+PASS PIN resources_markdown with None scope refuses before any fetch
+PASS PIN resources_markdown with empty list scope refuses before any fetch
+PASS PIN resources_markdown with blank strings scope refuses before any fetch
+PASS PIN the refusal starts with 'No article', which write_artifact already drops
+PASS PIN get_article_resources with no publications refuses before any fetch
+PASS PIN within_scope is False with no scope, even for records carrying no publications
+PASS PIN within_scope fails closed: a scoped caller cannot read records that carry no publications (B7)
+PASS PIN resources_markdown refuses an article whose records carry no publications, and shows none of its text
+
+--- M4: retrieved content is fenced ---
+PASS get_article_resources output fences the publisher material with the rule beside it
+
+--- a whole week's resources (B5 multi-day plans: LPR1, LP8) ---
+PASS PIN week: every article in the week, numbered, with title and id
+PASS PIN week: with no page list, articles are ordered by id and the header says the index records no order
+PASS PIN week: when the page lists the week, its order wins and the header says so
+PASS PIN week: identical lesson plans (whitespace aside) are listed once
+PASS PIN week: different lesson plan versions are both kept and labelled
+PASS PIN week: an article with no lesson plan says so, never invents one
+PASS PIN R89: each article's own indexed text is rendered, not only its title and lesson-plan panel
+PASS PIN R89: an article with no indexed text says so, never invents body text
+PASS PIN R89: the full-text section comes before the lesson-plan panels, so a plan reads the article before its publisher panel
+PASS PIN week: week panels, questions inside the fence
+PASS PIN week: our notes (no pacing, no order, no grade) sit outside the fence
+PASS PIN week: publisher text cannot close the fence
+PASS PIN week: a 'week:2295'-style id reads the same week as the bare id (no failed call and retry)
+PASS PIN week: a bracketed '[week:2295]', exactly as the table of contents prints it, reads the same week (B5)
+PASS PIN week: '[week:]' with nothing inside is still 'no week given', never a fetch
+PASS PIN week: 'week:' with nothing after it is still 'no week given', never a fetch
+PASS PIN generate_questions / write_artifact path: read_week with 'week:2295' returns the week, not an error
+PASS PIN week M2: no publications refuses before any fetch
+PASS PIN week M2: a week outside the teacher's publications is refused
+PASS PIN week: a failed lookup says it could not be checked, never 'none'
+PASS week_resources_markdown is exported from core.context for B5
+
+--- lesson plan: empty panel vs no panel vs unknown (B6 gap) ---
+PASS PIN resources_markdown lesson plan empty: its own line, outside the fence
+PASS PIN resources_markdown lesson plan empty: never 'could not check' when the lookup succeeded
+PASS PIN resources_markdown lesson plan absent: its own line, outside the fence
+PASS PIN resources_markdown lesson plan absent: never 'could not check' when the lookup succeeded
+PASS PIN resources_markdown lesson plan text: its own line, outside the fence
+PASS PIN resources_markdown lesson plan text: never 'could not check' when the lookup succeeded
+PASS PIN present-but-empty is named as such, for B5's compose engine
+PASS PIN panel absent from the page list: never 'no lesson plan' (the page hides empty panels), never 'empty'
+PASS PIN no page text (B5's call today): neither 'no lesson plan' nor 'a plan exists'
+PASS a lesson plan the index holds adds no lesson plan note, whatever the page says
+PASS PIN get_article_resources reads the on-screen panel list: present but empty
+PASS PIN another article's lesson plan state is unknown, never read from this page's panel list
+PASS a failed fetch never claims there are no resources
+PASS resources_markdown renders a failed lookup as 'could not check'Error loading configuration from Parameter Store: You must specify a region.
+Traceback (most recent call last):
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/src/config/config.py", line 257, in get_config
+    param_store_config = _load_parameter_store_config(config.PARAMETER_STORE_PREFIX)
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/src/config/config.py", line 175, in _load_parameter_store_config
+    ssm_client = boto3.client('ssm')
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/boto3/__init__.py", line 93, in client
+    return _get_default_session().client(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/boto3/session.py", line 337, in client
+    return self._session.create_client(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        service_name, **create_client_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/context.py", line 123, in wrapper
+    return func(*args, **kwargs)
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/session.py", line 1031, in create_client
+    client = client_creator.create_client(
+        service_name=service_name,
+    ...<8 lines>...
+        auth_token=auth_token,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/client.py", line 161, in create_client
+    client_args = self._get_client_args(
+        service_model,
+    ...<10 lines>...
+        partition_data,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/client.py", line 561, in _get_client_args
+    return args_creator.get_client_args(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        service_model,
+        ^^^^^^^^^^^^^^
+    ...<10 lines>...
+        partition_data,
+        ^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/args.py", line 121, in get_client_args
+    final_args = self.compute_client_args(
+        service_model,
+    ...<5 lines>...
+        scoped_config,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/args.py", line 265, in compute_client_args
+    endpoint_config = self._compute_endpoint_config(
+        service_name=service_name,
+    ...<4 lines>...
+        s3_config=s3_config,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/args.py", line 459, in _compute_endpoint_config
+    return self._resolve_endpoint(**resolve_endpoint_kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/args.py", line 577, in _resolve_endpoint
+    return endpoint_bridge.resolve(
+           ~~~~~~~~~~~~~~~~~~~~~~~^
+        service_name, region_name, endpoint_url, is_secure
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/client.py", line 675, in resolve
+    resolved = self.endpoint_resolver.construct_endpoint(
+        service_name,
+    ...<2 lines>...
+        use_fips_endpoint=use_fips_endpoint,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/regions.py", line 237, in construct_endpoint
+    result = self._endpoint_for_partition(
+        partition,
+    ...<3 lines>...
+        use_fips_endpoint,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/regions.py", line 285, in _endpoint_for_partition
+    raise NoRegionError()
+botocore.exceptions.NoRegionError: You must specify a region.
+Failed to load Parameter Store config
+Traceback (most recent call last):
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/src/config/config.py", line 257, in get_config
+    param_store_config = _load_parameter_store_config(config.PARAMETER_STORE_PREFIX)
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/src/config/config.py", line 175, in _load_parameter_store_config
+    ssm_client = boto3.client('ssm')
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/boto3/__init__.py", line 93, in client
+    return _get_default_session().client(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/boto3/session.py", line 337, in client
+    return self._session.create_client(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        service_name, **create_client_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/context.py", line 123, in wrapper
+    return func(*args, **kwargs)
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/session.py", line 1031, in create_client
+    client = client_creator.create_client(
+        service_name=service_name,
+    ...<8 lines>...
+        auth_token=auth_token,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/client.py", line 161, in create_client
+    client_args = self._get_client_args(
+        service_model,
+    ...<10 lines>...
+        partition_data,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/client.py", line 561, in _get_client_args
+    return args_creator.get_client_args(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        service_model,
+        ^^^^^^^^^^^^^^
+    ...<10 lines>...
+        partition_data,
+        ^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/args.py", line 121, in get_client_args
+    final_args = self.compute_client_args(
+        service_model,
+    ...<5 lines>...
+        scoped_config,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/args.py", line 265, in compute_client_args
+    endpoint_config = self._compute_endpoint_config(
+        service_name=service_name,
+    ...<4 lines>...
+        s3_config=s3_config,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/args.py", line 459, in _compute_endpoint_config
+    return self._resolve_endpoint(**resolve_endpoint_kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/args.py", line 577, in _resolve_endpoint
+    return endpoint_bridge.resolve(
+           ~~~~~~~~~~~~~~~~~~~~~~~^
+        service_name, region_name, endpoint_url, is_secure
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/client.py", line 675, in resolve
+    resolved = self.endpoint_resolver.construct_endpoint(
+        service_name,
+    ...<2 lines>...
+        use_fips_endpoint=use_fips_endpoint,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/regions.py", line 237, in construct_endpoint
+    result = self._endpoint_for_partition(
+        partition,
+    ...<3 lines>...
+        use_fips_endpoint,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/regions.py", line 285, in _endpoint_for_partition
+    raise NoRegionError()
+botocore.exceptions.NoRegionError: You must specify a region.
+search_curriculum timed out
+search_help timed out
+search_curriculum timed out
+search_help timed out
+get_article_resources timed out
+
+PASS no article on screen and none given asks which article
+
+--- search_help (faked index) ---
+PASS help article linked with its own URL
+PASS chunks of one article merged
+PASS changelog pages dropped by title
+PASS the fixture really straddles the limit (a check over a short text proves nothing)
+PASS PIN help excerpts never end mid-sentence without saying so
+PASS and the older plain cut is what produced the half sentence (stops inside the claim, no sentence end)
+PASS PIN an excerpt with no sentence end is marked as cut mid-sentence
+PASS a short excerpt is returned whole with no marker
+PASS PIN help excerpt: singular and plural, and -ed/-ing forms, count as the same word
+PASS the H04 fixture really puts the answer past the usual excerpt
+PASS PIN help excerpt (H04): the sentence answering the question reaches the model, labelled with its section
+PASS PIN help excerpt: a focused excerpt never crosses into the next section
+PASS PIN help excerpt: the teacher's own words count, not only the model's query
+PASS the ask-plumbing fixture: the model's query alone does not reach the answer
+PASS PIN search_help passes the teacher's message to the excerpt (the query alone would miss the answer)
+PASS the A22 fixture: without the boost the steps article would be fifth, outside the four returned
+PASS PIN help ranking (A22/APP1): a section heading with two of the query's words lifts its article into the results
+PASS PIN help ranking: a heading sharing only one query word does not lift
+PASS PIN help ranking: title words alone do not lift (titles share words across many articles)
+PASS PIN help ranking: a sentence line (ends with a full stop) is not a heading
+PASS PIN help ranking: the lift is small; an article well behind on meaning stays out
+PASS PIN help excerpt: nothing matching keeps the usual first excerpt byte for byte
+PASS the A16 fixture really puts the later section past the usual excerpt
+PASS PIN help excerpt (A16): when the usual excerpt matches as well, it is kept and no later section is pulled in
+PASS a non-help-centre URL is never linked
+PASS PIN cat.APP1: how-to steps may come only from the excerpts or the page's own actions (outside the fence)
+PASS PIN cat.APP1: missing steps are said and linked, never filled, never 'unnecessary' or 'automatic' without an excerpt
+PASS PIN the citable-links list sits after the data fence, with the rule to link only these
+PASS PIN the list is exactly the allowlisted article URLs this search returned, each once
+PASS PIN a URL quoted inside an excerpt is never offered as a link
+PASS PIN a non-help-centre URL is not in the list either
+PASS PIN no allowlisted article: no links list at all
+PASS no results points to the help centre instead of guessing
+
+--- retrieval timeouts ---
+PASS PIN embeddings client: 10 s timeout, 1 retry (SDK default was 600 s, 2 retries)
+PASS PIN metadata_fetch bounds its Pinecone query
+PASS PIN search query bounds its Pinecone query
+PASS PIN search_curriculum with a stalled embedding: returns within the bound, honest 'slow' result, no exception
+PASS PIN search_help with a stalled embedding: returns within the bound, honest 'slow' result, no exception
+PASS PIN search_curriculum with a stalled Pinecone query: returns within the bound, honest 'slow' result, no exception
+PASS PIN search_help with a stalled Pinecone query: returns within the bound, honest 'slow' result, no exception
+PASS PIN get_article_resources with a stalled lookup: returns within the bound, says it could not load, never 'none'
+
+--- topical search filters (kind / grade / language) ---
+PASS PIN plan: 'a video … for my 4th graders' -> video, grade 4, topic only
+PASS PIN plan: filler stops at word boundaries ('showing' is not 'show' + 'ing')
+PASS PIN plan: an ask written in Spanish -> Spanish articles
+PASS PIN plan: 'sixth grade' -> grade 6, no kind invented
+PASS PIN plan: a plain topic parses to no kind, grade, language, unit or week
+PASS PIN publications: Spanish keeps the Spanish publication and any unknown one
+PASS PIN publications: grade uses the grades list, else default_grade ±1; unknown kept
+PASS PIN search: Spanish filters to the Spanish publications when they match the topic
+PASS PIN search: a filtered search embeds each distinct text once (topic; teacher's words when they differ) and runs one query round
+PASS PIN search: a Spanish match far below the best is relaxed, and the relaxation is recorded
+PASS PIN search: an inferred kind filters when its best match is near the unfiltered best
+PASS PIN search: no on-topic result of that kind -> closest results, and 'kind' recorded as relaxed
+PASS ONLINE-7490: a video ask never widens to other kinds, however far below the best its matches are
+PASS ONLINE-7490: no image at all is no results, not an article
+PASS PIN search: an exact title that contains a kind word is a known item, not a kind filter
+PASS PIN search: a pure topic makes exactly HEAD's single call (S.query embeds for itself)
+PASS PIN facets off by default: the strict filter is the snapshot subset exactly as before, no facet keys, no probe
+PASS facets flag parsing: only 1 / true / yes turn it on
+PASS PIN facets on: the strict set filters the teacher's whole scope on the documents' own languages and grades ('any' included); only documents without facets fall back to the snapshot subset
+PASS PIN facets on: the strict set runs even when every one of the teacher's publications is in the snapshot subset
+PASS PIN facets on: a pure topic is still exactly one query with no facet keys
+PASS ONLINE-7507: the off arm (FILTER_DROP_MARGIN) is removed, one approach only
+PASS PIN render: fewer than six filtered results says 'Only N matched closely'
+PASS PIN render: relaxed constraints are said outside the fence, naming what was asked
+PASS PIN tool: an explicit doc_types from the model beats the kind parsed from its query
+PASS PIN tool: with no doc_types, the ask's kind, grade and topic reach the search (no model call)
+PASS PIN tool: a plain topic from the model is searched exactly as sent
+PASS the shipped publication facts load (211 live publications at snapshot time)
+
+--- search_curriculum: standards named in the search ---
+PASS PIN codes found: a guid, a hyphenated code, a dotted code, a state-prefixed Texas code
+PASS PIN ONLINE-7532: a Texas kindergarten code is a code, and an ask for articles aligned to it is a standard ask
+PASS PIN not codes: COVID-19, K-12, a date, grade 5.2, a lower-case model name
+PASS PIN a named code opens the result with its official entry: state, code, grade band, subject, description, inside the fence
+PASS PIN a 'what does it mean' ask looks it up in the teacher's scope and adds no reteach links
+PASS PIN a reteach ask adds the linked curriculum: article ids, titles, link kind, week, the rest counted, tagged questions
+PASS PIN (ONLINE-7532) a code ask hands the open page's week and publication to the links lookup
+PASS PIN (ONLINE-7532) no page scope: the links lookup gets no page, so its order is unchanged
+PASS PIN (B4 std.reteach) the block says nothing else in the result is linked, and asks for the link kind
+PASS PIN (B4 std.reteach) every linked id reaches the tool result's data, not only the ones shown, so a reply can be screened against the set
+PASS PIN (B1's citation screen) each linked article carries its title, link kind and week beside its id — including the five the model was never shown, since a reply can cite an article by name
+PASS PIN a title in the set is not an identity: two different linked articles here share one title, so a title hit can never stand as proof that a cited article is the linked one
+PASS PIN a search naming no standard carries no link set
+PASS PIN (PH-RT-01) the reteach block is the guideline record byte for byte, so the content team can replace the wording by id without an edit to this tool
+PASS PIN (B3 adjacency sweep) a standard document among the ordinary hits says on its OWN line that it matched the search text and is not stated to be the article's standard - the authoritative list is the block above
+PASS PIN the qualifier goes on standard documents only: an ordinary article hit is untouched
+PASS PIN an unknown code: 'not a standard linked to content in the teacher's publications', no official text, no links looked upsearch_curriculum standard lookup failed
+search_curriculum standard lookup failed
+instructional frame for resources failed
+instructional frame for resources failed
+search_curriculum elsewhere lookup failed
+search_curriculum not_owned lookup failed
+
+PASS PIN (PH-STD-01) the unknown-code sentence is the guideline record byte for byte
+PASS PIN a failed lookup says it could not be checked, never 'not a standard'
+PASS PIN no code named: no lookup and the result is the search alone
+PASS PIN no publications: the search refuses and no standard is looked up
+PASS PIN a slow standard lookup is cut at STANDARD_TIMEOUT_S and said as unchecked, and the search still returns
+PASS PIN (B4 std.reteach) a slow linked-curriculum lookup keeps the definition and says only the links could not be looked up
+
+--- help-centre known facts ---
+PASS PIN cat.APP1: an assign-an-article how-to carries the ruled fact outside the fence, after the rule
+PASS PIN cat.APP1: the fact says no separate step, automatic for a publication in the classroom, and the visibility that stops it
+PASS PIN cat.APP1: and claims nothing about publications outside the classroom
+PASS PIN cat.APP1: the links list is unchanged: only the articles this search returned
+PASS PIN (B3 adjacency sweep) the links list itself says the ruled fact is not one of these articles, so a reply cannot attach a help-centre URL to it and present it as the help centre's
+PASS PIN with no ruled fact the links list is unchanged, byte for byte
+PASS PIN cat.APP1: the ask alone triggers it
+PASS PIN cat.APP1: 'can students read articles without me assigning them?' gets it too
+PASS PIN cat.APP1: no fact on an unrelated how-to: 'can I change the due date on something I already assigned?'
+PASS PIN cat.APP1: no fact on an unrelated how-to: 'how do I assign a quiz to one student?'
+PASS PIN cat.APP1: no fact on an unrelated how-to: 'how do I add a co-teacher?'
+PASS PIN cat.APP1: no fact on an unrelated how-to: 'change due date on assigned content'
+PASS PIN cat.APP1: no fact on an unrelated how-to: 'how do I assign questions for this lesson?'
+PASS PIN cat.APP1: no results is unchanged (points to the help centre, no fact)
+PASS teacher_eval checks.py is present to screen the APP1 fact
+PASS PIN cat.APP1: the fact is not a refusal to B4's scorer
+
+--- PH-FR-01: the frame note moved to the guidelines register, byte for byte ---
+PASS PIN PH-FR-01 reaches the model byte-identical to the pre-move wording
+PASS PIN PH-FR-01 is what the record holds, not a second copy
+PASS PIN the unchecked line stays an engineering honesty message, not a guideline record
+
+--- instructional frame in the resources ---
+PASS PIN frame: looked up once with the stripped id and the teacher's publications
+PASS PIN frame: objectives, criteria and terms sit inside the data fence under one heading, each with its state and source
+PASS PIN frame: publisher text never sits outside the fence; the frame note does, once
+PASS PIN frame: absent fields are omitted, with no state word or note of theirs
+PASS PIN frame: the frame heads the fenced body, so a cut at MAX_CHARS keeps it
+PASS PIN frame: the terms list does not repeat their definitions (they are under Curriculum vocabulary)
+PASS PIN frame: nothing present or partial adds no section and no note
+PASS PIN frame: a frame that answered error is 'could not be checked' outside the fence, never an empty frame
+PASS PIN frame: a lookup that raised is 'could not be checked', never silence
+PASS PIN frame: a slow frame is cut at FRAME_TIMEOUT_S and said as unchecked
+PASS PIN frame: a frame refused for scope adds nothing
+PASS PIN frame: at most 8 objectives listed, each clipped to FRAME_ITEM_CHARS, the rest counted, sources summarised
+PASS PIN frame: no frame renders the resources as before: no section, no note, not 'could not be checked'
+PASS PIN frame: no scope never looks the frame up
+PASS PIN frame: an unknown or out-of-scope article shows no frame section or note, whatever the lookup returned
+PASS PIN frame (cold cost): the frame reuses the records just fetched, without a week or with the one the article sits in
+PASS PIN frame (cold cost): an article placed in another week, or in several, reads its own records
+PASS PIN frame (week): looked up as the week; the section heads the body and the article list follows it
+PASS PIN frame (week, cold cost): the week frame reuses the week records just fetched
+PASS PIN frame (week): a failed week frame is 'could not be checked' too
+
+--- topic_article (faked index) ---
+PASS no accessible publications: nothing is searched
+PASS ...and the search never ran
+PASS a blank topic is refused before any search
+PASS PIN: a publication outside the teacher's own access is never searched
+PASS a genuine hit resolves to an ArticleInput
+PASS ...with the search's own text as the article body, not a snippet
+PASS ...and the article id carried through
+PASS PIN: scoped to every accessible publication when none was named — not the whole index
+PASS PIN: naming an accessible publication narrows the search to that one, not the whole accessible set
+PASS nothing on the topic in the teacher's publications: no article, a plain reason
+
+--- topic_article: title-only articles (filler question) ---
+PASS has_prose: an article that only repeats its own title has none
+PASS has_prose: ...and one that says anything else has
+PASS the article's whole indexed record is what reaches the engine, not the one matched chunk
+PASS a top hit the index holds only the title of is skipped for the next hit that has prose
+PASS every hit title-only: no article at all, rather than a title to write questions about
+PASS ...and the reason says what is missing without claiming the publication does not cover the topic
+PASS an article the index ranks but holds no record for still falls back to the hit's own body
+
+--- topic_article: the answerable gate still applies (R80) ---
+PASS PIN: an off-topic question against a topic-resolved article is still gated out, not delivered
+PASS ...the repair round ran first, same as the page-article path (not a skip)
+
+--- ONLINE-7490: publication / unit / week ---
+PASS 7490 plan: weekly assessment is its own kind, unit and week parsed, the place topic drops them
+PASS 7490 plan: 'unit test' is a unit assessment; 'the 5th week' is week 5
+PASS 7490 plan: audio words
+PASS 7490 plan: an ordinary topic keeps its exact query (no unit/week stripped from it)
+PASS 7490 refine: 'media' + the teacher's 'videos' is video; 'assessment' + 'weekly assessment' is weekly
+PASS 7490 filter: weekly and unit assessments are separate kinds
+PASS 7490 resolve: a named publication matches every title holding its words, only inside scope; week 16 -> 2310
+PASS 7490 resolve: a week with no publication named is the publication on screen
+PASS 7490 resolve: week M inside unit N
+PASS 7490 resolve: week M not in unit N is the M-th week of that unit
+PASS 7490 resolve: a unit alone confines to the unit
+PASS 7490 resolve: an unmatched publication asks, and searches nothing
+PASS 7490 resolve: a week with no publication named or on screen asks
+PASS 7490 resolve: a week the publication does not have is said, not searched
+PASS 7490 resolve: nothing named is no place
+PASS 7490 resolve: a whole 3+ word title typed in the message names the publication
+PASS 7490 resolve: a one-word title (Ohio) in a topic does not confine the search
+PASS 7490 place filter: a week matches the document's own weeks or its articles' weeks
+PASS 7490 tool: a named place is one filtered query on publication, kind and week, never relaxed
+PASS 7490 tool: the result names the place
+PASS 7490 tool: a week parsed from the teacher's words, with the publication on screen, is searched there
+PASS ONLINE-7507: none of that kind in the week, nothing elsewhere or not-owned either -> outcome none, no cards
+PASS ONLINE-7507 AC2: content_results is still emitted on zero hits, so the 'Searched…' line always draws
+PASS 7490 tool: an unknown publication runs no search and asks which one
+PASS 7490 tool: a week parsed from a title, with no publication known, is still an ordinary title search
+PASS 7490 tool: the teacher's media kind holds when the model's query drops it
+PASS 7490 tool: 'media' from the model is narrowed to the image the teacher asked for
+PASS 7490 tool: a non-media kind in the teacher's words is not forced on the model's query
+PASS 7490 run 3: a place search with no kinds from the model keeps the kind the teacher named (printables)search_curriculum elsewhere lookup failed
+search_curriculum not_owned lookup failed
+search_curriculum elsewhere lookup failed
+search_curriculum not_owned lookup failed
+
+PASS 7490 run 3: kinds the model adds beyond the teacher's (lesson-plan panels for printables) are dropped
+PASS 7490 run 3: named_kinds keeps the model's kinds when the teacher named none of them
+PASS 7490 run 3: named_kinds keeps a general kind the teacher's words refine
+PASS 7490 run 3: the tool spec says a unit or week ask is a search, not opening the week
+PASS 7490 editions: publication 68 on screen is one of the matches -> it and its week-sharing twin, no question
+PASS 7490 editions: publication 435 on screen is one of the matches -> it and its week-sharing twin, no question
+PASS 7490 editions: a title typed in the message with its edition on screen is that edition
+PASS 7490 editions: page None is not a match -> ask, listing both editions' titles, searching nothing
+PASS 7490 editions: page 37 is not a match -> ask, listing both editions' titles, searching nothing
+PASS 7490 editions: a title typed in the message with no page asks too
+PASS 7490 editions: week-sharing twins only -> no question, both searched
+PASS 7490 editions: a match without the named unit is not a candidate (437 has no unit 7) -> no question
+PASS 7490 editions: an '(AL)' title with its own weeks is a different edition (weeks decide, not the title)
+PASS 7490 editions: grouping is by shared weeks
+PASS 7490 editions tool: no page -> no search, the result lists the editions and says ask
+PASS 7490 editions tool: page 68 -> one search on 68/435 and week 2310 only
+PASS 7490 week_label: a week inside its own publication renders as 'Week N'
+PASS 7490 week_label: a week outside the given publications is not labelled, in either direction
+PASS 7490 render: a shared worksheet's card shows the resolved place's own week as a label, not a raw id
+PASS 7490 render: it never cites another publication's week id, raw or labelled, anywhere in the reply
+PASS 7490 render: when none of a shared item's weeks are inside the resolved place, its card shows no week at all (never a foreign one)
+PASS 7490 render: with no resolved place, a shared item's week is still labelled from its own publication in the teacher's scope
+PASS 7490 ask text: the edition question tells the model an 'also as' title is not a second, separate option
+PASS R119 rule 2: no page, the teacher's state (LA) is in one edition -> that edition, no question
+PASS R119 rule 2: the result says which edition and why
+PASS R119 rule 2: UT is only in 437 -> 437 (state case-insensitive)
+PASS R119 rule 2: an edition's week-sharing '(AL)' copy carries AL for the edition -> 68/435
+PASS R119 rule 1: the edition on screen beats the state
+PASS R119 rule 3/4: the state (CO) is in both editions, neither is CO-only -> ask
+PASS R119 rule 3: the state (AL) is in several editions -> the one sold only in AL
+PASS R119 rule 3/4: no edition sold in TX, two national editions -> ask
+PASS R119 rule 4: no state (an admin) and two national editions -> ask
+PASS R119 rule 3: no state, one national edition beside a state edition -> the national one
+PASS R119 rule 3: a state no edition is sold in -> the one national edition
+PASS R119: 'NA' (all states) is not the teacher's state -> AL picks the AL edition
+PASS R119: an 'NA' edition is national -> CO, sold in neither by name, gets it
+PASS R119: an 'NA' edition does not tie with the one edition sold in the teacher's state (LA -> 68/435)
+PASS R119: unit 7 is unchanged - 437 has no unit 7, so 68/435 whatever the state
+PASS R119: without a state argument the question stands (callers that predate it)
+PASS R119: a structure without states (an export that predates them) asks, whatever the state
+PASS R119 tool: the request's user_state reaches the resolver -> one search on 68/435, week 2310, no question
+PASS 7490 week_label: weeks numbered across the publication stay 'Week N' (68's week 16)
+PASS 7490 week_label: a publication numbering weeks within each unit names the unit too
+PASS 7490 per-unit weeks: "week 2" with no unit and no page, ambiguous between two units, asks (listing them)
+PASS 7490 per-unit weeks: "unit 2, week 2" resolves directly, no question
+PASS 7490 per-unit weeks: a week number that exists in only one unit (3, only in Revolution) resolves directly
+PASS 7490 per-unit weeks: the page on screen is inside a unit of this publication -> that unit's week, no question
+PASS 7490 per-unit weeks: a page unit that is not one of this publication's own units does not settle it -> ask
+PASS 7490 per-unit weeks: unresolved() offers a unit question, not the edition wording
+PASS 7490 per-unit weeks tool: no page on screen -> no search, asks which unit
+PASS 7490 per-unit weeks tool: unit ru1 on screen -> one search on rw2 only, no question
+PASS 7490 run 3: exact ties order by the page's publication, then the teacher's, then doc_id; others keep rank
+PASS 7490 run 3: with no page, exact ties go to the teacher's publications, then doc_id
+PASS 7490 run 3: dedupe keeps the same twin whatever order the index returned them in
+PASS 7490 run 3: doc_id order is numeric, not lexical
+PASS 7490 run 3: twins that fill the pool are fetched past, so the teacher still gets RESULT_LIMIT results
+PASS 7490 run 3: a pool with enough distinct results makes one fetch
+PASS 7490 run 3: a short, untruncated result is final (no deeper fetch)
+PASS 7490 run 3: one text is embedded once and returns the same vector
+PASS 7490 run 3: a caller changing its vector does not change the cached one
+
+--- ONLINE-7507: the relevance floor and the four search outcomes ---
+PASS 7507 outcome found: relevant card shown, searched block says found/checked
+PASS 7507 outcome none (AC1): a keyword-only hit is dropped by the floor, not shown as a match
+PASS 7507 outcome none: model told plainly, not to name other topics
+PASS 7507 outcome not_owned (AC3, D2=a): named in the payload, no cards and no card titles
+PASS 7507 outcome not_owned: the model is told to name it but never present it as available or suggest buying
+PASS 7507 outcome elsewhere (AC4): not in the named place, found in the teacher's own other publication
+PASS 7507 outcome elsewhere: the reply says where it was not found and where it was
+PASS 7507 outcome unchecked: cards still shown, marked unchecked, never silently treated as all-pass
+PASS 7507 outcome unchecked: the model is told relevance could not be verified
+
+--- ONLINE-7507 D1 revised: named-item requests match by title first ---
+PASS no title_query: hits pass through unchanged, not matched
+PASS an exact title match keeps only that hit, dropping generic same-kind neighbours
+PASS a title that contains the named phrase (plus a kind suffix) also matches
+PASS no title in the pool matches: falls through unchanged so the judge still gets a turn
+PASS an untitled hit never matches (never treated as a title match by accident)
+PASS matching is case- and punctuation-insensitive
+PASS MUTATION: an empty title_query never matches everything (it falls through, not 'match all')
+PASS title match short-circuits the judge: the named item is kept even though the judge (faked to fail everything) never ran
+PASS no title match: falls through to the judge, which does run this time
+PASS MUTATION: judge unreachable with no title match -> unchecked, original hits kept, never dropped or all-passed silently
+
+--- ONLINE-7507 part 11: the message is judged at every stage; the fallback runs on an empty kept set ---
+PASS fallback trigger: a non-empty first pool judged all keyword-only runs the catalogue stage -> not_owned, no cards
+PASS every stage is judged against the teacher's message, with the tool query passed as context
+PASS no place named: the catalogue pool is judged without the named-place note (part 12)
+PASS part 13: a topic ask with a page open runs the ordinary search, with no placement filter
+PASS part 13: a topic ask with a page open is judged without the page, on the scope and the catalogue pool
+PASS part 13: 'this week' on a page -> the judge sees only the week's items (twin edition, article-attached panel)
+PASS part 13: 'this week' on a page -> the judge is shown the page and the part of it the message points at
+PASS part 13: a page ask searches the placement it points at (week ids and the week's articles), in scope
+PASS part 13: cards shown for a page ask are only placed onessearch_help full article failed
+
+PASS part 13: 'next week' on a page -> the next week's items only (4223 -> 4224, by unit then week order)
+PASS part 13: 'this unit' -> the unit's weeks and unit-level items with no week
+PASS part 13: a publication cue searches the page's edition only (68 and its twin 435), not the other publications
+PASS part 13: a page ask whose placed items all fail is none, never other weeks' or other publications' items
+PASS part 13: an unchecked page ask shows only the items placed on the page
+PASS part 13: a named place is judged as a place with no page line, even when the message also says 'this'
+PASS a judged-relevant first-pool card is found, shown alone, and no fallback stage runs
+PASS fallback trigger: a non-empty place pool judged all keyword-only runs the elsewhere stage -> elsewhere
+PASS the place pool is judged as stage 'place', the fallback pool as 'elsewhere'
+PASS a named place: the place pool and the elsewhere pool are judged with named_place
+PASS fallback trigger: a non-empty elsewhere pool judged all keyword-only runs the catalogue stage -> not_owned
+PASS a named place: the catalogue pool after it is judged with named_place too
+PASS named item with explicit doc_types: only the titled article is shown, the near-title one is not, judge not asked
+PASS named_title: 'Find the article X' -> (X, article)
+PASS named_title: 'Can you find the rubric X?' -> (X, rubric)
+PASS named_title: 'the lesson plan X' -> (X, lesson_plan)
+PASS named_title: 'the lesson plan FOR X' names the article, not the plan -> None
+PASS named_title: a topic request is not a named item
+PASS a title match must also be the named kind: an article titled X does not answer 'the lesson plan X'
+PASS 7511: a result names its publication, grade and week, and no unit id
+PASS 7511: on another publication's article, the reply is told to open with where it was found
+PASS 7511: on the matching publication's page, no such line
+PASS 7511: off any publication's page, no such line
+PASS 7511: on a publication page with no article open, it says this publication
+PASS 7511: a search keeps its articles, and the articles its questions belong to, scoped, in order, for a later tool
+PASS 7511: a search with no article result keeps nothing
+PASS an activity record is labelled activity
+PASS the fixture really spans several chunks with overlap
+PASS PIN stitching the chunks gives back the article, with no repeated title or overlap
+PASS PIN a matched article's later steps reach the model (Step 3 is past the first chunk)
+PASS PIN a whole article carries no excerpt-ends marker
+PASS PIN the rule keeps a whole article's sections apart and never talks about excerpts
+PASS PIN a failed whole-article lookup keeps the excerpt, never an error
+PASS PIN only the best FULL_ARTICLES are given whole; the rest keep excerpts
+PASS PIN a whole article over the budget keeps the best-matching section and names the headings it leaves out
+PASS a whole article under the budget is given as it is
+
+1 failure(s)

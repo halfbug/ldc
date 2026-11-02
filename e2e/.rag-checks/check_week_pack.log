@@ -1,0 +1,57 @@
+lesson pack week read failed
+PASS dev2's Week 8 ask on the table of contents goes to the pack builder with week 8 and Grade 4
+PASS "Make a lesson plan, a worksheet and an exit ticket for this week's article. Grade 4." is dispatched with week this
+PASS 'Make a lesson pack for week 13 for my 5th graders' is dispatched with week 13
+PASS "Create a lesson pack for Week 2's article. Grade 3. 45 minutes." is dispatched with week 2
+PASS "Make a lesson pack for next week's article" is dispatched with week next
+PASS 'Make a lesson plan, worksheet and exit ticket for the article in Week 4. Grade 6.' is dispatched with week 4
+PASS on an article, "this week's article" is a pack too (G-7761c C1 was left to the model)
+PASS an ask on an open article that names no week is unchanged (no week)
+PASS not dispatched: two weeks
+PASS not dispatched: one document for a week
+PASS not dispatched: a weekly plan
+PASS not dispatched: a unit
+PASS not dispatched: a question
+PASS not dispatched: parts for a week, not its article
+PASS not dispatched: parts for this week, not its article
+PASS not dispatched: no pack words
+PASS a pack ask with no week and no article stays with the model
+PASS the dev2 ask reads as several days to the plan writer (the bug)
+PASS the ask a pack part writes from does not
+PASS a pack part's ask keeps the grade and the rest of the teacher's words
+PASS Week 8 with three readings asks which one, before anything is written
+PASS the question offers the week's readings in the page's order, without the short or other-state items
+PASS the question names the week as the page does
+PASS its answer resumes the pack on the chosen article, keeping the grade, minutes and parts
+PASS a typed title answers it too
+PASS a week with more readings than buttons says so, and its last reading can still be typed
+PASS with no titles in the outline, the question lists the week's articles in the order on screen
+PASS and under the page's titles, with only the articles the index can read
+PASS a page that sends no week_articles lists the index's readable articles by id
+PASS a week whose only readable listed article is one gets the pack on it, with no question
+PASS a week the page lists with no articles gets a plain reply, not the index's other readings
+PASS malformed week_articles (not a list) is ignored, never raised
+PASS malformed week_articles (a malformed week) is ignored, never raised
+PASS malformed week_articles (a bad article row) is ignored, never raised
+PASS the chosen article gets all three parts
+PASS the pack's plan is a single-lesson plan, never a weekly plan
+PASS every part is written from the chosen article, not the table of contents
+PASS every part is written at the named grade 4
+PASS the pack is titled after the article
+PASS no part card is a weekly plan
+PASS a week with one reading gets the whole pack on it, with no question
+PASS a week the page does not list: a plain reply, nothing written and no card
+PASS this week, on a page with no week: a plain reply, nothing written and no card
+PASS a week number on a page with no weeks: a plain reply, nothing written and no card
+PASS an unreadable week: a plain reply, nothing written
+PASS a week with no reading: a plain reply, nothing written
+PASS on an open article, this week's article is the open article (no question, no lookup)
+PASS on an open article, the page's own Week 8 by its name is the open article (no question, no lookup)
+PASS on an open article from another week, Week 8 that the page cannot find is a plain reply
+PASS a part revised on the table of contents is checked against its article
+PASS an article that cannot be read for this teacher gets a plain reply, nothing written
+PASS write_artifact never writes from an article id it cannot read
+PASS a lesson plan stored before plans were built step by step is not changed, and says so plainly
+PASS a lesson plan Scout could not write withdraws its card and gives the teacher the plain words to ask again
+
+all passed

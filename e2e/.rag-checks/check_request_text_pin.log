@@ -1,0 +1,53 @@
+PASS every scenario has a golden
+PASS the closing scenarios really sent a second request on the fast model
+PASS the page layer is the real card, not an empty one: the system text beyond the core is large (18,636)
+PASS article_agent_cache_off: the same number of requests (2)
+PASS article_agent_cache_off request 1: every part of the text is identical (system, tools, messages, settings)
+PASS article_agent_cache_off request 2: every part of the text is identical (system, tools, messages, settings)
+PASS article_agent_cache_off: the checkpoints sit where the golden says
+PASS article_agent_engine_then_fast_closing: the same number of requests (2)
+PASS article_agent_engine_then_fast_closing request 1: every part of the text is identical (system, tools, messages, settings)
+PASS article_agent_engine_then_fast_closing request 2: every part of the text is identical (system, tools, messages, settings)
+PASS article_agent_engine_then_fast_closing: the checkpoints sit where the golden says
+PASS article_agent_engine_then_main_closing: the same number of requests (2)
+PASS article_agent_engine_then_main_closing request 1: every part of the text is identical (system, tools, messages, settings)
+PASS article_agent_engine_then_main_closing request 2: every part of the text is identical (system, tools, messages, settings)
+PASS article_agent_engine_then_main_closing: the checkpoints sit where the golden says
+PASS article_agent_guardrail: the same number of requests (2)
+PASS article_agent_guardrail request 1: every part of the text is identical (system, tools, messages, settings)
+PASS article_agent_guardrail request 2: every part of the text is identical (system, tools, messages, settings)
+PASS article_agent_guardrail: the checkpoints sit where the golden says
+PASS article_agent_one_step: the same number of requests (1)
+PASS article_agent_one_step request 1: every part of the text is identical (system, tools, messages, settings)
+PASS article_agent_one_step: the checkpoints sit where the golden says
+PASS article_agent_thinking: the same number of requests (1)
+PASS article_agent_thinking request 1: every part of the text is identical (system, tools, messages, settings)
+PASS article_agent_thinking: the checkpoints sit where the golden says
+PASS article_plan_one_step: the same number of requests (1)
+PASS article_plan_one_step request 1: every part of the text is identical (system, tools, messages, settings)
+PASS article_plan_one_step: the checkpoints sit where the golden says
+PASS classrooms_agent_no_teacher: the same number of requests (1)
+PASS classrooms_agent_no_teacher request 1: every part of the text is identical (system, tools, messages, settings)
+PASS classrooms_agent_no_teacher: the checkpoints sit where the golden says
+PASS search_page_agent: the same number of requests (1)
+PASS search_page_agent request 1: every part of the text is identical (system, tools, messages, settings)
+PASS search_page_agent: the checkpoints sit where the golden says
+PASS article_agent_one_step request 1: at most Bedrock's four checkpoints (4)
+PASS article_plan_one_step request 1: at most Bedrock's four checkpoints (4)
+PASS search_page_agent request 1: at most Bedrock's four checkpoints (4)
+PASS classrooms_agent_no_teacher request 1: at most Bedrock's four checkpoints (3)
+PASS article_agent_engine_then_main_closing request 1: at most Bedrock's four checkpoints (4)
+PASS article_agent_engine_then_main_closing request 2: at most Bedrock's four checkpoints (4)
+PASS article_agent_engine_then_fast_closing request 1: at most Bedrock's four checkpoints (4)
+PASS article_agent_engine_then_fast_closing request 2: at most Bedrock's four checkpoints (3)
+PASS article_agent_cache_off request 1: at most Bedrock's four checkpoints (0)
+PASS article_agent_cache_off request 2: at most Bedrock's four checkpoints (0)
+PASS article_agent_guardrail request 1: at most Bedrock's four checkpoints (4)
+PASS article_agent_guardrail request 2: at most Bedrock's four checkpoints (3)
+PASS article_agent_thinking request 1: at most Bedrock's four checkpoints (4)
+PASS caching off sends no checkpoint at all
+PASS the main model's second step keeps its history checkpoint (it is read by the step after)
+PASS the fast model's closing step sends no history checkpoint: nothing ever reads it
+PASS the fast closing step keeps the tools and system checkpoints the next closing on this page reads
+
+all passed

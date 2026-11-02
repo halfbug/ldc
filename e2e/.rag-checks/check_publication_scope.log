@@ -1,0 +1,199 @@
+Error loading configuration from Parameter Store: You must specify a region.
+Traceback (most recent call last):
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/src/config/config.py", line 257, in get_config
+    param_store_config = _load_parameter_store_config(config.PARAMETER_STORE_PREFIX)
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/src/config/config.py", line 175, in _load_parameter_store_config
+    ssm_client = boto3.client('ssm')
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/boto3/__init__.py", line 93, in client
+    return _get_default_session().client(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/boto3/session.py", line 337, in client
+    return self._session.create_client(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        service_name, **create_client_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/context.py", line 123, in wrapper
+    return func(*args, **kwargs)
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/session.py", line 1031, in create_client
+    client = client_creator.create_client(
+        service_name=service_name,
+    ...<8 lines>...
+        auth_token=auth_token,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/client.py", line 161, in create_client
+    client_args = self._get_client_args(
+        service_model,
+    ...<10 lines>...
+        partition_data,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/client.py", line 561, in _get_client_args
+    return args_creator.get_client_args(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        service_model,
+        ^^^^^^^^^^^^^^
+    ...<10 lines>...
+        partition_data,
+        ^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/args.py", line 121, in get_client_args
+    final_args = self.compute_client_args(
+        service_model,
+    ...<5 lines>...
+        scoped_config,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/args.py", line 265, in compute_client_args
+    endpoint_config = self._compute_endpoint_config(
+        service_name=service_name,
+    ...<4 lines>...
+        s3_config=s3_config,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/args.py", line 459, in _compute_endpoint_config
+    return self._resolve_endpoint(**resolve_endpoint_kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/args.py", line 577, in _resolve_endpoint
+    return endpoint_bridge.resolve(
+           ~~~~~~~~~~~~~~~~~~~~~~~^
+        service_name, region_name, endpoint_url, is_secure
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/client.py", line 675, in resolve
+    resolved = self.endpoint_resolver.construct_endpoint(
+        service_name,
+    ...<2 lines>...
+        use_fips_endpoint=use_fips_endpoint,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/regions.py", line 237, in construct_endpoint
+    result = self._endpoint_for_partition(
+        partition,
+    ...<3 lines>...
+        use_fips_endpoint,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/regions.py", line 285, in _endpoint_for_partition
+    raise NoRegionError()
+botocore.exceptions.NoRegionError: You must specify a region.
+Failed to load Parameter Store config
+Traceback (most recent call last):
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/src/config/config.py", line 257, in get_config
+    param_store_config = _load_parameter_store_config(config.PARAMETER_STORE_PREFIX)
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/src/config/config.py", line 175, in _load_parameter_store_config
+    ssm_client = boto3.client('ssm')
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/boto3/__init__.py", line 93, in client
+    return _get_default_session().client(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/boto3/session.py", line 337, in client
+    return self._session.create_client(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        service_name, **create_client_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/context.py", line 123, in wrapper
+    return func(*args, **kwargs)
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/session.py", line 1031, in create_client
+    client = client_creator.create_client(
+        service_name=service_name,
+    ...<8 lines>...
+        auth_token=auth_token,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/client.py", line 161, in create_client
+    client_args = self._get_client_args(
+        service_model,
+    ...<10 lines>...
+        partition_data,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/client.py", line 561, in _get_client_args
+    return args_creator.get_client_args(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        service_model,
+        ^^^^^^^^^^^^^^
+    ...<10 lines>...
+        partition_data,
+        ^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/args.py", line 121, in get_client_args
+    final_args = self.compute_client_args(
+        service_model,
+    ...<5 lines>...
+        scoped_config,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/args.py", line 265, in compute_client_args
+    endpoint_config = self._compute_endpoint_config(
+        service_name=service_name,
+    ...<4 lines>...
+        s3_config=s3_config,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/args.py", line 459, in _compute_endpoint_config
+    return self._resolve_endpoint(**resolve_endpoint_kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/args.py", line 577, in _resolve_endpoint
+    return endpoint_bridge.resolve(
+           ~~~~~~~~~~~~~~~~~~~~~~~^
+        service_name, region_name, endpoint_url, is_secure
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/client.py", line 675, in resolve
+    resolved = self.endpoint_resolver.construct_endpoint(
+        service_name,
+    ...<2 lines>...
+        use_fips_endpoint=use_fips_endpoint,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/regions.py", line 237, in construct_endpoint
+    result = self._endpoint_for_partition(
+        partition,
+    ...<3 lines>...
+        use_fips_endpoint,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/regions.py", line 285, in _endpoint_for_partition
+    raise NoRegionError()
+botocore.exceptions.NoRegionError: You must specify a region.
+PASS context list is normalised (ints, blanks, booleans, duplicates)
+PASS context comma string is accepted
+PASS context without publication_ids is None (the handler refuses, R83)
+PASS an empty context list is an empty scope, not None
+PASS widened body list is cut to the authorizer's list
+PASS both body keys carry the scope
+PASS the alias key cannot add a publication
+PASS a body with neither key gets the caller's own list
+PASS R83: naming only ids outside access falls back to the caller's own list, not NO_PUBLICATIONS
+PASS an explicit empty body list stays empty (NO_PUBLICATIONS) - a deliberate choice, not a mismatch
+PASS a caller with no publications gets NO_PUBLICATIONS
+PASS the sentinel cannot be sent in to mean anything
+PASS a non-list body value is ignored (the caller's own list)
+{"level":"INFO","location":"_handle_assistant_api_gateway:142","message":"Processing AI Assistant API request","timestamp":"2026-10-28 16:52:05,967+0500","service":"AIAssistant","taskName":"Task-1","path":"/assistant/chat","method":"POST","request_id":"req-1","context":"<__main__.Ctx object at 0x7040a8339940>"}
+{"level":"WARNING","location":"_handle_assistant_api_gateway:198","message":"Request named publications outside the caller's access","timestamp":"2026-10-28 16:52:05,967+0500","service":"AIAssistant","taskName":"Task-1","user_id":"7","dropped":1,"allowed":0}
+{"level":"WARNING","location":"_handle_assistant_api_gateway:218","message":"Limit check failed open","timestamp":"2026-10-28 16:52:05,967+0500","service":"AIAssistant","taskName":"Task-1","limit":"daily_cost","error":"TypeError"}
+{"level":"INFO","location":"_handle_assistant_api_gateway:220","message":"✅ Request data validated","timestamp":"2026-10-28 16:52:05,967+0500","service":"AIAssistant","taskName":"Task-1","user_id":"7","request_id":"req-1"}
+{"level":"INFO","location":"_handle_assistant_api_gateway:241","message":"AI Assistant service Response","timestamp":"2026-10-28 16:52:05,970+0500","service":"AIAssistant","taskName":"Task-1","user_id":"7","path":"/assistant/chat","method":"","success":true,"response_keys":["success"]}
+{"level":"INFO","location":"_handle_assistant_api_gateway:251","message":"AI Assistant request completed","timestamp":"2026-10-28 16:52:05,970+0500","service":"AIAssistant","taskName":"Task-1","success":true,"user_id":"7","path":"/assistant/chat","method":"","request_id":"req-1"}
+PASS handler: the exploit (no access, claims [68]) reaches the service with NO_PUBLICATIONS on both keys
+{"level":"INFO","location":"_handle_assistant_api_gateway:142","message":"Processing AI Assistant API request","timestamp":"2026-10-28 16:52:05,971+0500","service":"AIAssistant","taskName":"Task-4","path":"/assistant/chat","method":"POST","request_id":"req-1","context":"<__main__.Ctx object at 0x7040a8f416d0>"}
+{"level":"WARNING","location":"_handle_assistant_api_gateway:198","message":"Request named publications outside the caller's access","timestamp":"2026-10-28 16:52:05,971+0500","service":"AIAssistant","taskName":"Task-4","user_id":"7","dropped":1,"allowed":2}
+{"level":"WARNING","location":"_handle_assistant_api_gateway:218","message":"Limit check failed open","timestamp":"2026-10-28 16:52:05,971+0500","service":"AIAssistant","taskName":"Task-4","limit":"daily_cost","error":"TypeError"}
+{"level":"INFO","location":"_handle_assistant_api_gateway:220","message":"✅ Request data validated","timestamp":"2026-10-28 16:52:05,971+0500","service":"AIAssistant","taskName":"Task-4","user_id":"7","request_id":"req-1"}
+{"level":"INFO","location":"_handle_assistant_api_gateway:241","message":"AI Assistant service Response","timestamp":"2026-10-28 16:52:05,971+0500","service":"AIAssistant","taskName":"Task-4","user_id":"7","path":"/assistant/chat","method":"","success":true,"response_keys":["success"]}
+{"level":"INFO","location":"_handle_assistant_api_gateway:251","message":"AI Assistant request completed","timestamp":"2026-10-28 16:52:05,972+0500","service":"AIAssistant","taskName":"Task-4","success":true,"user_id":"7","path":"/assistant/chat","method":"","request_id":"req-1"}
+PASS handler: a widened alias key is cut to the authorizer's list
+{"level":"INFO","location":"_handle_assistant_api_gateway:142","message":"Processing AI Assistant API request","timestamp":"2026-10-28 16:52:05,972+0500","service":"AIAssistant","taskName":"Task-7","path":"/assistant/chat","method":"POST","request_id":"req-1","context":"<__main__.Ctx object at 0x7040a8f41810>"}
+{"level":"WARNING","location":"_handle_assistant_api_gateway:198","message":"Request named publications outside the caller's access","timestamp":"2026-10-28 16:52:05,972+0500","service":"AIAssistant","taskName":"Task-7","user_id":"7","dropped":1,"allowed":2}
+{"level":"WARNING","location":"_handle_assistant_api_gateway:218","message":"Limit check failed open","timestamp":"2026-10-28 16:52:05,972+0500","service":"AIAssistant","taskName":"Task-7","limit":"daily_cost","error":"TypeError"}
+{"level":"INFO","location":"_handle_assistant_api_gateway:220","message":"✅ Request data validated","timestamp":"2026-10-28 16:52:05,972+0500","service":"AIAssistant","taskName":"Task-7","user_id":"7","request_id":"req-1"}
+{"level":"INFO","location":"_handle_assistant_api_gateway:241","message":"AI Assistant service Response","timestamp":"2026-10-28 16:52:05,972+0500","service":"AIAssistant","taskName":"Task-7","user_id":"7","path":"/assistant/chat","method":"","success":true,"response_keys":["success"]}
+{"level":"INFO","location":"_handle_assistant_api_gateway:251","message":"AI Assistant request completed","timestamp":"2026-10-28 16:52:05,973+0500","service":"AIAssistant","taskName":"Task-7","success":true,"user_id":"7","path":"/assistant/chat","method":"","request_id":"req-1"}
+PASS handler: R83 - a claim entirely outside real access falls back to that access, never the claim or an error
+{"level":"INFO","location":"_handle_assistant_api_gateway:142","message":"Processing AI Assistant API request","timestamp":"2026-10-28 16:52:05,973+0500","service":"AIAssistant","taskName":"Task-10","path":"/assistant/chat","method":"POST","request_id":"req-1","context":"<__main__.Ctx object at 0x7040a833c8a0>"}
+{"level":"ERROR","location":"_handle_assistant_api_gateway:193","message":"Missing publication_ids in authorizer context; refusing","timestamp":"2026-10-28 16:52:05,973+0500","service":"AIAssistant","taskName":"Task-10","user_id":"7"}
+PASS handler: R83 - no publication_ids in the authorizer context is a 503 and the service never runs
+{"level":"INFO","location":"_handle_assistant_api_gateway:142","message":"Processing AI Assistant API request","timestamp":"2026-10-28 16:52:05,974+0500","service":"AIAssistant","taskName":"Task-13","path":"/adapt","method":"POST","request_id":"req-1","context":"<__main__.Ctx object at 0x7040a833c8a0>"}
+{"level":"WARNING","location":"_handle_assistant_api_gateway:218","message":"Limit check failed open","timestamp":"2026-10-28 16:52:05,974+0500","service":"AIAssistant","taskName":"Task-13","limit":"daily_cost","error":"TypeError"}
+{"level":"INFO","location":"_handle_assistant_api_gateway:220","message":"✅ Request data validated","timestamp":"2026-10-28 16:52:05,974+0500","service":"AIAssistant","taskName":"Task-13","user_id":"7","request_id":"req-1"}
+{"level":"INFO","location":"_handle_assistant_api_gateway:241","message":"AI Assistant service Response","timestamp":"2026-10-28 16:52:05,974+0500","service":"AIAssistant","taskName":"Task-13","user_id":"7","path":"/adapt","method":"","success":true,"response_keys":["success"]}
+{"level":"INFO","location":"_handle_assistant_api_gateway:251","message":"AI Assistant request completed","timestamp":"2026-10-28 16:52:05,974+0500","service":"AIAssistant","taskName":"Task-13","success":true,"user_id":"7","path":"/adapt","method":"","request_id":"req-1"}
+PASS handler: no path is exempt from scoping any more, not even the retired /adapt
+
+0 failure(s)

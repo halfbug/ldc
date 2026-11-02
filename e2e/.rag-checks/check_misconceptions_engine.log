@@ -1,0 +1,19 @@
+ok   a shared claim is one group
+ok   every id exactly once
+ok   defaults to the fast model
+ok   the key and the answers reach the model as data
+ok   the prompt keeps different claims apart and never labels the child
+ok   a group of one is not a group: its answer goes to ungrouped
+ok   an unknown id is dropped; a missing id goes to ungrouped
+ok   a label about the children is screened
+ok   an unreadable reply is a failure that groups nothing
+ok   no answers: no call
+ok   a body without a question is 422
+ok   duplicate ids are 422
+ok   an over-long answer is 422
+ok   a well-formed body validates
+ok   the route answers 422 with success false
+ok   a classmate's name in an answer is scrubbed before the model sees it
+ok   the route is its own throttle kind with limits and a noun
+
+ALL OK

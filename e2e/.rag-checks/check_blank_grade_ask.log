@@ -1,0 +1,37 @@
+PASS pause has a question naming the classroom
+PASS the article's grade is offered first
+PASS K-8 follows, each once
+PASS resume keeps the tool's other args, minus the field being asked
+PASS resume names save_memory scoped to the on-screen classroom
+PASS not a page action: no capability/args to relay
+PASS no article grade: the ladder starts at K, still every grade once
+PASS no classroom on screen: save_memory is teacher-level (classroom_id None)
+PASS an offered grade runs the original tool with grade filled in
+PASS save_memory carries the CHOSEN value through, for the caller to write before the tool runs
+PASS the K label resolves to the same K value (values map label to itself here)
+PASS free text that names no offered grade is not a deterministic resume (goes back to the model)
+PASS the grade question carries the instruction that the answer is the grade
+PASS typed grade forms parse to the picker's labels (any grade-shaped answer, in range or not)
+PASS typed 'Grade 3' resumes the tool with grade 3, saved as the grade memory
+PASS typed '3rd' resumes the tool with grade 3, saved as the grade memory
+PASS typed '3rd grade' resumes the tool with grade 3, saved as the grade memory
+PASS typed 'kindergarten' resumes the tool with grade K, saved as the grade memory
+PASS typed 'k' resumes the tool with grade K, saved as the grade memory
+PASS typed 'Grade 8' resumes the tool with grade 8, saved as the grade memory
+PASS typed '10' (outside K-8) asks again in code with the same chips and the fixed K-8 sentence, running nothing
+PASS typed 'Grade 12' (outside K-8) asks again in code with the same chips and the fixed K-8 sentence, running nothing
+PASS typed '0' (outside K-8) asks again in code with the same chips and the fixed K-8 sentence, running nothing
+PASS typed '13' (outside K-8) asks again in code with the same chips and the fixed K-8 sentence, running nothing
+PASS typed '11th' (outside K-8) asks again in code with the same chips and the fixed K-8 sentence, running nothing
+PASS a typed answer that is no grade at all still goes back to the model with the instruction
+PASS typed '5th' resumes when the article's grade was offered first
+PASS a prompt that is not the grade question never reads a typed grade form
+PASS a typed '10' reaches the model with the grade instruction beside it
+PASS an answer carrying a capability (a page action, not this question) is never treated as this resume
+PASS a grade picker keeps Keep and every grade, K to 12
+PASS a grade picker spelled 'Grade 7' keeps every grade
+PASS a non-grade question is still cut to 6
+PASS a numeric-looking list that is mostly not grades is still cut to 6
+PASS the model is told about the grade exception in the options description
+
+0 failure(s)

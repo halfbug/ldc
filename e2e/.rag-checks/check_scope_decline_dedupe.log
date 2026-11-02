@@ -1,0 +1,6 @@
+PASS the turn completes
+PASS both text segments streamed (reproduces the two-reply report)
+PASS the model is told its decline already reached the teacher before it can add another
+PASS the old error-only note is not what covers this (proves the new branch, not the old one)
+
+0 failure(s)

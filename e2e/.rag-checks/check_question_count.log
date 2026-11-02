@@ -1,0 +1,93 @@
+ok   rule 1: MAX_COUNT is 15
+ok   rule 1: generate_questions' count schema stops at 15
+ok   rule 1: draft_assignment's count schema stops at 15
+ok   rule 3: the remember tool describes a usual count as 1-15, as Laravel's rule now is
+ok   the tool tells the model an omitted count is sized from the article, not 5
+ok   rule 2: no number named writes one question per fresh idea
+ok   rule 2: an article with fewer than 3 ideas still gets 3
+ok   rule 2: an article with more than 15 ideas gets 15
+ok   rule 2: a named 1 and a named 2 are written as asked
+ok   rule 4: a named 12 on a 5-idea article writes 12
+ok   rule 5: a named 20 or 30 writes 15
+ok   rule 3: a usual count above the article's ideas is capped by them
+ok   rule 3: a usual count below the article's ideas is kept, even under 3
+ok   rule 3: a named count outranks a usual one
+ok   rule 4: the first questions each get a different idea
+ok   rule 4: questions 6 to 12 come back to an idea, and say how it was asked
+ok   rule 4: every question that comes back to an idea has a type that idea has not had before in the set
+ok   rule 4: the first questions keep the PH-QS-01 rotation
+ok   rule 7: no two questions share an idea and a type
+ok   a teacher's single named type is never swapped out, and no idea is asked twice in it (dev2 QA 2026-10-05)
+ok   rule 6: a follow-up set's questions go to ideas no earlier question tests
+ok   rule 6: with no new ideas left, a follow-up comes back to the earlier ideas in types they have not had
+ok   rule 5: the cap's sentence is not a planning note: it is added after delivery, counting what was delivered
+ok   rule 5: the fixed sentence, filled
+ok   rule 4: a named 12 on a 5-idea article says it supports about 5, and which questions come back
+ok   rule 3: a usual count the article cannot fill says so
+ok   rule 6: a follow-up with no new ideas says the earlier questions already ask them
+ok   no note when the set fits the article
+ok   v2: sentence numbers from a reply are kept only when they name a sentence of the article (3 or "S3")
+ok   rule 2 (engine): no number named writes one question per planned idea
+ok   rule 2 (engine): the writer is given one idea per question
+ok   rule 2 (engine): the plan is recorded with the set
+ok   rule 2 (engine): a one-idea article still gets 3, and the set says two of them come back to it
+ok   rule 2 (engine): a named 2 writes 2
+ok   rule 5 (engine): a named 20 writes 15
+ok   rule 5 (engine): the set carries the fixed cap note with 15 delivered, and the model is told to say it
+ok   rule 4 (engine): a named 12 on a 5-idea article writes 12, with the capacity note
+ok   rule 4 (engine): every question that comes back to an idea was delivered in a type different from its first use
+ok   rule 4 (engine): a question that comes back written in the wrong type is rejected and rewritten in its own type
+ok   rule 6 (engine): the marking call is shown the earlier questions, numbered, at temperature 0
+ok   rule 6 (engine): the writer is told not to repeat the earlier questions
+ok   rule 6 (engine): the follow-up's questions go to ideas whose sentences the earlier questions did not use
+ok   v2: the planner's request for a follow-up is byte-identical to a first set's (article alone, no earlier stems)
+ok   v2: the planner runs at temperature 0
+ok   v2: the planner reads the article as numbered sentences
+ok   v2: temperature 0 reaches a model that takes it and is never sent to Sonnet 5
+ok   v2: ideas sharing a sentence are merged (one sentence split in two, and a chain through 10-11-12), ideas citing no sentence of the article are dropped, and the plan keeps the article's order
+ok   v2: no two planned ideas share a sentence
+ok   v2: capacity is counted after the merge (8 ideas listed, 3 kept)
+ok   v2: a question is off its idea when it rests on any sentence outside the idea's
+ok   v2: earlier questions mark every idea holding a sentence they used
+ok   v2 (engine): the writer gets each idea's own sentences, quoted with their numbers
+ok   v2 (engine): the checker reads the article as numbered sentences and is asked which each question rests on
+ok   v2 (engine): a set whose questions stay inside their ideas needs no repair
+ok   v2 (engine): a question resting on another idea's sentence is sent to repair, told which sentence and its own
+ok   v2 (engine): the repaired question, inside its idea, replaces it
+ok   v2 (engine): the idea check is not a key check: the key-verified flag is untouched by it
+ok   v2 (engine): a rewrite still off its idea does not replace a question whose key was right, and the set records the question as off its idea
+ok   v2 (engine): a question that comes back to an idea and drifts to another idea's sentence is repaired back to its own idea's sentences, in its new type
+ok   rule 3 (engine): a usual 4 on a 6-idea article writes 4, with no note
+ok   rule 3 (engine): a usual 8 on a 3-idea article writes 3 and says why
+ok   an unreadable plan writes nothing and fails honestly, never a guessed count
+ok   rule 5 (engine): with 2 of 15 left out as not in the article, 13 are delivered
+ok   rule 5 (engine): the sentence counts the 13 delivered, never 15
+ok   rule 5 (engine): a named 15 writes 15 with no cap sentence
+ok   rule 5 (engine): a draft's mix of 25 writes its first 15 in the teacher's order, with the sentence
+ok   rule 5 (engine): past every idea in multiple choice, the mix's later true/false is used, never an idea twice
+ok   rule 1: /generate-from-topic takes 15 and refuses 16
+ok   rule 1: /generate-from-topic's request model stops at 15
+ok   rule 5 (tool): "20 questions" reaches the engine as 20 when the model passed the schema's 15
+ok   rule 5 (tool): a draft's "a 20-question quiz" with no count passed reaches the engine as 20
+ok   rule 2 (tool): a named 1 and a named 2 are written as asked
+ok   ONLINE-7767: "a Drawing question" with count 1 is written as one, not the default set
+ok   ONLINE-7767: ...while "a quiz" names no count
+ok   rule 5 (draft): a mix over 15 reaches the engine whole, so the engine can say what it left out
+ok   rule 3 (tool): a capped usual count is dropped from the closing's assumptions; other fields stay
+ok   rule 3 (tool): a usual count that was written stays an assumption
+ok   rule 5 (tool): the largest count in the teacher's words is read, in digits or words
+ok   v4 rows: the arm's 7 "order they appear" word-order items are all refused
+ok   v4 rows: the arm's sequence items across sentences (Houston x3, federal levels, the venture's steps) pass
+ok   type_fit rows: all 12 real sorting items (events and steps over several sentences) pass
+ok   a chronology across sentences passes
+ok   terms in order inside one sentence are refused even when the question never says "appear"
+ok   the same short terms out of the sentence's order are not word order
+ok   a question asking for the order words appear is refused whatever the terms
+ok   the next type after sorting in the rotation that is not sorting, preferring one the idea suits
+ok   v2 (engine): a word-order sorting item is refused, repaired once as the next non-sorting type in the rotation, and told why
+ok   v2 (engine): the refusal costs one repair round and the set keeps its size
+ok   v2 (engine): a sorting type the teacher named stays sorting and is asked for a real sequence
+ok   v2 (engine): a set with no word-order item refuses nothing and needs no repair
+ok   v2 (engine): a repair that is still word-order sorting is not delivered; the set is one short, never a word-order item
+
+all passed

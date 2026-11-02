@@ -1,0 +1,39 @@
+PASS constitution (the shared core): 112 of 112 sentences read back in a reply are dropped
+PASS Agent acting module: 10 of 10 sentences read back in a reply are dropped
+PASS Plan acting module: 7 of 7 sentences read back in a reply are dropped
+PASS teacher block: 8 of 8 sentences read back in a reply are dropped
+PASS scope rule and decline procedure: 11 of 11 sentences read back in a reply are dropped
+PASS grading rule: 4 of 4 sentences read back in a reply are dropped
+PASS tool search_curriculum: 11 of 11 sentences read back in a reply are dropped
+PASS tool offer_match: 5 of 5 sentences read back in a reply are dropped
+PASS tool build_teaching_set: 6 of 6 sentences read back in a reply are dropped
+PASS tool prepare_lesson: 5 of 5 sentences read back in a reply are dropped
+PASS tool get_article_resources: 2 of 2 sentences read back in a reply are dropped
+PASS tool search_help: 3 of 3 sentences read back in a reply are dropped
+PASS tool write_artifact: 13 of 13 sentences read back in a reply are dropped
+PASS tool generate_questions: 18 of 18 sentences read back in a reply are dropped
+PASS tool draft_assignment: 11 of 11 sentences read back in a reply are dropped
+PASS tool check_assignment: 4 of 4 sentences read back in a reply are dropped
+PASS tool find_assignments: 2 of 2 sentences read back in a reply are dropped
+PASS tool level_article: 11 of 11 sentences read back in a reply are dropped
+PASS tool grade_answers: 5 of 5 sentences read back in a reply are dropped
+PASS tool ask_user: 8 of 8 sentences read back in a reply are dropped
+PASS tool page_action: 5 of 5 sentences read back in a reply are dropped
+PASS tool remember: 8 of 8 sentences read back in a reply are dropped
+PASS tool forget: 9 of 9 sentences read back in a reply are dropped
+PASS tool suggest_standards: 7 of 7 sentences read back in a reply are dropped
+      code-built positives: 285 of 285
+PASS every one of the 18 tool modules has sentences in the screen's word list
+PASS every registry sentence with a 12-word static run is dropped when read back (995 of 995)
+      668 registry sentences are shorter than 12 words, so no screen of this kind can reach them
+PASS a word list built from nothing recognises none of the positives (so the checks above can fail)
+PASS real Scout replies were read from fixtures/scout_replies.json (not silently none)
+PASS none of 2396 real Scout replies shares a 12-word run with a prompt sentence
+PASS left alone: the decline
+PASS left alone: the decline when the search found nothing
+PASS left alone: the decline with titles
+PASS left alone: the grading sentence the rule asks for
+PASS left alone: the grading note on the card
+PASS the exemption is what lets the decline through: without it the decline would be dropped
+
+all passed

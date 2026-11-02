@@ -1,0 +1,31 @@
+PASS a set made in an earlier chat is reached from a new one
+PASS it is the set that was made, not a new or empty one
+PASS it keeps its own ref id, so every existing reader of a ref needs no change
+PASS a request that describes new content carries nothing over
+PASS ...nor does a turn with no typed ask
+PASS a teacher pointing back reaches the earlier set: 'Make it harder.'
+PASS a teacher pointing back reaches the earlier set: 'Save those questions to an assignment.'
+PASS a teacher pointing back reaches the earlier set: 'Can you assign my questions?'
+PASS the block no longer lets a request for questions reuse the set
+PASS the adopted ref resolves through the RefStore the tools already use
+PASS the model is told it exists, by ref, with the questions themselves
+PASS the model is told it came from an earlier chat, not from this one
+PASS QA r3 item 2: the block tells the model to say 'from an earlier chat' and never 'in this chat' (2026-10-04)
+PASS another teacher's new thread reaches nothing
+PASS a listing row naming someone else's thread still reaches nothing: the thread read is owner-filtered
+PASS the thread read really did filter on the owner
+PASS the teacher's own set is refused once their publication access no longer covers its article
+PASS the refusal was decided against the scope of the turn asking, not the one it was made under
+PASS a teacher with no publications at all reaches nothing
+PASS a set whose article can no longer be resolved is not carried over
+PASS a ref from before sources were recorded (no meta) is not carried over
+PASS a set with no source article recorded is not carried over
+PASS a set from outside the carry-over window is not offered
+PASS the most recent set is the one offered
+PASS a thread that has made something of its own carries nothing over
+PASS and does not query for one at all
+PASS a thread full of sets hands back a bounded number of candidates, newest first
+PASS an unused carry-over is dropped on write, so no thread grows a copy of another's set
+PASS a carry-over the teacher actually used is kept with the thread that used it
+
+0 failure(s)

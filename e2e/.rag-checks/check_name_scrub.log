@@ -1,0 +1,242 @@
+PASS an absent or empty list is no scrub
+PASS an entry whose alias is not a pseudonym is ignored
+PASS the list is capped
+PASS a full name
+PASS a full name in any case
+PASS last, first
+PASS an email and a username with a digit
+PASS a co-teacher
+PASS the full tier leaves a single name alone
+PASS a first name alone
+PASS a last name alone
+PASS a possessive
+PASS after a greeting that opens the sentence
+PASS a shared first name names everyone who has it
+PASS lower case is left as typed (declared gap)
+PASS two letters or fewer are left (declared gap)
+PASS part of a longer proper name is not a student
+PASS a name-shaped word opening a question to the reader is not a student
+PASS the same word with a verb after it is
+PASS a name the page itself uses is left alone (declared gap)
+PASS and without that page it is scrubbed
+PASS a word that is also a name is left alone: 'One of the places named in this article needs a slide.'
+PASS a word that is also a name is left alone: 'Add a slide about One of the explorers named in the article.'
+PASS a word that is also a name is left alone: 'Each of the people in history named here gets a slide.'
+PASS a word that is also a name is left alone: 'Other places the article names: add a slide.'
+PASS a word that is also a name is left alone: 'add a slide about one of the places named in this article.'
+PASS her full name is still scrubbed
+PASS a full name starting with a word is still scrubbed
+PASS a forename alone that is not a word is still scrubbed
+PASS a named student's slide request is still scrubbed
+PASS a request verb opening a sentence is left alone: 'Create one Drawing question from this article.'
+PASS a request verb opening a sentence is left alone: 'Hi Scout. Make a quiz.'
+PASS a request verb opening a sentence is left alone: 'Thanks!\nCreate a slide.'
+PASS the same word inside a sentence is still scrubbed
+PASS her full name is still scrubbed
+PASS a verb that is also a forename is still scrubbed
+PASS a username spelled like a request verb is still scrubbed: 'Username: Create'
+PASS a username spelled like a request verb is still scrubbed: 'Create got 3 wrong.'
+PASS the message
+PASS page_context
+PASS cp_content values, keys untouched
+PASS action_result
+PASS compose_request
+PASS page content gets only the full tier
+PASS a stored draft keeps a word that is also a student's single name
+PASS known negative: a full name and a username in the stored draft are still replaced
+PASS known negative: what the model reads still gets the single tier
+PASS known negative: the rest of display_extras still gets the single tier
+PASS the draft's other fields are kept
+PASS a dropped student's typed full name is replaced by his code
+PASS a name two students share is replaced by both codes, never one
+PASS a dropped student's name in page text is replaced
+PASS and in page content (full tier)
+PASS a name on nobody's list is left alone (known negative)
+PASS grading answers and exemplars
+PASS grading question gets the full tier
+PASS /v2/turn: preflight sees the scrubbed message
+PASS /v2/turn: and never the list
+PASS /v2/turn: the backstop is active for the turn
+PASS /v2/grade: the engine sees scrubbed answers and no list
+{"level":"INFO","location":"_guard_identifiers:129","message":"student identifiers in a browser payload","timestamp":"2026-10-28 16:51:51,723+0500","service":"CoreRouter","taskName":"anyio.from_thread.BlockingPortal._call_func","route":"turn","removed":0,"scrub_list_sent":false}
+Error loading configuration from Parameter Store: You must specify a region.
+Traceback (most recent call last):
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/src/config/config.py", line 257, in get_config
+    param_store_config = _load_parameter_store_config(config.PARAMETER_STORE_PREFIX)
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/src/config/config.py", line 175, in _load_parameter_store_config
+    ssm_client = boto3.client('ssm')
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/boto3/__init__.py", line 93, in client
+    return _get_default_session().client(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/boto3/session.py", line 337, in client
+    return self._session.create_client(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        service_name, **create_client_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/context.py", line 123, in wrapper
+    return func(*args, **kwargs)
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/session.py", line 1031, in create_client
+    client = client_creator.create_client(
+        service_name=service_name,
+    ...<8 lines>...
+        auth_token=auth_token,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/client.py", line 161, in create_client
+    client_args = self._get_client_args(
+        service_model,
+    ...<10 lines>...
+        partition_data,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/client.py", line 561, in _get_client_args
+    return args_creator.get_client_args(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        service_model,
+        ^^^^^^^^^^^^^^
+    ...<10 lines>...
+        partition_data,
+        ^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/args.py", line 121, in get_client_args
+    final_args = self.compute_client_args(
+        service_model,
+    ...<5 lines>...
+        scoped_config,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/args.py", line 265, in compute_client_args
+    endpoint_config = self._compute_endpoint_config(
+        service_name=service_name,
+    ...<4 lines>...
+        s3_config=s3_config,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/args.py", line 459, in _compute_endpoint_config
+    return self._resolve_endpoint(**resolve_endpoint_kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/args.py", line 577, in _resolve_endpoint
+    return endpoint_bridge.resolve(
+           ~~~~~~~~~~~~~~~~~~~~~~~^
+        service_name, region_name, endpoint_url, is_secure
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/client.py", line 675, in resolve
+    resolved = self.endpoint_resolver.construct_endpoint(
+        service_name,
+    ...<2 lines>...
+        use_fips_endpoint=use_fips_endpoint,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/regions.py", line 237, in construct_endpoint
+    result = self._endpoint_for_partition(
+        partition,
+    ...<3 lines>...
+        use_fips_endpoint,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/regions.py", line 285, in _endpoint_for_partition
+    raise NoRegionError()
+botocore.exceptions.NoRegionError: You must specify a region.
+Failed to load Parameter Store config
+Traceback (most recent call last):
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/src/config/config.py", line 257, in get_config
+    param_store_config = _load_parameter_store_config(config.PARAMETER_STORE_PREFIX)
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/src/config/config.py", line 175, in _load_parameter_store_config
+    ssm_client = boto3.client('ssm')
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/boto3/__init__.py", line 93, in client
+    return _get_default_session().client(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/boto3/session.py", line 337, in client
+    return self._session.create_client(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        service_name, **create_client_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/context.py", line 123, in wrapper
+    return func(*args, **kwargs)
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/session.py", line 1031, in create_client
+    client = client_creator.create_client(
+        service_name=service_name,
+    ...<8 lines>...
+        auth_token=auth_token,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/client.py", line 161, in create_client
+    client_args = self._get_client_args(
+        service_model,
+    ...<10 lines>...
+        partition_data,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/client.py", line 561, in _get_client_args
+    return args_creator.get_client_args(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        service_model,
+        ^^^^^^^^^^^^^^
+    ...<10 lines>...
+        partition_data,
+        ^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/args.py", line 121, in get_client_args
+    final_args = self.compute_client_args(
+        service_model,
+    ...<5 lines>...
+        scoped_config,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/args.py", line 265, in compute_client_args
+    endpoint_config = self._compute_endpoint_config(
+        service_name=service_name,
+    ...<4 lines>...
+        s3_config=s3_config,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/args.py", line 459, in _compute_endpoint_config
+    return self._resolve_endpoint(**resolve_endpoint_kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/args.py", line 577, in _resolve_endpoint
+    return endpoint_bridge.resolve(
+           ~~~~~~~~~~~~~~~~~~~~~~~^
+        service_name, region_name, endpoint_url, is_secure
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/client.py", line 675, in resolve
+    resolved = self.endpoint_resolver.construct_endpoint(
+        service_name,
+    ...<2 lines>...
+        use_fips_endpoint=use_fips_endpoint,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/regions.py", line 237, in construct_endpoint
+    result = self._endpoint_for_partition(
+        partition,
+    ...<3 lines>...
+        use_fips_endpoint,
+    )
+  File "/home/lenovo/ldc/e2e/.rag-head/lambdas/ai_assistant/.venv/lib/python3.13/site-packages/botocore/regions.py", line 285, in _endpoint_for_partition
+    raise NoRegionError()
+botocore.exceptions.NoRegionError: You must specify a region.
+PASS /v2/turn without a list: unchanged, no backstop
+PASS no active scrub leaves the request as it is
+PASS system and messages scrubbed
+PASS tool input scrubbed
+PASS signed reasoning passes unchanged
+PASS the caller's request is not mutated
+PASS the scrub reaches a worker thread started with to_thread
+PASS loop.py builds through scrub_outgoing
+PASS engines/llm.py builds through scrub_outgoing
+PASS threads.py builds through scrub_outgoing
+PASS context/history.py builds through scrub_outgoing
+{"level":"INFO","location":"lambda_handler:47","message":"🌐 Processing API Gateway request","timestamp":"2026-10-28 16:51:52,013+0500","service":"AIAssistant","cold_start":true,"function_name":"f","function_memory_size":128,"function_arn":"arn:aws:lambda:x:1:function:f","function_request_id":"r1","path":"/nowhere","method":"","request_id":"r1"}
+PASS the v1 handler's log is captured
+PASS and never holds the event body with the scrub list
+PASS with a list: password, email and username of a person are dropped, the score and alias stay
+PASS with a list: names stay for the scrub, and a non-person email key is left alone
+PASS with no list: names are dropped and every email-shaped string is masked
+PASS the input is not mutated
+PASS a clean payload removes nothing
+PASS a turn with no scrub list is stripped before anything reads it
+PASS and it is counted without content
+PASS a clean turn with a list is not logged
+PASS the turn route guards identifiers right after the scrub, before anything reads the request
+PASS every body route (grade, group, misconceptions, drawings) guards its body
+PASS 1,000 people over 65,000 characters in under 50 ms
+
+OK: 0 failure(s)

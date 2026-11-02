@@ -1,0 +1,511 @@
+publication structure unavailable
+settings: sha=ee4795072e88  dirty=False  effort=low  thinking=  max_tokens=32000  strict=z6mtpcbzm5x1:16  curriculum=u5k53i63fu9b:4  model_main=us.anthropic.claude-sonnet-5  model_fast=us.anthropic.claude-haiku-4-5-20251001-v1:0  small_system=You are Scout, an assistant for K-8 teachers.
+  plain_first:article        routed                71,619 bytes  profile=curriculum label=CURRICULUM/1
+  plain_first:article        other_profile         71,620 bytes  profile=strict     label=CURRICULUM/1
+  plain_first:article        guardrail_off         71,514 bytes  profile=none       label=CURRICULUM/1
+  plain_first:article        small_prompt             427 bytes  profile=curriculum label=CURRICULUM/1
+  plain_first:article        small_prompt_no_gr       322 bytes  profile=none       label=CURRICULUM/1
+  plain_first:article        fast_model            71,564 bytes  profile=curriculum label=CURRICULUM/1
+  plain_first:article        async_guardrail       71,652 bytes  profile=curriculum label=CURRICULUM/1
+  plain_first:article        typed_only            71,647 bytes  profile=curriculum label=CURRICULUM/1
+  plain_first:article        typed_only_async      71,680 bytes  profile=curriculum label=CURRICULUM/1
+  plain_first:classrooms     routed                65,354 bytes  profile=strict     label=OTHER/1
+  plain_first:classrooms     other_profile         65,353 bytes  profile=curriculum label=OTHER/1
+  plain_first:classrooms     guardrail_off         65,248 bytes  profile=none       label=OTHER/1
+  plain_first:classrooms     small_prompt             449 bytes  profile=strict     label=OTHER/1
+  plain_first:classrooms     small_prompt_no_gr       343 bytes  profile=none       label=OTHER/1
+  plain_first:classrooms     fast_model            65,299 bytes  profile=strict     label=OTHER/1
+  plain_first:classrooms     async_guardrail       65,387 bytes  profile=strict     label=OTHER/1
+  plain_first:classrooms     typed_only            65,382 bytes  profile=strict     label=OTHER/1
+  plain_first:classrooms     typed_only_async      65,415 bytes  profile=strict     label=OTHER/1
+  plain_first:toc            routed                69,448 bytes  profile=strict     label=OTHER/1
+  plain_first:toc            other_profile         69,447 bytes  profile=curriculum label=OTHER/1
+  plain_first:toc            guardrail_off         69,342 bytes  profile=none       label=OTHER/1
+  plain_first:toc            small_prompt             423 bytes  profile=strict     label=OTHER/1
+  plain_first:toc            small_prompt_no_gr       317 bytes  profile=none       label=OTHER/1
+  plain_first:toc            fast_model            69,393 bytes  profile=strict     label=OTHER/1
+  plain_first:toc            async_guardrail       69,481 bytes  profile=strict     label=OTHER/1
+  plain_first:toc            typed_only            69,476 bytes  profile=strict     label=OTHER/1
+  plain_first:toc            typed_only_async      69,509 bytes  profile=strict     label=OTHER/1
+  search_second:article      routed                74,963 bytes  profile=curriculum label=CURRICULUM/1
+  search_second:article      other_profile         74,964 bytes  profile=strict     label=CURRICULUM/1
+  search_second:article      guardrail_off         74,858 bytes  profile=none       label=CURRICULUM/1
+  search_second:article      small_prompt           3,452 bytes  profile=curriculum label=CURRICULUM/1
+  search_second:article      small_prompt_no_gr     3,347 bytes  profile=none       label=CURRICULUM/1
+  search_second:article      fast_model            74,908 bytes  profile=curriculum label=CURRICULUM/1
+  search_second:article      async_guardrail       74,996 bytes  profile=curriculum label=CURRICULUM/1
+  search_second:article      typed_only            74,991 bytes  profile=curriculum label=CURRICULUM/1
+  search_second:article      typed_only_async      75,024 bytes  profile=curriculum label=CURRICULUM/1
+  search_second:classrooms   routed                69,274 bytes  profile=curriculum label=CURRICULUM/1
+  search_second:classrooms   other_profile         69,275 bytes  profile=strict     label=CURRICULUM/1
+  search_second:classrooms   guardrail_off         69,169 bytes  profile=none       label=CURRICULUM/1
+  search_second:classrooms   small_prompt           3,428 bytes  profile=curriculum label=CURRICULUM/1
+  search_second:classrooms   small_prompt_no_gr     3,323 bytes  profile=none       label=CURRICULUM/1
+  search_second:classrooms   fast_model            68,869 bytes  profile=curriculum label=CURRICULUM/1
+  search_second:classrooms   async_guardrail       69,307 bytes  profile=curriculum label=CURRICULUM/1
+  search_second:classrooms   typed_only            69,302 bytes  profile=curriculum label=CURRICULUM/1
+  search_second:classrooms   typed_only_async      69,335 bytes  profile=curriculum label=CURRICULUM/1
+  search_second:toc          routed                72,855 bytes  profile=curriculum label=CURRICULUM/1
+  search_second:toc          other_profile         72,856 bytes  profile=strict     label=CURRICULUM/1
+  search_second:toc          guardrail_off         72,750 bytes  profile=none       label=CURRICULUM/1
+  search_second:toc          small_prompt           3,522 bytes  profile=curriculum label=CURRICULUM/1
+  search_second:toc          small_prompt_no_gr     3,417 bytes  profile=none       label=CURRICULUM/1
+  search_second:toc          fast_model            73,127 bytes  profile=curriculum label=CURRICULUM/1
+  search_second:toc          async_guardrail       72,888 bytes  profile=curriculum label=CURRICULUM/1
+  search_second:toc          typed_only            72,883 bytes  profile=curriculum label=CURRICULUM/1
+  search_second:toc          typed_only_async      72,916 bytes  profile=curriculum label=CURRICULUM/1
+
+warming 54 requests (not counted)
+  1/5 plain_first:article        routed              text=6,499 stop=end_turn
+  1/5 plain_first:article        other_profile       text=6,679 stop=end_turn
+  1/5 plain_first:article        guardrail_off       text=2,449 stop=end_turn
+  1/5 plain_first:article        small_prompt        text=4,554 stop=end_turn
+  1/5 plain_first:article        small_prompt_no_gr  text=2,130 stop=end_turn
+  1/5 plain_first:article        fast_model          text=4,548 stop=end_turn
+  1/5 plain_first:article        async_guardrail     text=3,687 stop=end_turn
+  1/5 plain_first:article        typed_only          text=6,877 stop=end_turn
+  1/5 plain_first:article        typed_only_async    text=3,573 stop=end_turn
+  1/5 plain_first:classrooms     routed              text=12,088 stop=end_turn
+  1/5 plain_first:classrooms     other_profile       text=8,340 stop=end_turn
+  1/5 plain_first:classrooms     guardrail_off       text=2,154 stop=end_turn
+  1/5 plain_first:classrooms     small_prompt        text=7,276 stop=end_turn
+  1/5 plain_first:classrooms     small_prompt_no_gr  text=1,437 stop=end_turn
+  1/5 plain_first:classrooms     fast_model          text=5,003 stop=end_turn
+  1/5 plain_first:classrooms     async_guardrail     text=3,506 stop=end_turn
+  1/5 plain_first:classrooms     typed_only          text=9,026 stop=end_turn
+  1/5 plain_first:classrooms     typed_only_async    text=3,301 stop=end_turn
+  1/5 plain_first:toc            routed              text=6,939 stop=end_turn
+  1/5 plain_first:toc            other_profile       text=7,268 stop=end_turn
+  1/5 plain_first:toc            guardrail_off       text=2,281 stop=end_turn
+  1/5 plain_first:toc            small_prompt        text=4,856 stop=end_turn
+  1/5 plain_first:toc            small_prompt_no_gr  text=1,609 stop=end_turn
+  1/5 plain_first:toc            fast_model          text=4,728 stop=end_turn
+  1/5 plain_first:toc            async_guardrail     text=3,469 stop=end_turn
+  1/5 plain_first:toc            typed_only          text=8,270 stop=end_turn
+  1/5 plain_first:toc            typed_only_async    text=3,482 stop=end_turn
+  1/5 search_second:article      routed              text=5,390 stop=end_turn
+  1/5 search_second:article      other_profile       text=5,007 stop=end_turn
+  1/5 search_second:article      guardrail_off       text=2,679 stop=end_turn
+  1/5 search_second:article      small_prompt        text=3,837 stop=end_turn
+  1/5 search_second:article      small_prompt_no_gr  text=1,486 stop=end_turn
+  1/5 search_second:article      fast_model          text=3,602 stop=end_turn
+  1/5 search_second:article      async_guardrail     text=3,396 stop=end_turn
+  1/5 search_second:article      typed_only          text=4,619 stop=end_turn
+  1/5 search_second:article      typed_only_async    text=3,481 stop=end_turn
+  1/5 search_second:classrooms   routed              text=4,660 stop=end_turn
+  1/5 search_second:classrooms   other_profile       text=5,839 stop=end_turn
+  1/5 search_second:classrooms   guardrail_off       text=2,486 stop=end_turn
+  1/5 search_second:classrooms   small_prompt        text=3,921 stop=end_turn
+  1/5 search_second:classrooms   small_prompt_no_gr  text=1,531 stop=end_turn
+  1/5 search_second:classrooms   fast_model          text=3,450 stop=end_turn
+  1/5 search_second:classrooms   async_guardrail     text=3,292 stop=end_turn
+  1/5 search_second:classrooms   typed_only          text=4,818 stop=end_turn
+  1/5 search_second:classrooms   typed_only_async    text=3,479 stop=end_turn
+  1/5 search_second:toc          routed              text=6,710 stop=end_turn
+  1/5 search_second:toc          other_profile       text=6,060 stop=end_turn
+  1/5 search_second:toc          guardrail_off       text=2,279 stop=end_turn
+  1/5 search_second:toc          small_prompt        text=4,099 stop=end_turn
+  1/5 search_second:toc          small_prompt_no_gr  text=1,492 stop=end_turn
+  1/5 search_second:toc          fast_model          text=3,608 stop=end_turn
+  1/5 search_second:toc          async_guardrail     text=4,429 stop=end_turn
+  1/5 search_second:toc          typed_only          text=7,349 stop=end_turn
+  1/5 search_second:toc          typed_only_async    text=4,524 stop=end_turn
+  2/5 plain_first:article        routed              text=6,021 stop=end_turn
+  2/5 plain_first:article        other_profile       text=6,842 stop=end_turn
+  2/5 plain_first:article        guardrail_off       text=2,253 stop=end_turn
+  2/5 plain_first:article        small_prompt        text=4,544 stop=end_turn
+  2/5 plain_first:article        small_prompt_no_gr  text=1,308 stop=end_turn
+  2/5 plain_first:article        fast_model          text=4,617 stop=end_turn
+  2/5 plain_first:article        async_guardrail     text=3,520 stop=end_turn
+  2/5 plain_first:article        typed_only          text=6,274 stop=end_turn
+  2/5 plain_first:article        typed_only_async    text=3,231 stop=end_turn
+  2/5 plain_first:classrooms     routed              text=9,079 stop=end_turn
+  2/5 plain_first:classrooms     other_profile       text=7,887 stop=end_turn
+  2/5 plain_first:classrooms     guardrail_off       text=2,357 stop=end_turn
+  2/5 plain_first:classrooms     small_prompt        text=7,270 stop=end_turn
+  2/5 plain_first:classrooms     small_prompt_no_gr  text=1,743 stop=end_turn
+  2/5 plain_first:classrooms     fast_model          text=5,102 stop=end_turn
+  2/5 plain_first:classrooms     async_guardrail     text=3,340 stop=end_turn
+  2/5 plain_first:classrooms     typed_only          text=8,468 stop=end_turn
+  2/5 plain_first:classrooms     typed_only_async    text=3,514 stop=end_turn
+  2/5 plain_first:toc            routed              text=6,851 stop=end_turn
+  2/5 plain_first:toc            other_profile       text=6,745 stop=end_turn
+  2/5 plain_first:toc            guardrail_off       text=2,053 stop=end_turn
+  2/5 plain_first:toc            small_prompt        text=4,012 stop=end_turn
+  2/5 plain_first:toc            small_prompt_no_gr  text=1,321 stop=end_turn
+  2/5 plain_first:toc            fast_model          text=4,619 stop=end_turn
+  2/5 plain_first:toc            async_guardrail     text=3,221 stop=end_turn
+  2/5 plain_first:toc            typed_only          text=6,475 stop=end_turn
+  2/5 plain_first:toc            typed_only_async    text=3,379 stop=end_turn
+  2/5 search_second:article      routed              text=4,511 stop=end_turn
+  2/5 search_second:article      other_profile       text=4,494 stop=end_turn
+  2/5 search_second:article      guardrail_off       text=2,235 stop=end_turn
+  2/5 search_second:article      small_prompt        text=3,364 stop=end_turn
+  2/5 search_second:article      small_prompt_no_gr  text=1,288 stop=end_turn
+  2/5 search_second:article      fast_model          text=3,550 stop=end_turn
+  2/5 search_second:article      async_guardrail     text=3,514 stop=end_turn
+  2/5 search_second:article      typed_only          text=5,015 stop=end_turn
+  2/5 search_second:article      typed_only_async    text=3,238 stop=end_turn
+  2/5 search_second:classrooms   routed              text=4,793 stop=end_turn
+  2/5 search_second:classrooms   other_profile       text=4,088 stop=end_turn
+  2/5 search_second:classrooms   guardrail_off       text=2,310 stop=end_turn
+  2/5 search_second:classrooms   small_prompt        text=3,580 stop=end_turn
+  2/5 search_second:classrooms   small_prompt_no_gr  text=1,338 stop=end_turn
+  2/5 search_second:classrooms   fast_model          text=3,660 stop=end_turn
+  2/5 search_second:classrooms   async_guardrail     text=3,363 stop=end_turn
+  2/5 search_second:classrooms   typed_only          text=4,386 stop=end_turn
+  2/5 search_second:classrooms   typed_only_async    text=3,300 stop=end_turn
+  2/5 search_second:toc          routed              text=5,786 stop=end_turn
+  2/5 search_second:toc          other_profile       text=5,856 stop=end_turn
+  2/5 search_second:toc          guardrail_off       text=2,425 stop=end_turn
+  2/5 search_second:toc          small_prompt        text=5,000 stop=end_turn
+  2/5 search_second:toc          small_prompt_no_gr  text=1,599 stop=end_turn
+  2/5 search_second:toc          fast_model          text=3,447 stop=end_turn
+  2/5 search_second:toc          async_guardrail     text=4,175 stop=end_turn
+  2/5 search_second:toc          typed_only          text=6,618 stop=end_turn
+  2/5 search_second:toc          typed_only_async    text=3,920 stop=end_turn
+  3/5 plain_first:article        routed              text=6,508 stop=end_turn
+  3/5 plain_first:article        other_profile       text=6,468 stop=end_turn
+  3/5 plain_first:article        guardrail_off       text=2,218 stop=end_turn
+  3/5 plain_first:article        small_prompt        text=4,001 stop=end_turn
+  3/5 plain_first:article        small_prompt_no_gr  text=1,339 stop=end_turn
+  3/5 plain_first:article        fast_model          text=3,770 stop=end_turn
+  3/5 plain_first:article        async_guardrail     text=3,283 stop=end_turn
+  3/5 plain_first:article        typed_only          text=6,948 stop=end_turn
+  3/5 plain_first:article        typed_only_async    text=3,496 stop=end_turn
+  3/5 plain_first:classrooms     routed              text=10,139 stop=end_turn
+  3/5 plain_first:classrooms     other_profile       text=8,328 stop=end_turn
+  3/5 plain_first:classrooms     guardrail_off       text=2,325 stop=end_turn
+  3/5 plain_first:classrooms     small_prompt        text=8,032 stop=end_turn
+  3/5 plain_first:classrooms     small_prompt_no_gr  text=1,340 stop=end_turn
+  3/5 plain_first:classrooms     fast_model          text=5,153 stop=end_turn
+  3/5 plain_first:classrooms     async_guardrail     text=3,279 stop=end_turn
+  3/5 plain_first:classrooms     typed_only          text=7,578 stop=end_turn
+  3/5 plain_first:classrooms     typed_only_async    text=3,215 stop=end_turn
+  3/5 plain_first:toc            routed              text=7,162 stop=end_turn
+  3/5 plain_first:toc            other_profile       text=6,694 stop=end_turn
+  3/5 plain_first:toc            guardrail_off       text=2,316 stop=end_turn
+  3/5 plain_first:toc            small_prompt        text=3,758 stop=end_turn
+  3/5 plain_first:toc            small_prompt_no_gr  text=1,852 stop=end_turn
+  3/5 plain_first:toc            fast_model          text=4,612 stop=end_turn
+  3/5 plain_first:toc            async_guardrail     text=2,995 stop=end_turn
+  3/5 plain_first:toc            typed_only          text=6,754 stop=end_turn
+  3/5 plain_first:toc            typed_only_async    text=3,017 stop=end_turn
+  3/5 search_second:article      routed              text=4,677 stop=end_turn
+  3/5 search_second:article      other_profile       text=4,746 stop=end_turn
+  3/5 search_second:article      guardrail_off       text=2,222 stop=end_turn
+  3/5 search_second:article      small_prompt        text=3,566 stop=end_turn
+  3/5 search_second:article      small_prompt_no_gr  text=1,436 stop=end_turn
+  3/5 search_second:article      fast_model          text=3,357 stop=end_turn
+  3/5 search_second:article      async_guardrail     text=3,669 stop=end_turn
+  3/5 search_second:article      typed_only          text=5,010 stop=end_turn
+  3/5 search_second:article      typed_only_async    text=3,052 stop=end_turn
+  3/5 search_second:classrooms   routed              text=4,583 stop=end_turn
+  3/5 search_second:classrooms   other_profile       text=5,518 stop=end_turn
+  3/5 search_second:classrooms   guardrail_off       text=2,620 stop=end_turn
+  3/5 search_second:classrooms   small_prompt        text=3,777 stop=end_turn
+  3/5 search_second:classrooms   small_prompt_no_gr  text=1,456 stop=end_turn
+  3/5 search_second:classrooms   fast_model          text=3,047 stop=end_turn
+  3/5 search_second:classrooms   async_guardrail     text=3,067 stop=end_turn
+  3/5 search_second:classrooms   typed_only          text=4,952 stop=end_turn
+  3/5 search_second:classrooms   typed_only_async    text=3,384 stop=end_turn
+  3/5 search_second:toc          routed              text=6,030 stop=end_turn
+  3/5 search_second:toc          other_profile       text=6,181 stop=end_turn
+  3/5 search_second:toc          guardrail_off       text=2,420 stop=end_turn
+  3/5 search_second:toc          small_prompt        text=4,109 stop=end_turn
+  3/5 search_second:toc          small_prompt_no_gr  text=1,447 stop=end_turn
+  3/5 search_second:toc          fast_model          text=3,691 stop=end_turn
+  3/5 search_second:toc          async_guardrail     text=4,208 stop=end_turn
+  3/5 search_second:toc          typed_only          text=5,619 stop=end_turn
+  3/5 search_second:toc          typed_only_async    text=3,991 stop=end_turn
+  4/5 plain_first:article        routed              text=6,563 stop=end_turn
+  4/5 plain_first:article        other_profile       text=6,575 stop=end_turn
+  4/5 plain_first:article        guardrail_off       text=2,171 stop=end_turn
+  4/5 plain_first:article        small_prompt        text=3,981 stop=end_turn
+  4/5 plain_first:article        small_prompt_no_gr  text=1,451 stop=end_turn
+  4/5 plain_first:article        fast_model          text=4,209 stop=end_turn
+  4/5 plain_first:article        async_guardrail     text=3,428 stop=end_turn
+  4/5 plain_first:article        typed_only          text=6,985 stop=end_turn
+  4/5 plain_first:article        typed_only_async    text=3,518 stop=end_turn
+  4/5 plain_first:classrooms     routed              text=7,957 stop=end_turn
+  4/5 plain_first:classrooms     other_profile       text=8,523 stop=end_turn
+  4/5 plain_first:classrooms     guardrail_off       text=2,167 stop=end_turn
+  4/5 plain_first:classrooms     small_prompt        text=7,320 stop=end_turn
+  4/5 plain_first:classrooms     small_prompt_no_gr  text=1,456 stop=end_turn
+  4/5 plain_first:classrooms     fast_model          text=4,721 stop=end_turn
+  4/5 plain_first:classrooms     async_guardrail     text=3,415 stop=end_turn
+  4/5 plain_first:classrooms     typed_only          text=8,909 stop=end_turn
+  4/5 plain_first:classrooms     typed_only_async    text=3,270 stop=end_turn
+  4/5 plain_first:toc            routed              text=6,913 stop=end_turn
+  4/5 plain_first:toc            other_profile       text=6,727 stop=end_turn
+  4/5 plain_first:toc            guardrail_off       text=2,283 stop=end_turn
+  4/5 plain_first:toc            small_prompt        text=4,544 stop=end_turn
+  4/5 plain_first:toc            small_prompt_no_gr  text=1,585 stop=end_turn
+  4/5 plain_first:toc            fast_model          text=4,411 stop=end_turn
+  4/5 plain_first:toc            async_guardrail     text=3,453 stop=end_turn
+  4/5 plain_first:toc            typed_only          text=6,637 stop=end_turn
+  4/5 plain_first:toc            typed_only_async    text=3,365 stop=end_turn
+  4/5 search_second:article      routed              text=5,002 stop=end_turn
+  4/5 search_second:article      other_profile       text=6,099 stop=end_turn
+  4/5 search_second:article      guardrail_off       text=2,228 stop=end_turn
+  4/5 search_second:article      small_prompt        text=3,669 stop=end_turn
+  4/5 search_second:article      small_prompt_no_gr  text=1,309 stop=end_turn
+  4/5 search_second:article      fast_model          text=3,525 stop=end_turn
+  4/5 search_second:article      async_guardrail     text=3,481 stop=end_turn
+  4/5 search_second:article      typed_only          text=5,205 stop=end_turn
+  4/5 search_second:article      typed_only_async    text=4,213 stop=end_turn
+  4/5 search_second:classrooms   routed              text=4,683 stop=end_turn
+  4/5 search_second:classrooms   other_profile       text=4,304 stop=end_turn
+  4/5 search_second:classrooms   guardrail_off       text=2,313 stop=end_turn
+  4/5 search_second:classrooms   small_prompt        text=3,553 stop=end_turn
+  4/5 search_second:classrooms   small_prompt_no_gr  text=1,477 stop=end_turn
+  4/5 search_second:classrooms   fast_model          text=3,474 stop=end_turn
+  4/5 search_second:classrooms   async_guardrail     text=3,542 stop=end_turn
+  4/5 search_second:classrooms   typed_only          text=4,421 stop=end_turn
+  4/5 search_second:classrooms   typed_only_async    text=3,160 stop=end_turn
+  4/5 search_second:toc          routed              text=5,758 stop=end_turn
+  4/5 search_second:toc          other_profile       text=5,926 stop=end_turn
+  4/5 search_second:toc          guardrail_off       text=2,241 stop=end_turn
+  4/5 search_second:toc          small_prompt        text=3,475 stop=end_turn
+  4/5 search_second:toc          small_prompt_no_gr  text=2,455 stop=end_turn
+  4/5 search_second:toc          fast_model          text=3,364 stop=end_turn
+  4/5 search_second:toc          async_guardrail     text=4,424 stop=end_turn
+  4/5 search_second:toc          typed_only          text=5,547 stop=end_turn
+  4/5 search_second:toc          typed_only_async    text=4,305 stop=end_turn
+  5/5 plain_first:article        routed              text=6,384 stop=end_turn
+  5/5 plain_first:article        other_profile       text=6,931 stop=end_turn
+  5/5 plain_first:article        guardrail_off       text=2,342 stop=end_turn
+  5/5 plain_first:article        small_prompt        text=4,261 stop=end_turn
+  5/5 plain_first:article        small_prompt_no_gr  text=2,672 stop=end_turn
+  5/5 plain_first:article        fast_model          text=4,594 stop=end_turn
+  5/5 plain_first:article        async_guardrail     text=3,439 stop=end_turn
+  5/5 plain_first:article        typed_only          text=7,053 stop=end_turn
+  5/5 plain_first:article        typed_only_async    text=3,452 stop=end_turn
+  5/5 plain_first:classrooms     routed              text=7,437 stop=end_turn
+  5/5 plain_first:classrooms     other_profile       text=7,858 stop=end_turn
+  5/5 plain_first:classrooms     guardrail_off       text=2,312 stop=end_turn
+  5/5 plain_first:classrooms     small_prompt        text=7,340 stop=end_turn
+  5/5 plain_first:classrooms     small_prompt_no_gr  text=1,377 stop=end_turn
+  5/5 plain_first:classrooms     fast_model          text=4,614 stop=end_turn
+  5/5 plain_first:classrooms     async_guardrail     text=3,618 stop=end_turn
+  5/5 plain_first:classrooms     typed_only          text=7,656 stop=end_turn
+  5/5 plain_first:classrooms     typed_only_async    text=3,298 stop=end_turn
+  5/5 plain_first:toc            routed              text=6,940 stop=end_turn
+  5/5 plain_first:toc            other_profile       text=6,668 stop=end_turn
+  5/5 plain_first:toc            guardrail_off       text=2,085 stop=end_turn
+  5/5 plain_first:toc            small_prompt        text=3,592 stop=end_turn
+  5/5 plain_first:toc            small_prompt_no_gr  text=1,665 stop=end_turn
+  5/5 plain_first:toc            fast_model          text=4,528 stop=end_turn
+  5/5 plain_first:toc            async_guardrail     text=3,943 stop=end_turn
+  5/5 plain_first:toc            typed_only          text=7,197 stop=end_turn
+  5/5 plain_first:toc            typed_only_async    text=3,478 stop=end_turn
+  5/5 search_second:article      routed              text=4,511 stop=end_turn
+  5/5 search_second:article      other_profile       text=5,254 stop=end_turn
+  5/5 search_second:article      guardrail_off       text=2,223 stop=end_turn
+  5/5 search_second:article      small_prompt        text=3,445 stop=end_turn
+  5/5 search_second:article      small_prompt_no_gr  text=1,330 stop=end_turn
+  5/5 search_second:article      fast_model          text=3,612 stop=end_turn
+  5/5 search_second:article      async_guardrail     text=4,533 stop=end_turn
+  5/5 search_second:article      typed_only          text=4,335 stop=end_turn
+  5/5 search_second:article      typed_only_async    text=3,275 stop=end_turn
+  5/5 search_second:classrooms   routed              text=5,160 stop=end_turn
+  5/5 search_second:classrooms   other_profile       text=4,409 stop=end_turn
+  5/5 search_second:classrooms   guardrail_off       text=3,459 stop=end_turn
+  5/5 search_second:classrooms   small_prompt        text=3,414 stop=end_turn
+  5/5 search_second:classrooms   small_prompt_no_gr  text=1,388 stop=end_turn
+  5/5 search_second:classrooms   fast_model          text=3,158 stop=end_turn
+  5/5 search_second:classrooms   async_guardrail     text=3,328 stop=end_turn
+  5/5 search_second:classrooms   typed_only          text=4,256 stop=end_turn
+  5/5 search_second:classrooms   typed_only_async    text=3,444 stop=end_turn
+  5/5 search_second:toc          routed              text=5,621 stop=end_turn
+  5/5 search_second:toc          other_profile       text=5,502 stop=end_turn
+  5/5 search_second:toc          guardrail_off       text=2,158 stop=end_turn
+  5/5 search_second:toc          small_prompt        text=3,838 stop=end_turn
+  5/5 search_second:toc          small_prompt_no_gr  text=1,286 stop=end_turn
+  5/5 search_second:toc          fast_model          text=3,946 stop=end_turn
+  5/5 search_second:toc          async_guardrail     text=4,427 stop=end_turn
+  5/5 search_second:toc          typed_only          text=5,696 stop=end_turn
+  5/5 search_second:toc          typed_only_async    text=4,316 stop=end_turn
+270 rows from /tmp/claude-1000/-home-lenovo/26617161-b16c-44c6-9118-2fb125cdce5c/scratchpad/rag-7875/experiments/ttft_floor_7875/step2_rows.jsonl
+
+sha=ee4795072e88  dirty=False  effort=low  thinking=  max_tokens=32000  strict=z6mtpcbzm5x1:16  curriculum=u5k53i63fu9b:4  small_system=You are Scout, an assistant for K-8 teachers.  sessions=['2026-10-29T16:50:37Z']
+call          arm                 profile           runs used blk oth err  text50  text90   aws50   aws90 event50 event90  resp50  tail50 out50   lat50 reason  rsn50  read50  wrt50
+plain_first   routed              curriculum/strict   15   15   0   0   0   6,939  10,139   6,075   9,262   6,939  10,138   2,934   1,121   466   7,365      1  9,078  22,288      0
+plain_first   other_profile       curriculum/strict   15   15   0   0   0   6,842   8,340   5,972   7,469   6,842   8,340   2,890   1,186   443   7,400      0      -  22,288      0
+plain_first   guardrail_off       none                15   15   0   0   0   2,281   2,357   1,405   1,487   2,281   2,357   2,280   4,562   464   6,019      0      -  22,288      0
+plain_first   small_prompt        curriculum/strict   15   15   0   0   0   4,544   7,340   4,256   7,031   4,544   7,339   2,002      14   156   4,261      0      -       -      -
+plain_first   small_prompt_no_gr  none                15   15   0   0   0   1,456   2,130   1,168   1,843   1,456   2,129   1,453   1,578   147   2,733      0      -       -      -
+plain_first   fast_model          curriculum/strict   15   15   0   0   0   4,614   5,102   3,741   4,223   4,614   5,102   2,189     455   327   4,210      0      -  16,528    396
+plain_first   async_guardrail     curriculum/strict   15   15   0   0   0   3,439   3,687   2,577   2,814   3,427   3,686   3,039   5,138   495   7,715      2  3,243  22,288      0
+plain_first   typed_only          curriculum/strict   15   15   0   0   0   7,053   8,909   6,123   7,760   7,053   8,908   2,886   1,414   527   7,128      1  9,025  22,288      0
+plain_first   typed_only_async    curriculum/strict   15   15   0   0   0   3,379   3,518   2,442   2,654   3,379   3,518   2,965   5,070   496   7,568      0      -  22,288      0
+search_second routed              curriculum          15   15   0   0   0   5,002   6,030   4,013   5,164   5,002   6,030   3,102       5    97   4,144      0      -  22,104  1,212
+search_second other_profile       strict              15   15   0   0   0   5,502   6,099   4,615   5,239   5,502   6,099   3,615       4    92   4,619      0      -  22,104  1,211
+search_second guardrail_off       none                15   15   0   0   0   2,310   2,679   1,425   1,818   2,309   2,679   2,308   1,092    97   2,577      0      -  22,104  1,212
+search_second small_prompt        curriculum          15   15   0   0   0   3,669   4,109   3,380   3,821   3,669   4,109   2,152       3    70   3,383      0      -       -      -
+search_second small_prompt_no_gr  none                15   15   0   0   0   1,447   1,599   1,160   1,313   1,447   1,599   1,446     762    72   1,929      0      -       -      -
+search_second fast_model          curriculum          15   15   0   0   0   3,525   3,691   2,583   2,789   3,525   3,691   2,163       6    83   2,700      0      -  16,528  1,219
+search_second async_guardrail     curriculum          15   15   0   0   0   3,542   4,429   2,678   3,569   3,542   4,429   3,123   1,520   105   4,040      0      -  22,104  1,210
+search_second typed_only          curriculum          15   15   0   0   0   5,010   6,618   4,151   5,748   5,010   6,617   3,193       5    98   4,157      0      -  22,104  1,211
+search_second typed_only_async    curriculum          15   15   0   0   0   3,479   4,316   2,612   3,451   3,479   4,316   3,076   1,372    97   3,977      0      -  22,104  1,212
+
+used = end_turn with text (percentiles are over these); blk = guardrail_intervened; oth = any other stop; aws = in-AWS first text, latencyMs minus (last byte - first text) per run; event = first stream event; resp = HTTP response open; tail50 = last byte minus first text; lat50 = Bedrock's latencyMs; reason = used runs with reasoning first, rsn50 = their first reasoning p50
+settings: sha=ee4795072e88  dirty=False  effort=low  thinking=  max_tokens=32000  strict=z6mtpcbzm5x1:16  curriculum=u5k53i63fu9b:4  model_main=us.anthropic.claude-sonnet-5  idle_retries=1
+  block:sync:all           77,382 bytes  guardrail=z6mtpcbzm5x1:16  mode=sync  typed_only=False
+  block:sync:typed         77,410 bytes  guardrail=z6mtpcbzm5x1:16  mode=sync  typed_only=True
+  block:async:all          77,383 bytes  guardrail=z6mtpcbzm5x1:16  mode=async  typed_only=False
+  block:async:typed        77,411 bytes  guardrail=z6mtpcbzm5x1:16  mode=async  typed_only=True
+  mask:strict:sync            582 bytes  guardrail=z6mtpcbzm5x1:16  mode=sync  typed_only=False
+  mask:strict:async           583 bytes  guardrail=z6mtpcbzm5x1:16  mode=async  typed_only=False
+  mask:curriculum:sync        581 bytes  guardrail=u5k53i63fu9b:4  mode=sync  typed_only=False
+  mask:curriculum:async       582 bytes  guardrail=u5k53i63fu9b:4  mode=async  typed_only=False
+  1/5 block:sync:all         outcome=complete             attempts=1 stop=end_turn verdicts=[] seen=953
+  1/5 block:sync:typed       outcome=complete             attempts=1 stop=end_turn verdicts=[] seen=1068
+  1/5 block:async:all        outcome=complete             attempts=1 stop=end_turn verdicts=[] seen=984
+  1/5 block:async:typed      outcome=complete             attempts=1 stop=end_turn verdicts=[] seen=1348
+{"level":"INFO","location":"_once:581","message":"Bedrock guardrail masked PII only, turn continues","timestamp":"2026-10-29 22:17:53,718+0500","service":"CoreLoop","taskName":"Task-37","guardrail_verdicts":["pii:EMAIL:ANONYMIZED","pii:PHONE:ANONYMIZED"]}
+  1/5 mask:strict:sync       outcome=complete             attempts=1 stop=guardrail_intervened verdicts=['pii:EMAIL:ANONYMIZED', 'pii:PHONE:ANONYMIZED'] seen=345
+{"level":"INFO","location":"_once:581","message":"Bedrock guardrail masked PII only, turn continues","timestamp":"2026-10-29 22:17:58,654+0500","service":"CoreLoop","taskName":"Task-40","guardrail_verdicts":["pii:EMAIL:ANONYMIZED","pii:PHONE:ANONYMIZED"]}
+  1/5 mask:strict:async      outcome=complete             attempts=1 stop=guardrail_intervened verdicts=['pii:EMAIL:ANONYMIZED', 'pii:PHONE:ANONYMIZED'] seen=476
+{"level":"INFO","location":"_once:581","message":"Bedrock guardrail masked PII only, turn continues","timestamp":"2026-10-29 22:18:04,044+0500","service":"CoreLoop","taskName":"Task-43","guardrail_verdicts":["pii:EMAIL:ANONYMIZED","pii:PHONE:ANONYMIZED"]}
+  1/5 mask:curriculum:sync   outcome=complete             attempts=1 stop=guardrail_intervened verdicts=['pii:EMAIL:ANONYMIZED', 'pii:PHONE:ANONYMIZED'] seen=393
+{"level":"INFO","location":"_once:581","message":"Bedrock guardrail masked PII only, turn continues","timestamp":"2026-10-29 22:18:09,260+0500","service":"CoreLoop","taskName":"Task-46","guardrail_verdicts":["pii:EMAIL:ANONYMIZED","pii:PHONE:ANONYMIZED"]}
+  1/5 mask:curriculum:async  outcome=complete             attempts=1 stop=guardrail_intervened verdicts=['pii:EMAIL:ANONYMIZED', 'pii:PHONE:ANONYMIZED'] seen=414
+  2/5 block:sync:all         outcome=complete             attempts=1 stop=end_turn verdicts=[] seen=1025
+  2/5 block:sync:typed       outcome=complete             attempts=1 stop=end_turn verdicts=[] seen=1163
+  2/5 block:async:all        outcome=complete             attempts=1 stop=end_turn verdicts=[] seen=1274
+  2/5 block:async:typed      outcome=complete             attempts=1 stop=end_turn verdicts=[] seen=918
+{"level":"INFO","location":"_once:581","message":"Bedrock guardrail masked PII only, turn continues","timestamp":"2026-10-29 22:18:39,983+0500","service":"CoreLoop","taskName":"Task-61","guardrail_verdicts":["pii:EMAIL:ANONYMIZED","pii:PHONE:ANONYMIZED"]}
+  2/5 mask:strict:sync       outcome=complete             attempts=1 stop=guardrail_intervened verdicts=['pii:EMAIL:ANONYMIZED', 'pii:PHONE:ANONYMIZED'] seen=399
+{"level":"INFO","location":"_once:581","message":"Bedrock guardrail masked PII only, turn continues","timestamp":"2026-10-29 22:18:44,078+0500","service":"CoreLoop","taskName":"Task-64","guardrail_verdicts":["pii:EMAIL:ANONYMIZED","pii:PHONE:ANONYMIZED"]}
+  2/5 mask:strict:async      outcome=complete             attempts=1 stop=guardrail_intervened verdicts=['pii:EMAIL:ANONYMIZED', 'pii:PHONE:ANONYMIZED'] seen=359
+{"level":"INFO","location":"_once:581","message":"Bedrock guardrail masked PII only, turn continues","timestamp":"2026-10-29 22:18:48,679+0500","service":"CoreLoop","taskName":"Task-67","guardrail_verdicts":["pii:EMAIL:ANONYMIZED","pii:PHONE:ANONYMIZED"]}
+  2/5 mask:curriculum:sync   outcome=complete             attempts=1 stop=guardrail_intervened verdicts=['pii:EMAIL:ANONYMIZED', 'pii:PHONE:ANONYMIZED'] seen=358
+{"level":"INFO","location":"_once:581","message":"Bedrock guardrail masked PII only, turn continues","timestamp":"2026-10-29 22:18:52,662+0500","service":"CoreLoop","taskName":"Task-70","guardrail_verdicts":["pii:EMAIL:ANONYMIZED","pii:PHONE:ANONYMIZED"]}
+  2/5 mask:curriculum:async  outcome=complete             attempts=1 stop=guardrail_intervened verdicts=['pii:EMAIL:ANONYMIZED', 'pii:PHONE:ANONYMIZED'] seen=344
+  3/5 block:sync:all         outcome=complete             attempts=1 stop=end_turn verdicts=[] seen=839
+  3/5 block:sync:typed       outcome=complete             attempts=1 stop=end_turn verdicts=[] seen=833
+{"level":"WARNING","location":"_once:575","message":"Bedrock guardrail intervened","timestamp":"2026-10-29 22:19:12,339+0500","service":"CoreLoop","taskName":"Task-79","guardrail_verdicts":["topic:Political and Extremist Content:BLOCKED"]}
+  3/5 block:async:all        outcome=guardrail_intervened attempts=1 stop=guardrail_intervened verdicts=['topic:Political and Extremist Content:BLOCKED'] seen=1048
+  3/5 block:async:typed      outcome=complete             attempts=1 stop=end_turn verdicts=[] seen=1435
+{"level":"INFO","location":"_once:581","message":"Bedrock guardrail masked PII only, turn continues","timestamp":"2026-10-29 22:19:23,322+0500","service":"CoreLoop","taskName":"Task-85","guardrail_verdicts":["pii:EMAIL:ANONYMIZED","pii:PHONE:ANONYMIZED"]}
+  3/5 mask:strict:sync       outcome=complete             attempts=1 stop=guardrail_intervened verdicts=['pii:EMAIL:ANONYMIZED', 'pii:PHONE:ANONYMIZED'] seen=298
+{"level":"INFO","location":"_once:581","message":"Bedrock guardrail masked PII only, turn continues","timestamp":"2026-10-29 22:19:27,561+0500","service":"CoreLoop","taskName":"Task-88","guardrail_verdicts":["pii:EMAIL:ANONYMIZED","pii:PHONE:ANONYMIZED"]}
+  3/5 mask:strict:async      outcome=complete             attempts=1 stop=guardrail_intervened verdicts=['pii:EMAIL:ANONYMIZED', 'pii:PHONE:ANONYMIZED'] seen=311
+{"level":"INFO","location":"_once:581","message":"Bedrock guardrail masked PII only, turn continues","timestamp":"2026-10-29 22:19:32,811+0500","service":"CoreLoop","taskName":"Task-91","guardrail_verdicts":["pii:EMAIL:ANONYMIZED","pii:PHONE:ANONYMIZED"]}
+  3/5 mask:curriculum:sync   outcome=complete             attempts=1 stop=guardrail_intervened verdicts=['pii:EMAIL:ANONYMIZED', 'pii:PHONE:ANONYMIZED'] seen=389
+{"level":"INFO","location":"_once:581","message":"Bedrock guardrail masked PII only, turn continues","timestamp":"2026-10-29 22:19:37,117+0500","service":"CoreLoop","taskName":"Task-94","guardrail_verdicts":["pii:EMAIL:ANONYMIZED","pii:PHONE:ANONYMIZED"]}
+  3/5 mask:curriculum:async  outcome=complete             attempts=1 stop=guardrail_intervened verdicts=['pii:EMAIL:ANONYMIZED', 'pii:PHONE:ANONYMIZED'] seen=375
+  4/5 block:sync:all         outcome=complete             attempts=1 stop=end_turn verdicts=[] seen=1274
+  4/5 block:sync:typed       outcome=complete             attempts=1 stop=end_turn verdicts=[] seen=1025
+  4/5 block:async:all        outcome=complete             attempts=1 stop=end_turn verdicts=[] seen=1282
+  4/5 block:async:typed      outcome=complete             attempts=1 stop=end_turn verdicts=[] seen=1133
+{"level":"INFO","location":"_once:581","message":"Bedrock guardrail masked PII only, turn continues","timestamp":"2026-10-29 22:20:12,950+0500","service":"CoreLoop","taskName":"Task-109","guardrail_verdicts":["pii:EMAIL:ANONYMIZED","pii:PHONE:ANONYMIZED"]}
+  4/5 mask:strict:sync       outcome=complete             attempts=1 stop=guardrail_intervened verdicts=['pii:EMAIL:ANONYMIZED', 'pii:PHONE:ANONYMIZED'] seen=386
+{"level":"INFO","location":"_once:581","message":"Bedrock guardrail masked PII only, turn continues","timestamp":"2026-10-29 22:20:18,010+0500","service":"CoreLoop","taskName":"Task-112","guardrail_verdicts":["pii:EMAIL:ANONYMIZED","pii:PHONE:ANONYMIZED"]}
+  4/5 mask:strict:async      outcome=complete             attempts=1 stop=guardrail_intervened verdicts=['pii:EMAIL:ANONYMIZED', 'pii:PHONE:ANONYMIZED'] seen=422
+{"level":"INFO","location":"_once:581","message":"Bedrock guardrail masked PII only, turn continues","timestamp":"2026-10-29 22:20:23,143+0500","service":"CoreLoop","taskName":"Task-115","guardrail_verdicts":["pii:EMAIL:ANONYMIZED","pii:PHONE:ANONYMIZED"]}
+  4/5 mask:curriculum:sync   outcome=complete             attempts=1 stop=guardrail_intervened verdicts=['pii:EMAIL:ANONYMIZED', 'pii:PHONE:ANONYMIZED'] seen=390
+{"level":"INFO","location":"_once:581","message":"Bedrock guardrail masked PII only, turn continues","timestamp":"2026-10-29 22:20:27,670+0500","service":"CoreLoop","taskName":"Task-118","guardrail_verdicts":["pii:EMAIL:ANONYMIZED","pii:PHONE:ANONYMIZED"]}
+  4/5 mask:curriculum:async  outcome=complete             attempts=1 stop=guardrail_intervened verdicts=['pii:EMAIL:ANONYMIZED', 'pii:PHONE:ANONYMIZED'] seen=405
+  5/5 block:sync:all         outcome=complete             attempts=1 stop=end_turn verdicts=[] seen=842
+  5/5 block:sync:typed       outcome=complete             attempts=1 stop=end_turn verdicts=[] seen=1001
+  5/5 block:async:all        outcome=complete             attempts=1 stop=end_turn verdicts=[] seen=1211
+  5/5 block:async:typed      outcome=complete             attempts=1 stop=end_turn verdicts=[] seen=1162
+{"level":"INFO","location":"_once:581","message":"Bedrock guardrail masked PII only, turn continues","timestamp":"2026-10-29 22:20:57,947+0500","service":"CoreLoop","taskName":"Task-133","guardrail_verdicts":["pii:EMAIL:ANONYMIZED","pii:PHONE:ANONYMIZED"]}
+  5/5 mask:strict:sync       outcome=complete             attempts=1 stop=guardrail_intervened verdicts=['pii:EMAIL:ANONYMIZED', 'pii:PHONE:ANONYMIZED'] seen=349
+{"level":"INFO","location":"_once:581","message":"Bedrock guardrail masked PII only, turn continues","timestamp":"2026-10-29 22:21:02,684+0500","service":"CoreLoop","taskName":"Task-136","guardrail_verdicts":["pii:EMAIL:ANONYMIZED","pii:PHONE:ANONYMIZED"]}
+  5/5 mask:strict:async      outcome=complete             attempts=1 stop=guardrail_intervened verdicts=['pii:EMAIL:ANONYMIZED', 'pii:PHONE:ANONYMIZED'] seen=357
+{"level":"INFO","location":"_once:581","message":"Bedrock guardrail masked PII only, turn continues","timestamp":"2026-10-29 22:21:07,033+0500","service":"CoreLoop","taskName":"Task-139","guardrail_verdicts":["pii:EMAIL:ANONYMIZED","pii:PHONE:ANONYMIZED"]}
+  5/5 mask:curriculum:sync   outcome=complete             attempts=1 stop=guardrail_intervened verdicts=['pii:EMAIL:ANONYMIZED', 'pii:PHONE:ANONYMIZED'] seen=275
+{"level":"INFO","location":"_once:581","message":"Bedrock guardrail masked PII only, turn continues","timestamp":"2026-10-29 22:21:12,139+0500","service":"CoreLoop","taskName":"Task-142","guardrail_verdicts":["pii:EMAIL:ANONYMIZED","pii:PHONE:ANONYMIZED"]}
+  5/5 mask:curriculum:async  outcome=complete             attempts=1 stop=guardrail_intervened verdicts=['pii:EMAIL:ANONYMIZED', 'pii:PHONE:ANONYMIZED'] seen=435
+120 rows from /tmp/claude-1000/-home-lenovo/26617161-b16c-44c6-9118-2fb125cdce5c/scratchpad/rag-7875/experiments/ttft_floor_7875/block_rows.jsonl  sessions=['2026-10-29T07:09:48Z', '2026-10-29T17:17:19Z']  shas=['3ecfbf65f766', 'ee4795072e88']
+
+block:async:all  runs=15
+  outcome         {'complete': 14, 'guardrail_intervened': 1}
+  attempts        {1: 15}  (2 = the loop regenerated)
+  1st stop        {'end_turn': 14, 'guardrail_intervened': 1}
+  1st verdicts    {'-': 14, 'topic:Political and Extremist Content:BLOCKED': 1}
+  1st side        input 0, output 1
+  1st Bedrock msg 0 runs; model text before it (chars) []
+  1st first text  p50 3,211 ms, stop p50 6,453 ms
+  teacher saw     chars p50 1,053; Bedrock msg 0; raw email 0, raw phone 0; placeholders {'-': 15}
+  raised          {'-': 14, 'I am programmed to be a helpful and harmless AI assistant. My safety g': 1}
+
+block:async:typed  runs=15
+  outcome         {'complete': 14, 'guardrail_intervened': 1}
+  attempts        {1: 15}  (2 = the loop regenerated)
+  1st stop        {'end_turn': 14, 'guardrail_intervened': 1}
+  1st verdicts    {'-': 14, 'topic:Political and Extremist Content:BLOCKED': 1}
+  1st side        input 0, output 1
+  1st Bedrock msg 0 runs; model text before it (chars) []
+  1st first text  p50 3,257 ms, stop p50 6,588 ms
+  teacher saw     chars p50 1,127; Bedrock msg 0; raw email 0, raw phone 0; placeholders {'-': 15}
+  raised          {'-': 14, 'I am programmed to be a helpful and harmless AI assistant. My safety g': 1}
+
+block:sync:all  runs=15
+  outcome         {'complete': 14, 'guardrail_intervened': 1}
+  attempts        {1: 15}  (2 = the loop regenerated)
+  1st stop        {'end_turn': 14, 'guardrail_intervened': 1}
+  1st verdicts    {'-': 14, 'topic:Political and Extremist Content:BLOCKED': 1}
+  1st side        input 0, output 1
+  1st Bedrock msg 1 runs; model text before it (chars) [1004]
+  1st first text  p50 6,256 ms, stop p50 6,419 ms
+  teacher saw     chars p50 1,050; Bedrock msg 1; raw email 0, raw phone 0; placeholders {'-': 15}
+  raised          {'-': 14, 'I am programmed to be a helpful and harmless AI assistant. My safety g': 1}
+
+block:sync:typed  runs=15
+  outcome         {'complete': 14, 'guardrail_intervened': 1}
+  attempts        {1: 15}  (2 = the loop regenerated)
+  1st stop        {'end_turn': 14, 'guardrail_intervened': 1}
+  1st verdicts    {'-': 14, 'topic:Political and Extremist Content:BLOCKED': 1}
+  1st side        input 0, output 1
+  1st Bedrock msg 1 runs; model text before it (chars) [1000]
+  1st first text  p50 6,292 ms, stop p50 6,578 ms
+  teacher saw     chars p50 1,068; Bedrock msg 1; raw email 0, raw phone 0; placeholders {'-': 15}
+  raised          {'-': 14, 'I am programmed to be a helpful and harmless AI assistant. My safety g': 1}
+
+mask:curriculum:async  runs=15
+  outcome         {'complete': 15}
+  attempts        {1: 15}  (2 = the loop regenerated)
+  1st stop        {'guardrail_intervened': 15}
+  1st verdicts    {'pii:EMAIL:ANONYMIZED;pii:PHONE:ANONYMIZED': 15}
+  1st side        input 0, output 0
+  1st Bedrock msg 0 runs; model text before it (chars) []
+  1st first text  p50 2,474 ms, stop p50 4,338 ms
+  teacher saw     chars p50 394; Bedrock msg 0; raw email 15, raw phone 15; placeholders {'-': 15}
+  raised          {'-': 15}
+
+mask:curriculum:sync  runs=15
+  outcome         {'complete': 15}
+  attempts        {1: 15}  (2 = the loop regenerated)
+  1st stop        {'guardrail_intervened': 15}
+  1st verdicts    {'pii:EMAIL:ANONYMIZED;pii:PHONE:ANONYMIZED': 15}
+  1st side        input 0, output 0
+  1st Bedrock msg 0 runs; model text before it (chars) []
+  1st first text  p50 4,540 ms, stop p50 4,549 ms
+  teacher saw     chars p50 358; Bedrock msg 0; raw email 0, raw phone 0; placeholders {'EMAIL,PHONE': 15}
+  raised          {'-': 15}
+
+mask:strict:async  runs=15
+  outcome         {'complete': 15}
+  attempts        {1: 15}  (2 = the loop regenerated)
+  1st stop        {'guardrail_intervened': 15}
+  1st verdicts    {'pii:EMAIL:ANONYMIZED;pii:PHONE:ANONYMIZED': 15}
+  1st side        input 0, output 0
+  1st Bedrock msg 0 runs; model text before it (chars) []
+  1st first text  p50 2,393 ms, stop p50 4,233 ms
+  teacher saw     chars p50 364; Bedrock msg 0; raw email 15, raw phone 15; placeholders {'-': 15}
+  raised          {'-': 15}
+
+mask:strict:sync  runs=15
+  outcome         {'complete': 15}
+  attempts        {1: 15}  (2 = the loop regenerated)
+  1st stop        {'guardrail_intervened': 15}
+  1st verdicts    {'pii:EMAIL:ANONYMIZED;pii:PHONE:ANONYMIZED': 15}
+  1st side        input 0, output 0
+  1st Bedrock msg 0 runs; model text before it (chars) []
+  1st first text  p50 4,296 ms, stop p50 4,304 ms
+  teacher saw     chars p50 348; Bedrock msg 0; raw email 0, raw phone 0; placeholders {'EMAIL,PHONE': 15}
+  raised          {'-': 15}

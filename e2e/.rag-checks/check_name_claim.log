@@ -1,0 +1,59 @@
+PASS fires: Names aren't something I can see or share — the page shows s
+PASS fires: Same as before — I can't get scores for RRT2H2 since they're
+PASS fires: Michael Franklin doesn't have a real name I can search by — 
+PASS fires: I can't look up an individual student by name/code that way 
+PASS fires: I cannot see your students' names.
+PASS fires: I'm unable to access student names from here.
+PASS fires: I only see students as codes, not names.
+PASS fires: Student names aren't something I can show you.
+PASS fires: I don’t have a way to know their real names, so I’ll use the
+PASS fires: I can’t see the student’s name.
+PASS fires: As for names — I can't display real student names myself; th
+PASS fires: The roster reaches me only as identifiers.
+PASS fires: I also can't give you a student's real name.
+PASS fires: "Student K7QM4R"), with the real names visible to you on scr
+PASS fires: Their names show on your screen but are not sent to me.
+PASS fires: I can't tell you which student that is by name.
+PASS fires: I can't share their real names here.
+PASS fires: Once there's enough scored work, I can tell you which pseudo
+PASS fires: I only see pseudonymised names on this page.
+PASS fires: Students are anonymized for me.
+PASS fires: Names come through masked.
+PASS fires: These are coded students, so check your roster for their rea
+PASS fires: You can match the code to the student on your roster.
+PASS fires: Look up who that is on your roster.
+PASS fires: Cross-reference these with your class list to get each name.
+PASS stays: I couldn't find a student named Sunny Day in pretty class.
+PASS stays: Which student do you mean? Tell me their full name.
+PASS stays: I can't see Rose Thompson's scores because she's dropped.
+PASS stays: Use only the codes the page gives for these standards.
+PASS stays: TEKS 2.15(B) is shown as a code in the standards list.
+PASS stays: Student K7QM4R has 3 of 5 items finished as of Tuesday.
+PASS stays: I can't include student names in a summary you share with yo
+PASS stays: I don't have a way to email families, but I can draft the no
+PASS stays: Names in the groups card are sorted alphabetically.
+PASS stays: I can't reveal the answer key to students.
+PASS stays: Rachel Harris has the highest assessment average, 83.3%.
+PASS stays: Scout needs work from at least 2 separate weeks to summarise
+PASS stays: I can't share student names in a summary for your principal.
+PASS stays: No student has enough scored work in that period, so I can't
+PASS stays: I can't give you a score for Student K7QM4R because there is
+PASS stays: The report wasn't sent to me, so I can't check it.
+PASS stays: Check your roster to add a student.
+PASS stays: The coded questions are in the card.
+PASS stays: Your roster shows 94 students.
+PASS stays: Find Sunny Dayy 21 on the People page to restore her.
+PASS stays: You can match each standard to the week that teaches it.
+PASS stays: The masked dancers in this article come from a festival.
+PASS stays: The color-coded names in the groups card show each group.
+PASS a reply keeps its other sentences
+PASS the screen records that it fired
+PASS a clean reply is unchanged
+PASS empty text passes through
+PASS N2 streamed word by word: the whole claim sentence goes, across its 'e.g.'
+PASS a claim in a sentence's later clause takes the whole sentence: no clause of it is shown
+PASS N3 streamed word by word: no fragment of a dropped sentence is shown
+PASS a clean reply streamed in pieces is unchanged
+PASS the chat loop runs every reply through the screen
+
+all passed

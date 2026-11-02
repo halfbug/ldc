@@ -1,0 +1,327 @@
+{
+  "name": "swo-genai-pov-guardrails-p2-candidate",
+  "description": "Phase 2 A/B candidate: DEV v12 with intent-scoped topic definitions (no exclusion clauses). Evaluate-only via ApplyGuardrail; not attached to any lambda.",
+  "crossRegionConfig": {
+    "guardrailProfileIdentifier": "arn:aws:bedrock:us-west-2:976193258093:guardrail-profile/us.guardrail.v1:0"
+  },
+  "topicPolicyConfig": {
+    "topicsConfig": [
+      {
+        "name": "Violence",
+        "definition": "Instructions or encouragement to hurt people: making weapons, planning attacks, killing, torture, or self-harm methods.",
+        "examples": [
+          "How to commit suicide",
+          "How to kill someone",
+          "How to make a pipe bomb",
+          "Torture methods"
+        ],
+        "type": "DENY",
+        "inputEnabled": true,
+        "inputAction": "BLOCK",
+        "outputEnabled": true,
+        "outputAction": "BLOCK"
+      },
+      {
+        "name": "Illegal Substances",
+        "definition": "Help getting, making, using, or hiding illegal drugs or steroids, or helping a minor get or use alcohol, tobacco, or vapes.",
+        "examples": [
+          "Buy steroids online",
+          "How to make meth",
+          "How to vape without getting caught",
+          "Underage drinking tips"
+        ],
+        "type": "DENY",
+        "inputEnabled": true,
+        "inputAction": "BLOCK",
+        "outputEnabled": true,
+        "outputAction": "BLOCK"
+      },
+      {
+        "name": "Hate Speech",
+        "definition": "Output that insults or demeans people for their race, religion, gender, sexuality, disability, or class, or presents a stereotype about them as true.",
+        "examples": [
+          "How to bully someone online",
+          "Racist jokes",
+          "Stereotypes about a culture's clothing or traditions",
+          "Why group X is inferior",
+          "Why women are worse at this job than men"
+        ],
+        "type": "DENY",
+        "inputEnabled": false,
+        "inputAction": "NONE",
+        "outputEnabled": true,
+        "outputAction": "BLOCK"
+      },
+      {
+        "name": "Crime",
+        "definition": "Instructions or help to commit theft, hacking, fraud, trafficking, or piracy, or to avoid being caught for a crime.",
+        "examples": [
+          "Download pirated movies",
+          "How to hack a system",
+          "How to steal credit cards",
+          "How to traffick people"
+        ],
+        "type": "DENY",
+        "inputEnabled": true,
+        "inputAction": "BLOCK",
+        "outputEnabled": true,
+        "outputAction": "BLOCK"
+      },
+      {
+        "name": "Explicit Content",
+        "definition": "Pornography, sexual roleplay, sexual or romantic talk between the assistant and the user, or grooming a minor.",
+        "examples": [
+          "Be my girlfriend",
+          "Send me explicit photos",
+          "Sexual roleplay scenario"
+        ],
+        "type": "DENY",
+        "inputEnabled": true,
+        "inputAction": "BLOCK",
+        "outputEnabled": true,
+        "outputAction": "BLOCK"
+      },
+      {
+        "name": "Restricted Topics",
+        "definition": "Output that recruits for or praises violent extremists, helps a minor gamble, gives steps for an occult ritual or dangerous challenge, or helps a student evade school controls.",
+        "examples": [
+          "Bypass school content filter",
+          "Do the blackout challenge",
+          "How to join a terrorist group",
+          "How to summon a demon",
+          "Online gambling for teens"
+        ],
+        "type": "DENY",
+        "inputEnabled": false,
+        "inputAction": "NONE",
+        "outputEnabled": true,
+        "outputAction": "BLOCK"
+      },
+      {
+        "name": "Political and Extremist Content",
+        "definition": "Output telling the user which candidate or party to vote for or support, or writing campaign slogans or ads for a candidate or party.",
+        "examples": [
+          "Convince me to vote for this candidate",
+          "Persuade me to support this candidate over that one",
+          "Which political party should I support",
+          "Write a political campaign slogan"
+        ],
+        "type": "DENY",
+        "inputEnabled": false,
+        "inputAction": "NONE",
+        "outputEnabled": true,
+        "outputAction": "BLOCK"
+      },
+      {
+        "name": "Financial Scams and Advice",
+        "definition": "Output promoting a specific investment, coin, or get-rich scheme, giving insider-trading tips, or telling the user what to buy or sell to make money.",
+        "examples": [
+          "Get rich quick scheme",
+          "Give me insider trading tips",
+          "Guaranteed investment scheme",
+          "Promote this cryptocurrency"
+        ],
+        "type": "DENY",
+        "inputEnabled": false,
+        "inputAction": "NONE",
+        "outputEnabled": true,
+        "outputAction": "BLOCK"
+      },
+      {
+        "name": "Copyright and Intellectual Property",
+        "definition": "Output that gives pirated media or links to it, explains removing DRM or watermarks, or helps counterfeit goods.",
+        "examples": [
+          "Bypass DRM protection",
+          "Download this movie for free",
+          "Give me a pirated copy of this book",
+          "Remove the watermark from this file"
+        ],
+        "type": "DENY",
+        "inputEnabled": false,
+        "inputAction": "NONE",
+        "outputEnabled": true,
+        "outputAction": "BLOCK"
+      },
+      {
+        "name": "Biometric Identification",
+        "definition": "Output that names, identifies, or matches a specific real person from a photo, voice, fingerprint, DNA, or other biometric data.",
+        "examples": [
+          "Identify this person from their fingerprint",
+          "Match this face to a database",
+          "Recognize this face",
+          "Who is this person in the photo"
+        ],
+        "type": "DENY",
+        "inputEnabled": false,
+        "inputAction": "NONE",
+        "outputEnabled": true,
+        "outputAction": "BLOCK"
+      },
+      {
+        "name": "Therapy Counseling and Legal Advice",
+        "definition": "Output acting as the user's therapist, counselor, or lawyer: diagnosing their mental health, prescribing their treatment, or advising on their own legal case.",
+        "examples": [
+          "Act as my therapist",
+          "Am I legally liable for this",
+          "Counsel me through my personal crisis",
+          "Give me legal advice for my case"
+        ],
+        "type": "DENY",
+        "inputEnabled": false,
+        "inputAction": "NONE",
+        "outputEnabled": true,
+        "outputAction": "BLOCK"
+      },
+      {
+        "name": "Manipulative or Coercive Language",
+        "definition": "Output pressuring the user by guilt, obligation, flattery, or threat, such as saying they owe the assistant or will disappoint someone unless they comply.",
+        "examples": [
+          "As your teacher I'm disappointed if you don't comply",
+          "If you cared about me you'd do this",
+          "You owe me since we're friends"
+        ],
+        "type": "DENY",
+        "inputEnabled": false,
+        "inputAction": "NONE",
+        "outputEnabled": true,
+        "outputAction": "BLOCK"
+      },
+      {
+        "name": "Personal Safety and Privacy Violations",
+        "definition": "Output that asks for or repeats someone's private identifiers, diagnoses the user's own symptoms, or gives legal advice on the user's own situation.",
+        "examples": [
+          "Am I liable for this accident",
+          "Diagnose my chest pain",
+          "My SSN is 123-45-6789",
+          "Store my fingerprint data"
+        ],
+        "type": "DENY",
+        "inputEnabled": false,
+        "inputAction": "NONE",
+        "outputEnabled": true,
+        "outputAction": "BLOCK"
+      }
+    ],
+    "tierConfig": {
+      "tierName": "STANDARD"
+    }
+  },
+  "contentPolicyConfig": {
+    "filtersConfig": [
+      {
+        "type": "VIOLENCE",
+        "inputStrength": "MEDIUM",
+        "outputStrength": "MEDIUM"
+      },
+      {
+        "type": "PROMPT_ATTACK",
+        "inputStrength": "LOW",
+        "outputStrength": "NONE"
+      },
+      {
+        "type": "MISCONDUCT",
+        "inputStrength": "MEDIUM",
+        "outputStrength": "MEDIUM"
+      },
+      {
+        "type": "HATE",
+        "inputStrength": "MEDIUM",
+        "outputStrength": "MEDIUM"
+      },
+      {
+        "type": "SEXUAL",
+        "inputStrength": "MEDIUM",
+        "outputStrength": "MEDIUM"
+      },
+      {
+        "type": "INSULTS",
+        "inputStrength": "MEDIUM",
+        "outputStrength": "MEDIUM"
+      }
+    ],
+    "tierConfig": {
+      "tierName": "STANDARD"
+    }
+  },
+  "wordPolicyConfig": {
+    "managedWordListsConfig": [
+      {
+        "type": "PROFANITY"
+      }
+    ],
+    "wordsConfig": [
+      {
+        "text": "pipe bomb"
+      },
+      {
+        "text": "suicide method"
+      },
+      {
+        "text": "self harm instructions"
+      },
+      {
+        "text": "child grooming"
+      },
+      {
+        "text": "thinspo"
+      },
+      {
+        "text": "pro-ana"
+      }
+    ]
+  },
+  "sensitiveInformationPolicyConfig": {
+    "piiEntitiesConfig": [
+      {
+        "type": "EMAIL",
+        "action": "ANONYMIZE"
+      },
+      {
+        "type": "PHONE",
+        "action": "ANONYMIZE"
+      },
+      {
+        "type": "USERNAME",
+        "action": "ANONYMIZE"
+      },
+      {
+        "type": "US_SOCIAL_SECURITY_NUMBER",
+        "action": "BLOCK"
+      },
+      {
+        "type": "CREDIT_DEBIT_CARD_NUMBER",
+        "action": "BLOCK"
+      },
+      {
+        "type": "PASSWORD",
+        "action": "BLOCK"
+      },
+      {
+        "type": "AWS_SECRET_KEY",
+        "action": "BLOCK"
+      }
+    ],
+    "regexesConfig": [
+      {
+        "name": "BiometricData",
+        "description": "Blocks base64 images",
+        "pattern": "data:image\\/[a-z]+;base64,[A-Za-z0-9+\\/=]{100,}",
+        "action": "BLOCK"
+      }
+    ]
+  },
+  "contextualGroundingPolicyConfig": {
+    "filtersConfig": [
+      {
+        "type": "GROUNDING",
+        "threshold": 0.7
+      },
+      {
+        "type": "RELEVANCE",
+        "threshold": 0.7
+      }
+    ]
+  },
+  "blockedInputMessaging": "Sorry — I can't help with that one. It's outside what I'm able to answer here. Please try a different question.",
+  "blockedOutputsMessaging": "Sorry — I couldn't give you an answer to that. Your question got through; my answer didn't make it past a content check. It's worth trying again, and if it keeps happening please tell your administrator."
+}

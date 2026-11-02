@@ -1,0 +1,103 @@
+PASS all eighteen tools load
+PASS module name equals tool name
+PASS search_curriculum satisfies CoreTool
+PASS search_curriculum spec names itself
+PASS search_curriculum spec has a JSON object schema
+PASS offer_match satisfies CoreTool
+PASS offer_match spec names itself
+PASS offer_match spec has a JSON object schema
+PASS build_teaching_set satisfies CoreTool
+PASS build_teaching_set spec names itself
+PASS build_teaching_set spec has a JSON object schema
+PASS prepare_lesson satisfies CoreTool
+PASS prepare_lesson spec names itself
+PASS prepare_lesson spec has a JSON object schema
+PASS get_article_resources satisfies CoreTool
+PASS get_article_resources spec names itself
+PASS get_article_resources spec has a JSON object schema
+PASS search_help satisfies CoreTool
+PASS search_help spec names itself
+PASS search_help spec has a JSON object schema
+PASS write_artifact satisfies CoreTool
+PASS write_artifact spec names itself
+PASS write_artifact spec has a JSON object schema
+PASS generate_questions satisfies CoreTool
+PASS generate_questions spec names itself
+PASS generate_questions spec has a JSON object schema
+PASS draft_assignment satisfies CoreTool
+PASS draft_assignment spec names itself
+PASS draft_assignment spec has a JSON object schema
+PASS check_assignment satisfies CoreTool
+PASS check_assignment spec names itself
+PASS check_assignment spec has a JSON object schema
+PASS find_assignments satisfies CoreTool
+PASS find_assignments spec names itself
+PASS find_assignments spec has a JSON object schema
+PASS level_article satisfies CoreTool
+PASS level_article spec names itself
+PASS level_article spec has a JSON object schema
+PASS grade_answers satisfies CoreTool
+PASS grade_answers spec names itself
+PASS grade_answers spec has a JSON object schema
+PASS ask_user satisfies CoreTool
+PASS ask_user spec names itself
+PASS ask_user spec has a JSON object schema
+PASS page_action satisfies CoreTool
+PASS page_action spec names itself
+PASS page_action spec has a JSON object schema
+PASS remember satisfies CoreTool
+PASS remember spec names itself
+PASS remember spec has a JSON object schema
+PASS forget satisfies CoreTool
+PASS forget spec names itself
+PASS forget spec has a JSON object schema
+PASS suggest_standards satisfies CoreTool
+PASS suggest_standards spec names itself
+PASS suggest_standards spec has a JSON object schema
+PASS page_action withheld in Plan mode
+PASS page_action offered in Agent mode
+PASS page_action defines no spec_for (its schema is page-independent)
+PASS page_action's capability arg carries no enum
+PASS page_action's tool spec is byte-identical across two different pages
+PASS page_action pauses with a PendingAction
+PASS page_action expands refs and fills stateVersion from the service
+PASS create.addQuestions expands a question-set ref into all 5 questions
+PASS edit.addQuestions expands a question-set ref into all 5 questions
+PASS content.saveCopy expands a question-set ref into all 5 questions
+PASS saving a lesson plan to Customized Content is refused before any card, whether its ref is passed or not
+PASS a question set, an article copy on a thread with no document, and a save that passes questions still pause
+PASS navigation that would answer a how-to or where-is question is refused, with no card
+PASS asking to be taken somewhere still navigates, and a question never blocks a non-navigation action
+PASS "how do I open" is a how-to question; "can I see the People page", "jump to" and "Open People" navigate
+PASS nav.openFor: an ask for the action itself opens its page, polite question form included
+PASS nav.openFor: a how, where, can-I or show-me-how question is refused with no card
+PASS "LP", a study guide and "lesson plan and its questions" are refused; "plan my week" and a levelled save are not
+PASS a save or how-to written with look-alike letters is read as the same words
+PASS page_action refuses an undeclared capability without pausing
+PASS ask_user pauses with a PendingPrompt carrying field
+PASS the offered weeks come from the page, consecutive from its first week, at most 6; the model's are ignored
+PASS each offered label resumes into write_artifact with the page's own week id; a model week_id is dropped
+PASS typed weeks beyond the six resolve by title or number against every week the page lists
+PASS week numbers that restart per unit keep every match, so a typed "1" is never silently one of them
+PASS the resume mapping and ids never reach the wire
+PASS a page that lists no weeks keeps the model's options and resumes nothing
+PASS choose_week_for only resumes into an engine that validates the week
+PASS resume and resume_instruction are never on the wire
+PASS TurnContext carries a live Usage accumulator with add()
+PASS a tool's copy of the context shares the same accumulator
+PASS each new TurnContext gets its own accumulator
+PASS the constitution names no lesson length in minutes (every default duration it gave was repeated as fact)
+PASS the Agent acting module reads a page state after an action as that action's result, never as 'already there'
+PASS the constitution asks for a lead-in sentence only before write_artifact or generate_questions, never before level_article
+PASS the constitution answers a reteach ask with the weakest standards' own percentages and an offered, never assigned, recheck
+PASS the page-question rule carves out pacing.where as the one exception to answering from what the page shows
+PASS main model default is Sonnet 5
+PASS Sonnet 5 never receives temperature
+PASS Haiku still accepts temperature
+PASS timeouts match §5
+PASS where the page publishes the plan save, the refusal names My Lesson Plans and that action, with the ref to pass
+PASS where it does not, the refusal is byte-identical to the copy-or-print wording, so no page hears of an action it lacks
+PASS what was never refused still is not: a question-set save, and a thread with no document, on either page
+PASS at the landing site the save is still refused before any card, now with the pointer in the tool result
+
+0 failure(s)

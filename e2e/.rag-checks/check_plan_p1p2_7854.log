@@ -1,0 +1,513 @@
+plan_build cut a Scout-written line: field=insert_sub limit=300 length=325 kept=325
+plan_build cut a Scout-written line: field=answer limit=300 length=504 kept=299
+plan_build cut a Scout-written line: field=answer limit=300 length=2159 kept=287
+plan_build cut a Scout-written line: field=insert_text limit=600 length=2159 kept=575
+plan_build cut a Scout-written line: field=insert_sub limit=300 length=2159 kept=287
+plan_build cut a Scout-written line: field=insert_sub limit=300 length=338 kept=338
+plan_build cut a Scout-written line: field=insert_sub limit=300 length=894 kept=13
+plan_build cut a Scout-written line: field=insert_sub limit=300 length=478 kept=478
+plan_build cut a Scout-written line: field=insert_text limit=300 length=476 kept=458
+plan_build cut a Scout-written line: field=ask_q limit=300 length=359 kept=299
+plan_build cut a Scout-written line: field=ask_a limit=300 length=359 kept=299
+plan_build cut a Scout-written line: field=ask_q limit=300 length=359 kept=299
+plan_build cut a Scout-written line: field=ask_a limit=300 length=359 kept=299
+plan_build cut a Scout-written line: field=ask_q limit=300 length=359 kept=299
+plan_build cut a Scout-written line: field=ask_a limit=300 length=359 kept=299
+plan_build cut a Scout-written line: field=ask_q limit=300 length=359 kept=299
+plan_build cut a Scout-written line: field=ask_a limit=300 length=359 kept=299
+plan_build cut a Scout-written line: field=ask_q limit=300 length=359 kept=299
+plan_build cut a Scout-written line: field=ask_a limit=300 length=359 kept=299
+plan_build cut a Scout-written line: field=ask_q limit=300 length=359 kept=299
+plan_build cut a Scout-written line: field=ask_a limit=300 length=359 kept=299
+plan_build cut a Scout-written line: field=text limit=50 length=499 kept=49
+plan_build cut a Scout-written line: field=objective limit=300 length=561 kept=297
+plan_build cut a Scout-written line: field=insert_sub limit=300 length=606 kept=0
+plan_build cut a Scout-written line: field=answer limit=300 length=606 kept=0
+plan_build cut a Scout-written line: field=objective limit=300 length=606 kept=0
+plan_build cut a Scout-written line: field=insert_sub limit=300 length=673 kept=43
+plan_build cut a Scout-written line: field=insert_sub limit=300 length=614 kept=7
+plan_build cut a Scout-written line: field=insert_sub limit=300 length=374 kept=362
+plan_build cut a Scout-written line: field=text limit=300 length=374 kept=362
+plan_build cut a Scout-written line: field=insert_sub limit=300 length=615 kept=6
+plan_build cut a Scout-written line: field=text limit=20 length=606 kept=0
+plan_build cut a Scout-written line: field=text limit=27 length=606 kept=0
+plan_build cut a Scout-written line: field=text limit=34 length=606 kept=0
+plan_build cut a Scout-written line: field=text limit=41 length=606 kept=0
+plan_build cut a Scout-written line: field=text limit=48 length=606 kept=0
+plan_build cut a Scout-written line: field=text limit=55 length=606 kept=0
+plan_build cut a Scout-written line: field=text limit=62 length=606 kept=0
+plan_build cut a Scout-written line: field=text limit=69 length=606 kept=0
+plan_build cut a Scout-written line: field=text limit=76 length=606 kept=0
+plan_build cut a Scout-written line: field=text limit=83 length=606 kept=0
+plan_build cut a Scout-written line: field=text limit=90 length=606 kept=0
+plan_build cut a Scout-written line: field=text limit=97 length=606 kept=0
+plan_build cut a Scout-written line: field=text limit=104 length=606 kept=0
+plan_build cut a Scout-written line: field=text limit=111 length=606 kept=0
+plan_build cut a Scout-written line: field=text limit=118 length=606 kept=0
+plan_build cut a Scout-written line: field=text limit=125 length=606 kept=0
+plan_build cut a Scout-written line: field=text limit=132 length=606 kept=0
+plan_build cut a Scout-written line: field=text limit=139 length=606 kept=0
+plan_build cut a Scout-written line: field=text limit=146 length=606 kept=0
+plan_build cut a Scout-written line: field=text limit=153 length=606 kept=0
+plan_build cut a Scout-written line: field=text limit=160 length=606 kept=0
+plan_build cut a Scout-written line: field=text limit=167 length=606 kept=0
+plan_build cut a Scout-written line: field=text limit=174 length=606 kept=0
+plan_build cut a Scout-written line: field=text limit=181 length=606 kept=0
+plan_build cut a Scout-written line: field=text limit=188 length=606 kept=0
+plan_build cut a Scout-written line: field=text limit=195 length=606 kept=0
+plan_build cut a Scout-written line: field=text limit=202 length=606 kept=0
+plan_build cut a Scout-written line: field=text limit=209 length=606 kept=0
+plan_build cut a Scout-written line: field=text limit=216 length=606 kept=0
+plan_build cut a Scout-written line: field=text limit=223 length=606 kept=0
+plan_build cut a Scout-written line: field=text limit=230 length=606 kept=0
+plan_build cut a Scout-written line: field=text limit=237 length=606 kept=0
+plan_build cut a Scout-written line: field=text limit=244 length=606 kept=0
+plan_build cut a Scout-written line: field=text limit=251 length=606 kept=0
+plan_build cut a Scout-written line: field=text limit=258 length=606 kept=0
+plan_build cut a Scout-written line: field=text limit=265 length=606 kept=0
+plan_build cut a Scout-written line: field=text limit=272 length=606 kept=0
+plan_build cut a Scout-written line: field=text limit=279 length=606 kept=0
+plan_build cut a Scout-written line: field=text limit=286 length=606 kept=0
+plan_build cut a Scout-written line: field=text limit=293 length=606 kept=0
+plan_build cut a Scout-written line: field=text limit=300 length=606 kept=0
+plan_build cut a Scout-written line: field=text limit=307 length=606 kept=0
+plan_build cut a Scout-written line: field=text limit=314 length=606 kept=0
+plan_build cut a Scout-written line: field=text limit=321 length=606 kept=0
+plan_build cut a Scout-written line: field=text limit=328 length=606 kept=0
+plan_build cut a Scout-written line: field=text limit=335 length=606 kept=0
+plan_build cut a Scout-written line: field=text limit=342 length=606 kept=0
+plan_build cut a Scout-written line: field=text limit=349 length=606 kept=0
+plan_build cut a Scout-written line: field=text limit=356 length=606 kept=0
+plan_build cut a Scout-written line: field=text limit=363 length=606 kept=0
+plan_build cut a Scout-written line: field=text limit=370 length=606 kept=0
+plan_build cut a Scout-written line: field=text limit=377 length=606 kept=0
+plan_build cut a Scout-written line: field=text limit=384 length=606 kept=0
+plan_build cut a Scout-written line: field=text limit=391 length=606 kept=0
+plan_build cut a Scout-written line: field=text limit=398 length=606 kept=0
+plan_build cut a Scout-written line: field=text limit=20 length=673 kept=14
+plan_build cut a Scout-written line: field=text limit=27 length=673 kept=23
+plan_build cut a Scout-written line: field=text limit=34 length=673 kept=38
+plan_build cut a Scout-written line: field=text limit=41 length=673 kept=29
+plan_build cut a Scout-written line: field=text limit=48 length=673 kept=43
+plan_build cut a Scout-written line: field=text limit=55 length=673 kept=43
+plan_build cut a Scout-written line: field=text limit=62 length=673 kept=43
+plan_build cut a Scout-written line: field=text limit=69 length=673 kept=43
+plan_build cut a Scout-written line: field=text limit=76 length=673 kept=43
+plan_build cut a Scout-written line: field=text limit=83 length=673 kept=43
+plan_build cut a Scout-written line: field=text limit=90 length=673 kept=43
+plan_build cut a Scout-written line: field=text limit=97 length=673 kept=43
+plan_build cut a Scout-written line: field=text limit=104 length=673 kept=43
+plan_build cut a Scout-written line: field=text limit=111 length=673 kept=43
+plan_build cut a Scout-written line: field=text limit=118 length=673 kept=43
+plan_build cut a Scout-written line: field=text limit=125 length=673 kept=43
+plan_build cut a Scout-written line: field=text limit=132 length=673 kept=43
+plan_build cut a Scout-written line: field=text limit=139 length=673 kept=43
+plan_build cut a Scout-written line: field=text limit=146 length=673 kept=43
+plan_build cut a Scout-written line: field=text limit=153 length=673 kept=43
+plan_build cut a Scout-written line: field=text limit=160 length=673 kept=43
+plan_build cut a Scout-written line: field=text limit=167 length=673 kept=43
+plan_build cut a Scout-written line: field=text limit=174 length=673 kept=43
+plan_build cut a Scout-written line: field=text limit=181 length=673 kept=43
+plan_build cut a Scout-written line: field=text limit=188 length=673 kept=43
+plan_build cut a Scout-written line: field=text limit=195 length=673 kept=43
+plan_build cut a Scout-written line: field=text limit=202 length=673 kept=43
+plan_build cut a Scout-written line: field=text limit=209 length=673 kept=43
+plan_build cut a Scout-written line: field=text limit=216 length=673 kept=43
+plan_build cut a Scout-written line: field=text limit=223 length=673 kept=43
+plan_build cut a Scout-written line: field=text limit=230 length=673 kept=43
+plan_build cut a Scout-written line: field=text limit=237 length=673 kept=43
+plan_build cut a Scout-written line: field=text limit=244 length=673 kept=43
+plan_build cut a Scout-written line: field=text limit=251 length=673 kept=43
+plan_build cut a Scout-written line: field=text limit=258 length=673 kept=43
+plan_build cut a Scout-written line: field=text limit=265 length=673 kept=43
+plan_build cut a Scout-written line: field=text limit=272 length=673 kept=43
+plan_build cut a Scout-written line: field=text limit=279 length=673 kept=43
+plan_build cut a Scout-written line: field=text limit=286 length=673 kept=43
+plan_build cut a Scout-written line: field=text limit=293 length=673 kept=43
+plan_build cut a Scout-written line: field=text limit=300 length=673 kept=43
+plan_build cut a Scout-written line: field=text limit=307 length=673 kept=43
+plan_build cut a Scout-written line: field=text limit=314 length=673 kept=43
+plan_build cut a Scout-written line: field=text limit=321 length=673 kept=43
+plan_build cut a Scout-written line: field=text limit=328 length=673 kept=43
+plan_build cut a Scout-written line: field=text limit=335 length=673 kept=43
+plan_build cut a Scout-written line: field=text limit=342 length=673 kept=43
+plan_build cut a Scout-written line: field=text limit=349 length=673 kept=43
+plan_build cut a Scout-written line: field=text limit=356 length=673 kept=43
+plan_build cut a Scout-written line: field=text limit=363 length=673 kept=43
+plan_build cut a Scout-written line: field=text limit=370 length=673 kept=43
+plan_build cut a Scout-written line: field=text limit=377 length=673 kept=43
+plan_build cut a Scout-written line: field=text limit=384 length=673 kept=43
+plan_build cut a Scout-written line: field=text limit=391 length=673 kept=43
+plan_build cut a Scout-written line: field=text limit=398 length=673 kept=43
+plan_build cut a Scout-written line: field=text limit=20 length=614 kept=7
+plan_build cut a Scout-written line: field=text limit=27 length=614 kept=7
+plan_build cut a Scout-written line: field=text limit=34 length=614 kept=7
+plan_build cut a Scout-written line: field=text limit=41 length=614 kept=7
+plan_build cut a Scout-written line: field=text limit=48 length=614 kept=7
+plan_build cut a Scout-written line: field=text limit=55 length=614 kept=7
+plan_build cut a Scout-written line: field=text limit=62 length=614 kept=7
+plan_build cut a Scout-written line: field=text limit=69 length=614 kept=7
+plan_build cut a Scout-written line: field=text limit=76 length=614 kept=7
+plan_build cut a Scout-written line: field=text limit=83 length=614 kept=7
+plan_build cut a Scout-written line: field=text limit=90 length=614 kept=7
+plan_build cut a Scout-written line: field=text limit=97 length=614 kept=7
+plan_build cut a Scout-written line: field=text limit=104 length=614 kept=7
+plan_build cut a Scout-written line: field=text limit=111 length=614 kept=7
+plan_build cut a Scout-written line: field=text limit=118 length=614 kept=7
+plan_build cut a Scout-written line: field=text limit=125 length=614 kept=7
+plan_build cut a Scout-written line: field=text limit=132 length=614 kept=7
+plan_build cut a Scout-written line: field=text limit=139 length=614 kept=7
+plan_build cut a Scout-written line: field=text limit=146 length=614 kept=7
+plan_build cut a Scout-written line: field=text limit=153 length=614 kept=7
+plan_build cut a Scout-written line: field=text limit=160 length=614 kept=7
+plan_build cut a Scout-written line: field=text limit=167 length=614 kept=7
+plan_build cut a Scout-written line: field=text limit=174 length=614 kept=7
+plan_build cut a Scout-written line: field=text limit=181 length=614 kept=7
+plan_build cut a Scout-written line: field=text limit=188 length=614 kept=7
+plan_build cut a Scout-written line: field=text limit=195 length=614 kept=7
+plan_build cut a Scout-written line: field=text limit=202 length=614 kept=7
+plan_build cut a Scout-written line: field=text limit=209 length=614 kept=7
+plan_build cut a Scout-written line: field=text limit=216 length=614 kept=7
+plan_build cut a Scout-written line: field=text limit=223 length=614 kept=7
+plan_build cut a Scout-written line: field=text limit=230 length=614 kept=7
+plan_build cut a Scout-written line: field=text limit=237 length=614 kept=7
+plan_build cut a Scout-written line: field=text limit=244 length=614 kept=7
+plan_build cut a Scout-written line: field=text limit=251 length=614 kept=7
+plan_build cut a Scout-written line: field=text limit=258 length=614 kept=7
+plan_build cut a Scout-written line: field=text limit=265 length=614 kept=7
+plan_build cut a Scout-written line: field=text limit=272 length=614 kept=7
+plan_build cut a Scout-written line: field=text limit=279 length=614 kept=7
+plan_build cut a Scout-written line: field=text limit=286 length=614 kept=7
+plan_build cut a Scout-written line: field=text limit=293 length=614 kept=7
+plan_build cut a Scout-written line: field=text limit=300 length=614 kept=7
+plan_build cut a Scout-written line: field=text limit=307 length=614 kept=7
+plan_build cut a Scout-written line: field=text limit=314 length=614 kept=7
+plan_build cut a Scout-written line: field=text limit=321 length=614 kept=7
+plan_build cut a Scout-written line: field=text limit=328 length=614 kept=7
+plan_build cut a Scout-written line: field=text limit=335 length=614 kept=7
+plan_build cut a Scout-written line: field=text limit=342 length=614 kept=7
+plan_build cut a Scout-written line: field=text limit=349 length=614 kept=7
+plan_build cut a Scout-written line: field=text limit=356 length=614 kept=7
+plan_build cut a Scout-written line: field=text limit=363 length=614 kept=7
+plan_build cut a Scout-written line: field=text limit=370 length=614 kept=7
+plan_build cut a Scout-written line: field=text limit=377 length=614 kept=7
+plan_build cut a Scout-written line: field=text limit=384 length=614 kept=7
+plan_build cut a Scout-written line: field=text limit=391 length=614 kept=7
+plan_build cut a Scout-written line: field=text limit=398 length=614 kept=7
+plan_build cut a Scout-written line: field=text limit=20 length=374 kept=6
+plan_build cut a Scout-written line: field=text limit=27 length=374 kept=6
+plan_build cut a Scout-written line: field=text limit=34 length=374 kept=6
+plan_build cut a Scout-written line: field=text limit=41 length=374 kept=6
+plan_build cut a Scout-written line: field=text limit=48 length=374 kept=6
+plan_build cut a Scout-written line: field=text limit=55 length=374 kept=6
+plan_build cut a Scout-written line: field=text limit=62 length=374 kept=6
+plan_build cut a Scout-written line: field=text limit=69 length=374 kept=6
+plan_build cut a Scout-written line: field=text limit=76 length=374 kept=6
+plan_build cut a Scout-written line: field=text limit=83 length=374 kept=6
+plan_build cut a Scout-written line: field=text limit=90 length=374 kept=6
+plan_build cut a Scout-written line: field=text limit=97 length=374 kept=6
+plan_build cut a Scout-written line: field=text limit=104 length=374 kept=6
+plan_build cut a Scout-written line: field=text limit=111 length=374 kept=6
+plan_build cut a Scout-written line: field=text limit=118 length=374 kept=6
+plan_build cut a Scout-written line: field=text limit=125 length=374 kept=6
+plan_build cut a Scout-written line: field=text limit=132 length=374 kept=6
+plan_build cut a Scout-written line: field=text limit=139 length=374 kept=6
+plan_build cut a Scout-written line: field=text limit=146 length=374 kept=6
+plan_build cut a Scout-written line: field=text limit=153 length=374 kept=6
+plan_build cut a Scout-written line: field=text limit=160 length=374 kept=6
+plan_build cut a Scout-written line: field=text limit=167 length=374 kept=362
+plan_build cut a Scout-written line: field=text limit=174 length=374 kept=362
+plan_build cut a Scout-written line: field=text limit=181 length=374 kept=362
+plan_build cut a Scout-written line: field=text limit=188 length=374 kept=362
+plan_build cut a Scout-written line: field=text limit=195 length=374 kept=362
+plan_build cut a Scout-written line: field=text limit=202 length=374 kept=362
+plan_build cut a Scout-written line: field=text limit=209 length=374 kept=362
+plan_build cut a Scout-written line: field=text limit=216 length=374 kept=362
+plan_build cut a Scout-written line: field=text limit=223 length=374 kept=362
+plan_build cut a Scout-written line: field=text limit=230 length=374 kept=362
+plan_build cut a Scout-written line: field=text limit=237 length=374 kept=362
+plan_build cut a Scout-written line: field=text limit=244 length=374 kept=362
+plan_build cut a Scout-written line: field=text limit=251 length=374 kept=362
+plan_build cut a Scout-written line: field=text limit=258 length=374 kept=362
+plan_build cut a Scout-written line: field=text limit=265 length=374 kept=362
+plan_build cut a Scout-written line: field=text limit=272 length=374 kept=362
+plan_build cut a Scout-written line: field=text limit=279 length=374 kept=362
+plan_build cut a Scout-written line: field=text limit=286 length=374 kept=362
+plan_build cut a Scout-written line: field=text limit=293 length=374 kept=362
+plan_build cut a Scout-written line: field=text limit=300 length=374 kept=362
+plan_build cut a Scout-written line: field=text limit=307 length=374 kept=362
+plan_build cut a Scout-written line: field=text limit=314 length=374 kept=362
+plan_build cut a Scout-written line: field=text limit=321 length=374 kept=362
+plan_build cut a Scout-written line: field=text limit=328 length=374 kept=362
+plan_build cut a Scout-written line: field=text limit=335 length=374 kept=362
+plan_build cut a Scout-written line: field=text limit=342 length=374 kept=362
+plan_build cut a Scout-written line: field=text limit=349 length=374 kept=362
+plan_build cut a Scout-written line: field=text limit=356 length=374 kept=362
+plan_build cut a Scout-written line: field=text limit=363 length=374 kept=362
+plan_build cut a Scout-written line: field=text limit=370 length=374 kept=362
+plan_build cut a Scout-written line: field=text limit=20 length=615 kept=6
+plan_build cut a Scout-written line: field=text limit=27 length=615 kept=6
+plan_build cut a Scout-written line: field=text limit=34 length=615 kept=6
+plan_build cut a Scout-written line: field=text limit=41 length=615 kept=6
+plan_build cut a Scout-written line: field=text limit=48 length=615 kept=6
+plan_build cut a Scout-written line: field=text limit=55 length=615 kept=6
+plan_build cut a Scout-written line: field=text limit=62 length=615 kept=6
+plan_build cut a Scout-written line: field=text limit=69 length=615 kept=6
+plan_build cut a Scout-written line: field=text limit=76 length=615 kept=6
+plan_build cut a Scout-written line: field=text limit=83 length=615 kept=6
+plan_build cut a Scout-written line: field=text limit=90 length=615 kept=6
+plan_build cut a Scout-written line: field=text limit=97 length=615 kept=6
+plan_build cut a Scout-written line: field=text limit=104 length=615 kept=6
+plan_build cut a Scout-written line: field=text limit=111 length=615 kept=6
+plan_build cut a Scout-written line: field=text limit=118 length=615 kept=6
+plan_build cut a Scout-written line: field=text limit=125 length=615 kept=6
+plan_build cut a Scout-written line: field=text limit=132 length=615 kept=6
+plan_build cut a Scout-written line: field=text limit=139 length=615 kept=6
+plan_build cut a Scout-written line: field=text limit=146 length=615 kept=6
+plan_build cut a Scout-written line: field=text limit=153 length=615 kept=6
+plan_build cut a Scout-written line: field=text limit=160 length=615 kept=6
+plan_build cut a Scout-written line: field=text limit=167 length=615 kept=6
+plan_build cut a Scout-written line: field=text limit=174 length=615 kept=6
+plan_build cut a Scout-written line: field=text limit=181 length=615 kept=6
+plan_build cut a Scout-written line: field=text limit=188 length=615 kept=6
+plan_build cut a Scout-written line: field=text limit=195 length=615 kept=6
+plan_build cut a Scout-written line: field=text limit=202 length=615 kept=6
+plan_build cut a Scout-written line: field=text limit=209 length=615 kept=6
+plan_build cut a Scout-written line: field=text limit=216 length=615 kept=6
+plan_build cut a Scout-written line: field=text limit=223 length=615 kept=6
+plan_build cut a Scout-written line: field=text limit=230 length=615 kept=6
+plan_build cut a Scout-written line: field=text limit=237 length=615 kept=6
+plan_build cut a Scout-written line: field=text limit=244 length=615 kept=6
+plan_build cut a Scout-written line: field=text limit=251 length=615 kept=6
+plan_build cut a Scout-written line: field=text limit=258 length=615 kept=6
+plan_build cut a Scout-written line: field=text limit=265 length=615 kept=6
+plan_build cut a Scout-written line: field=text limit=272 length=615 kept=6
+plan_build cut a Scout-written line: field=text limit=279 length=615 kept=6
+plan_build cut a Scout-written line: field=text limit=286 length=615 kept=6
+plan_build cut a Scout-written line: field=text limit=293 length=615 kept=6
+plan_build cut a Scout-written line: field=text limit=300 length=615 kept=6
+plan_build cut a Scout-written line: field=text limit=307 length=615 kept=6
+plan_build cut a Scout-written line: field=text limit=314 length=615 kept=6
+plan_build cut a Scout-written line: field=text limit=321 length=615 kept=6
+plan_build cut a Scout-written line: field=text limit=328 length=615 kept=6
+plan_build cut a Scout-written line: field=text limit=335 length=615 kept=6
+plan_build cut a Scout-written line: field=text limit=342 length=615 kept=6
+plan_build cut a Scout-written line: field=text limit=349 length=615 kept=6
+plan_build cut a Scout-written line: field=text limit=356 length=615 kept=6
+plan_build cut a Scout-written line: field=text limit=363 length=615 kept=6
+plan_build cut a Scout-written line: field=text limit=370 length=615 kept=6
+plan_build cut a Scout-written line: field=text limit=377 length=615 kept=6
+plan_build cut a Scout-written line: field=text limit=384 length=615 kept=6
+plan_build cut a Scout-written line: field=text limit=391 length=615 kept=6
+plan_build cut a Scout-written line: field=text limit=398 length=615 kept=6
+plan_build cut a Scout-written line: field=text limit=20 length=338 kept=18
+plan_build cut a Scout-written line: field=text limit=27 length=338 kept=25
+plan_build cut a Scout-written line: field=text limit=34 length=338 kept=34
+plan_build cut a Scout-written line: field=text limit=41 length=338 kept=39
+plan_build cut a Scout-written line: field=text limit=48 length=338 kept=46
+plan_build cut a Scout-written line: field=text limit=55 length=338 kept=53
+plan_build cut a Scout-written line: field=text limit=62 length=338 kept=60
+plan_build cut a Scout-written line: field=text limit=69 length=338 kept=67
+plan_build cut a Scout-written line: field=text limit=76 length=338 kept=71
+plan_build cut a Scout-written line: field=text limit=83 length=338 kept=81
+plan_build cut a Scout-written line: field=text limit=90 length=338 kept=81
+plan_build cut a Scout-written line: field=text limit=97 length=338 kept=94
+plan_build cut a Scout-written line: field=text limit=104 length=338 kept=94
+plan_build cut a Scout-written line: field=text limit=111 length=338 kept=94
+plan_build cut a Scout-written line: field=text limit=118 length=338 kept=94
+plan_build cut a Scout-written line: field=text limit=125 length=338 kept=94
+plan_build cut a Scout-written line: field=text limit=132 length=338 kept=94
+plan_build cut a Scout-written line: field=text limit=139 length=338 kept=338
+plan_build cut a Scout-written line: field=text limit=146 length=338 kept=338
+plan_build cut a Scout-written line: field=text limit=153 length=338 kept=338
+plan_build cut a Scout-written line: field=text limit=160 length=338 kept=338
+plan_build cut a Scout-written line: field=text limit=167 length=338 kept=338
+plan_build cut a Scout-written line: field=text limit=174 length=338 kept=338
+plan_build cut a Scout-written line: field=text limit=181 length=338 kept=338
+plan_build cut a Scout-written line: field=text limit=188 length=338 kept=338
+plan_build cut a Scout-written line: field=text limit=195 length=338 kept=338
+plan_build cut a Scout-written line: field=text limit=202 length=338 kept=338
+plan_build cut a Scout-written line: field=text limit=209 length=338 kept=338
+plan_build cut a Scout-written line: field=text limit=216 length=338 kept=338
+plan_build cut a Scout-written line: field=text limit=223 length=338 kept=338
+plan_build cut a Scout-written line: field=text limit=230 length=338 kept=338
+plan_build cut a Scout-written line: field=text limit=237 length=338 kept=338
+plan_build cut a Scout-written line: field=text limit=244 length=338 kept=338
+plan_build cut a Scout-written line: field=text limit=251 length=338 kept=338
+plan_build cut a Scout-written line: field=text limit=258 length=338 kept=338
+plan_build cut a Scout-written line: field=text limit=265 length=338 kept=338
+plan_build cut a Scout-written line: field=text limit=272 length=338 kept=338
+plan_build cut a Scout-written line: field=text limit=279 length=338 kept=338
+plan_build cut a Scout-written line: field=text limit=286 length=338 kept=338
+plan_build cut a Scout-written line: field=text limit=293 length=338 kept=338
+plan_build cut a Scout-written line: field=text limit=300 length=338 kept=338
+plan_build cut a Scout-written line: field=text limit=307 length=338 kept=338
+plan_build cut a Scout-written line: field=text limit=314 length=338 kept=338
+plan_build cut a Scout-written line: field=text limit=321 length=338 kept=338
+plan_build cut a Scout-written line: field=text limit=328 length=338 kept=338
+plan_build cut a Scout-written line: field=text limit=335 length=338 kept=338
+plan_build cut a Scout-written line: field=answer limit=300 length=588 kept=299
+plan_build cut a Scout-written line: field=objective limit=300 length=588 kept=299
+plan_build cut a Scout-written line: field=text limit=100 length=683 kept=100
+plan_build cut a Scout-written line: field=insert_sub limit=300 length=606 kept=0
+plan_build cut a Scout-written line: field=insert_text limit=600 length=2006 kept=0
+plan_build cut a Scout-written line: field=objective limit=300 length=606 kept=0
+plan_build cut a Scout-written line: field=objective limit=300 length=606 kept=0
+plan_build cut a Scout-written line: field=note limit=400 length=606 kept=0
+plan_build cut a Scout-written line: field=standard limit=400 length=606 kept=0
+plan_build cut a Scout-written line: field=say limit=400 length=606 kept=0
+plan_build cut a Scout-written line: field=say limit=400 length=606 kept=0
+plan_build cut a Scout-written line: field=say limit=400 length=606 kept=0
+plan_build cut a Scout-written line: field=say limit=400 length=606 kept=0
+plan_build cut a Scout-written line: field=say limit=400 length=606 kept=0
+plan_build cut a Scout-written line: field=say limit=400 length=606 kept=0
+plan_build cut a Scout-written line: field=step_text limit=600 length=2006 kept=0
+plan_build cut a Scout-written line: field=say limit=400 length=606 kept=0
+plan_build cut a Scout-written line: field=say limit=400 length=606 kept=0
+plan_build cut a Scout-written line: field=say limit=400 length=606 kept=0
+plan_build cut a Scout-written line: field=say limit=400 length=606 kept=0
+plan_build cut a Scout-written line: field=say limit=400 length=606 kept=0
+plan_build cut a Scout-written line: field=answer limit=300 length=1013 kept=171
+plan_build cut a Scout-written line: field=answer limit=300 length=1013 kept=171
+plan_build cut a Scout-written line: field=ask_a limit=300 length=1013 kept=171
+plan_build cut a Scout-written line: field=ask_a limit=300 length=1013 kept=171
+plan_build cut a Scout-written line: field=ask_a limit=300 length=1013 kept=171
+plan_build cut a Scout-written line: field=ask_a limit=300 length=1013 kept=171
+plan_build cut a Scout-written line: field=ask_a limit=300 length=1013 kept=171
+plan_build cut a Scout-written line: field=ask_a limit=300 length=1013 kept=171
+plan_build cut a Scout-written line: field=answer limit=300 length=1126 kept=368
+plan_build cut a Scout-written line: field=answer limit=300 length=1126 kept=368
+plan_build cut a Scout-written line: field=ask_a limit=300 length=1126 kept=368
+plan_build cut a Scout-written line: field=ask_a limit=300 length=1126 kept=368
+plan_build cut a Scout-written line: field=ask_a limit=300 length=1126 kept=368
+plan_build cut a Scout-written line: field=ask_a limit=300 length=1126 kept=368
+plan_build cut a Scout-written line: field=ask_a limit=300 length=1126 kept=368
+plan_build cut a Scout-written line: field=ask_a limit=300 length=1126 kept=368
+plan_build cut a Scout-written line: field=insert_sub limit=300 length=673 kept=43
+plan_build cut a Scout-written line: field=insert_sub limit=300 length=673 kept=43
+plan_build cut a Scout-written line: field=insert_text limit=600 length=1073 kept=43
+plan_build cut a Scout-written line: field=insert_sub limit=300 length=851 kept=300
+plan_build cut a Scout-written line: field=insert_sub limit=300 length=869 kept=62
+plan_build cut a Scout-written line: field=insert_sub limit=300 length=911 kept=104
+plan_build cut a Scout-written line: field=insert_sub limit=300 length=683 kept=284
+plan_build cut a Scout-written line: field=insert_sub limit=300 length=869 kept=62
+plan_build cut a Scout-written line: field=insert_sub limit=300 length=550 kept=266
+plan_build cut a Scout-written line: field=insert_sub limit=300 length=571 kept=269
+plan_build cut a Scout-written line: field=insert_sub limit=300 length=571 kept=283
+plan_build cut a Scout-written line: field=insert_sub limit=300 length=382 kept=272
+plan_build cut a Scout-written line: field=change_text limit=600 length=1986 kept=79
+plan_build cut a Scout-written line: field=Background Knowledge limit=600 length=1986 kept=79
+plan_build cut a Scout-written line: field=step_text limit=600 length=2006 kept=0
+plan_build cut a Scout-written line: field=say limit=400 length=606 kept=0
+plan_build cut a Scout-written line: field=say limit=400 length=606 kept=0
+plan_build cut a Scout-written line: field=say limit=400 length=606 kept=0
+plan_build cut a Scout-written line: field=say limit=400 length=606 kept=0
+plan_build cut a Scout-written line: field=say limit=400 length=606 kept=0
+ok   the test's long ask is over 600 characters
+ok   a Studies Weekly step over 1,000 characters and an ask over 600 are rendered whole, closing )** and all
+ok   the adapted-37936 line is over the old 300-character cut and inside the 300 + 200 reach
+ok   adapted-37936: the rendered Ask keeps its closing )** (it was cut mid-answer at 300 characters)
+ok   an answer to a Studies Weekly question is Scout's own: over 300 it is cut after a whole sentence
+ok   the test's generated answer is over 2,000 characters
+ok   a generated 2,000-character answer is bounded to 300, at a sentence end
+ok   a generated inserted step is bounded to 600 and its sub line to 300
+ok   the gate-6 37936 line is over 300 characters and inside the 300 + 200 reach
+ok   adapted-37936: the model-written sub line keeps its closing )** (the old cut lost it)
+ok   markup stays balanced: a run no end closes within 300 + 200 is cut before it, not inside it
+ok   a sentence end inside an open **(...)** is not a place to cut: the line runs on to its closing )**
+ok   an open parenthesis is not cut inside either
+ok   a free plan's question and its answer are Scout's own: they keep their 300 bound, cut at a sentence end
+ok   a long line Scout wrote is cut after a whole sentence, within its bound
+ok   the cut is logged with the field and the lengths, not the content
+ok   a line with no sentence end in range is cut after a whole word, and a short line is untouched
+ok   Scout's objectives keep their 300-character bound through the validator
+ok   the existing fields keep their meaning: unsupported counts the first reply, unsupported_after the retry's
+ok   the first reply is returned and the checks say so
+ok   the returned reply's own claims are recorded: gifts, not the retry's cake
+ok   structural problems and claim flags are separate fields for both replies
+ok   a retry that leaves fewer problems is returned, with its (empty) claim list
+ok   a reply with nothing to retry is the returned reply, with no flags and no retry
+ok   a structural problem in the first reply shows as structural, and the retry that fixes it is returned
+ok   the frozen set has at least 36 pairs, both RAG-22 pairs and at least 4 governing-context pairs
+ok   today's in_source still rejects every pinned pair after the engine's word-ending fold
+ok   in_source on the raw pair is also unchanged: none is cleared (the checker's flag stands)
+ok   the pairs a run of the source reaches are cleared today, exactly as before (frozen, not fixed here)
+ok   today's in_source still clears a claim that is a run of the source (the other side of the pin)
+ok   compose and prepare_lesson use the same in_source function object as plan_build
+ok   in_source and _norm are byte-for-byte the function the pin was written against
+ok   every pinned pair is still flagged by plan_build's claim filter (claim_problems) when the checker flags it
+ok   claim_problems gives the old flags, text and all, for long, abbreviation, multi-sentence and short claims
+ok   the abbreviation case really is flagged by the old function (the pin is not vacuous)
+ok   the claim quote writes no cut log line
+ok   a failed fidelity check is recorded and the plan is still returned
+ok   ...and the plan's returned/structural/claim_flags bookkeeping survives it into the result
+ok   R2-01: a run starting at position 0 that nothing closes in reach leaves no sub line, not a broken one
+ok   R2-01: an answer that is one unclosed run is dropped, and the existing missing-answer problem is raised
+ok   R2-01: an objective that is one unclosed run is dropped, and the existing objectives problem is raised
+ok   R2-01: nested **(...)** with the closure beyond 300 + 200 retreats to the last balanced sentence end
+ok   R2-01: a run with no earlier sentence end retreats to the last whole word before the outermost opener
+ok   R2-01: nested delimiters whose closure is within 300 + 200 are kept whole
+ok   R2-01: a crossing such as **(a**) is not a balanced place to cut
+ok   R2-01: every cut over a spread of limits is balanced or empty
+ok   R2-02: the abbreviation case is a real one (the line is long and its first period is 'U.S.')
+ok   R2-02: a long answer starting 'The U.S. government' keeps more than 'The U.S.'
+ok   R2-02: a long objective starting 'The U.S. government' keeps more than 'The U.S.'
+ok   R2-02: Mr., Mrs., Ms., Dr., St., e.g., i.e., etc. and a single capital initial are not sentence ends, a real one is
+ok   R2-02: with no genuine sentence end in reach the cut is a balanced word boundary
+ok   R2-03: the build records the stage and a hash of the reply its claims were checked against
+ok   R2-03: through compose, fidelity changes the flagged answer and the checks still say generator_reply
+ok   R2-03: the hash is of the pre-fidelity reply, not the corrected one
+ok   R3-01: an inserted sub line with no safe cut is dropped and a structural problem names it
+ok   R3-01: an inserted step text with no safe cut is reported
+ok   R3-01: a rejected objective is reported by name as well as by the count rule
+ok   R3-01: a third objective rejected while two remain still raises a problem
+ok   R3-01: a rejected note is reported
+ok   R3-01: an absent optional field raises no problem
+ok   R3-01: a rejected standard is reported
+ok   R3-01: a free plan's say line with no safe cut is reported
+ok   R3-01: a free plan's step text with no safe cut is reported
+ok   R3-02: the sentence-boundary cut is balanced and non-empty
+ok   R3-02: adapted plan, sentence-boundary cut: the rendered answer keeps its parentheses and every line balances
+ok   R3-02: free plan, sentence-boundary cut: the rendered answer keeps its parentheses and every line balances
+ok   R3-02: the extended-closure cut is balanced and non-empty
+ok   R3-02: adapted plan, extended-closure cut: the rendered answer keeps its parentheses and every line balances
+ok   R3-02: free plan, extended-closure cut: the rendered answer keeps its parentheses and every line balances
+ok   R3-02: the adapted render of '(Because it is kind.)' matches the frozen output
+ok   R3-02: the free render of '(Because it is kind.)' matches the frozen output
+ok   R3-02: the adapted render of 'Because it is kind.' matches the frozen output
+ok   R3-02: the free render of 'Because it is kind.' matches the frozen output
+ok   R3-02: the adapted render of 'Because (as shown) it is kind.' matches the frozen output
+ok   R3-02: the free render of 'Because (as shown) it is kind.' matches the frozen output
+ok   R4-01: a plan with Studies Weekly questions: an inserted question whose answer the cut removed raises the have-no-answer problem
+ok   R4-01: a plan with none: an inserted question whose answer the cut removed raises the have-no-answer problem
+ok   R4-01: the same in the step text
+ok   R4-01: a cut that keeps both the question and its answer raises nothing
+ok   R4-02: the cut is emitted at the logger's default level, in production's WARNING
+ok   R5-01: an Ask with instructions after the question, answer past the reach, raises the problem
+ok   R5-01: two pairs, first answer kept and second lost, raises the problem despite the kept answer
+ok   R5-01: both pairs kept raises nothing
+ok   R5-01: a non-question line cut raises nothing new
+ok   R6-01: whitespace inside the answer on an untruncated line raises nothing
+ok   R6-01: whitespace inside a question and an answer on an untruncated line raises nothing
+ok   R6-01: extra whitespace inside the question does not hide a removed answer
+ok   R6-02: identical answers, the second one cut, raises the problem
+ok   R6-02: repeated question text, the second answer cut, raises the problem
+ok   R6-02: repeated question text, the second question and its answer both cut, raises nothing
+ok   R6-02: repeated question and identical answer, both kept, raises nothing
+ok   R7-01: a quoted title with a "?" after the kept question, title and answer cut, raises the problem
+ok   P1P2-01: a changed step cut back to its question raises the have-no-answer problem
+ok   P1P2-01: a changed step kept whole raises nothing
+ok   P1P2-01: a free plan's label cut back to its question raises the problem
+ok   P1P2-02: heading-like objectives are dropped and the draft label is removedplan_build cut a Scout-written line: field=change_text limit=600 length=1647 kept=62
+plan_build cut a Scout-written line: field=change_text limit=600 length=1055 kept=38
+plan_build cut a Scout-written line: field=sub limit=300 length=520 kept=296
+
+ok   P1P2-02: the pack takes the first real objective from the rendered plan
+ok   P1P2-02: a reply left with one real objective asks for 2-4
+ok   P1P2B-01: a quoted board question kept while its answer is cut raises the problem
+ok   P1P2B-01: a quoted title with a question mark and no answer raises no answer problem
+ok   P1P2B-02: an emphasised draft label is removed and a heading behind it dropped; a substantive Objective: line stays
+ok   P1P2C-01: a board question followed by a quoted title, kept while its answer is cut, raises the problem
+ok   P1P2C-02: a draft label without a colon is never an objective, alone or in front of one
+
+ALL OK

@@ -1,0 +1,56 @@
+PASS accepts Student K7QM4R
+PASS accepts Teacher B2XT9C
+PASS accepts Student PHWGGZN6
+PASS accepts Student G5QXD6
+PASS refuses 'Student 3'
+PASS refuses 'Student 30'
+PASS refuses 'Teacher 12'
+PASS refuses 'Student'
+PASS refuses 'Student K7QM4'
+PASS refuses 'Student K7QM4RX2Z'
+PASS refuses 'Student k7qm4r'
+PASS refuses 'Student AEIOUL'
+PASS refuses 'Student K7QM4R '
+PASS refuses 'student K7QM4R'
+PASS refuses 'Pupil K7QM4R'
+PASS refuses 'a student'
+PASS refuses None
+PASS refuses 4
+PASS a code never opens with a digit or a vowel
+PASS a scrub built from code aliases holds every person
+PASS known positive: a full name becomes its code alias
+PASS known positive: an email and a username
+PASS known positive: an eight-character alias
+PASS known positive: a co-teacher
+PASS a shared first name lists both codes, in code order
+PASS numbered aliases are no longer accepted
+PASS a code of the wrong shape is ignored
+PASS _stand_in sorts codes as text, kind first
+PASS _stand_in of four is 'a student'
+PASS _stand_in does not throw on a code
+PASS known positive: a mislabelled code is rewritten to the profiled student
+PASS the profiled student's own code is left alone
+PASS a code the teacher named is left alone
+PASS a numbered label is not a student here
+PASS a word after 'student' is not a code
+PASS lower case 'student rhythm' is not a code
+PASS a title keeps no code
+PASS nor a list of codes
+PASS nor an eight-character one, nor a possessive
+PASS an ordinary title is untouched
+PASS cut_ids leaves 'Student BQZ472 has 3 items missing.' alone
+PASS cut_ids leaves 'Looked at: Student MT8Z25 in Period 1.' alone
+PASS cut_ids leaves 'Teacher K22223 and Student PHWGGZ42' alone
+PASS cut_ids still cuts an article id beside a code
+PASS a stored thread doc has no scrub_names and no name
+PASS a scrub object does not print its needles
+PASS only the routers, the request model and the scrub itself mention scrub_names
+PASS core/threads.py never touches the wire list
+PASS core/telemetry.py never touches the wire list
+PASS core/loop.py never touches the wire list
+PASS known positive: the route read the list and scrubbed the message
+PASS the request no longer holds the list
+PASS nothing logged during the turn carries a name, an email or a username
+PASS control: the capture does catch a line that names a student
+
+OK: 0 failure(s)

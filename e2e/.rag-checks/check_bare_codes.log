@@ -1,0 +1,10 @@
+PASS codes come from every alias the conversation carries, runs included, with their prefix
+PASS table: a bare code in a cell gets its prefix; the header word is untouched
+PASS list: each bare code in a bold list gets its prefix
+PASS prose: a bare code, a possessive, and a teacher's code get their own prefix
+PASS a code already inside an alias run is left exactly as it is
+PASS a non-code six-letter word, an unknown code-shaped token and a near miss stay
+PASS nothing known: the text passes untouched
+PASS the chat loop runs every reply through the screen, before the wording screen that scopes by alias
+
+all passed

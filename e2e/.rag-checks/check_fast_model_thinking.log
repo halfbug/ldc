@@ -1,0 +1,10 @@
+PASS a Haiku 5.5 fast-model call that names no thinking turns it off
+PASS a Haiku 4.5 fast-model call sends no thinking field, as today
+PASS a main-model call that names no thinking is unchanged
+PASS a main-model call that asks for no thinking still gets it
+PASS the sweep finds the fast-model call sites
+PASS no fast-model call site sets thinking itself; the request turns it off
+PASS a thread title on Haiku 5.5 turns thinking off
+PASS a thread title on Haiku 4.5 sends no thinking field, as today
+PASS a relevance batch on Haiku 5.5 turns thinking off
+PASS a relevance batch on Haiku 4.5 sends no thinking field, as today

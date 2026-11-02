@@ -1,0 +1,18 @@
+publication structure unavailable
+ok   dev2 round 2: the no-titles rule is repeated after the results, outside the data block
+ok   ...and not written when nothing matched
+ok   ONLINE-7511: the reply is told to point at the card when the page offers no way to open content
+ok   ...and the line never says 'no action' (the model parrots its first sentence)
+ok   ...and with no capability ids at all
+ok   ...and on the Classrooms page, whose always-offered assignment.open opens no search result
+ok   ...but not written when the page offers article.goToAdjacent
+ok   ...but not written when the page offers article.openContent
+ok   ...but not written when the page offers publication.goToWeek
+ok   ...but not written when the page offers resources.openMediaItem
+ok   ...but not written when the page offers training.openResource
+ok   ...and not written when nothing matched
+ok   ONLINE-7490: with a printable card, Scout knows the card opens its PDF to print or download, after the data block
+ok   ...and not written for cards with no printable
+ok   ...nor when nothing matched
+
+OK

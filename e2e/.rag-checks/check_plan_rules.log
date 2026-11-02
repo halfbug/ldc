@@ -1,0 +1,14 @@
+ok   the extended timing and standards rules are in the spec exactly as their records hold them
+ok   the spec no longer fixes the warm-up at 5–10 minutes, which contradicted PH-LP-04's shares
+ok   the not-a-focus cut reads PH-LP-09's value
+ok   the rules B11's gate did not pass are recorded with their numbers and are not in force
+ok   no parked rule's wording reaches the spec
+ok   a not-a-focus list longer than PH-LP-09 is cut to that many and counts the rest
+ok   a code the pattern reads short is shown whole ("NE SS 5.4.4" not "SS 5.4.4", "AR Dimension 1.1" not "1.1")
+ok   a single lesson plan's not-a-focus list is cut (it was cut only for weekly plans: QA S18-6.1)
+ok   a plan with no asked period gets the pacing line from code, with one model call and no repair
+ok   the period the teacher asked for is read from their words
+ok   no period, or several, is no period
+ok   a chat plan for a 45-minute class says so on its pacing line, written by code, with one model call
+
+all passed

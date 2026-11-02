@@ -1,0 +1,15 @@
+ok   no notes renders nothing
+ok   notes with no text are skipped
+ok   one note is introduced and bulleted
+ok   several notes are each their own bullet
+ok   a note is defused like any other untrusted per-request text (one_line), never fenced verbatim
+ok   generate_questions' task_message omits the section with no notes
+ok   generate_questions' task_message includes remembered notes
+ok   compose's task_message omits the section with no notes
+ok   compose's task_message includes remembered notes
+ok   generate_questions passes ctx.resolved.notes to the engine
+ok   no remembered notes passes an empty list, not a crash
+ok   no teacher_context at all (resolved=None) still runs, notes=None
+ok   write_artifact passes ctx.resolved.notes to compose()
+
+ALL OK

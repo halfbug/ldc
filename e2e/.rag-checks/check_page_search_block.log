@@ -1,0 +1,11 @@
+PASS the Search page in Agent mode carries the line
+PASS the line is the last system block
+PASS the line names the own-answer carve-out
+PASS the constitution is not touched
+PASS the table of contents carries no line
+PASS the table of contents' blocks equal the same page's blocks with no capability ids at all
+PASS Plan mode on the Search page carries no line
+PASS a built context with no capability_ids attribute carries no line
+PASS a page that only mentions search in a title is not the Search page
+
+all passed

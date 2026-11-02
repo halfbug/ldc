@@ -1,0 +1,13 @@
+ok   a form digest alone is not an article
+ok   a form that carries its article's source is one (the lesson-plan form over an article)
+ok   control: an article page's source is an article
+ok   with the form open, the engines read the article from the form's source, not its digest
+ok   ...headed by the Activity line, which is stripped from the body
+ok   the form's own text is used, so the stub index record is never read
+ok   the compose turn's article is the Student View text, at the class grade
+ok   a form weekly plan takes the class grade SWO sent, and is not told to guess
+ok   a grade the article already has is kept
+ok   with no grade at all the brief asks for a labelled guess
+ok   passage labels and the page's passage header never reach the engines' article text
+
+0 failure(s)

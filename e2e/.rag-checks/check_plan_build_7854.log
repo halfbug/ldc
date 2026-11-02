@@ -1,0 +1,103 @@
+ok   the plan's steps are its numbered top-level lines in order; a support label's own list is not steps
+ok   each **Lesson Plan: …** label starts a part, so a two-lesson panel has two parts
+ok   the header is what comes before the first part, and the label line "Lesson Plan" is dropped
+ok   only a question with no answer gets an id; a plain-parenthesis answer is shown in bold
+ok   a plan written as run-in phases ("Engage: …") has those phases for its steps; a short label line stays header
+ok   a plain plan with a run-in line keeps every paragraph as a step, and its "Warm-up:" line is a label, not a step or the end of the steps
+ok   in a plain plan's step list an option stays a label, an "Article 2:" line and a short label with a value are steps, and a support label still ends the steps
+ok   a plain plan with colon-less headings ("Key Ideas") is not read as plain text; it keeps the run-in reading
+ok   a plain-text plan has its paragraphs after "Lesson Plan:" for steps, the questions under a step ending "Ask:" stay that step's, and the plain labels are read as labels
+ok   a plain-text plan with no "Lesson Plan:" line has its paragraphs after the header for steps
+ok   a plain plan's instruction on its "Lesson Plan:" line is its first step, and a plain support label ends the steps (Codex D-001, D-002)
+ok   a plan with no steps asks for no more steps than a plan may add, and its "What changed" counts no kept steps
+ok   a plan that has its family's labels and a differentiation label asks for none of them
+ok   a plan with fewer than 5 steps, no materials and no differentiation asks for steps, the label and differentiation
+ok   a valid reply has no problems
+ok   every Studies Weekly line is shown word for word, in its order (steps renumbered within their part)
+ok   the layout: H1, header, pacing, the step heading, the parts as H3, and Scout's additions last
+ok   an answer goes on its question's line in bold parentheses
+ok   an added step is marked as Scout's, after the last line of the step it follows, and numbering continues
+ok   a step added at the start comes first in the first part, before the Studies Weekly steps
+ok   a closing label the plan lacks is a bold line marked as Scout's, after the steps and before Scout's additions
+ok   the fact check reads only what the model wrote; the Studies Weekly text is kept apart as its source
+ok   an added step after an unknown id, or repeating a Studies Weekly question, is refused; at most 4 are kept
+ok   a standard outside the listed ones is removed and named as a problem; a listed one stays
+ok   fewer than 2 objectives, or a vocabulary term the article does not use, is a problem
+ok   a short plan's reply must reach 5 steps, give the missing label, and add differentiation when asked
+ok   a Spanish plan for an English ask asks for every line translated, by id
+ok   a translation that changes a number or the ** marks is refused and the line stays as Studies Weekly wrote it
+ok   a translated step keeps its list number even when the reply drops it
+ok   a change that is still its step is kept; one that is another activity is refused and the step kept as written
+ok   a step is removed only on the teacher's own words; otherwise it is kept
+ok   an unchecked success criterion is a problem; a step that checks it is enough
+ok   whole minutes in proportion add up to exactly the period
+ok   the kept steps and added steps share the period; if-time and removed steps take no minutes
+ok   What changed is written by code from the edits
+ok   a customized plan shows each step's minutes and checks, if-time steps marked, a removed step gone
+ok   a step added after a removed step keeps its place
+ok   a free plan keeps a resource-given label only when the resources hold its value, and names an unanswered question
+ok   a free plan needs 5-12 steps, its family's labels, 3-5 Learning Through Play centres and differentiation
+ok   a free plan is rendered in its skeleton: labels, pacing, numbered steps, Ask lines with bold answers, closing, additions
+ok   a valid reply costs one call and no retry
+ok   a reply with problems gets one retry naming them, kept when it has fewer
+ok   a retry that is worse is dropped and the first reply is used; the plan is still the Studies Weekly plan
+ok   a free plan whose reply cannot be read twice is a plain message to ask again, not an empty plan
+ok   a free plan read twice with no steps is the same plain message
+ok   an adapted plan Scout could not read twice is the plain message outside the plan, never a plan with it inside
+ok   a readable retry replaces an unreadable first reply
+ok   an unreadable retry never replaces a readable first reply
+ok   a Spanish plan for an English ask is asked to be translated, and a line left untranslated is reported, not invented
+ok   compose's fact check reads only the model's text and never rewrites the Studies Weekly plan's
+ok   ...and a fix to the model's own text is applied
+ok   the honesty line goes under the criterion the article only partly supports, by code
+ok   a header label found only later in the panel (a second lesson's Notes for Teacher) is still asked for
+ok   a closing label the plan lacks goes before the plan's own later closing label, in the family's order
+ok   a plan that asks no question needs an added step with a question and its answer
+ok   the request says so when the plan asks no question, and only then
+ok   a listed standard is citable by the code inside it ("MI 4-H3.0.3" cites H3.0.3)
+ok   ...and an unlisted one still is not
+ok   a Studies Weekly answer written "**(…).**" is an answer, shown as "**(…)**.", and gets no second one
+ok   a question written on the board for the class gets an answer id; a quoted title does not
+ok   a change sends the plan's request, the reply it was built from and the teacher's words, in one call
+ok   the change is made by step id and rendered by code: the step gone, the added step marked, the rest as it was
+ok   the changed plan carries its new reply and the teacher's words, so the next change starts from it
+ok   a Studies Weekly step is removed only on the teacher's words; otherwise the same one retry names it
+ok   a new period times every step to add up to it, and an if-time step is marked
+ok   ...and a timed change that leaves a step without its op and minutes is retried naming it
+ok   a change whose reply cannot be read twice is a plain message, and the plan is left as it was
+ok   a free plan is changed the same way: its reply sent back, the change rendered in its skeleton
+ok   a free plan's change that cannot be read is the change's plain message
+ok   a fact-check fix is made in the stored reply too, so a later change keeps it
+ok   a plan reply with unescaped quotes, a raw line break and a trailing comma is read, not lost (gate 5's two unreadable rows)
+ok   both plan requests carry the rule that answers, definitions and steps say only what the article says
+ok   an answer whose claim the article does not make is rewritten once, naming the claim, and the rewrite is kept
+ok   a flagged claim the article states, one not in the item's words, or one on an unknown id costs no rewrite
+ok   a claim check that fails adds nothing: the plan is built from its reply
+ok   a flagged claim the article states in other word endings costs no rewrite ("shared" for "share")
+ok   a retry with its own unsupported claim is no better, so the first reply is kept
+ok   a free plan's step whose claim the article does not make is rewritten once, naming the claim
+ok   gate 5's confirmed fix in adapted-149463 (v1) is a problem the rewrite is told
+ok   gate 5's confirmed fix in adapted-29486 (a1) is a problem the rewrite is told
+ok   gate 5's confirmed fix in adapted-39805 (v1) is a problem the rewrite is told
+ok   gate 5's confirmed fix in adapted-95368 (q2) is a problem the rewrite is told
+ok   gate 5's confirmed fix in free-27135 (p1) is a problem the rewrite is told
+ok   gate 5's confirmed fix in free-27135 (p1) is a problem the rewrite is told
+ok   gate 5's confirmed fix in custom-95368 (s3) is a problem the rewrite is told
+ok   gate 5's confirmed fix in custom-95368 (s4) is a problem the rewrite is told
+ok   a reply longer than the room the plan leaves is told its words and the room, and the shorter retry is kept
+ok   Scout's room: max(1,100, 1.25 x the Studies Weekly plan's words) less the plan and what code adds; 1,040 without one
+ok   Scout's words count what it writes, not ids, minutes, checks or a translation of the Studies Weekly lines
+ok   compose returns the plan's state with the plan, for a later change
+ok   compose makes a change through the step edits, and fact-checks only the text the change wrote
+ok   ...and the fix is kept in the changed plan's state
+ok   a change to several days is not made: the plan is one lesson, said plainly, with no model call
+ok   compose tells an adapted plan Scout could not read twice in plain words, with no plan, fact check or extra call
+ok   a customized plan Scout could not read twice is the same plain message, so the form shows it outside the editor
+ok   compose tells an unwritten free plan in plan_build's plain words, with no error code
+ok   revise_document never changes a lesson plan by sections
+ok   a part titled like the step heading is not repeated under it (no "## Lesson Plan" then "### Lesson Plan")
+ok   a free plan's part titled like the step heading is not repeated; another title is kept
+ok   the Built for line names SWO's grades and never shows a negative grade code
+ok   running text and the class line use SWO's grade names too
+
+ALL OK

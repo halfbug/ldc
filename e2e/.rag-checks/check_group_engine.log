@@ -1,0 +1,28 @@
+ok   every id appears exactly once across groups and ungrouped
+ok   two ideas of the same claim land in the same group
+ok   a genuinely different claim (sunlight, not soil) is a separate group, not merged by topic
+ok   a lone idea with nothing to share it with is ungrouped, not a group of one
+ok   a3 and a4, which the reply dropped entirely, land in ungrouped rather than vanishing
+ok   still every id exactly once even after the reply's own omission
+ok   an id nobody gave the model is dropped from the group it was stuffed into
+ok   every real id is still present exactly once
+ok   a1 is not counted twice even though two groups both claimed it
+ok   a1 stayed in the first group that claimed it
+ok   a labelless 'group' is not kept as a group
+ok   its member falls through to ungrouped instead of being dropped
+ok   every id is still present exactly once
+ok   an unreadable reply is reported as a failure
+ok   do-no-harm: every id still reaches the caller as ungrouped rather than being lost
+ok   no group is invented from an unreadable reply
+ok   no items means no model call at all
+ok   the grouping engine defaults to MODEL_FAST, not the main grading model
+ok   items are grouped by idea alone; a differing verdict on the items no longer splits the group
+ok   nothing is ungrouped just because members carry different verdicts
+ok   an item's verdict field, whatever its value, is not validated any more
+ok   an item with no verdict at all still validates
+ok   a body with no question is rejected
+ok   a body with no items is rejected
+ok   duplicate item ids are rejected
+ok   a well-formed body validates
+
+ALL OK

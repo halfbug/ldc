@@ -1,0 +1,100 @@
+PASS A12 remember: a message that does not ask to save writes nothing
+PASS A12 remember: the model is told to ask the teacher, as a plain result
+PASS A12 forget: a message that does not ask to forget deletes nothing
+PASS A12 forget by kind: refused the same way
+PASS A12 forget all: a message that asks to forget one thing cannot wipe everything
+PASS A13 forget all: 'Forget everything' asks for confirmation and deletes nothing
+PASS A13 forget all: 'please clear all my saved preferences' asks for confirmation and deletes nothing
+PASS A13 forget all: 'Delete everything you remember about me' asks for confirmation and deletes nothing
+PASS A13 forget all: 'forget what you know about me' asks for confirmation and deletes nothing
+PASS A13 forget all: the confirm button runs forget directly with the paused arguments
+PASS A13 forget all: the answered confirmation deletes everything, with no typed words needed
+PASS A13 forget all: the keep button forgets nothing
+PASS A13 forget all: an answer from an earlier turn cannot confirm it, whatever arguments the model passes
+PASS A13 forget all: a browser action's result cannot confirm it, whatever arguments the model passes
+PASS A13 forget all: an answer that is not the button cannot confirm it, whatever arguments the model passes
+PASS A13 forget one item stays immediate, with no confirmation
+PASS A12 remember: 'Remember that I teach Grade 4' is explicit enough
+PASS A12 remember: 'From now on give me 8 questions' is explicit enough
+PASS A12 remember: 'save this as my default' is explicit enough
+PASS A12 remember: 'I usually want Spanish too' is explicit enough
+PASS A12 typed kind: 'Michigan' saves state
+PASS A12 typed kind: 'MI' saves state
+PASS A12 typed kind: '3rd' saves grade
+PASS A12 typed kind: 'third grade' saves grade
+PASS A12 typed kind: 'kindergarten' saves grade
+PASS A12 typed kind: 'Eight please' saves question_count
+PASS A12 typed kind: 'US History' saves subject
+PASS A12 typed kind: 'multiple choice' saves question_types
+PASS A12 typed kind: 'en español también' saves question_languages
+PASS A12 refused: 'yes' does not save grade 3
+PASS A12 refused: 'Michigan' does not save grade 3
+PASS A12 refused: 'Summarize this page' does not save state MI
+PASS A12 refused: '3rd' does not save note None
+PASS A12 refused: 'Michigan' does not save note None
+PASS A12 refused: '5' does not save publication 12
+PASS A12 block: a note renders as one line, never starting a prompt section of its own
+PASS A12 block: a note never overrides rules or asks for an action
+PASS memory_client passes the auth's verify flag to httpx
+PASS assignments_client passes the auth's verify flag to httpx
+PASS standards_client passes the auth's verify flag to httpx
+PASS remember: a stated preference is saved, not an error
+PASS remember: the content names the id for the model to reference
+PASS remember: memory.changed is emitted with the id and text
+PASS remember: the id is read out of Laravel's data wrapper, not None
+PASS remember: a flat (unwrapped) body still yields its id
+PASS remember: a 422 from Laravel is relayed as the model's error text, not a stack trace
+PASS remember: a refused save says plainly that nothing was saved, and tells the model not to claim it
+PASS remember: kind grade with value 5 reaches Laravel as {'grade': 5}
+PASS remember: kind grade with value '5' reaches Laravel as {'grade': 5}
+PASS remember: kind grade with value ['5'] reaches Laravel as {'grade': 5}
+PASS remember: kind grade with value 'K' reaches Laravel as {'grade': 0}
+PASS remember: kind subject with value 'US History' reaches Laravel as {'subject': 'US History'}
+PASS remember: kind state with value 'mi' reaches Laravel as {'state': 'MI'}
+PASS remember: kind publication with value 12 reaches Laravel as {'publication': 12}
+PASS remember: kind publication with value '12' reaches Laravel as {'publication': 12}
+PASS remember: kind question_count with value 8 reaches Laravel as {'question_count': 8}
+PASS remember: kind question_types with value ['multiple_choice'] reaches Laravel as {'question_types': ['multiple_choice']}
+PASS remember: kind question_types with value 'true_false' reaches Laravel as {'question_types': ['true_false']}
+PASS remember: kind question_languages with value ['es'] reaches Laravel as {'question_languages': ['es']}
+PASS the fake enforces Laravel's shape: a bare grade value is a 422 'must be an array' (the round-2 failure)
+PASS remember: a count above Laravel's 1-15 (ONLINE-7578, 2026-10-04) is refused with the plain nothing-saved text and stores nothing
+PASS remember: 15, the most per request, is a usual count Laravel keeps
+PASS remember: a note still has no value
+PASS remember: an unknown kind is refused before any request
+PASS remember: classroom_id on a teacher-level kind is refused before any request
+PASS remember: a typed kind with no value is refused before any request
+PASS remember: no auth for this turn refuses cleanly, never a crash
+PASS forget: a real id is removed, not an error
+PASS forget: memory.changed is emitted for the browser to refetch
+PASS forget: forgetting an already-gone id is a plain error, never a crash
+PASS forget: "all" on the teacher's words alone asks first and clears nothing
+PASS forget: "all" once confirmed clears every remembered row
+PASS forget: an empty id is refused before any request
+PASS forget: id '../../classrooms/5' is a plain error with no HTTP call
+PASS forget: id '5/../../x' is a plain error with no HTTP call
+PASS forget: id '5?x=1' is a plain error with no HTTP call
+PASS forget: id '5#' is a plain error with no HTTP call
+PASS forget: id '%2e%2e/5' is a plain error with no HTTP call
+PASS forget: id 'all/x' is a plain error with no HTTP call
+PASS forget: id 'abc' is a plain error with no HTTP call
+PASS forget: id '5 6' is a plain error with no HTTP call
+PASS forget: a uuid id is sent
+PASS forget several: every matching id is deleted and the other note stays
+PASS forget several: the reply is the tool's own and names both notes by their stored wording, nothing else
+PASS forget several: one memory.changed per deleted id, each with its own id
+PASS forget several: three are named in a list, a repeated id counts once, and one that was not there is reported, not named
+PASS forget several: when none could be deleted it is a plain error with no reply naming anything
+PASS forget several: a list of one is the ordinary single forget
+PASS forget several: still needs the teacher's own words to ask for it
+PASS forget several: "all" beside a list is never read as a list
+PASS forget by kind: a stored row of that kind is removed, not an error
+PASS forget by kind: it deleted the row's REAL id (42), read from `ctx.resolved`, not a guess
+PASS forget by kind: memory.changed carries the real id, not the kind string
+PASS forget by kind: no row of that kind is a plain, truthful reply, never an error and never a crash
+PASS forget by kind: an unrecognised kind is refused before any lookup
+PASS forget by kind: a classroom-scoped kind resolves against that classroom's own row
+PASS mutation check: memory_id_for finds nothing for a kind with no matching row
+PASS mutation check: memory_id_for finds the real id when the row is there
+
+0 failure(s)

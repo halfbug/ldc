@@ -1,0 +1,46 @@
+ok   a drawing is described
+ok   no mark field reaches the wire, even when the model's reply carries one (known positive)
+ok   the row carries exactly the description, the reading and the flags
+ok   the prompt tells the model it never marks
+ok   the prompt asks for no checks, verdict or confidence
+ok   only one model call per chunk: no checklist call
+ok   the review call sends each image as an image block, never as text
+ok   AC4: a quality sentence from the model never reaches the wire (known positive)
+ok   AC4: a neutral description is left whole (known negative)
+ok   AC5: what was read is returned as written, spelling uncorrected
+ok   AC5: unreadable writing says Scout couldn't read it, and no guess is shown
+ok   AC5: an unreadable drawing is still described
+ok   AC5: partly readable writing is kept and marked partly
+ok   writing reported with legibility none is corrected to partly (never 'none' beside words)
+ok   D49: a concerning drawing gets no description and no reading
+ok   D49: it is still flagged for ordering, and only counted
+ok   a drawing the browser found blank is never sent to the model
+ok   blank (browser) -> nothing drafted, look first, and the note
+ok   blank (model) -> nothing drafted either
+ok   an off-topic judgement is not a flag Scout makes any more
+ok   a duplicated id is dropped, never resolved
+ok   an unknown id is dropped
+ok   a comma before a closing bracket is repaired (6 of 189 dev2 replies were lost to it)
+ok   a reply with a missing value is still unreadable, never guessed
+ok   a drawing with no reply is reported ungraded
+ok   an unreadable reply is retried once and the second reply is used
+ok   the retry says the first reply could not be read (a new request, never a replay of the first)
+ok   typed text travels JSON-encoded in the intro
+ok   no answer key or criteria reach the model
+ok   a well-formed body is accepted
+ok   422: no question
+ok   422: a question that is not text
+ok   422: too many drawings
+ok   422: bytes that are not the declared format
+ok   422: an oversized image
+ok   422: not base64
+ok   422: duplicate ids
+ok   a blank drawing needs no image
+ok   drawing_request answers 422 with success false
+ok   fields an older browser still sends (key, criteria, checklist) are ignored, never used for a mark
+ok   the scrub removes a roster name from the question and the typed text
+ok   the drawings route has its own throttle kind
+ok   six images at the cap fit the drawings route's own body cap, which the general cap does not
+ok   drawing reviews share grading's in-flight pool path constant
+
+ALL OK

@@ -1,0 +1,34 @@
+ok   QC1: 30 asked writes 15 and delivers 14 when one is left out
+ok   QC1: the cap's note is in the set's data, counting what was delivered
+ok   QC1: every note in the markdown is in the data, and the other way round
+ok   QC1: the title counts the delivered questions, not the planned ones
+ok   QC1: the card's closing event carries that title
+ok   QC1: a title given by the caller is kept as given
+ok   QC1: the reply says the cap's note as the card shows it
+ok   QC1: a set stored before notes were kept closes as before
+ok   QC1: an ask over the cap gets the fixed lead-in naming 15
+ok   QC1: the ask's own words count even when the call carries the schema's 15
+ok   QC1: an ask within the cap, another tool, or no call keeps the model's lead-in
+ok   QC2: a matching question reaches the planner with its pairs
+ok   QC2: a check-all question reaches it with its correct options only
+ok   QC2: a sorting question reaches it with its order, a multiple choice with its key
+ok   QC2: a malformed key still gives the stem
+ok   QC2: earlier questions are this article's, each with its key
+ok   QC2: a question coming back to an idea takes one only an earlier set asked, before one this set asked
+ok   QC2: only once every idea is in this set does the set ask one of its own ideas again
+ok   QC2: a first set with no earlier questions comes back in article order, as before
+ok   QC5: an ask naming no number dispatches no count
+ok   QC5: an ask naming one still dispatches it
+ok   QC5: no count sent, a remembered 8 is the usual, and the reply says so
+ok   QC5: a guessed 5 on a page naming another count is not named; the remembered 8 wins
+ok   QC5: a page that names this very count still vouches for it
+ok   QC5: a count the teacher typed beats the remembered one
+ok   Leak: the verifier's reason is in no question, detail or note the card receives
+ok   Leak: no detail carries a 'problem' field
+ok   Leak: the repair that wrote the review as question text was not delivered; the original question stands
+ok   Leak: the reason is still recorded for us, in checks
+ok   Leak: echoes_review finds a review sentence in a question's text, options or key
+ok   Leak: echoes_review leaves an ordinary question alone, and ignores short fragments
+ok   Leak: a repair that does not echo the review is delivered as before
+
+all passed
