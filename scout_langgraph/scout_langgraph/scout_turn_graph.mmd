@@ -1,0 +1,24 @@
+---
+config:
+  flowchart:
+    curve: linear
+---
+graph TD;
+	__start__([<p>__start__</p>]):::first
+	ingest(ingest)
+	agent(agent)
+	tools(tools)
+	pause(pause)
+	finalize(finalize)
+	__end__([<p>__end__</p>]):::last
+	__start__ --> ingest;
+	agent -.-> finalize;
+	agent -.-> tools;
+	ingest --> agent;
+	pause --> agent;
+	tools -.-> agent;
+	tools -.-> pause;
+	finalize --> __end__;
+	classDef default fill:#f2f0ff,line-height:1.2
+	classDef first fill-opacity:0
+	classDef last fill:#bfb6fc
